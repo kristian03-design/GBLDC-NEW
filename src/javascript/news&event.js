@@ -83,7 +83,7 @@ function renderPaginationButtons() {
     container.innerHTML += `
         <button onclick="goToPage(${i})" class="w-8 h-8 ${
       i === currentPage
-        ? "bg-gray-800 text-white font-medium rounded-sm"
+        ? "bg-gray-900 text-white font-medium rounded-sm"
         : "hover:text-yellow-900"
     }">${i}</button>
       `;
