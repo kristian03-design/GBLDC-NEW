@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FontAwesome for Icons -->
+     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-4 overflow-hidden">
+            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>  
+                <h1 class="text-2xl font-bold">GBLDC</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
+                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+                    </div>
+                </div>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-green-600">NEWS & EVENTS</a>
+            </nav>
+            <!-- End of Navbar -->
+            <!-- Apply now Button -->
+            <div class="button gap-4 hidden md:flex items-center">
+                <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+                <a href="applynow.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-800">Apply Now</a>
+            </div>
+        </div>
+    </header>
+<!-- News and Events Section-->
+<section class="max-w-7xl mx-auto px-4 py-12">
+    <h2 class="text-3xl font-semibold text-center text-gray-800 mb-10">News and Events</h2>
+
+    <!-- News Cards -->
+    <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+      <!-- News cards populated by JS -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center items-center space-x-4 text-yellow-700">
+      <button onclick="prevPage()" class="hover:text-yellow-900 text-lg px-2">&lt;</button>
+      
+      <div id="pagination-buttons" class="flex space-x-1">
+        <!-- Pagination numbers inserted by JS -->
+      </div>
+
+      <button onclick="nextPage()" class="hover:text-yellow-900 text-lg px-2">&gt;</button>
+    </div>
+  </section>
+      <script src="../src/javascript/news&event.js"></script>
+    </body>
+    </html>
