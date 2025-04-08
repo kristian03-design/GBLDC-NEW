@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FontAwesome for Icons -->
+     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-4 overflow-hidden">
+            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>  
+                <h1 class="text-2xl font-bold">GBLDC</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
+                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+                    </div>
+                </div>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-green-600">NEWS & EVENTS</a>
+            </nav>
+            </div>
+            </header>
+    <section>
+    <div class="max-w-4xl mx-auto mt-6  p-7">
+        <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
+        <p class="text-center text-black mt-3">Let’s talks and learn your finances better</p>
+
+        <div class="flex items-center justify-center my-6">
+            <div class="flex items-center gap-8">
+                <div class="flex flex-col items-center text-black">
+                <a href=""><div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                        1
+                    </div></a>
+                   <a href=""> <p class="text-sm mt-2">Personal Information</p> </a>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <a href="applynowstep2.html">   <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
+                        2
+                    </div></a>
+                    <p class="text-sm mt-2">Educational Information</p>
+                </div>
+                <div class="w-20 h-1 bg-gray-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                        3
+                    </div>
+                    <p class="text-sm mt-2">Employment Information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-4xl mx-auto mt-6 bg-white p-7 shadow-lg rounded-lg">
+    <div class="p-9 rounded-lg">
+        
+        <label class="block text-black font-medium">Highest Educational Attainment <span class="text-red-500">*</span></label>
+        <select class="mt-6 w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>-- Select Level --</option>
+            <option>High School</option>
+            <option>Associate Degree</option>
+            <option>Bachelor's Degree</option>
+            <option>Master's Degree</option>
+            <option>Doctorate</option>
+        </select>
+        <div class="flex justify-end mt-6">
+           <a href="applynowstep3.html"><button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Next</button></a>
+        </div>
+    </div>
+    </section>
+</div>
+<script src="../src/javascript/dropdown.js"></script>
+</body>
+</html>
+
+      
+    

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FontAwesome for Icons -->
+     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-4 overflow-hidden">
+            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>  
+                <h1 class="text-2xl font-bold">GBLDC</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
+                <a href="#" class="hover:text-green-600">HOME</a>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+                    </div>
+                </div>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-green-600">NEWS & EVENTS</a>
+            </nav>
+            <!-- End of Navbar -->
+            <!-- Apply now Button -->
+            <div class="button gap-4 hidden md:flex items-center">
+                <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+                <a href="applynow.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-800">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative">
+        <img src="path/images/LANDINGPAGE.png" alt="Greater Bulacan" class="w-full h-[540px] object-fill">
+        </div>
+    </section>
+    <section class="py-14 px-6 text-center">
+        <h2 class="text-4xl font-medium text-teal-900 mb-2">Our Products</h2>
+        <p class="text-gray-600 mb-10 tracking-wide">Build your future according to how you want it to be</p>
+    
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto text-left ">
+          <!-- Card 1 - Loan -->
+          <div class="bg-white rounded-xl shadow-md p-6  flex flex-col justify-between items-center tracking-wide">
+            <div>
+              <h3 class="text-lg font-semibold text-teal-900 mb-2">Loan</h3>
+              <p class="text-gray-600 mb-6">Get financial assistance for your startup business, tuition fees, or home appliances.</p>
+            </div>
+            <img src="" alt="Loan" class="w-24 h-24 mb-4">
+            <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400">Learn More</button>
+          </div>
+    
+          <!-- Card 2 - Deposit -->
+          <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide">
+            <div>
+              <h3 class="text-lg font-semibold text-teal-900 mb-2">Deposit</h3>
+              <p class="text-gray-600 mb-6">Save up for your long-term needs or your next travel through creating a savings plan that is right for you.</p>
+            </div>
+            <img src="" alt="Deposit" class="w-24 h-24 mb-4">
+            <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400">Learn More</button>
+          </div>
+    
+          <!-- Card 3 - Insurance -->
+          <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide">
+            <div>
+              <h3 class="text-lg font-semibold text-teal-900 mb-2">Insurance</h3>
+              <p class="text-gray-600 mb-6">Set yourself up for life through a lifelong insurance plan for you and your family’s future.</p>
+            </div>
+            <img src="" alt="Insurance" class="w-24 h-24 mb-4">
+            <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400">Learn More</button>
+          </div>
+    
+          <!-- Card 4 - Social Services -->
+          <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide">
+            <div>
+              <h3 class="text-lg font-semibold text-teal-900 mb-2">Social Services</h3>
+              <p class="text-gray-600 mb-6">Enjoy and be entitled to various social services benefits especially designed for members in every step of their lives.</p>
+            </div>
+            <img src="" alt="Social Services" class="w-24 h-24 mb-4">
+            <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400">Learn More</button>
+          </div>
+        </div>
+      </section>
+    <!-- CO-OP Member Meetings Section -->
+    <section class="container mx-auto my-14 px-7">
+        <h2 class="text-center text-teal-900 text-3xl font-medium">CO-OP MEMBER MEETINGS</h2>
+        <p class="text-center text-gray-700 mt-2 font-normal tracking-wide">Join us for our upcoming meetings and events to stay informed and engaged with your cooperative community.</p>
+        <div class="relative w-full mt-6">
+            <div class="overflow-hidden relative w-full h-96 " id="carousel">
+                <div class="flex w-full h-full transition-transform duration-500 gap-5" id="carousel-inner">
+                    <img src="path/images/meeting 1.png" class="w-full h-full object-cover rounded-xl drop-shadow-2xl" alt="Meeting 1">
+                    <img src="path/images/meeting 2.png" class="w-full h-full object-cover rounded-xl drop-shadow-2xl" alt="Meeting 2">
+                    <img src="path/images/meeting 3.png" class="w-full h-full object-cover rounded-xl drop-shadow-2xl" alt="Meeting 3">
+                </div>
+            </div>
+            <div class="absolute inset-0 flex justify-between items-center px-4">
+                <button class="bg-gray-400 font-semibold p-2 rounded-full shadow-md w-10" onclick="prevSlide()">&#10094;</button>
+                <button class="bg-gray-400 font-semibold p-2 rounded-full shadow-md w-10 " onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Events & Announcements Section -->
+    <section class="py-12 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-10">
+          <h2 class="text-4xl font-medium text-teal-900 tracking-wide">News and Events</h2>
+          <p class="text-gray-500 mt-2 tracking-wide">The latest updates from your partners</p>
+        </div>
+    
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="bg-white rounded-xl shadow">
+            <img src="path/images/event1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-54 object-cover"/>
+            <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
+           Lorem ipsum dolor sit.
+            </h3>
+            <p class="text-sm text-gray-600 p-3">
+           Lorem ipsum, dolor sit amet consectetur adipisicing.
+            </p>
+          </div>
+    
+          <!-- Card 2 -->
+          <div class="bg-white rounded-xl shadow">
+            <img src="path/images/event1.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-54 object-cover"/>
+            <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, ipsa?
+            </h3>
+            <p class="text-sm text-gray-600 p-3">
+            Lorem ipsum dolor sit amet consectetur.
+            </p>
+          </div>
+    
+          <!-- Card 3 -->
+          <div class="bg-white rounded-xl shadow">
+            <img src="path/images/event1.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-54 object-cover "/>
+            <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
+             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates adipisci cumque dolorem!
+            </h3>
+            <p class="text-sm text-gray-600 p-3 mb-4">
+             Lorem, ipsum.
+            </p>
+          </div>
+        </div>
+    
+        <div class="text-center mt-10">
+          <button class="bg-green-600 hover:bg-green-700 text-white font-light py-2 px-6 rounded-lg">
+            View More
+          </button>
+        </div>
+      </section>
+      <!-- JS SCRIPT -->
+    <script src="../src/javascript/carousel.js"></script>
+    <script src="../src/javascript/dropdown.js"></script>
+    <!-- FOOTER -->
+    <footer class="bg-gray-200 text-black font-medium text-center py-4 mt-10">
+        <p>&copy; 2025 Greater Bulacan Livelihood Development Cooperative Organization. All Rights Reserved.</p> 
+    </footer>
+</body>
+</html>

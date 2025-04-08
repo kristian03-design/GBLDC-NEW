@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FontAwesome for Icons -->
+     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+</head>
+
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-4 overflow-hidden">
+            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>  
+                <h1 class="text-2xl font-bold">GBLDC</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
+                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+                    </div>
+                </div>
+                <div class="toggle relative">
+                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-green-600">NEWS & EVENTS</a>
+            </nav>
+            </div>
+            </header>
+    <section>
+    <div class="max-w-4xl mx-auto mt-6 p-7 ">
+        <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
+        <p class="text-center text-bl mt-3">Let’s talks and learn your finances better</p>
+        <div class="flex items-center justify-center my-6">
+            <div class="flex items-center gap-8">
+                <div class="flex flex-col items-center text-black">
+                <a href=""><div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                        1
+                    </div></a>
+                   <a href=""> <p class="text-sm mt-2">Personal Information</p> </a>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <a href="applynowstep2.html">   <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                        2
+                    </div></a>
+                    <p class="text-sm mt-2">Educational Information</p>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full text-black">
+                        3
+                    </div>
+                    <p class="text-sm mt-2">Employment Information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="max-w-7xl mx-auto bg-white p-7 shadow-lg rounded-lg mt-6 mb-6">
+    
+        <form class="space-y-6 font-normal max-w-7xl mx-auto p-11">
+    
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">Employment Status <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <option>-- Select --</option>
+              </select>
+            </div>
+    
+            <div>
+              <label class="block text-sm font-medium mb-1">Source of Funds <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <option>-- Select --</option>
+              </select>
+            </div>
+          </div>
+    
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">Employer/Business Name <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Employer/Business Name">
+            </div>
+    
+            <div>
+              <label class="block text-sm font-medium mb-1">Occupation <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <option>-- Select Occupation --</option>
+              </select>
+            </div>
+          </div>
+    
+          <div>
+            <label class="block text-sm font-medium mb-1">Company/Business Address <span class="text-red-500">*</span></label>
+            <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Company/Business Address">
+          </div>
+    
+          <div class="grid md:grid-cols-3 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">Title/Position <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Title/Position">
+            </div>
+    
+            <div>
+              <label class="block text-sm font-medium mb-1">Year/s of Stay</label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Year/s of Stay">
+            </div>
+    
+            <div>
+              <label class="block text-sm font-medium mb-1">Office Contact No. <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Office Contact No.">
+            </div>
+          </div>
+    
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">Gross Monthly Income <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <option>-- Select --</option>
+              </select>
+            </div>
+    
+            <div>
+              <label class="block text-sm font-medium mb-1">Nature/Type of Employment/Business <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+                <option>-- Select --</option>
+              </select>
+            </div>
+          </div>
+    
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label class="block text-sm font-medium mb-1">SSS/GSIS No. <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="SSS/GSIS No.">
+            </div>
+    
+            <div>
+              <label class="block text-sm font-medium mb-1">TIN No. <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="TIN No.">
+            </div>
+          </div>
+    
+          <div class="pt-6 border-t">
+            <h3 class="text-lg font-semibold mb-2">Attachments</h3>
+            <label class="block text-sm font-medium mb-1 mt-3">Required Documents <span class="text-red-500">*</span></label>
+            <div class="flex items-center gap-3">
+              <input type="text" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Required Documents" readonly>
+              <input type="file" class="text-sm">
+            </div>
+          </div>
+          <label class="block text-sm font-medium mb-1">2x2 Picture <span class="text-red-500">*</span></label>
+          <div class="flex items-center gap-3">
+            <input type="text" class="border px-3 py-2 rounded w-96" placeholder="Required Documents" readonly>
+            <input type="file" class="text-sm">
+          </div>
+          <label class="block text-sm font-medium mb-1">Proof of Payment <span class="text-red-500">*</span></label>
+          <div class="flex items-center gap-3">
+            <input type="text" class="border px-3 py-2 rounded w-96" placeholder="Required Documents" readonly>
+            <input type="file" class="text-sm">
+          </div>
+        <!-- File Size Note -->
+        <p class="text-sm text-gray-500 mt-2">Maximum upload file size: 1mb</p>
+        <!-- Submit Button -->
+        <div class="flex justify-end mt-6">
+          <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="../src/javascript/dropdown.js"></script>
+  </body>
+  </html>
