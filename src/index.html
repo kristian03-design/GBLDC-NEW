@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
   <link href="./output.css" rel="stylesheet">
   <title>Greater Bulacan Livelihood Development Cooperative</title>
 </head>
@@ -39,9 +40,13 @@
   
           <div>
             <label class="block text-sm font-medium text-gray-700">Password</label>
-            <input type="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your password">
+            <div class="relative">
+              <input type="password" id="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your password">
+              <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-5 flex items-center text-gray-500">
+                <i id="eyeIcon" class="fa-regular fa-eye" aria-hidden="true" style="font-size: 1.5rem;" ></i>
+              </button>
+            </div>
           </div>
-  
           <div class="text-center text-sm text-gray-500 mt-2">or Signup with</div>
           <div class="flex justify-center space-x-4">
             <button type="button" class="flex items-center px-4 py-2 border rounded-md hover:bg-gray-100">
@@ -52,7 +57,7 @@
             </button>
           </div>
   
-          <a href="landingpage.html"><button type="submit" class="w-72 mt-4 mx-20 bg-black text-white py-2 rounded-md hover:bg-gray-800 font-semibold"></a>
+          <button type="submit" formaction="landingpage.html" class="w-72 mt-4 mx-20 bg-black text-white py-2 rounded-md hover:bg-gray-800 font-semibold">
             LOGIN
           </button>
   
@@ -62,6 +67,6 @@
         </form>
       </div>
     </div>
-  
+   <script src="../src/javascript/eye-toggle.js"></script>
   </body>
   </html>
