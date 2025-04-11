@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FontAwesome for Icons -->
+     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+</head>
+
+<body class="bg-white">
+    <!-- Header Section -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-4 overflow-hidden">
+          <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>
+          <h1 class="text-2xl font-bold">GBLDC</h1>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
+          <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+          <div class="toggle relative">
+              <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+              <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+              </div>
+          </div>
+          <div class="toggle relative">
+              <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+              <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+              </div>
+          </div>
+          <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
+            </nav>
+            <!-- Apply now Button -->
+            <div class="button gap-4 hidden md:flex items-center">
+          <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+          <a href="applynow.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-800">Apply Now</a>
+            </div>
+        </div>
+    </header>
+
+<!--Loan Products-->
+    <section class="text-center py-10 px-4">
+        <h2 class="text-4xl font-semibold text-teal-900 mb-2">Loan Products</h2>
+        <p class="text-sm text-gray-600 mb-10">We are here to help you reach your own dreams</p>
+    
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          
+          <!-- Flexi-Combo Line -->
+          <div class="bg-orange-50 p-16 rounded-sm shadow-lg hover: transition">
+            <div class="flex justify-center mb-4">
+              <div class="bg-orange-400 rounded-full p-4">
+                <img src="path/images/flexicomboline.png" class="h-22 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7h16M4 12h16M4 17h16" />
+                </img>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Flexi-Combo Line</h3>
+            <p class="text-sm text-gray-700">
+              To provide a credit line facility that is more competitive and responsive to the needs of the member-borrower.
+            </p>
+          </div>
+    
+          <!-- Secured Consumer Loan -->
+          <div class="bg-orange-50 p-16 rounded-sm shadow-lg hover: transition">
+            <div class="flex justify-center mb-4">
+              <div class="bg-orange-400 rounded-full p-4">
+                <img src="path/images/cashbag.png" class="h-22 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 6a4 4 0 014 4v4a4 4 0 11-8 0V10a4 4 0 014-4z" />
+                </img>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Secured Consumer Loan</h3>
+            <p class="text-sm text-gray-700">
+              Secured loan product intended for non-business related purposes.
+            </p>
+          </div>
+    
+          <!-- Sunergy Loan -->
+          <div class="bg-orange-50 p-16 rounded-sm shadow-lg hover: transition">
+            <div class="flex justify-center mb-4">
+              <div class="bg-orange-400 rounded-full p-4">
+                <img src="path/images/sunergyloan.png" class="h-22 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M5 3L19 21M5 21L19 3" />
+                </img>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Sunergy Loan</h3>
+            <p class="text-sm text-gray-700">
+              Sunergy Loan is a loan facility intended to help members finance their purchase of Solar Energy Power System that would enable them to reduce their monthly electric bill.
+            </p>
+          </div>
+    
+          <!-- Motorcycle Loan -->
+          <div class="bg-orange-50 p-16 rounded-sm shadow-lg hover: transition">
+            <div class="flex justify-center mb-4">
+              <div class="bg-orange-400 rounded-full p-4">
+                <img src="path/images/motorcycle.png" class="h-22 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M4 17l2-3 4 3 4-6 4 6h4" />
+                </img>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Motorcycle Loan</h3>
+            <p class="text-sm text-gray-700">
+              Intended to provide members with a loan facility that will help them acquire a brand new motorcycle.
+            </p>
+          </div>
+    
+          <!-- Back to Back Loan -->
+          <div class="bg-orange-50 p-16 rounded-sm shadow-lg hover: transition">
+            <div class="flex justify-center mb-4">
+              <div class="bg-orange-400 rounded-full p-4">
+                <img src="path/images/backtobackloan.png" class="h-22 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 8v8m4-4H8" />
+                </img>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Back to Back Loan</h3>
+            <p class="text-sm text-gray-700">
+              To provide a loan package that is more competitive and responsive to the needs of the members.
+            </p>
+          </div>
+    
+          <!-- Kaagapay Loan -->
+          <div class="bg-orange-50 p-16 rounded-sm shadow-lg hover: transition">
+            <div class="flex justify-center mb-4">
+              <div class="bg-orange-400 rounded-full p-4">
+                <img src="path/images/group-people.png" class="h-22 w-16 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M5 13l4 4L19 7" />
+                </img>
+              </div>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Kaagapay Loan</h3>
+            <p class="text-sm text-gray-700">
+              Intended to help members in difficult financial situations which may arise from unforeseen events.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mini About Us -->
+      <section class="bg-slate-200 py-14 px-10">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-start">
+          
+          <!-- Left content -->
+          <div>
+            <h2 class="text-2xl font-semibold text-teal-900 mb-4">Why Greater Bulacan Livelihood Development Cooperative?</h2>
+            <p class="text-gray-700 mb-6">
+             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus consequatur ipsa atque obcaecati quasi, alias est commodi rerum praesentium nesciunt.
+            </p>
+            <a href="#" class="inline-block bg-green-600 text-white px-5 py-2 rounded hover:bg-green-500 transition">
+              About Us
+            </a>
+          </div>
+      
+          <!-- Right content -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-10">
+            <!-- Feature 1 -->
+            <div class="flex items-start space-x-3">
+              <img src="path/images/jar-icon2 (1).png" class="h-22 w-22 text-green-600" alt="Icon">
+              <span class="text-teal-900 mt-3">Easy application</span>
+            </div>
+            <!-- Feature 2 -->
+            <div class="flex items-start space-x-3">
+              <img src="path/images/jar-icon2 (1).png" class="h-22 w-22 text-green-600" alt="Icon">
+              <span class="text-teal-900 ">Wide financial saving options</span>
+            </div>
+            <!-- Feature 3 -->
+            <div class="flex items-start space-x-3">
+              <img src="path/images/jar-icon2 (1).png" class="h-22 w-22 text-green-600" alt="Icon">
+              <span class="text-teal-900 mt-3">Transparent</span>
+            </div>
+            <!-- Feature 4 -->
+            <div class="flex items-start space-x-3">
+              <img src="path/images/jar-icon2 (1).png" class="h-22 w-22 text-green-600" alt="Icon">
+              <span class="text-teal-900 mt-3">Accountable</span>
+            </div>
+          </div>
+      
+        </div>
+      </section>
+
+
+      <!-- Footer -->
+      <footer class="bg-green-700 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 mt-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-200 mt-5">
+            
+            <!-- Products & Services -->
+            <div>
+              <h4 class="font-semibold uppercase mb-4 text-white">Products & Services</h4>
+              <ul class="space-y-2 font-light">
+                <li><a href="#" class="hover:underline">Loan Products</a></li>
+                <li><a href="#" class="hover:underline">Deposit Products</a></li>
+                <li><a href="#" class="hover:underline">Insurance Products</a></li>
+                <li><a href="#" class="hover:underline">Social Services</a></li>
+              </ul>
+            </div>
+      
+            <!-- About -->
+            <div>
+              <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
+              <ul class="space-y-2 font-light">
+                <li><a href="#" class="hover:underline">About Greater Bulacan Livelihood Development Cooperative</a></li>
+                <li><a href="#" class="hover:underline">Senior Management</a></li>
+                <li><a href="#" class="hover:underline">Officers & Committees</a></li>
+              </ul>
+            </div>
+      
+            <!-- Other Quicklinks -->
+            <div>
+              <h4 class="font-semibold uppercase mb-4 text-white">Other Quicklinks</h4>
+              <ul class="space-y-2 font-light">
+                <li><a href="#" class="hover:underline">News & Events</a></li>
+                <li><a href="#" class="hover:underline">FAQs</a></li>
+                <li><a href="#" class="hover:underline">Contact</a></li>
+                <li><a href="#" class="hover:underline">Apply Now</a></li>
+                <li><a href="#" class="hover:underline">Downloadable Forms</a></li>
+                <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+              </ul>
+            </div>
+      
+          </div>
+      
+          <!-- Copyright -->
+          <div class="mt-12 text-center text-sm text-white font-normal">
+            GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.
+          </div>
+        </div>
+      </footer>
+      <script src="../src/javascript/dropdown.js"></script>
+    </body>
+    </html>

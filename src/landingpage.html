@@ -24,7 +24,7 @@
           <div class="toggle relative">
               <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
               <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+            <a href="loan.html" class="block px-4 py-2 hover:bg-green-200">Loans</a>
             <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
             <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
             <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
@@ -66,8 +66,8 @@
               <p class="text-gray-600 mb-6">Get financial assistance for your startup business, tuition fees, or home appliances.</p>
             </div>
             <img src="path/images/gbldc-loan.png" alt="Loan" class="w-56 h-56 mb-6 mt-6">
-            <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400">Learn More</button>
-          </div>
+            <a href="loan.html"><button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400">Learn More</button>
+          </div></a>
     
           <!-- Card 2 - Deposit -->
           <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide">
@@ -169,24 +169,50 @@
       </section>
    
     <!-- FOOTER -->
-   <footer class="bg-white dark:bg-gray-800 text-black font-medium text-center py-4 mt-10">
-      <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
-        <span class="text-base text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="https://www.facebook.com/profile.php?id=100067957008092" class="hover:underline">Greater Bulacan Livelihood Development Cooperative</a>. All Rights Reserved.
-      </span>
-      <ul class="flex flex-wrap items-center mt-3 text-base font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
-          <li>
-              <a href="#" class="hover:underline me-4 md:me-6">About</a>
-          </li>
-          <li>
-              <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
-          </li>
-          <li>
-              <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
-          </li>
-          <li>
-              <a href="#" class="hover:underline">Contact</a>
-          </li>
-      </ul>
+    <footer class="bg-green-700 text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 mt-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-200 mt-5">
+          
+          <!-- Products & Services -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Products & Services</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="loan.html" class="hover:underline">Loan Products</a></li>
+              <li><a href="#" class="hover:underline">Deposit Products</a></li>
+              <li><a href="#" class="hover:underline">Insurance Products</a></li>
+              <li><a href="#" class="hover:underline">Social Services</a></li>
+            </ul>
+          </div>
+    
+          <!-- About -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#" class="hover:underline">About Greater Bulacan Livelihood Development Cooperative</a></li>
+              <li><a href="#" class="hover:underline">Senior Management</a></li>
+              <li><a href="#" class="hover:underline">Officers & Committees</a></li>
+            </ul>
+          </div>
+    
+          <!-- Other Quicklinks -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Other Quicklinks</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#" class="hover:underline">News & Events</a></li>
+              <li><a href="#" class="hover:underline">FAQs</a></li>
+              <li><a href="#" class="hover:underline">Contact</a></li>
+              <li><a href="#" class="hover:underline">Apply Now</a></li>
+              <li><a href="#" class="hover:underline">Downloadable Forms</a></li>
+              <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+            </ul>
+          </div>
+    
+        </div>
+    
+        <!-- Copyright -->
+        <div class="mt-12 text-center text-sm text-white font-normal">
+          GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.
+        </div>
       </div>
     </footer>
        <!-- JS SCRIPT -->
