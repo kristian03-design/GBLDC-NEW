@@ -15,37 +15,67 @@
         <div class="container mx-auto flex justify-between items-center p-4">
             <!-- Logo and Title -->
             <div class="flex items-center space-x-4 overflow-hidden">
-            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>  
-                <h1 class="text-2xl font-bold">GBLDC</h1>
+          <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>
+          <h1 class="text-2xl font-bold">GBLDC</h1>
             </div>
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
-                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
-                    </div>
-                </div>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
-                    </div>
-                </div>
-                <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
+          <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+          <div class="toggle relative">
+              <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+              <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+              </div>
+          </div>
+          <div class="toggle relative">
+              <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+              <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+              </div>
+          </div>
+          <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
             </nav>
-            <!-- End of Navbar -->
             <!-- Apply now Button -->
             <div class="button gap-4 hidden md:flex items-center">
-                <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
-                <a href="applynow.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-800">Apply Now</a>
+          <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+          <a href="applynow.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-800">Apply Now</a>
+            </div>
+            <!-- Hamburger Icon -->
+            <button class="md:hidden text-black" onclick="toggleMobileMenu()">
+          <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-white shadow-lg p-4" id="mobile-menu">
+            <a href="landingpage.html" class="block py-2 hover:text-green-600">HOME</a>
+            <div class="toggle relative">
+          <a href="#" class="block py-2 hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+          <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-products-mobile">
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+          </div>
+            </div>
+            <div class="toggle relative">
+          <a href="#" class="block py-2 hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+          <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-mobile">
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+              <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+          </div>
+            </div>
+            <a href="news&events.html" class="block py-2 hover:text-green-600">NEWS & EVENTS</a>
+            <div class="mt-4">
+          <a href="index.html" class="block bg-green-600 text-white w-36 px-7 py-2 rounded-lg font-normal hover:bg-green-800 text-center">Login</a>
+          <a href="applynow.html" class="block bg-green-600 text-white w-36 px-6 py-2 rounded-lg font-normal hover:bg-green-800 text-center mt-2">Apply Now</a>
             </div>
         </div>
     </header>
@@ -130,10 +160,10 @@
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           <!-- Card 1 -->
           <div class="bg-white rounded-xl shadow">
-            <img src="path/images/event1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-54 object-cover"/>
+           <a href="#"><img src="path/images/event1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-54 object-cover"/>
             <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
            Lorem ipsum dolor sit.
-            </h3>
+            </h3></a>
             <p class="text-sm text-gray-600 p-3">
            Lorem ipsum, dolor sit amet consectetur adipisicing.
             </p>
@@ -141,10 +171,10 @@
     
           <!-- Card 2 -->
           <div class="bg-white rounded-xl shadow">
-            <img src="path/images/event1.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-54 object-cover"/>
+            <a href="#"><img src="path/images/event1.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-54 object-cover"/>
             <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, ipsa?
-            </h3>
+            </h3></a>
             <p class="text-sm text-gray-600 p-3">
             Lorem ipsum dolor sit amet consectetur.
             </p>
@@ -152,10 +182,10 @@
     
           <!-- Card 3 -->
           <div class="bg-white rounded-xl shadow">
-            <img src="path/images/event1.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-54 object-cover "/>
+            <a href="#"><img src="path/images/event1.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-54 object-cover "/>
             <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
              Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates adipisci cumque dolorem!
-            </h3>
+            </h3></a> 
             <p class="text-sm text-gray-600 p-3 mb-4">
              Lorem, ipsum.
             </p>
@@ -168,9 +198,7 @@
           </button></a>
         </div>
       </section>
-      <!-- JS SCRIPT -->
-    <script src="../src/javascript/carousel.js"></script>
-    <script src="../src/javascript/dropdown.js"></script>
+   
     <!-- FOOTER -->
    <footer class="bg-white dark:bg-gray-800 text-black font-medium text-center py-4 mt-10">
       <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
@@ -192,5 +220,8 @@
       </ul>
       </div>
     </footer>
+       <!-- JS SCRIPT -->
+       <script src="../src/javascript/carousel.js"></script>
+       <script src="../src/javascript/dropdown.js"></script>
 </body>
 </html>
