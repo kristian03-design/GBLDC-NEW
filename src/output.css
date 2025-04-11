@@ -901,6 +901,10 @@ video {
   max-width: 1536px;
 }
 
+.max-w-md{
+  max-width: 28rem;
+}
+
 .grow{
   flex-grow: 1;
 }

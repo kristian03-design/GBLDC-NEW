@@ -32,18 +32,18 @@
           <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo Icon" class="w-24 h-24 object-contain">
         </div>
   
-        <form class="space-y-4">
+        <form class="space-y-4" action="login.php" method="POST">
           <div>
             <label class="block text-sm font-medium text-gray-700">Email</label>
             <input type="email" name="email" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your Email">
           </div>
-  
+        
           <div>
             <label class="block text-sm font-medium text-gray-700">Password</label>
             <div class="relative">
               <input type="password" id="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your password">
               <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-5 flex items-center text-gray-500">
-                <i id="eyeIcon" class="fa-regular fa-eye" aria-hidden="true" style="font-size: 1.5rem;" ></i>
+          <i id="eyeIcon" class="fa-regular fa-eye" aria-hidden="true" style="font-size: 1.5rem;" ></i>
               </button>
             </div>
           </div>
@@ -56,11 +56,10 @@
               <img src="https://img.icons8.com/color/24/facebook-new.png" class="mr-2" alt="Facebook Icon"> Facebook
             </button>
           </div>
-  
-          <button type="submit" formaction="landingpage.html" class="w-72 mt-4 mx-20 bg-black text-white py-2 rounded-md hover:bg-gray-800 font-semibold">
+        
+          <button type="submit" class="w-72 mt-4 mx-20 bg-black text-white py-2 rounded-md hover:bg-gray-800 font-semibold">
             LOGIN
           </button>
-  
           <p class="text-sm text-center mt-2 text-gray-700">
             Dont have an account yet? <a href="register.html" class="text-green-600 font-medium">Register Now</a>
           </p>
