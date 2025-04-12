@@ -11,7 +11,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: {$conn->connect_error}");
 }
 
 // Get form data safely
@@ -41,7 +41,7 @@ if ($result->num_rows === 1) {
         $_SESSION['email'] = $email;
         
         // Redirect to dashboard or homepage
-        header("Location: dashboard.php");
+        header("Location: landingpage.html");
         exit;
     } else {
         echo "Invalid password.";
@@ -52,4 +52,3 @@ if ($result->num_rows === 1) {
 
 $stmt->close();
 $conn->close();
-?>
