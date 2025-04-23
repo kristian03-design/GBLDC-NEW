@@ -52,7 +52,6 @@
     <!-- Hero Section -->
     <section class="relative">
         <img src="path/images/LANDINGPAGE.png" alt="Greater Bulacan" class="w-full h-[540px] object-fill">
-        </div>
     </section>
     <section class="py-14 px-6 text-center">
         <h2 class="text-4xl font-medium text-teal-900 mb-2">Our Products</h2>
@@ -206,9 +205,29 @@
               <li><a href="#" class="hover:underline">Privacy Policy</a></li>
             </ul>
           </div>
-    
         </div>
-    
+
+        <!-- Chatbot Widget --> 
+         <button onclick="toggleChatbot()" class="fixed bottom-10 right-10 bg-green-600 text-white p-4 rounded-full shadow-lg z-50">
+          <i class="fas fa-comments text-xl"></i>
+          </button>
+        <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden" id="chatbot-widget">
+          <div class="bg-green-600 px-4 py-2 text-lg font-medium flex justify-between items-center text-white">
+          <span>Chat with Us</span>
+          <button onclick="toggleChatbot()" class="text-white focus:outline-none">
+            <i class="fas fa-times"></i>
+          </button>
+          </div>
+          <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black">
+          <!-- Messages will appear here -->
+          </div>
+          <form id="chat-form" class="flex p-2 border-t text-black">
+          <input id="chat-input" type="text" placeholder="Type your message..."
+            class="flex-1 px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400 text-black" />
+          <button type="submit" class="bg-green-600 text-white px-4 rounded-r-md hover:bg-green-700">Send</button>
+          </form>
+        </div>
+  
         <!-- Copyright -->
         <div class="mt-12 text-center text-sm text-white font-normal">
           GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.
@@ -218,5 +237,6 @@
        <!-- JS SCRIPT -->
        <script src="../src/javascript/carousel.js"></script>
        <script src="../src/javascript/dropdown.js"></script>
+        <script src="../src/javascript/chatbot.js"></script>
 </body>
 </html>
