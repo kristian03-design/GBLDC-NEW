@@ -9,14 +9,14 @@
     <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
 </head>
 
-<body class="bg-gray-100 antialiased">
+<body class="bg-gray-100 antialiased ">
     <!-- Header Section -->
     <header class="bg-white shadow-md">
-        <div class="container mx-auto flex justify-between items-center p-4">
+        <div class="container-lg mx-auto flex justify-between items-center p-4">
             <!-- Logo and Title -->
-            <div class="flex items-center space-x-4 overflow-hidden">
-          <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-14 h-14"></a>
-          <h1 class="text-2xl font-bold">GBLDC</h1>
+            <div class="flex items-center space-x-4 overflow-hidden ml-5">
+          <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16"></a>
+          <h1 class="text-lg font-bold">Greater Bulacan Livelihood Development Cooperative</h1>
             </div>
             <!-- Navigation -->
             <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
@@ -42,7 +42,7 @@
           <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
             </nav>
             <!-- Apply now Button -->
-            <div class="button gap-4 hidden md:flex items-center">
+            <div class="button gap-4 hidden md:flex items-center mr-10">
           <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
           <a href="applynow.html" class="bg-green-600 text-white px-6 py-2 rounded-lg font-normal hover:bg-green-800">Apply Now</a>
             </div>
@@ -53,7 +53,7 @@
     <section class="relative">
         <img src="path/images/LANDINGPAGE.png" alt="Greater Bulacan" class="w-full h-[540px] object-fill">
     </section>
-    <section class="py-14 px-6 text-center">
+    <section class="py-14 px-6 text-center mt-5">
         <h2 class="text-4xl font-medium text-teal-900 mb-2">Our Products</h2>
         <p class="text-gray-600 mb-10 tracking-wide">Build your future according to how you want it to be</p>
     
@@ -119,43 +119,42 @@
     </section>
     
     <!-- Events & Announcements Section -->
-    <section class="py-12 px-6 max-w-screen-2xl mx-auto">
+    <section class="py-12 px-6 max-w-screen-2xl mx-auto mb-10">
         <div class="text-center mb-10">
           <h2 class="text-4xl font-medium text-teal-900 tracking-wide">News and Events</h2>
           <p class="text-gray-500 mt-2 tracking-wide">The latest updates from your partners</p>
         </div>
     
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 tracking-normal text-center  "> 
           <!-- Card 1 -->
           <div class="bg-white rounded-xl shadow">
            <a href="#"><img src="path/images/event1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-54 object-cover"/>
-            <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
-           Lorem ipsum dolor sit.
+            <h3 class="text-lg  text-slate-800 mb-2 p-3">
+              22nd Annual General Assembly of Greater Bulacan Livelihood Development Cooperative - held last March 22, 2024 @ Cafe De Apati, Makinabang, Baliuag, Bulacan
             </h3></a>
-            <p class="text-sm text-gray-600 p-3">
-           Lorem ipsum, dolor sit amet consectetur adipisicing.
-            </p>
+            <p class="text-medium text-gray-700 p-3">Join us for an engaging discussion on cooperative development and future initiatives.</p>
           </div>
     
           <!-- Card 2 -->
-          <div class="bg-white rounded-xl shadow">
+          <div class="bg-white rounded-xl shadow ">
             <a href="#"><img src="path/images/event1.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-54 object-cover"/>
-            <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, ipsa?
+            <h3 class="text-lg text-slate-800 mb-2 p-3 ">
+              Greater Bulacan Livelihood Development Cooperative - Supports Coop Parade, Kick-Off Ceremony and Launching of Go Koop - 
+              Empowering Cooperatives in line with the Celebration of Cooperative Month 2023
             </h3></a>
             <p class="text-sm text-gray-600 p-3">
-            Lorem ipsum dolor sit amet consectetur.
+            Join us for a day of celebration and awareness of the cooperative movement in our community.
             </p>
           </div>
     
           <!-- Card 3 -->
           <div class="bg-white rounded-xl shadow">
             <a href="#"><img src="path/images/event1.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-54 object-cover "/>
-            <h3 class="text-lg font-semibold text-slate-800 mb-2 p-3">
-             Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates adipisci cumque dolorem!
+            <h3 class="text-lg text-slate-800 mb-2 p-3">
+            Greater Bulacan Livelihood Development Cooperative - Family Outing and Team Building held last April 12-13, 2025 @ Paynawa Beach Resort, Brgy. Laoag, Cabangan, Zambales
             </h3></a> 
             <p class="text-sm text-gray-600 p-3 mb-4">
-             Lorem, ipsum.
+            Join us for a fun-filled day of activities and bonding with fellow members.
             </p>
           </div>
         </div>
@@ -165,6 +164,27 @@
             View More
           </button></a>
         </div>
+
+           <!-- Chatbot Widget --> 
+           <button onclick="toggleChatbot()" class="fixed bottom-10 right-10 bg-green-600 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-700 transition-transform transform hover:scale-110">
+            <i class="fas fa-comments text-2xl"></i>
+            </button>
+          <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden" id="chatbot-widget">
+            <div class="bg-green-600 px-4 py-2 text-lg font-medium flex justify-between items-center text-white">
+            <span>Chat with Us</span>
+            <button onclick="toggleChatbot()" class="text-white focus:outline-none hover:text-gray-300 transition-colors">
+            <i class="fas fa-times"></i>
+            </button>
+            </div>
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black">
+            <!-- Messages will appear here -->
+            </div>
+            <form id="chat-form" class="flex p-2 border-t text-black">
+            <input id="chat-input" type="text" placeholder="Type your message..."
+            class="flex-1 px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400 text-black transition-shadow" />
+            <button type="submit" class="bg-green-600 text-white px-4 rounded-r-md hover:bg-green-700 transition-colors">Send</button>
+            </form>
+          </div>
       </section>
    
     <!-- FOOTER -->
@@ -206,30 +226,9 @@
             </ul>
           </div>
         </div>
-
-        <!-- Chatbot Widget --> 
-         <button onclick="toggleChatbot()" class="fixed bottom-10 right-10 bg-green-600 text-white p-4 rounded-full shadow-lg z-50">
-          <i class="fas fa-comments text-xl"></i>
-          </button>
-        <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden" id="chatbot-widget">
-          <div class="bg-green-600 px-4 py-2 text-lg font-medium flex justify-between items-center text-white">
-          <span>Chat with Us</span>
-          <button onclick="toggleChatbot()" class="text-white focus:outline-none">
-            <i class="fas fa-times"></i>
-          </button>
-          </div>
-          <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black">
-          <!-- Messages will appear here -->
-          </div>
-          <form id="chat-form" class="flex p-2 border-t text-black">
-          <input id="chat-input" type="text" placeholder="Type your message..."
-            class="flex-1 px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400 text-black" />
-          <button type="submit" class="bg-green-600 text-white px-4 rounded-r-md hover:bg-green-700">Send</button>
-          </form>
-        </div>
   
         <!-- Copyright -->
-        <div class="mt-12 text-center text-sm text-white font-normal">
+        <div class="mt-12 text-center text-sm text-white font-normal underline">
           GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.
         </div>
       </div>
@@ -238,5 +237,6 @@
        <script src="../src/javascript/carousel.js"></script>
        <script src="../src/javascript/dropdown.js"></script>
         <script src="../src/javascript/chatbot.js"></script>
+        
 </body>
 </html>
