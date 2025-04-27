@@ -87,28 +87,26 @@
 
     <!-- Modal -->
     <div id="validationModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
-        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-1/2 z-50">
+        <div class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50">
             <h3 class="text-lg font-semibold text-gray-800 mb-4">Missing Required Fields</h3>
             <p class="text-gray-600 mb-4">Please fill out the following required fields before proceeding:</p>
             <ul id="missingFieldsList" class="list-disc list-inside text-red-500 mb-4"></ul>
-            <button onclick="closeModal()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Close</button>
+            <button onclick="closeModal()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
         </div>
     </div>
     
     <form class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10">
         <!-- Branch -->
-        <label for="branch" class="block text-black font-medium">Branch<span class="text-red-500">*</span></label>
-        <select id="branch" name="branch" class="w-full border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-400" required>
-            <option>Select Branch</option>
-        </select>
+   
+        <h3 class="text-2xl font-medium text-teal-900">Personal Information</h3>
     
         <!-- Salutation -->
         <fieldset>
             <legend class="text-black font-medium">Salutation<span class="text-red-500">*</span></legend>
             <div class="flex gap-4 flex-wrap">
-                <label><input type="radio" name="salutation" value="Mr." class="mr-1" > Mr.</label>
-                <label><input type="radio" name="salutation" value="Mrs." class="mr-1" > Mrs.</label>
-                <label><input type="radio" name="salutation" value="Ms." class="mr-1" > Ms.</label>
+                <label><input type="radio" name="salutation" value="Mr." class="mr-1 mt-2" > Mr.</label>
+                <label><input type="radio" name="salutation" value="Mrs." class="mr-1 mt-2" > Mrs.</label>
+                <label><input type="radio" name="salutation" value="Ms." class="mr-1 mt-2" > Ms.</label>
             </div>
         </fieldset>
     
@@ -116,15 +114,15 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
                 <label for="lastName" class="block text-black">Last Name<span class="text-red-500">*</span></label>
-                <input id="lastName" type="text" placeholder="Last Name" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <input id="lastName" type="text" placeholder="Last Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
                 <label for="firstName" class="block text-black">First Name<span class="text-red-500">*</span></label>
-                <input id="firstName" type="text" placeholder="First Name" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <input id="firstName" type="text" placeholder="First Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
                 <label for="middleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
-                <input id="middleName" type="text" placeholder="Middle Name" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <input id="middleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
         </div>
     
@@ -132,17 +130,17 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
                 <label for="birthPlace" class="block text-black">Place of Birth<span class="text-red-500">*</span></label>
-                <input id="birthPlace" type="text" placeholder="Place of Birth" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <input id="birthPlace" type="text" placeholder="Place of Birth" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
                 <label for="birthDate" class="block text-black">Birth Date<span class="text-red-500">*</span></label>
-                <input id="birthDate" type="date" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-gray-400" required>
+                <input id="birthDate" type="date" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black" required>
             </div>
             <div>
                 <span class="block text-black">Gender<span class="text-red-500">*</span></label>
                 <div class="flex gap-4">
-                    <label><input type="radio" name="gender" value="Male" class="mr-1"> Male</label>
-                    <label><input type="radio" name="gender" value="Female" class="mr-1"> Female</label>
+                    <label><input type="radio" name="gender" value="Male" class="mr-1 mt-3"> Male</label>
+                    <label><input type="radio" name="gender" value="Female" class="mr-1 mt-3"> Female</label>
                 </div>
             </div>
         </div>
@@ -151,49 +149,67 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
             <div>
                 <label for="religion" class="block text-black">Religion<span class="text-red-500">*</span></label>
-                <select id="religion" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <select id="religion" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
                     <option>Select Religion</option>
+                    <option>ROMAN CATHOLIC</option>
+                    <option >PROTESTANT</option>
+                    <option >CHRISTIAN</option>
+                    <option >BAPTIST</option>
+                    <option >SEVENTH-DAY ADVENTIST</option>
+                    <option >IGLESIA NI CRISTO</option>
+                    <option >ADVENTIST</option>
+                    <option >BUDDHISM</option>
+                    <option >JESUS IS LORD MOVEMENT</option>
+                    <option >JEHOVAH'S WITNESSES</option>
+                    <option >METHODIST</option>
+                    <option >NON-SECTARIAN</option>
+                    <option >OTHER</option>
+
                 </select>
             </div>
             <div>
                 <label for="nationality" class="block text-black">Nationality<span class="text-red-500">*</span></label>
-                <input id="nationality" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <input id="nationality" type="text" placeholder="Nationality" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
                 <label for="civilStatus" class="block text-black">Civil Status<span class="text-red-500">*</span></label>
-                <select id="civilStatus" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <select id="civilStatus" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
                     <option>Select Status</option>
+                    <option>SINGLE</option>
+                    <option>WIDOW</option>
+                    <option>MARRIED</option>
+                    <option>SEPARATED</option>
                 </select>
             </div>
         </div>
     
         <!-- Email -->
         <label for="email" class="block text-black font-medium">Email Address<span class="text-red-500">*</span></label>
-        <input id="email" type="email" placeholder="Email Address" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        <input id="email" type="email" placeholder="Email Address" class="border border-gray-300 p-2 rounded-md w-96 focus:outline-none focus:ring-2 focus:ring-green-400" required>
     
-        <hr class="my-6">
+        <hr class="my-6 border-gray-950">
     
         <!-- Home Address -->
-        <h3 class="text-lg font-medium">Home Address<span class="text-red-500">*</span></h3>
+        <h3 class="text-2xl font-medium text-teal-900">Home Address</h3>
         <label for="street" class="block text-black">Street Address<span class="text-red-500">*</span></label>
-        <input id="street" type="text" placeholder="No. & Street" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        <input id="street" type="text" placeholder="No. & Street" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
     
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
             <div>
                 <label for="province" class="block text-black">Province<span class="text-red-500">*</span></label>
-                <select id="province" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <select id="province" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
                     <option>Select Province</option>
                 </select>
             </div>
             <div>
                 <label for="city" class="block text-black">City<span class="text-red-500">*</span></label>
-                <select id="city" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <select id="city" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
                     <option>Select City</option>
                 </select>
             </div>
             <div>
                 <label for="barangay" class="block text-black">Barangay<span class="text-red-500">*</span></label>
-                <select id="barangay" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <select id="barangay" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
                     <option>Select Barangay</option>
                 </select>
             </div>
@@ -202,31 +218,31 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
                 <label for="yearsOfStay" class="block text-black">Years of Stay<span class="text-red-500">*</span></label>
-                <input id="yearsOfStay" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <input id="yearsOfStay" type="text" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div class="md:col-span-2">
                 <label for="contact" class="block text-black">Contact Number<span class="text-red-500">*</span></label>
-                <div class="flex items-center border border-gray-300 rounded-md">
-                    <span class="px-2 text-gray-500">+63</span>
-                    <input id="contact" type="text" class=" p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <div class="mt-2 w-80 flex items-center border rounded-md">
+                    <span class="px-2 text-black">+63</span>
+                    <input id="contact" type="text" class=" p-2 rounded-sm w-80 border focus:outline-none focus:ring-2 focus:ring-green-400">
                 </div>
             </div>
         </div>
     
         <!-- Social Media -->
-        <h3 class="text-lg font-medium">Social Media Accounts<span class="text-red-500">*</span></h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <h3 class="text-lg font-medium">Social Media Accounts</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
             <div>
                 <label for="facebook" class="block text-black">Facebook</label>
-                <input id="facebook" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="facebook" type="text" placeholder="Facebook" class="border border-gray-300 p-2 rounded-md w-full mt-2 focus:outline-none focus:ring-2 focus:ring-green-400">
             </div>
             <div>
                 <label for="instagram" class="block text-black">Instagram</label>
-                <input id="instagram" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="instagram" type="text" placeholder="Instagram" class="border border-gray-300 p-2 rounded-md w-full mt-2 focus:outline-none focus:ring-2 focus:ring-green-400">
             </div>
             <div>
                 <label for="twitter" class="block text-black">Twitter</label>
-                <input id="twitter" type="text" class=" border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <input id="twitter" type="text" placeholder="Twitter" class=" border border-gray-300 p-2 rounded-md w-full mt-2 focus:outline-none focus:ring-2 focus:ring-green-400">
             </div>
         </div>
     
@@ -234,16 +250,16 @@
         <h3 class="text-lg font-medium">Family Information<span class="text-red-500">*</span></h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-                <label for="maidenName" class="block text-black">Maiden Name</label>
-                <input id="maidenName" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <label for="maidenName" class="block text-black">Maiden Name<span class="text-red-500">*</span></label>
+                <input id="maidenName" type="text" placeholder="Maiden Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
-                <label for="familyFirstName" class="block text-black">First Name</label>
-                <input id="familyFirstName" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <label for="familyFirstName" class="block text-black">First Name<span class="text-red-500">*</span></label>
+                <input id="familyFirstName" type="text" placeholder="First Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
-                <label for="familyMiddleName" class="block text-black">Middle Name</label>
-                <input id="familyMiddleName" type="text" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
+                <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
         </div>
     
@@ -256,7 +272,6 @@
     <script src="../src/javascript/dropdown.js"></script>
     <script>
         function validateStep1(event) {
-            event.preventDefault();
             const requiredFields = document.querySelectorAll('input[required], select[required]');
             let allFilled = true;
             let missingFields = [];
@@ -272,6 +287,7 @@
             });
 
             if (!allFilled) {
+                event.preventDefault();
                 const modal = document.getElementById('validationModal');
                 const missingFieldsList = document.getElementById('missingFieldsList');
                 missingFieldsList.innerHTML = '';
@@ -282,7 +298,11 @@
                 });
                 modal.classList.remove('hidden');
             } else {
-                window.location.href = event.target.closest('a').getAttribute('href');
+                // Allow form submission
+                const form = event.target.closest('form');
+                if (form) {
+                    form.submit();
+                }
             }
         }
 
