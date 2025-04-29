@@ -1,4 +1,4 @@
-let index = 0;
+let index = 1;
 const slides = document.querySelectorAll('#carousel-inner img');
 function updateCarousel() {
     document.getElementById('carousel-inner').style.transform = `translateX(-${index * 100}%)`;

@@ -1,11 +1,26 @@
 function toggleDropdown(event) {
     event.preventDefault();
     const dropdown = document.getElementById('dropdown-menu');
-    dropdown.classList.toggle('hidden');
+    const otherDropdown = document.getElementById('dropdown-menu-products');
+
+    if (!dropdown.classList.contains('hidden')) {
+        dropdown.classList.add('hidden');
+    } else {
+        dropdown.classList.remove('hidden');
+        otherDropdown.classList.add('hidden');
+    }
 }
+
 function toggleDropdownProducts(event) {
     event.preventDefault();
     const dropdown = document.getElementById('dropdown-menu-products');
-    dropdown.classList.toggle('hidden');
+    const otherDropdown = document.getElementById('dropdown-menu');
+
+    if (!dropdown.classList.contains('hidden')) {
+        dropdown.classList.add('hidden');
+    } else {
+        dropdown.classList.remove('hidden');
+        otherDropdown.classList.add('hidden');
+    }
 }
 
