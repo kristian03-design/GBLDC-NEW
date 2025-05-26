@@ -11,37 +11,73 @@
 <body class="bg-gray-50">
     <!-- Header Section -->
     <header class="bg-white shadow-md">
-        <div class="container-lg mx-auto flex flex-col md:flex-row justify-between items-center p-4">
-            <!-- Logo and Title -->
-            <div class="flex items-center space-x-4 overflow-hidden ml-5">
-            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16 "></a>  
-                <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development Cooperative</h1>
-            </div>
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
-                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
-                    </div>
-                </div>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
-                    </div>
-                </div>
-                <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
-            </nav>
-            </div>
-            </header>
+      <div class="container-lg mx-auto flex justify-between items-center p-4">
+      <!-- Logo and Title -->
+      <div class="flex items-center space-x-4 overflow-hidden ">
+        <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16 bg-auto"></a>
+        <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development Cooperative</h1>
+      </div>
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
+        <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+        <div class="toggle relative">
+        <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+          <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 rounded-md">Loans</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Deposits</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Insurance</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Social Services</a>
+        </div>
+        </div>
+        <div class="toggle relative">
+        <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">About GBLDC</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Mission & Vision</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Board of Directors</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Committee Officers</a>
+        </div>
+        </div>
+        <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
+      </nav>
+      <!-- Apply now Button -->
+      <div class="button gap-4 hidden md:flex items-center mr-10">
+        <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+        <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
+      </div>
+
+      <!--Responsiveness for Other Devices Code Below-->
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-black focus:outline-none" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+      <a href="landingpage.html" class="block px-4 py-2 hover:bg-green-200">HOME</a>
+      <div class="relative">
+        <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center" onclick="toggleDropdownProductsMobile(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-products-mobile">
+        <a href="loan.html" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+        </div>
+        </div>
+        <div class="relative">
+        <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center" onclick="toggleDropdownMobileAbout(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-about-mobile">
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+        </div>
+        </div>
+      <a href="news&events.html" class="block px-4 py-2 hover:bg-green-200">NEWS & EVENTS</a>
+      </nav>
+    </header>
+
             <!-- End of Navbar -->
     <div class="max-w-4xl mx-auto mt-6 p-7 ">
         <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
@@ -81,7 +117,7 @@
     </div>
 
     <!-- Modal -->
-    <div id="validationModal" class="fixed inset-0 flex items-center justify-center hidden bg-black bg-opacity-50">
+    <div id="validationModal" class="fixed inset-0 items-center flex justify-center hidden bg-black bg-opacity-50">
         <div class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50">
             <h3 class="text-lg font-semibold text-gray-800 mb-4">Missing Required Fields</h3>
             <p class="text-gray-600 mb-4">Please fill out the following required fields before proceeding:</p>
@@ -224,28 +260,11 @@
             </div>
         </div>
     
-        <!-- Social Media -->
-        <h3 class="text-lg font-medium">Social Media Accounts</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 ">
-            <div>
-                <label for="facebook" class="block text-black">Facebook</label>
-                <input id="facebook" type="text" placeholder="Facebook" class="border border-gray-300 p-2 rounded-md w-full mt-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-            </div>
-            <div>
-                <label for="instagram" class="block text-black">Instagram</label>
-                <input id="instagram" type="text" placeholder="Instagram" class="border border-gray-300 p-2 rounded-md w-full mt-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-            </div>
-            <div>
-                <label for="twitter" class="block text-black">Twitter</label>
-                <input id="twitter" type="text" placeholder="Twitter" class=" border border-gray-300 p-2 rounded-md w-full mt-2 focus:outline-none focus:ring-2 focus:ring-green-400">
-            </div>
-        </div>
-    
         <!-- Family Information -->
-        <h3 class="text-lg font-medium">Family Information<span class="text-red-500">*</span></h3>
+        <h3 class="text-2xl font-medium text-teal-900">Family Information<span class="text-red-500">*</span></h3>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-                <label for="maidenName" class="block text-black">Maiden Name<span class="text-red-500">*</span></label>
+                <label for="maidenName" class="block text-black">Last Name<span class="text-red-500">*</span></label>
                 <input id="maidenName" type="text" placeholder="Maiden Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
             <div>
@@ -256,48 +275,53 @@
                 <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
                 <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
+              <div>
+                <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
+                <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+             <div>
+                <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
+                <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
         </div>
     
         <!-- Submit Button -->
         <div class="flex justify-end mt-6 font-light">
-            <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-9 py-2 rounded">Next</button>
+            <button type="button" onclick="validateStep1(event)" class="bg-green-600 hover:bg-green-700 text-white px-9 py-2 rounded">Next</button>
         </div>
     </form>
     </div>
     <script src="../src/javascript/dropdown.js"></script>
     <script>
         function validateStep1(event) {
+            event.preventDefault();
             const requiredFields = document.querySelectorAll('input[required], select[required]');
             let allFilled = true;
             let missingFields = [];
 
             requiredFields.forEach(field => {
-                if (!field.value.trim()) {
-                    allFilled = false;
-                    field.classList.add('border-red-500');
-                    missingFields.push(field.previousElementSibling.textContent.replace('*', '').trim());
-                } else {
-                    field.classList.remove('border-red-500');
-                }
+            if (!field.value.trim()) {
+                allFilled = false;
+                field.classList.add('border-red-500');
+                missingFields.push(field.previousElementSibling.textContent.replace('*', '').trim());
+            } else {
+                field.classList.remove('border-red-500');
+            }
             });
 
             if (!allFilled) {
-                event.preventDefault();
-                const modal = document.getElementById('validationModal');
-                const missingFieldsList = document.getElementById('missingFieldsList');
-                missingFieldsList.innerHTML = '';
-                missingFields.forEach(field => {
-                    const li = document.createElement('li');
-                    li.textContent = field;
-                    missingFieldsList.appendChild(li);
-                });
-                modal.classList.remove('hidden');
+            const modal = document.getElementById('validationModal');
+            const missingFieldsList = document.getElementById('missingFieldsList');
+            missingFieldsList.innerHTML = '';
+            missingFields.forEach(field => {
+                const li = document.createElement('li');
+                li.textContent = field;
+                missingFieldsList.appendChild(li);
+            });
+            modal.classList.remove('hidden');
             } else {
-                // Allow form submission
-                const form = event.target.closest('form');
-                if (form) {
-                    form.submit();
-                }
+            // Proceed to the next page
+            window.location.href = "applynowstep2.html";
             }
         }
 

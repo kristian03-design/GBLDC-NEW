@@ -9,12 +9,12 @@
     <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
 </head>
 
-<body class="bg-gray-100 antialiased ">
+<body class="bg-gray-100 antialiased">
     <!-- Header Section -->
     <header class="bg-white shadow-md">
       <div class="container-lg mx-auto flex justify-between items-center p-4">
       <!-- Logo and Title -->
-      <div class="flex items-center space-x-4 overflow-hidden ml-5">
+      <div class="flex items-center space-x-4 overflow-hidden ">
         <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16 bg-auto"></a>
         <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development Cooperative</h1>
       </div>
@@ -23,20 +23,20 @@
         <a href="landingpage.html" class="hover:text-green-600">HOME</a>
         <div class="toggle relative">
         <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-          <a href="loan.html" class="block px-4 py-2 hover:bg-green-200">Loans</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+          <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 rounded-md">Loans</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Deposits</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Insurance</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Social Services</a>
         </div>
         </div>
         <div class="toggle relative">
         <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">About GBLDC</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Mission & Vision</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Board of Directors</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Committee Officers</a>
         </div>
         </div>
         <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
@@ -148,8 +148,12 @@
                 </div>
             </div>
             <div class="absolute inset-0 flex justify-between items-center px-4">
-                <button class="bg-gray-400 font-semibold p-2 rounded-full shadow-md w-10" onclick="prevSlide()">&#10094;</button>
-                <button class="bg-gray-400 font-semibold p-2 rounded-full shadow-md w-10 " onclick="nextSlide()">&#10095;</button>
+                <button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center" onclick="prevSlide()" aria-label="Previous Slide">
+                  <i class="fas fa-chevron-left text-xl text-green-700"></i>
+                </button>
+                <button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center" onclick="nextSlide()" aria-label="Next Slide">
+                  <i class="fas fa-chevron-right text-xl text-green-700"></i>
+                </button>
             </div>
         </div>
     </section>

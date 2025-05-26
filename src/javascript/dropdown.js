@@ -23,4 +23,16 @@ function toggleDropdownProducts(event) {
         otherDropdown.classList.add('hidden');
     }
 }
-
+ function toggleMobileMenu() {
+          const menu = document.getElementById('mobile-menu');
+          menu.classList.toggle('hidden');
+        }
+        function toggleDropdownProductsMobile(event) {
+          event.preventDefault();
+          document.getElementById('dropdown-menu-products-mobile').classList.toggle('hidden');
+        }
+        function toggleDropdownMobileAbout(event) {
+          event.preventDefault();
+          document.getElementById('dropdown-menu-about-mobile').classList.toggle('hidden');
+        }
+    

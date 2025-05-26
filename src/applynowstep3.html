@@ -1,187 +1,472 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- FontAwesome for Icons -->
-     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/e588cb9d47.js"
+      crossorigin="anonymous"></script>
     <link href="./output.css" rel="stylesheet">
-    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
-</head>
+    <title>Greater Bulacan Livelihood Development Cooperative</title>
+  </head>
 
-<body class="bg-gray-50">
+  <body class="bg-gray-50">
     <!-- Header Section -->
     <header class="bg-white shadow-md">
-        <div class="container-lg mx-auto flex justify-between items-center p-4">
-            <!-- Logo and Title -->
-            <div class="flex items-center space-x-4 overflow-hidden ml-5">
-            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16"></a>  
-                <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development Cooperative</h1>
-            </div>
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
-                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
-                    </div>
-                </div>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
-                    </div>
-                </div>
-                <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
-            </nav>
-            </div>
-            </header>
-    <section>
-    <div class="max-w-4xl mx-auto mt-6 p-7 ">
-        <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
-        <p class="text-center text-bl mt-3">Let’s talks and learn your finances better</p>
-        <div class="flex items-center justify-center my-6">
-            <div class="flex items-center gap-8">
-                <div class="flex flex-col items-center text-black">
-                <a href=""><div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                        1
-                    </div></a>
-                   <a href=""> <p class="text-sm mt-2">Personal Information</p> </a>
-                </div>
-                <div class="w-20 h-1 bg-green-300"></div>
-                <div class="flex flex-col items-center text-black">
-                    <a href="applynowstep2.html">   <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                        2
-                    </div></a>
-                    <p class="text-sm mt-2">Educational Information</p>
-                </div>
-                <div class="w-20 h-1 bg-green-300"></div>
-                <div class="flex flex-col items-center text-black">
-                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full text-black">
-                        3
-                    </div>
-                    <p class="text-sm mt-2">Employment Information</p>
-                </div>
-            </div>
+      <div class="container-lg mx-auto flex justify-between items-center p-4">
+        <!-- Logo and Title -->
+        <div class="flex items-center space-x-4 overflow-hidden ">
+          <a href="landingpage.html"><img
+              src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo"
+              class="w-22 h-16 bg-auto"></a>
+          <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development
+            Cooperative</h1>
         </div>
-    </section>
-    <div class="max-w-7xl mx-auto bg-white p-7 shadow-lg rounded-lg mt-6 mb-6">
-    
+        <!-- Navigation -->
+        <nav
+          class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
+          <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+          <div class="toggle relative">
+            <a href="#" class="hover:text-green-600 flex items-center"
+              onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span
+                class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+            <div
+              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20"
+              id="dropdown-menu-products">
+              <a href="loan.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Loans</a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Deposits</a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Insurance</a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Social
+                Services</a>
+            </div>
+          </div>
+          <div class="toggle relative">
+            <a href="#" class="hover:text-green-600 flex items-center"
+              onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i
+                  class="fas fa-chevron-down"></i></span></a>
+            <div
+              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20"
+              id="dropdown-menu">
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">About
+                GBLDC</a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Mission &
+                Vision</a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Board of
+                Directors</a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md">Committee
+                Officers</a>
+            </div>
+          </div>
+          <a href="news&events.html" class="hover:text-green-600">NEWS &
+            EVENTS</a>
+        </nav>
+        <!-- Apply now Button -->
+        <div class="button gap-4 hidden md:flex items-center mr-10">
+          <a href="index.html"
+            class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+          <a href="applynow.html"
+            class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply
+            Now</a>
+        </div>
+
+        <!--Responsiveness for Other Devices Code Below-->
+
+        <!-- Mobile Menu Button -->
+        <button class="md:hidden text-black focus:outline-none"
+          onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+        <a href="landingpage.html"
+          class="block px-4 py-2 hover:bg-green-200">HOME</a>
+        <div class="relative">
+          <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center"
+            onclick="toggleDropdownProductsMobile(event)">PRODUCT &
+            SERVICES<span class="ml-1"><i
+                class="fas fa-chevron-down"></i></span></a>
+          <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
+            id="dropdown-menu-products-mobile">
+            <a href="loan.html"
+              class="block px-4 py-2 hover:bg-green-200">Loans</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Social
+              Services</a>
+          </div>
+        </div>
+        <div class="relative">
+          <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center"
+            onclick="toggleDropdownMobileAbout(event)">ABOUT<span
+              class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+          <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
+            id="dropdown-menu-about-mobile">
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">About
+              GBLDC</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission &
+              Vision</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of
+              Directors</a>
+            <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee
+              Officers</a>
+          </div>
+        </div>
+        <a href="news&events.html"
+          class="block px-4 py-2 hover:bg-green-200">NEWS & EVENTS</a>
+        <div class="flex flex-col items-left mt-4 w-44 px-4 ">
+          <a href="index.html"
+            class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
+          <a href="applynow.html"
+            class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5">Apply
+            Now</a>
+        </div>
+      </nav>
+    </header>
+    <section>
+      <div class="max-w-4xl mx-auto mt-6 p-7 ">
+        <h2 class="text-center text-4xl font-semibold text-gray-800">Online
+          Application</h2>
+        <p class="text-center text-bl mt-3">Let’s talks and learn your finances
+          better</p>
+        <div class="flex items-center justify-center my-6">
+          <div class="flex items-center gap-8">
+            <div class="flex flex-col items-center text-black">
+              <a href><div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                  1
+                </div></a>
+              <a href> <p class="text-sm mt-2">Personal Information</p> </a>
+            </div>
+            <div class="w-20 h-1 bg-green-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <a href="applynowstep2.html"> <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                  2
+                </div></a>
+              <p class="text-sm mt-2">Educational Information</p>
+            </div>
+            <div class="w-20 h-1 bg-green-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full text-black">
+                3
+              </div>
+              <p class="text-sm mt-2">Employment Information</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div
+        class="max-w-7xl mx-auto bg-white p-7 shadow-lg rounded-lg mt-6 mb-6">
+
         <form class="space-y-6 font-normal max-w-7xl mx-auto p-11">
-          <h3 class="text-2xl font-medium text-teal-900">Employment Information</h3>
+          <h3 class="text-2xl font-medium text-teal-900">Employment
+            Information</h3>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Employment Status <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-sm font-medium mb-1">Employment Status
+                <span class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
               </select>
             </div>
-    
+
             <div>
-              <label class="block text-sm font-medium mb-1">Source of Funds <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-sm font-medium mb-1">Source of Funds
+                <span class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
               </select>
             </div>
           </div>
-    
+
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Employer/Business Name <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Employer/Business Name">
+              <label class="block text-sm font-medium mb-1">Employer/Business
+                Name <span class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Employer/Business Name">
             </div>
-    
+
             <div>
-              <label class="block text-sm font-medium mb-1">Occupation <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-sm font-medium mb-1">Occupation <span
+                  class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select Occupation</option>
               </select>
             </div>
           </div>
-    
+
           <div>
-            <label class="block text-sm font-medium mb-1">Company/Business Address <span class="text-red-500">*</span></label>
-            <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Company/Business Address">
+            <label class="block text-sm font-medium mb-1">Company/Business
+              Address <span class="text-red-500">*</span></label>
+            <input type="text"
+              class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              placeholder="Company/Business Address">
           </div>
-    
+
           <div class="grid md:grid-cols-3 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Title/Position <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Title/Position">
+              <label class="block text-sm font-medium mb-1">Title/Position <span
+                  class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Title/Position">
             </div>
-    
+
             <div>
-              <label class="block text-sm font-medium mb-1">Year/s of Stay</label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Year/s of Stay">
+              <label class="block text-sm font-medium mb-1">Year/s of
+                Stay</label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Year/s of Stay">
             </div>
-    
+
             <div>
-              <label class="block text-sm font-medium mb-1">Office Contact No. <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Office Contact No.">
+              <label class="block text-sm font-medium mb-1">Office Contact No.
+                <span class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Office Contact No.">
             </div>
           </div>
-    
+
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Gross Monthly Income <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded text-gray-400 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-sm font-medium mb-1">Gross Monthly Income
+                <span class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded text-gray-400 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
               </select>
             </div>
-    
+
             <div>
-              <label class="block text-sm font-medium mb-1">Nature/Type of Employment/Business <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-sm font-medium mb-1">Nature/Type of
+                Employment/Business <span class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded px-3 py-2 text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
               </select>
             </div>
           </div>
-    
+
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">SSS/GSIS No. <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="SSS/GSIS No.">
+              <label class="block text-sm font-medium mb-1">SSS/GSIS No. <span
+                  class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="SSS/GSIS No.">
             </div>
-    
+
             <div>
-              <label class="block text-sm font-medium mb-1">TIN No. <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="TIN No.">
+              <label class="block text-sm font-medium mb-1">TIN No. <span
+                  class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="TIN No.">
             </div>
           </div>
-    
-          <div class="pt-6 border-t">
-            <h3 class="text-lg font-semibold mb-2">Attachments</h3>
-            <label class="block text-sm font-medium mb-1 mt-3">Required Documents <span class="text-red-500">*</span></label>
-            <div class="flex items-center gap-3">
-              <input type="text" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Required Documents" readonly>
-              <input type="file" class="text-sm">
-            </div>
-          </div>
-          <label class="block text-sm font-medium mb-1">2x2 Picture <span class="text-red-500">*</span></label>
-          <div class="flex items-center gap-3">
-            <input type="text" class="border px-3 py-2 rounded w-96" placeholder="Required Documents" readonly>
-            <input type="file" class="text-sm">
-          </div>
-          <label class="block text-sm font-medium mb-1">Proof of Payment <span class="text-red-500">*</span></label>
-          <div class="flex items-center gap-3">
-            <input type="text" class="border px-3 py-2 rounded w-96" placeholder="Required Documents" readonly>
-            <input type="file" class="text-sm">
-          </div>
-        <!-- File Size Note -->
-        <p class="text-sm text-gray-500 mt-2">Maximum upload file size: 1mb</p>
-        <!-- Submit Button -->
-        <div class="flex justify-end mt-6 font-light">
-          <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Submit</button>
+
+         <div class="pt-6 border-t">
+        <h3 class="text-2xl font-medium mb-2 text-teal-900">Attachments</h3>
+        <label class="block font-normal mb-1 text-sm">Required Documents <span class="text-red-500">*</span></label>
+        <div class="flex items-center gap-3">
+          <input type="text" id="docName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Required Documents" readonly>
+          <input type="file" id="docFile" class="text-sm" accept="image/*">
+          <button type="button" id="docRemove" class="hidden text-red-500 text-base">Remove</button>
+          <button type="button" id="docReplace" class="hidden text-blue-500 text-base">Replace</button>
         </div>
-      </form>
-    </div>
-    <script src="../src/javascript/dropdown.js"></script>
+        <img id="docPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            </div>
+
+            <div class="mt-6">
+        <label class="block font-normal mb-1 text-sm">2x2 Picture <span class="text-red-500">*</span></label>
+        <div class="flex items-center gap-3">
+          <input type="text" id="picName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="2x2 Picture" readonly>
+          <input type="file" id="picFile" class="text-sm" accept="image/*">
+          <button type="button" id="picRemove" class="hidden text-red-500  text-base">Remove</button>
+          <button type="button" id="picReplace" class="hidden text-blue-500  text-base">Replace</button>
+        </div>
+        <img id="picPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            </div>
+
+            <div class="mt-6">
+        <label class="block font-normal mb-1 text-sm">Proof of Billing <span class="text-red-500">*</span></label>
+        <div class="flex items-center gap-3">
+          <input type="text" id="billingName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Proof of Billing" readonly>
+          <input type="file" id="billingFile" class="text-sm" accept="image/*">
+          <button type="button" id="billingRemove" class="hidden text-red-500 text-base">Remove</button>
+          <button type="button" id="billingReplace" class="hidden text-blue-500 text-base">Replace</button>
+        </div>
+        <img id="billingPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            </div>
+
+            <p class="text-sm text-gray-500 mt-2">Maximum upload file size: 1MB</p>
+            <div class="flex justify-end pt-6">
+        <div class="flex justify-end pt-6">
+        <button type="submit"
+          class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
+      </div>
+
+      <!-- Loading Modal -->
+      <div id="loadingModal" class="fixed inset-0 p-10 flex items-center justify-center z-50 hidden">
+        <div class="bg-black rounded-md p-8 flex flex-col items-center" id="loadingContent">
+          <svg class="animate-spin h-10 w-10 text-green-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
+        viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor"
+              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+          </svg>
+          <style>
+          #loadingModal .animate-spin {
+            animation: spin 1s linear infinite;
+          }
+          @keyframes spin {
+            100% { transform: rotate(360deg); }
+          }
+        </style>
+          <span class="text-lg text-white">Submitting, please wait...</span>
+        </div>
+        <div class="bg-black rounded-md p-9 flex flex-col items-center hidden" id="successContent">
+          <svg class="h-16 w-16 text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25" />
+        <path stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+          d="M7 13l3 3 7-7" />
+          </svg>
+          <span class="text-lg text-white">Submitted successfully!</span>
+        </div>
+      </div>
+      <script>
+        // Modal logic for loading and success
+        const form = document.querySelector("form");
+        const loadingModal = document.getElementById("loadingModal");
+        const loadingContent = document.getElementById("loadingContent");
+        const successContent = document.getElementById("successContent");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Show loading modal
+          loadingModal.classList.remove("hidden");
+          loadingContent.classList.remove("hidden");
+          successContent.classList.add("hidden");
+
+          // Simulate async submit (replace with real AJAX if needed)
+          setTimeout(() => {
+            loadingContent.classList.add("hidden");
+            successContent.classList.remove("hidden");
+            // Hide modal after 2 seconds
+            setTimeout(() => {
+              loadingModal.classList.add("hidden");
+              successContent.classList.add("hidden");
+              form.reset();
+              // Optionally, reset file previews and buttons
+              ["doc", "pic", "billing"].forEach(prefix => {
+          document.getElementById(prefix + "Preview").classList.add("hidden");
+          document.getElementById(prefix + "Name").value = "";
+          document.getElementById(prefix + "File").value = "";
+          document.getElementById(prefix + "Remove").classList.add("hidden");
+          document.getElementById(prefix + "Replace").classList.add("hidden");
+          document.getElementById(prefix + "File").classList.remove("hidden");
+              });
+              // Redirect to landing page
+              window.location.href = "landingpage.html";
+            }, 2000);
+          }, 1800);
+        });
+      </script>
+    </form>
+          <script src="../src/javascript/dropdown.js"></script>
+          <script>
+          function previewImage(input, previewId, nameId, removeId, replaceId) {
+            const file = input.files[0];
+            if (!file) return;
+
+            const preview = document.getElementById(previewId);
+            const nameInput = document.getElementById(nameId);
+            const removeBtn = removeId ? document.getElementById(removeId) : null;
+            const replaceBtn = replaceId ? document.getElementById(replaceId) : null;
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+        preview.src = e.target.result;
+        preview.classList.remove("hidden");
+        if (nameInput) nameInput.value = file.name;
+        if (removeBtn) removeBtn.classList.remove("hidden");
+        if (replaceBtn) replaceBtn.classList.remove("hidden");
+        if (input) input.classList.add("hidden");
+            };
+            reader.readAsDataURL(file);
+          }
+
+          function removeImage(previewId, nameId, fileId, removeId, replaceId) {
+            const preview = document.getElementById(previewId);
+            const nameInput = document.getElementById(nameId);
+            const fileInput = document.getElementById(fileId);
+            const removeBtn = removeId ? document.getElementById(removeId) : null;
+            const replaceBtn = replaceId ? document.getElementById(replaceId) : null;
+
+            preview.src = "";
+            preview.classList.add("hidden");
+            if (nameInput) nameInput.value = "";
+            if (fileInput) {
+        fileInput.value = "";
+        fileInput.classList.remove("hidden");
+            }
+            if (removeBtn) removeBtn.classList.add("hidden");
+            if (replaceBtn) replaceBtn.classList.add("hidden");
+          }
+
+          function replaceImage(fileId) {
+            const fileInput = document.getElementById(fileId);
+            if (fileInput) {
+        fileInput.click();
+            }
+          }
+
+          document.getElementById("docFile").addEventListener("change", function () {
+            previewImage(this, "docPreview", "docName", "docRemove", "docReplace");
+          });
+          document.getElementById("docRemove").addEventListener("click", function () {
+            removeImage("docPreview", "docName", "docFile", "docRemove", "docReplace");
+          });
+          document.getElementById("docReplace").addEventListener("click", function () {
+            replaceImage("docFile");
+          });
+
+          document.getElementById("picFile").addEventListener("change", function () {
+            previewImage(this, "picPreview", "picName", "picRemove", "picReplace");
+          });
+          document.getElementById("picRemove").addEventListener("click", function () {
+            removeImage("picPreview", "picName", "picFile", "picRemove", "picReplace");
+          });
+          document.getElementById("picReplace").addEventListener("click", function () {
+            replaceImage("picFile");
+          });
+
+          document.getElementById("billingFile").addEventListener("change", function () {
+            previewImage(this, "billingPreview", "billingName", "billingRemove", "billingReplace");
+          });
+          document.getElementById("billingRemove").addEventListener("click", function () {
+            removeImage("billingPreview", "billingName", "billingFile", "billingRemove", "billingReplace");
+          });
+          document.getElementById("billingReplace").addEventListener("click", function () {
+            replaceImage("billingFile");
+          });
+          </script>
   </body>
-  </html>
+</html>

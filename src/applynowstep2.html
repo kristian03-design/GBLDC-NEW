@@ -11,39 +11,77 @@
 
 <body class="bg-gray-50">
     <!-- Header Section -->
-    <header class="bg-white shadow-md">
-        <div class="container-lg mx-auto flex justify-between items-center p-4">
-            <!-- Logo and Title -->
-            <div class="flex items-center space-x-4 overflow-hidden ml-5">
-            <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16"></a>  
-                <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development Cooperative</h1>
-            </div>
-            <!-- Navigation -->
-            <nav class="hidden md:flex space-x-7 text-black font-normal tracking-wide">
-                <a href="landingpage.html" class="hover:text-green-600">HOME</a>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Loans</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
-                    </div>
-                </div>
-                <div class="toggle relative">
-                    <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-                    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
-                    </div>
-                </div>
-                <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
-            </nav>
-           
-            </div>
-            </header>
+      <header class="bg-white shadow-md">
+      <div class="container-lg mx-auto flex justify-between items-center p-4">
+      <!-- Logo and Title -->
+      <div class="flex items-center space-x-4 overflow-hidden ">
+        <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16 bg-auto"></a>
+        <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development Cooperative</h1>
+      </div>
+      <!-- Navigation -->
+      <nav class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
+        <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+        <div class="toggle relative">
+        <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
+          <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 rounded-md">Loans</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Deposits</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Insurance</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Social Services</a>
+        </div>
+        </div>
+        <div class="toggle relative">
+        <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">About GBLDC</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Mission & Vision</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Board of Directors</a>
+          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Committee Officers</a>
+        </div>
+        </div>
+        <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
+      </nav>
+      <!-- Apply now Button -->
+      <div class="button gap-4 hidden md:flex items-center mr-10">
+        <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+        <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
+      </div>
+
+      <!--Responsiveness for Other Devices Code Below-->
+
+      <!-- Mobile Menu Button -->
+      <button class="md:hidden text-black focus:outline-none" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+      </div>
+      <!-- Mobile Navigation -->
+      <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+      <a href="landingpage.html" class="block px-4 py-2 hover:bg-green-200">HOME</a>
+      <div class="relative">
+        <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center" onclick="toggleDropdownProductsMobile(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-products-mobile">
+        <a href="loan.html" class="block px-4 py-2 hover:bg-green-200">Loans</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
+        </div>
+        </div>
+        <div class="relative">
+        <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center" onclick="toggleDropdownMobileAbout(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+        <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-about-mobile">
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
+        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
+        </div>
+        </div>
+      <a href="news&events.html" class="block px-4 py-2 hover:bg-green-200">NEWS & EVENTS</a>
+      <div class="flex flex-col items-left mt-4 w-44 px-4 ">
+        <a href="index.html" class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
+        <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5">Apply Now</a>
+      </div>
+      </nav>
+    </header>
     <section>
     <div class="max-w-4xl mx-auto mt-6  p-7">
         <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
