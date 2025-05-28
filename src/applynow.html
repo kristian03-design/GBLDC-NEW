@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- FontAwesome for Icons -->
      <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+       <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
     <link href="./output.css" rel="stylesheet">
     <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
 </head>
@@ -91,7 +92,7 @@
                         </div>
                     </a>
                     <a href="#">
-                        <p class="text-sm mt-2">Personal Information</p>
+                        <p class="text-center text-sm mt-2">Personal Information</p>
                     </a>
                 </div>
                 <div class="w-20 h-1 bg-green-300"></div>
@@ -101,16 +102,23 @@
                             2
                         </div>
                     </a>
-                    <p class="text-sm mt-2">Educational Information</p>
+                    <p class="text-center text-sm mt-2">Emergency Contact 1</p>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                 <div class="flex flex-col items-center text-black">
+                    <a href="applynowstep2.html">   <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                        3
+                    </div></a>
+                    <p class="text-center text-sm mt-2">Emergency Contact 2</p>
                 </div>
                 <div class="w-20 h-1 bg-gray-300"></div>
                 <div class="flex flex-col items-center text-black">
                     <a href="#" onclick="validateStep1(event)">
                         <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                            3
+                            4
                         </div>
                     </a>
-                    <p class="text-sm mt-2">Employment Information</p>
+                    <p class="text-center text-sm mt-2">Employment Information</p>
                 </div>
             </div>
         </div>
@@ -213,12 +221,22 @@
                 </select>
             </div>
         </div>
-    
-        <!-- Email -->
-        <label for="email" class="block text-black font-medium">Email Address<span class="text-red-500">*</span></label>
-        <input id="email" type="email" placeholder="Email Address" class="border border-gray-300 p-2 rounded-md w-96 focus:outline-none focus:ring-2 focus:ring-green-400" required>
-    
-        <hr class="my-6 border-gray-950">
+        <div class="md:col-span-2 w-full">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label for="email" class="block text-black font-medium">Email Address<span class="text-red-500">*</span></label>
+                    <input id="email" type="email" placeholder="Email Address" class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                </div>
+                <div>
+                    <label for="contact" class="block text-black">Contact Number<span class="text-red-500">*</span></label>
+                    <div class="flex items-center">
+                        <span class="px-2 text-black">+63</span>
+                        <input id="contact" type="text" class="p-2 rounded-sm w-full border focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-6 border-gray-300">
     
         <!-- Home Address -->
         <h3 class="text-2xl font-medium text-teal-900">Home Address</h3>
@@ -228,20 +246,94 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
             <div>
                 <label for="province" class="block text-black">Province<span class="text-red-500">*</span></label>
-                <select id="province" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <select id="province" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
                     <option>Select Province</option>
+                    <option>Bulacan</option>
+                    <option>Pampanga</option>
+                    <option>Bataan</option>
+                    <option>Nueva Ecija</option>
+                    <option>Tarlac</option>
+                    <option>Zambales</option>
+                    <option>Aurora</option>
+                    <option>Other</option>
                 </select>
             </div>
             <div>
                 <label for="city" class="block text-black">City<span class="text-red-500">*</span></label>
-                <select id="city" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <select id="city" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
                     <option>Select City</option>
+                    <option>Baliuag</option>
+                    <option>Malolos</option>
+                    <option>Meycauayan</option>
+                    <option>San Jose del Monte</option>
+                    <option>Marilao</option>
+                    <option>Santa Maria</option>
+                    <option>Plaridel</option>
+                    <option>San Rafael</option>
+                    <option>San Ildefonso</option>
+                    <option>Guiguinto</option>
+                    <option>Balagtas</option>
+                    <option>Bocaue</option>
+                    <option>Obando</option>
+                    <option>Bulakan</option>
+                    <option>Angat</option>
+                    <option>Norzagaray</option>
+                    <option>Pulilan</option>
+                    <option>Hagonoy</option>
+                    <option>Paombong</option>
+                    <option>Calumpit</option>
+                    <option>Dona Remedios Trinidad</option>
+                    <option>Bustos</option>
+                    <option>Pandi</option>
+                    <option>Other</option>
                 </select>
             </div>
             <div>
                 <label for="barangay" class="block text-black">Barangay<span class="text-red-500">*</span></label>
-                <select id="barangay" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                <select id="barangay" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
                     <option>Select Barangay</option>
+                    <option>Bagong Nayon</option>
+                    <option>Baliuag</option>
+                    <option>Bambang</option>
+                    <option>Balagtas</option>
+                    <option>Bagong Barrio</option>
+                    <option>Bagong Silang</option>
+                    <option>Bagumbayan</option>
+                    <option>Bahay Pare</option>
+                    <option>Bancal</option>
+                    <option>Bintog</option>
+                    <option>Bocaue</option>
+                    <option>Bulakan</option>
+                    <option>Bustos</option>
+                    <option>Calumpit</option>
+                    <option>Catmon</option>
+                    <option>Concepcion</option>
+                    <option>Cruz na Daan</option>
+                    <option>Cutcot</option>
+                    <option>Dona Remedios Trinidad</option>
+                    <option>Guiguinto</option>
+                    <option>Hagonoy</option>
+                    <option>Iba</option>
+                    <option>Ibayo</option>
+                    <option>Longos</option>
+                    <option>Malolos</option>
+                    <option>Marilao</option>
+                    <option>Meycauayan</option>
+                    <option>Norzagaray</option>
+                    <option>Obando</option>
+                    <option>Pandi</option>
+                    <option>Paombong</option>
+                    <option>Plaridel</option>
+                    <option>Pulilan</option>
+                    <option>San Ildefonso</option>
+                    <option>San Jose del Monte</option>
+                    <option>San Miguel</option>
+                    <option>San Rafael</option>
+                    <option>Santa Maria</option>
+                    <option>Sapang Palay</option>
+                    <option>Tabang</option>
+                    <option>Tibag</option>
+                    <option>Other</option>
                 </select>
             </div>
         </div>
@@ -251,43 +343,24 @@
                 <label for="yearsOfStay" class="block text-black">Years of Stay<span class="text-red-500">*</span></label>
                 <input id="yearsOfStay" type="text" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
             </div>
-            <div class="md:col-span-2">
-                <label for="contact" class="block text-black">Contact Number<span class="text-red-500">*</span></label>
-                <div class="mt-2 w-80 flex items-center border rounded-md">
-                    <span class="px-2 text-black">+63</span>
-                    <input id="contact" type="text" class=" p-2 rounded-sm w-80 border focus:outline-none focus:ring-2 focus:ring-green-400">
+            <div>
+                <label for="houseOwnership" class="block text-black">House Ownership<span class="text-red-500">*</span></label>
+                <select id="houseOwnership" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                    <option>Select Ownership</option>
+                    <option>Owned</option>
+                    <option>Rented</option>
+                    <option>Living with Parents</option>
+                    <option>Other</option>
+                </select>
                 </div>
-            </div>
+                <div>
+                    <label for="zipCode" class="block text-black">Zip Code<span class="text-red-500">*</span></label>
+                    <input id="zipCode" type="text" placeholder="Zip Code" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                </div>
         </div>
-    
-        <!-- Family Information -->
-        <h3 class="text-2xl font-medium text-teal-900">Family Information<span class="text-red-500">*</span></h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div>
-                <label for="maidenName" class="block text-black">Last Name<span class="text-red-500">*</span></label>
-                <input id="maidenName" type="text" placeholder="Maiden Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-            <div>
-                <label for="familyFirstName" class="block text-black">First Name<span class="text-red-500">*</span></label>
-                <input id="familyFirstName" type="text" placeholder="First Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-            <div>
-                <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
-                <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-              <div>
-                <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
-                <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-             <div>
-                <label for="familyMiddleName" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
-                <input id="familyMiddleName" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            </div>
-        </div>
-    
         <!-- Submit Button -->
         <div class="flex justify-end mt-6 font-light">
-            <button type="button" onclick="validateStep1(event)" class="bg-green-600 hover:bg-green-700 text-white px-9 py-2 rounded">Next</button>
+            <button type="button" onclick="validateStep1(event)" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Continue</button>
         </div>
     </form>
     </div>

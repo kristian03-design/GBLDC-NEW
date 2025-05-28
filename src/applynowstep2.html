@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- FontAwesome for Icons -->
      <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+       <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
     <link href="./output.css" rel="stylesheet">
     <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
 </head>
@@ -88,50 +89,372 @@
         <p class="text-center text-black mt-3">Let’s talks and learn your finances better</p>
 
         <div class="flex items-center justify-center my-6">
-            <div class="flex items-center gap-8">
-                <div class="flex flex-col items-center text-black">
-                <a href=""><div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                        1
-                    </div></a>
-                   <a href=""> <p class="text-sm mt-2">Personal Information</p> </a>
+          <div class="flex items-center gap-8">
+            <div class="flex flex-col items-center text-black">
+              <a href="">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                  1
                 </div>
-                <div class="w-20 h-1 bg-green-300"></div>
-                <div class="flex flex-col items-center text-black">
-                    <a href="applynowstep2.html">   <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
-                        2
-                    </div></a>
-                    <p class="text-sm mt-2">Educational Information</p>
-                </div>
-                <div class="w-20 h-1 bg-gray-300"></div>
-                <div class="flex flex-col items-center text-black">
-                    <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                        3
-                    </div>
-                    <p class="text-sm mt-2">Employment Information</p>
-                </div>
+              </a>
+              <a href="">
+                <p class="text-sm mt-2 text-center">Personal Information</p>
+              </a>
             </div>
+            <div class="w-20 h-1 bg-green-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <a href="applynowstep2.html">
+                <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
+                  2
+                </div>
+              </a>
+              <p class="text-sm mt-2 text-center">Emergency Contact 1</p>
+            </div>
+            <div class="w-20 h-1 bg-green-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <a href="applynowstep2.html">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                  3
+                </div>
+              </a>
+              <p class="text-sm mt-2 text-center">Emergency Contact 2</p>
+            </div>
+            <div class="w-20 h-1 bg-gray-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                4
+              </div>
+              <p class="text-sm mt-2 text-center">Employment Information</p>
+            </div>
+          </div>
         </div>
     </section>
-    <section class="max-w-4xl mx-auto mt-6 bg-white p-7 shadow-lg rounded-lg">
-    <div class="p-9 rounded-lg">
-        
-        <label class="block text-black font-medium">Highest Educational Attainment <span class="text-red-500">*</span></label>
-        <select class="mt-6 w-full p-3 border text-gray-400 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" required>
-            <option>Select Level</option>
-            <option>High School</option>
-            <option>Associate Degree</option>
-            <option>Bachelor's Degree</option>
-            <option>Master's Degree</option>
-            <option>Doctorate</option>
-        </select>
-        <div class="flex justify-end mt-6 font-light">
-           <a href="applynow.html"><button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded mr-4 ">Back</button></a>
-           <a href="applynowstep3.html"><button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Next</button></a>
+    <!-- Validation Modal -->
+      <div id="validationModal" class="fixed inset-0 items-center flex justify-center hidden bg-black bg-opacity-50">
+        <div class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Missing Required Fields</h3>
+            <p class="text-gray-600 mb-4">Please fill out the following required fields before proceeding:</p>
+            <ul id="missingFieldsList" class="list-disc list-inside text-red-500 mb-4"></ul>
+            <button onclick="closeModal()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
         </div>
     </div>
-    </section>
+    <!-- Emergency Contact (1) Form -->
+    <form class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10" onsubmit="validateStep2(event)">
+      <h3 class="text-2xl font-medium text-teal-900">Emergency Contact (1)</h3>
+      <p class="text-gray-500 mb-4">Please provide details of your first emergency contact.</p>
+      <!-- Salutation -->
+      <fieldset>
+        <legend class="text-black font-medium">Salutation<span class="text-red-500">*</span></legend>
+        <div class="flex gap-4 flex-wrap">
+          <label><input type="radio" name="salutation1" value="Mr." class="mr-1 mt-2"> Mr.</label>
+          <label><input type="radio" name="salutation1" value="Mrs." class="mr-1 mt-2"> Mrs.</label>
+          <label><input type="radio" name="salutation1" value="Ms." class="mr-1 mt-2"> Ms.</label>
+        </div>
+      </fieldset>
+      <!-- Name Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label for="lastName1" class="block text-black">Last Name<span class="text-red-500">*</span></label>
+          <input id="lastName1" type="text" placeholder="Last Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="firstName1" class="block text-black">First Name<span class="text-red-500">*</span></label>
+          <input id="firstName1" type="text" placeholder="First Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="middleName1" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
+          <input id="middleName1" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+      </div>
+      <!-- Birth Details -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label for="birthPlace1" class="block text-black">Place of Birth<span class="text-red-500">*</span></label>
+          <input id="birthPlace1" type="text" placeholder="Place of Birth" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="birthDate1" class="block text-black">Birth Date<span class="text-red-500">*</span></label>
+          <input id="birthDate1" type="date" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black" required>
+        </div>
+        <div>
+          <span class="block text-black">Gender<span class="text-red-500">*</span></span>
+          <div class="flex gap-4">
+            <label><input type="radio" name="gender1" value="Male" class="mr-1 mt-3"> Male</label>
+            <label><input type="radio" name="gender1" value="Female" class="mr-1 mt-3"> Female</label>
+          </div>
+        </div>
+      </div>
+      <!-- Religion, Nationality, Status -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+        <div>
+          <label for="religion1" class="block text-black">Religion<span class="text-red-500">*</span></label>
+          <select id="religion1" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option>Select Religion</option>
+            <option>ROMAN CATHOLIC</option>
+            <option>PROTESTANT</option>
+            <option>CHRISTIAN</option>
+            <option>BAPTIST</option>
+            <option>SEVENTH-DAY ADVENTIST</option>
+            <option>IGLESIA NI CRISTO</option>
+            <option>ADVENTIST</option>
+            <option>BUDDHISM</option>
+            <option>JESUS IS LORD MOVEMENT</option>
+            <option>JEHOVAH'S WITNESSES</option>
+            <option>METHODIST</option>
+            <option>NON-SECTARIAN</option>
+            <option>OTHER</option>
+          </select>
+        </div>
+        <div>
+          <label for="nationality1" class="block text-black">Nationality<span class="text-red-500">*</span></label>
+          <input id="nationality1" type="text" placeholder="Nationality" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="civilStatus1" class="block text-black">Civil Status<span class="text-red-500">*</span></label>
+          <select id="civilStatus1" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option>Select Status</option>
+            <option>SINGLE</option>
+            <option>WIDOW</option>
+            <option>MARRIED</option>
+            <option>SEPARATED</option>
+          </select>
+        </div>
+      </div>
+      <div class="md:col-span-2 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="contact1" class="block text-black">Contact Number<span class="text-red-500">*</span></label>
+            <div class="flex items-center">
+              <span class="px-2 text-black">+63</span>
+              <input id="contact1" type="text" class="p-2 rounded-md w-56 border focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+          </div>
+        </div>
+      </div>
+       <hr class="my-6 border-gray-300">
+      <!-- Home Address -->
+      <h3 class="text-2xl font-medium text-teal-900">Home Address</h3>
+      <label for="street2" class="block text-black">Street Address<span class="text-red-500">*</span></label>
+      <input id="street2" type="text" placeholder="No. & Street" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+        <div>
+          <label for="province2" class="block text-black">Province<span class="text-red-500">*</span></label>
+          <select id="province2" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>Select Province</option>
+            <option>Bulacan</option>
+            <option>Pampanga</option>
+            <option>Bataan</option>
+            <option>Nueva Ecija</option>
+            <option>Tarlac</option>
+            <option>Zambales</option>
+            <option>Aurora</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="city2" class="block text-black">City<span class="text-red-500">*</span></label>
+          <select id="city2" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>Select City</option>
+            <option>Baliuag</option>
+            <option>Malolos</option>
+            <option>Meycauayan</option>
+            <option>San Jose del Monte</option>
+            <option>Marilao</option>
+            <option>Santa Maria</option>
+            <option>Plaridel</option>
+            <option>San Rafael</option>
+            <option>San Ildefonso</option>
+            <option>Guiguinto</option>
+            <option>Balagtas</option>
+            <option>Bocaue</option>
+            <option>Obando</option>
+            <option>Bulakan</option>
+            <option>Angat</option>
+            <option>Norzagaray</option>
+            <option>Pulilan</option>
+            <option>Hagonoy</option>
+            <option>Paombong</option>
+            <option>Calumpit</option>
+            <option>Dona Remedios Trinidad</option>
+            <option>Bustos</option>
+            <option>Pandi</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="barangay2" class="block text-black">Barangay<span class="text-red-500">*</span></label>
+          <select id="barangay2" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>Select Barangay</option>
+            <option>Bagong Nayon</option>
+            <option>Baliuag</option>
+            <option>Bambang</option>
+            <option>Balagtas</option>
+            <option>Bagong Barrio</option>
+            <option>Bagong Silang</option>
+            <option>Bagumbayan</option>
+            <option>Bahay Pare</option>
+            <option>Bancal</option>
+            <option>Bintog</option>
+            <option>Bocaue</option>
+            <option>Bulakan</option>
+            <option>Bustos</option>
+            <option>Calumpit</option>
+            <option>Catmon</option>
+            <option>Concepcion</option>
+            <option>Cruz na Daan</option>
+            <option>Cutcot</option>
+            <option>Dona Remedios Trinidad</option>
+            <option>Guiguinto</option>
+            <option>Hagonoy</option>
+            <option>Iba</option>
+            <option>Ibayo</option>
+            <option>Longos</option>
+            <option>Malolos</option>
+            <option>Marilao</option>
+            <option>Meycauayan</option>
+            <option>Norzagaray</option>
+            <option>Obando</option>
+            <option>Pandi</option>
+            <option>Paombong</option>
+            <option>Plaridel</option>
+            <option>Pulilan</option>
+            <option>San Ildefonso</option>
+            <option>San Jose del Monte</option>
+            <option>San Miguel</option>
+            <option>San Rafael</option>
+            <option>Santa Maria</option>
+            <option>Sapang Palay</option>
+            <option>Tabang</option>
+            <option>Tibag</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label for="yearsOfStay2" class="block text-black">Years of Stay<span class="text-red-500">*</span></label>
+          <input id="yearsOfStay2" type="text" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="houseOwnership2" class="block text-black">House Ownership<span class="text-red-500">*</span></label>
+          <select id="houseOwnership2" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option>Select Ownership</option>
+            <option>Owned</option>
+            <option>Rented</option>
+            <option>Living with Parents</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="zipCode2" class="block text-black">Zip Code<span class="text-red-500">*</span></label>
+          <input id="zipCode2" type="text" placeholder="Zip Code" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+      </div>
+      <div class="flex justify-end mt-6 font-light">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Continue</button>
+      </div>
+    </form>
 </div>
 <script src="../src/javascript/dropdown.js"></script>
+  <script>
+        function validateStep2(event) {
+            event.preventDefault();
+            let allFilled = true;
+            let missingFields = [];
+
+            // Validate radio groups
+            const radioGroups = [
+              { name: 'salutation1', label: 'Salutation' },
+              { name: 'gender1', label: 'Gender' }
+            ];
+
+            // Validate required input and select fields (not radio)
+            const requiredInputs = document.querySelectorAll('input[required]:not([type="radio"])');
+            const requiredSelects = document.querySelectorAll('select[required]');
+            requiredInputs.forEach(field => {
+              if (!field.value.trim()) {
+                allFilled = false;
+                field.classList.add('border-red-500');
+                missingFields.push(field.previousElementSibling ? field.previousElementSibling.textContent.replace('*', '').trim() : field.id);
+              } else {
+                field.classList.remove('border-red-500');
+              }
+            });
+            requiredSelects.forEach(field => {
+              if (!field.value || field.value.startsWith('Select')) {
+                allFilled = false;
+                field.classList.add('border-red-500');
+                missingFields.push(field.previousElementSibling ? field.previousElementSibling.textContent.replace('*', '').trim() : field.id);
+              } else {
+                field.classList.remove('border-red-500');
+              }
+            });
+            radioGroups.forEach(group => {
+                const radios = document.getElementsByName(group.name);
+                let checked = false;
+                for (let i = 0; i < radios.length; i++) {
+                    if (radios[i].checked) {
+                        checked = true;
+                        break;
+                    }
+                }
+                if (!checked) {
+                    allFilled = false;
+                    missingFields.push(group.label);
+                    // Optionally, highlight the radio group label
+                    if (radios.length > 0) {
+                        radios[0].closest('fieldset')?.classList.add('border-red-500');
+                    }
+                } else {
+                    if (radios.length > 0) {
+                        radios[0].closest('fieldset')?.classList.remove('border-red-500');
+                    }
+                }
+            });
+
+            // Validate other required fields
+            const requiredFields = document.querySelectorAll('input[required], select[required]');
+            requiredFields.forEach(field => {
+                // Skip radio buttons (already handled)
+                if (field.type === 'radio') return;
+                if (!field.value.trim()) {
+                    allFilled = false;
+                    field.classList.add('border-red-500');
+                    missingFields.push(field.previousElementSibling ? field.previousElementSibling.textContent.replace('*', '').trim() : field.id);
+                } else {
+                    field.classList.remove('border-red-500');
+                }
+            });
+
+            if (!allFilled) {
+                const modal = document.getElementById('validationModal');
+                const missingFieldsList = document.getElementById('missingFieldsList');
+                missingFieldsList.innerHTML = '';
+                // Remove duplicates
+                [...new Set(missingFields)].forEach(field => {
+                    const li = document.createElement('li');
+                    li.textContent = field;
+                    missingFieldsList.appendChild(li);
+                });
+                modal.classList.remove('hidden');
+            } else {
+                // Proceed to the next page
+                window.location.href = "applynowstep3.html";
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('validationModal');
+            modal.classList.add('hidden');
+        }
+    </script>
+
+        <style>
+            input.border-red-500, select.border-red-500 {
+                border-color: #f87171; /* Tailwind red-400 */
+                background-color: #fee2e2; /* Tailwind red-100 */
+            }
+        </style>
+
 </body>
 </html>
 
