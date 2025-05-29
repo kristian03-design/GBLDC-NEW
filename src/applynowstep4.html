@@ -6,7 +6,8 @@
     <!-- FontAwesome for Icons -->
     <script src="https://kit.fontawesome.com/e588cb9d47.js"
       crossorigin="anonymous"></script>
-        <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+    <link rel="icon" type="image/png"
+      href="path/images/logocoop-removebg-preview 2.png">
     <link href="./output.css" rel="stylesheet">
     <title>Greater Bulacan Livelihood Development Cooperative</title>
   </head>
@@ -26,47 +27,51 @@
         <!-- Navigation -->
         <nav
           class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
-          <a href="landingpage.html" class="hover:text-green-600">HOME</a>
+          <a href="landingpage.html"
+            class="hover:text-green-600 transition-colors duration-300">HOME</a>
           <div class="toggle relative">
-            <a href="#" class="hover:text-green-600 flex items-center"
+            <a href="#"
+              class="hover:text-green-600 flex items-center transition-colors duration-300"
               onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span
                 class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
             <div
-              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20"
+              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
               id="dropdown-menu-products">
               <a href="loan.html"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Loans</a>
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Loans</a>
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Deposits</a>
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Deposits</a>
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Insurance</a>
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Insurance</a>
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Social
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Social
                 Services</a>
             </div>
           </div>
           <div class="toggle relative">
-            <a href="#" class="hover:text-green-600 flex items-center"
+            <a href="#"
+              class="hover:text-green-600 flex items-center transition-colors duration-300"
               onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i
                   class="fas fa-chevron-down"></i></span></a>
             <div
-              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20"
+              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
               id="dropdown-menu">
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">About
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">About
                 GBLDC</a>
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Mission &
-                Vision</a>
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Mission
+                & Vision</a>
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Board of
-                Directors</a>
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Board
+                of Directors</a>
               <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md">Committee
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Committee
                 Officers</a>
             </div>
           </div>
-          <a href="news&events.html" class="hover:text-green-600">NEWS &
+          <a href="news&events.html"
+            class="hover:text-green-600 transition-colors duration-300">NEWS &
             EVENTS</a>
         </nav>
         <!-- Apply now Button -->
@@ -81,7 +86,7 @@
         <!--Responsiveness for Other Devices Code Below-->
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black focus:outline-none"
+        <button class="md:hidden text-black focus:outline-none animate-fade-in"
           onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-2xl"></i>
         </button>
@@ -89,45 +94,55 @@
       <!-- Mobile Navigation -->
       <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
         <a href="landingpage.html"
-          class="block px-4 py-2 hover:bg-green-200">HOME</a>
+          class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">HOME</a>
         <div class="relative">
-          <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center"
+          <a href="#"
+            class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
             onclick="toggleDropdownProductsMobile(event)">PRODUCT &
             SERVICES<span class="ml-1"><i
                 class="fas fa-chevron-down"></i></span></a>
           <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
             id="dropdown-menu-products-mobile">
             <a href="loan.html"
-              class="block px-4 py-2 hover:bg-green-200">Loans</a>
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Social
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Loans</a>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Deposits</a>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Insurance</a>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Social
               Services</a>
           </div>
         </div>
         <div class="relative">
-          <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center"
+          <a href="#"
+            class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
             onclick="toggleDropdownMobileAbout(event)">ABOUT<span
               class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
           <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
             id="dropdown-menu-about-mobile">
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">About
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">About
               GBLDC</a>
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission &
-              Vision</a>
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of
-              Directors</a>
-            <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Mission
+              & Vision</a>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Board
+              of Directors</a>
+            <a href="#"
+              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Committee
               Officers</a>
           </div>
         </div>
         <a href="news&events.html"
-          class="block px-4 py-2 hover:bg-green-200">NEWS & EVENTS</a>
+          class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">NEWS
+          & EVENTS</a>
         <div class="flex flex-col items-left mt-4 w-44 px-4 ">
           <a href="index.html"
             class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
           <a href="applynow.html"
-            class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5">Apply
+            class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50">Apply
             Now</a>
         </div>
       </nav>
@@ -139,21 +154,23 @@
         <p class="text-center text-bl mt-3">Let’s talks and learn your finances
           better</p>
         <div class="flex items-center justify-center my-6">
-         <div class="flex items-center gap-8">
+          <div class="flex items-center gap-8">
             <div class="flex flex-col items-center text-black">
-              <a href="">
-                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+              <a href>
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   1
                 </div>
               </a>
-              <a href="">
+              <a href>
                 <p class="text-sm mt-2 text-center">Personal Information</p>
               </a>
             </div>
             <div class="w-20 h-1 bg-green-300"></div>
             <div class="flex flex-col items-center text-black">
               <a href="applynowstep2.html">
-                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   2
                 </div>
               </a>
@@ -162,7 +179,8 @@
             <div class="w-20 h-1 bg-green-300"></div>
             <div class="flex flex-col items-center text-black">
               <a href="applynowstep2.html">
-                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   3
                 </div>
               </a>
@@ -170,7 +188,8 @@
             </div>
             <div class="w-20 h-1 bg-gray-300"></div>
             <div class="flex flex-col items-center text-black">
-              <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
                 4
               </div>
               <p class="text-sm mt-2 text-center">Employment Information</p>
@@ -184,9 +203,12 @@
         <form class="space-y-6 font-normal max-w-7xl mx-auto p-11">
           <h3 class="text-2xl font-medium text-teal-900">Employment
             Information</h3>
+          <p class="text-sm text-black">Please provide your employment
+            information to help us understand your financial background.</p>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Employment Status
+              <label class="block text-normal font-medium mb-1">Employment
+                Status
                 <span class="text-red-500">*</span></label>
               <select
                 class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -209,7 +231,7 @@
             </div>
 
             <div>
-              <label class="block text-sm font-medium mb-1">Source of Funds
+              <label class="block text-normal font-medium mb-1">Source of Funds
                 <span class="text-red-500">*</span></label>
               <select
                 class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -228,7 +250,8 @@
 
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Employer/Business
+              <label
+                class="block text-normal font-medium mb-1">Employer/Business
                 Name <span class="text-red-500">*</span></label>
               <input type="text"
                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -236,7 +259,7 @@
             </div>
 
             <div>
-              <label class="block text-sm font-medium mb-1">Occupation <span
+              <label class="block text-normal font-medium mb-1">Occupation <span
                   class="text-red-500">*</span></label>
               <select
                 class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -267,7 +290,7 @@
           </div>
 
           <div>
-            <label class="block text-sm font-medium mb-1">Company/Business
+            <label class="block text-normal font-medium mb-1">Company/Business
               Address <span class="text-red-500">*</span></label>
             <input type="text"
               class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -275,7 +298,8 @@
           </div>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">Gross Monthly Income
+              <label class="block text-normal font-medium mb-1">Gross Monthly
+                Income
                 <span class="text-red-500">*</span></label>
               <select
                 class="w-full border rounded  px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -290,7 +314,7 @@
             </div>
 
             <div>
-              <label class="block text-sm font-medium mb-1">Nature/Type of
+              <label class="block text-normal font-medium mb-1">Nature/Type of
                 Employment/Business <span class="text-red-500">*</span></label>
               <select
                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
@@ -315,7 +339,8 @@
 
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-sm font-medium mb-1">SSS/GSIS No. <span
+              <label class="block text-normal font-medium mb-1">SSS/GSIS No.
+                <span
                   class="text-red-500">*</span></label>
               <input type="text"
                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -323,7 +348,7 @@
             </div>
 
             <div>
-              <label class="block text-sm font-medium mb-1">TIN No. <span
+              <label class="block text-normal font-medium mb-1">TIN No. <span
                   class="text-red-500">*</span></label>
               <input type="text"
                 class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
@@ -331,57 +356,90 @@
             </div>
           </div>
 
-         <div class="pt-6 border-t">
-        <h3 class="text-2xl font-medium mb-2 text-teal-900">Attachments</h3>
-        <label class="block font-normal mb-1 text-sm">Required Documents <span class="text-red-500">*</span></label>
-        <div class="flex items-center gap-3">
-          <input type="text" id="docName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Required Documents" readonly>
-          <input type="file" id="docFile" class="text-sm" accept="image/*">
-          <button type="button" id="docRemove" class="hidden text-red-500 text-base">Remove</button>
-          <button type="button" id="docReplace" class="hidden text-blue-500 text-base">Replace</button>
-        </div>
-        <img id="docPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+          <div class="pt-6 border-t">
+            <h3 class="text-2xl font-medium mb-2 text-teal-900">Attachments</h3>
+            <label class="block font-normal mb-1 text-normal">Required Documents
+              <span class="text-red-500">*</span></label>
+            <div class="flex items-center gap-3">
+              <input type="text" id="docName"
+                class="border px-3 py-2 rounded w-96 mt-3"
+                placeholder="Required Documents" readonly>
+              <input type="file" id="docFile" class="text-sm" accept="image/*">
+              <button type="button" id="docRemove"
+                class="hidden text-red-500 text-base">Remove</button>
+              <button type="button" id="docReplace"
+                class="hidden text-blue-500 text-base">Replace</button>
             </div>
+            <img id="docPreview"
+              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+          </div>
 
-            <div class="mt-6">
-        <label class="block font-normal mb-1 text-sm">2x2 Picture <span class="text-red-500">*</span></label>
-        <div class="flex items-center gap-3">
-          <input type="text" id="picName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="2x2 Picture" readonly>
-          <input type="file" id="picFile" class="text-sm" accept="image/*">
-          <button type="button" id="picRemove" class="hidden text-red-500  text-base">Remove</button>
-          <button type="button" id="picReplace" class="hidden text-blue-500  text-base">Replace</button>
-        </div>
-        <img id="picPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+          <div class="mt-6">
+            <label class="block font-normal mb-1 text-normal">2x2 Picture <span
+                class="text-red-500">*</span></label>
+            <div class="flex items-center gap-3">
+              <input type="text" id="picName"
+                class="border px-3 py-2 rounded w-96 mt-3"
+                placeholder="2x2 Picture" readonly>
+              <input type="file" id="picFile" class="text-sm" accept="image/*">
+              <button type="button" id="picRemove"
+                class="hidden text-red-500  text-base">Remove</button>
+              <button type="button" id="picReplace"
+                class="hidden text-blue-500  text-base">Replace</button>
             </div>
+            <img id="picPreview"
+              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+          </div>
 
-            <div class="mt-6">
-        <label class="block font-normal mb-1 text-sm">Proof of Billing <span class="text-red-500">*</span></label>
-        <div class="flex items-center gap-3">
-          <input type="text" id="billingName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Proof of Billing" readonly>
-          <input type="file" id="billingFile" class="text-sm" accept="image/*">
-          <button type="button" id="billingRemove" class="hidden text-red-500 text-base">Remove</button>
-          <button type="button" id="billingReplace" class="hidden text-blue-500 text-base">Replace</button>
-        </div>
-        <img id="billingPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+          <div class="mt-6">
+            <label class="block font-normal mb-1 text-normal">Proof of Billing
+              <span class="text-red-500">*</span></label>
+            <div class="flex items-center gap-3">
+              <input type="text" id="billingName"
+                class="border px-3 py-2 rounded w-96 mt-3"
+                placeholder="Proof of Billing" readonly>
+              <input type="file" id="billingFile" class="text-sm"
+                accept="image/*">
+              <button type="button" id="billingRemove"
+                class="hidden text-red-500 text-base">Remove</button>
+              <button type="button" id="billingReplace"
+                class="hidden text-blue-500 text-base">Replace</button>
             </div>
+            <img id="billingPreview"
+              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+          </div>
+          <p class="text-sm text-gray-500 mt-2">Maximum upload file size:
+            1MB</p>
 
-            <p class="text-sm text-gray-500 mt-2">Maximum upload file size: 1MB</p>
+          <!-- CAPTCHA Section -->
+          <div class="mt-6">
+            <!-- hCaptcha Widget -->
+            <div class="mt-2">
+              <div class="h-captcha"
+                data-sitekey="ES_8135d46fe39d4d37ac652d3c461c0f8c"></div>
+            </div>
+            <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+            <!-- On submit, hCaptcha will validate automatically.
+             Make sure to verify the response on your server after form submission. -->
             <div class="flex justify-end pt-6">
-        <div class="flex justify-end pt-6">
-        <button type="submit"
-          class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
-      </div>
+              <button type="submit"
+                class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
+            </div>
 
-      <!-- Loading Modal -->
-      <div id="loadingModal" class="fixed inset-0 p-10 flex items-center justify-center z-50 hidden">
-        <div class="bg-black rounded-md p-8 flex flex-col items-center" id="loadingContent">
-          <svg class="animate-spin h-10 w-10 text-green-600 mb-4" xmlns="http://www.w3.org/2000/svg" fill="none"
-        viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor"
-              d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-          </svg>
-          <style>
+            <!-- Loading Modal -->
+            <div id="loadingModal"
+              class="fixed inset-0 p-10 flex items-center justify-center z-50 hidden">
+              <div class="bg-black rounded-md p-8 flex flex-col items-center"
+                id="loadingContent">
+                <svg class="animate-spin h-10 w-10 text-green-600 mb-4"
+                  xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10"
+                    stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
+                </svg>
+                <style>
           #loadingModal .animate-spin {
             animation: spin 1s linear infinite;
           }
@@ -389,56 +447,24 @@
             100% { transform: rotate(360deg); }
           }
         </style>
-          <span class="text-lg text-white">Submitting, please wait...</span>
-        </div>
-        <div class="bg-black rounded-md p-9 flex flex-col items-center hidden" id="successContent">
-          <svg class="h-16 w-16 text-green-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" class="opacity-25" />
-        <path stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
-          d="M7 13l3 3 7-7" />
-          </svg>
-          <span class="text-lg text-white">Submitted successfully!</span>
-        </div>
-      </div>
-      <script>
-        // Modal logic for loading and success
-        const form = document.querySelector("form");
-        const loadingModal = document.getElementById("loadingModal");
-        const loadingContent = document.getElementById("loadingContent");
-        const successContent = document.getElementById("successContent");
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          // Show loading modal
-          loadingModal.classList.remove("hidden");
-          loadingContent.classList.remove("hidden");
-          successContent.classList.add("hidden");
-
-          // Simulate async submit (replace with real AJAX if needed)
-          setTimeout(() => {
-            loadingContent.classList.add("hidden");
-            successContent.classList.remove("hidden");
-            // Hide modal after 2 seconds
-            setTimeout(() => {
-              loadingModal.classList.add("hidden");
-              successContent.classList.add("hidden");
-              form.reset();
-              // Optionally, reset file previews and buttons
-              ["doc", "pic", "billing"].forEach(prefix => {
-          document.getElementById(prefix + "Preview").classList.add("hidden");
-          document.getElementById(prefix + "Name").value = "";
-          document.getElementById(prefix + "File").value = "";
-          document.getElementById(prefix + "Remove").classList.add("hidden");
-          document.getElementById(prefix + "Replace").classList.add("hidden");
-          document.getElementById(prefix + "File").classList.remove("hidden");
-              });
-              // Redirect to landing page
-              window.location.href = "landingpage.html";
-            }, 2000);
-          }, 1800);
-        });
-      </script>
-    </form>
+                <span class="text-lg text-white">Submitting, please
+                  wait...</span>
+              </div>
+              <div
+                class="bg-black rounded-md p-9 flex flex-col items-center hidden"
+                id="successContent">
+                <svg class="h-16 w-16 text-green-500 mb-4" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor"
+                    stroke-width="4" class="opacity-25" />
+                  <path stroke="currentColor" stroke-width="4"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    d="M7 13l3 3 7-7" />
+                </svg>
+                <span class="text-lg text-white">Submitted successfully!</span>
+              </div>
+            </div>
+          </form>
           <script src="../src/javascript/dropdown.js"></script>
           <script>
           function previewImage(input, previewId, nameId, removeId, replaceId) {
@@ -517,5 +543,84 @@
             replaceImage("billingFile");
           });
           </script>
-  </body>
-</html>
+          <script>
+        // Modal logic for loading and success
+        const form = document.querySelector("form");
+        const loadingModal = document.getElementById("loadingModal");
+        const loadingContent = document.getElementById("loadingContent");
+        const successContent = document.getElementById("successContent");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          // Show loading modal
+          loadingModal.classList.remove("hidden");
+          loadingContent.classList.remove("hidden");
+          successContent.classList.add("hidden");
+
+          // Simulate async submit (replace with real AJAX if needed)
+          setTimeout(() => {
+            loadingContent.classList.add("hidden");
+            successContent.classList.remove("hidden");
+            // Hide modal after 2 seconds
+            setTimeout(() => {
+              loadingModal.classList.add("hidden");
+              successContent.classList.add("hidden");
+              form.reset();
+              // Optionally, reset file previews and buttons
+              ["doc", "pic", "billing"].forEach(prefix => {
+          document.getElementById(prefix + "Preview").classList.add("hidden");
+          document.getElementById(prefix + "Name").value = "";
+          document.getElementById(prefix + "File").value = "";
+          document.getElementById(prefix + "Remove").classList.add("hidden");
+          document.getElementById(prefix + "Replace").classList.add("hidden");
+          document.getElementById(prefix + "File").classList.remove("hidden");
+              });
+              // Redirect to landing page
+              window.location.href = "landingpage.html";
+            }, 2000);
+          }, 1800);
+        });
+      </script>
+       <style>
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fade-in-down {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fade-in-left {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes fade-in-right {
+      from { opacity: 0; transform: translateX(40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes zoom-in {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    @keyframes bounce-in {
+      0% { opacity: 0; transform: scale(0.8);}
+      60% { opacity: 1; transform: scale(1.05);}
+      80% { transform: scale(0.97);}
+      100% { transform: scale(1);}
+    }
+    .animate-fade-in { animation: fade-in 1s ease; }
+    .animate-fade-in-up { animation: fade-in-up 1s ease; }
+    .animate-fade-in-down { animation: fade-in-down 1s ease; }
+    .animate-fade-in-left { animation: fade-in-left 1s ease; }
+    .animate-fade-in-right { animation: fade-in-right 1s ease; }
+    .animate-zoom-in { animation: zoom-in 1s ease; }
+    .animate-bounce-in { animation: bounce-in 1s; }
+    .animate-card-fade-in { animation: fade-in-up 1.2s cubic-bezier(.39,.575,.565,1) both; }
+    .animate-carousel-slide { animation: fade-in 1.2s; }
+    </style>
+        </body>
+      </html>

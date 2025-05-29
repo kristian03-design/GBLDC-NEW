@@ -20,63 +20,67 @@
       </div>
       <!-- Navigation -->
       <nav class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
-        <a href="landingpage.html" class="hover:text-green-600">HOME</a>
-        <div class="toggle relative">
-        <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu-products">
-          <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 rounded-md">Loans</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Deposits</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Insurance</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Social Services</a>
-        </div>
-        </div>
-        <div class="toggle relative">
-        <a href="#" class="hover:text-green-600 flex items-center" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-        <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20" id="dropdown-menu">
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">About GBLDC</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Mission & Vision</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Board of Directors</a>
-          <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md">Committee Officers</a>
-        </div>
-        </div>
-        <a href="news&events.html" class="hover:text-green-600">NEWS & EVENTS</a>
-      </nav>
-      <!-- Apply now Button -->
-      <div class="button gap-4 hidden md:flex items-center mr-10">
-        <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
-        <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
-      </div>
+    <a href="landingpage.html" class="hover:text-green-600 transition-colors duration-300">HOME</a>
+    <div class="toggle relative">
+    <a href="#" class="hover:text-green-600 flex items-center transition-colors duration-300" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster" id="dropdown-menu-products">
+      <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Loans</a>
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Deposits</a>
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Insurance</a>
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Social Services</a>
+    </div>
+    </div>
+    <div class="toggle relative">
+    <a href="#" class="hover:text-green-600 flex items-center transition-colors duration-300" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster" id="dropdown-menu">
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">About GBLDC</a>
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Mission & Vision</a>
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Board of Directors</a>
+      <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Committee Officers</a>
+    </div>
+    </div>
+    <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300">NEWS & EVENTS</a>
+    </nav>
+    <!-- Apply now Button -->
+    <div class="button gap-4 hidden md:flex items-center mr-10">
+    <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
+    </div>
 
-      <!--Responsiveness for Other Devices Code Below-->
+    <!--Responsiveness for Other Devices Code Below-->
 
-      <!-- Mobile Menu Button -->
-      <button class="md:hidden text-black focus:outline-none" onclick="toggleMobileMenu()">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-      </div>
-      <!-- Mobile Navigation -->
-      <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
-      <a href="landingpage.html" class="block px-4 py-2 hover:bg-green-200">HOME</a>
-      <div class="relative">
-        <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center" onclick="toggleDropdownProductsMobile(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-        <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-products-mobile">
-        <a href="loan.html" class="block px-4 py-2 hover:bg-green-200">Loans</a>
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">Deposits</a>
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">Insurance</a>
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">Social Services</a>
-        </div>
-        </div>
-        <div class="relative">
-        <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center" onclick="toggleDropdownMobileAbout(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-        <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-about-mobile">
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">About GBLDC</a>
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">Mission & Vision</a>
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">Board of Directors</a>
-        <a href="#" class="block px-4 py-2 hover:bg-green-200">Committee Officers</a>
-        </div>
-        </div>
-      <a href="news&events.html" class="block px-4 py-2 hover:bg-green-200">NEWS & EVENTS</a>
-      </nav>
+    <!-- Mobile Menu Button -->
+    <button class="md:hidden text-black focus:outline-none animate-fade-in" onclick="toggleMobileMenu()">
+    <i class="fas fa-bars text-2xl"></i>
+    </button>
+    </div>
+    <!-- Mobile Navigation -->
+    <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+    <a href="landingpage.html" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">HOME</a>
+    <div class="relative">
+    <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200" onclick="toggleDropdownProductsMobile(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+    <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-products-mobile">
+    <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Loans</a>
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Deposits</a>
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Insurance</a>
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Social Services</a>
+    </div>
+    </div>
+    <div class="relative">
+    <a href="#" class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200" onclick="toggleDropdownMobileAbout(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
+    <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full" id="dropdown-menu-about-mobile">
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">About GBLDC</a>
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Mission & Vision</a>
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Board of Directors</a>
+    <a href="#" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Committee Officers</a>
+    </div>
+    </div>
+    <a href="news&events.html" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">NEWS & EVENTS</a>
+    <div class="flex flex-col items-left mt-4 w-44 px-4 ">
+    <a href="index.html" class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
+    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50">Apply Now</a>
+    </div>
+    </nav>
     </header>
 
             <!-- End of Navbar -->
@@ -127,10 +131,10 @@
 
     <!-- Modal -->
     <div id="validationModal" class="fixed inset-0 items-center flex justify-center hidden bg-black bg-opacity-50">
-        <div class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50">
+        <div class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50 animate-fade-in-down">
             <h3 class="text-lg font-semibold text-gray-800 mb-4">Missing Required Fields</h3>
             <p class="text-gray-600 mb-4">Please fill out the following required fields before proceeding:</p>
-            <ul id="missingFieldsList" class="list-disc list-inside text-red-500 mb-4"></ul>
+            <ul id="missingFieldsList" class="custom-asterisk-list list-inside text-red-500 mb-4"></ul>
             <button onclick="closeModal()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
         </div>
     </div>
@@ -411,5 +415,58 @@
                 background-color: #fee2e2; /* Tailwind red-100 */
             }
         </style>
+
+         <style>
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fade-in-up {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fade-in-down {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fade-in-left {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes fade-in-right {
+      from { opacity: 0; transform: translateX(40px);}
+      to { opacity: 1; transform: translateX(0);}
+    }
+    @keyframes zoom-in {
+      from { opacity: 0; transform: scale(0.95);}
+      to { opacity: 1; transform: scale(1);}
+    }
+    @keyframes bounce-in {
+      0% { opacity: 0; transform: scale(0.8);}
+      60% { opacity: 1; transform: scale(1.05);}
+      80% { transform: scale(0.97);}
+      100% { transform: scale(1);}
+    }
+    .animate-fade-in { animation: fade-in 1s ease; }
+    .animate-fade-in-up { animation: fade-in-up 1s ease; }
+    .animate-fade-in-down { animation: fade-in-down 1s ease; }
+    .animate-fade-in-left { animation: fade-in-left 1s ease; }
+    .animate-fade-in-right { animation: fade-in-right 1s ease; }
+    .animate-zoom-in { animation: zoom-in 1s ease; }
+    .animate-bounce-in { animation: bounce-in 1s; }
+    .animate-card-fade-in { animation: fade-in-up 1.2s cubic-bezier(.39,.575,.565,1) both; }
+    .animate-carousel-slide { animation: fade-in 1.2s; }
+    </style>
+      <style>
+            .custom-asterisk-list {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            .custom-asterisk-list li::before {
+                content: "* ";
+                color: #ef4444; /* Tailwind red-500 */
+                font-weight: bold;
+            }
+    </style>
 </body>
 </html>
