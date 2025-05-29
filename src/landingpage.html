@@ -5,26 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- FontAwesome for Icons -->
     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+    <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png" sizes="512x512"/>
     <link href="./output.css" rel="stylesheet">
     <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+
+      <style>
+      /* Modern pulse animation for background blobs */
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(1);}
+        50% { opacity: 0.5; transform: scale(1.15);}
+      }
+      .animate-pulse { animation: pulse 1.5s infinite; }
+      /* Add delay for staggered card animation */
+      .delay-100  { animation-delay: 0.2s !important; }
+      .delay-200 { animation-delay: 0.3s !important; }
+      .delay-400 { animation-delay: 0.6s !important; }
+      .delay-600 { animation-delay: 0.9s !important; }
+
+       </style>
 </head>
 
 <body class="bg-gray-100 antialiased">
   <!-- Header Section -->
-  <header class="bg-white shadow-md animate-fade-in-down">
+  <header class="bg-white shadow-md">
     <div class="container-lg mx-auto flex justify-between items-center p-4">
     <!-- Logo and Title -->
     <div class="flex items-center space-x-4 overflow-hidden ">
-    <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16 bg-auto animate-fade-in-left"></a>
+    <a href="landingpage.html"><img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-22 h-16 bg-auto"></a>
     <h1 class="text-lg font-medium animate-fade-in-right">Greater Bulacan Livelihood Development Cooperative</h1>
     </div>
     <!-- Navigation -->
-    <nav class="hidden md:flex space-x-7 text-black font-normal tracking-normal animate-fade-in">
+    <nav class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
     <a href="landingpage.html" class="hover:text-green-600 transition-colors duration-300">HOME</a>
     <div class="toggle relative">
     <a href="#" class="hover:text-green-600 flex items-center transition-colors duration-300" onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 animate-fade-in-up animate_faster" id="dropdown-menu-products">
+    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster" id="dropdown-menu-products">
       <a href="loan.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Loans</a>
       <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Deposits</a>
       <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Insurance</a>
@@ -33,7 +48,7 @@
     </div>
     <div class="toggle relative">
     <a href="#" class="hover:text-green-600 flex items-center transition-colors duration-300" onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 animate_animated animate-fade-in-up animate_faster" id="dropdown-menu">
+    <div class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster" id="dropdown-menu">
       <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">About GBLDC</a>
       <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Mission & Vision</a>
       <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Board of Directors</a>
@@ -43,9 +58,9 @@
     <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300">NEWS & EVENTS</a>
     </nav>
     <!-- Apply now Button -->
-    <div class="button gap-4 hidden md:flex items-center mr-10 animate-fade-in-up">
-    <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800 transition-colors duration-300">Login</a>
-    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50 transition-colors duration-300">Apply Now</a>
+    <div class="button gap-4 hidden md:flex items-center mr-10">
+    <a href="index.html" class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
+    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
     </div>
 
     <!--Responsiveness for Other Devices Code Below-->
@@ -78,8 +93,8 @@
     </div>
     <a href="news&events.html" class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">NEWS & EVENTS</a>
     <div class="flex flex-col items-left mt-4 w-44 px-4 ">
-    <a href="index.html" class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center transition-colors duration-300">Login</a>
-    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50 transition-colors duration-300">Apply Now</a>
+    <a href="index.html" class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
+    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50">Apply Now</a>
     </div>
     </nav>
   </header>
@@ -136,19 +151,6 @@
         <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">Learn More</button>
       </div>
         </div>
-        <style>
-      /* Modern pulse animation for background blobs */
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; transform: scale(1);}
-        50% { opacity: 0.5; transform: scale(1.15);}
-      }
-      .animate-pulse { animation: pulse 2.5s infinite; }
-      /* Add delay for staggered card animation */
-      .delay-0   { animation-delay: 0s !important; }
-      .delay-200 { animation-delay: 0.3s !important; }
-      .delay-400 { animation-delay: 0.6s !important; }
-      .delay-600 { animation-delay: 0.9s !important; }
-        </style>
     </section>
   <!-- CO-OP Member Meetings Section -->
   <section class="container mx-auto my-14 px-7">
@@ -163,7 +165,7 @@
         </div>
       </div>
       <div class="absolute inset-0 flex justify-between items-center px-4">
-        <button class="bg-white font-semibold p-2 rounded-full shadow-md </div>w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200" onclick="prevSlide()" aria-label="Previous Slide">
+        <button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200" onclick="prevSlide()" aria-label="Previous Slide">
           <i class="fas fa-chevron-left text-xl text-green-700"></i>
         </button>
         <button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200" onclick="nextSlide()" aria-label="Next Slide">
@@ -224,7 +226,7 @@
        <button onclick="toggleChatbot()" class="fixed bottom-10 right-10 bg-green-600 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-700 transition-transform transform hover:scale-110 animate-bounce-in">
       <i class="fas fa-comments text-2xl"></i>
       </button>
-      <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up" id="chatbot-widget">
+      <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster" id="chatbot-widget">
       <div class="bg-green-600 px-4 py-2 text-lg font-medium flex justify-between items-center text-white">
       <span>Chat with Us</span>
       <div>
@@ -256,7 +258,7 @@
   <!-- FOOTER -->
   <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
     <div class="max-w-7xl mx-auto px-4 mt-4">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-sm text-gray-200 mt-5">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
       
       <!-- Products & Services -->
       <div>
@@ -268,7 +270,7 @@
         <li><a href="#" class="hover:underline transition-colors duration-200">Social Services</a></li>
       </ul>
       </div>
-  
+
       <!-- About -->
       <div>
       <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
@@ -278,7 +280,7 @@
         <li><a href="#" class="hover:underline transition-colors duration-200">Officers & Committees</a></li>
       </ul>
       </div>
-  
+
       <!-- Other Quicklinks -->
       <div>
       <h4 class="font-semibold uppercase mb-4 text-white">Other Quicklinks</h4>
@@ -291,7 +293,16 @@
         <li><a href="#" class="hover:underline transition-colors duration-200">Privacy Policy</a></li>
       </ul>
       </div>
+      <!-- Download Our App -->
+      <div>
+      <h4 class="font-semibold uppercase mb-4 text-white">Download Our App</h4>
+      <ul class="space-y-2 font-light">
+        <li><a href="#" class="hover:underline transition-colors duration-200">Click Here to Download App</a></li>
+      </ul>
+      </div>
     </div>
+    
+ 
   
     <!-- Copyright -->
     <div class="mt-12 text-center text-sm text-white font-normal underline">

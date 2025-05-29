@@ -19,7 +19,6 @@ const newsData = [
     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
     img: "/src/path/images/event1.jpg",
   },
-  
   {
     title: "Lorem213",
     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
@@ -65,14 +64,17 @@ function renderNewsItems() {
   const items = newsData.slice(start, end);
 
   items.forEach((item) => {
-    container.innerHTML += `
-        <div class="space-y-4">
-          <img src="${item.img}" alt="${item.title}" class="rounded-sm shadow-md w-full h-auto object-cover">
-          <h3 class="text-lg font-semibold text-center text-gray-800">${item.title}</h3>
-          <p class="text-center text-gray-600 text-sm">${item.desc}</p>
-        </div>
-      `;
+    const card = document.createElement("div");
+    card.className = "space-y-4";
+    card.innerHTML = `
+      <img src="${item.img}" alt="${item.title}" class="rounded-sm shadow-md w-full h-auto object-cover">
+      <h3 class="text-lg font-semibold text-center text-gray-800">${item.title}</h3>
+      <p class="text-center text-gray-600 text-sm">${item.desc}</p>
+    `;
+    container.appendChild(card);
   });
+
+  animateCards();
 }
 
 function renderPaginationButtons() {
@@ -80,13 +82,15 @@ function renderPaginationButtons() {
   container.innerHTML = "";
 
   for (let i = 1; i <= totalPages; i++) {
-    container.innerHTML += `
-        <button onclick="goToPage(${i})" class="w-8 h-8 ${
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    btn.className = `w-8 h-8 ${
       i === currentPage
         ? "bg-gray-900 text-white font-medium rounded-sm"
         : "hover:text-yellow-900"
-    }">${i}</button>
-      `;
+    }`;
+    btn.onclick = () => goToPage(i);
+    container.appendChild(btn);
   }
 }
 
@@ -111,6 +115,16 @@ function prevPage() {
     renderNewsItems();
     renderPaginationButtons();
   }
+}
+
+function animateCards() {
+  const cards = document.querySelectorAll('#news-container > *');
+  cards.forEach((card, i) => {
+    card.classList.remove('card-animate');
+    setTimeout(() => {
+      card.classList.add('card-animate');
+    }, 80 * i);
+  });
 }
 
 // Initial Render
