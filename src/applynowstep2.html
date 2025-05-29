@@ -91,18 +91,18 @@
         <div class="flex items-center justify-center my-6">
           <div class="flex items-center gap-8">
             <div class="flex flex-col items-center text-black">
-              <a href="">
+              <a href="#" onclick="validateStep2(event)">
                 <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   1
                 </div>
               </a>
-              <a href="">
+              <a href="#" onclick="validateStep2(event)">
                 <p class="text-sm mt-2 text-center">Personal Information</p>
               </a>
             </div>
             <div class="w-20 h-1 bg-green-300"></div>
             <div class="flex flex-col items-center text-black">
-              <a href="applynowstep2.html">
+              <a href="#" onclick="validateStep2(event)">
                 <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
                   2
                 </div>
@@ -111,7 +111,7 @@
             </div>
             <div class="w-20 h-1 bg-green-300"></div>
             <div class="flex flex-col items-center text-black">
-              <a href="applynowstep2.html">
+              <a href="#" onclick="validateStep2(event)">
                 <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   3
                 </div>
@@ -120,9 +120,10 @@
             </div>
             <div class="w-20 h-1 bg-gray-300"></div>
             <div class="flex flex-col items-center text-black">
+               <a href="#" onclick="validateStep2(event)">
               <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                 4
-              </div>
+              </div></a>
               <p class="text-sm mt-2 text-center">Employment Information</p>
             </div>
           </div>
@@ -356,89 +357,35 @@
 </div>
 <script src="../src/javascript/dropdown.js"></script>
   <script>
-        function validateStep2(event) {
+       function validateStep2(event) {
             event.preventDefault();
+            const requiredFields = document.querySelectorAll('input[required], select[required]');
             let allFilled = true;
             let missingFields = [];
 
-            // Validate radio groups
-            const radioGroups = [
-              { name: 'salutation1', label: 'Salutation' },
-              { name: 'gender1', label: 'Gender' }
-            ];
-
-            // Validate required input and select fields (not radio)
-            const requiredInputs = document.querySelectorAll('input[required]:not([type="radio"])');
-            const requiredSelects = document.querySelectorAll('select[required]');
-            requiredInputs.forEach(field => {
-              if (!field.value.trim()) {
-                allFilled = false;
-                field.classList.add('border-red-500');
-                missingFields.push(field.previousElementSibling ? field.previousElementSibling.textContent.replace('*', '').trim() : field.id);
-              } else {
-                field.classList.remove('border-red-500');
-              }
-            });
-            requiredSelects.forEach(field => {
-              if (!field.value || field.value.startsWith('Select')) {
-                allFilled = false;
-                field.classList.add('border-red-500');
-                missingFields.push(field.previousElementSibling ? field.previousElementSibling.textContent.replace('*', '').trim() : field.id);
-              } else {
-                field.classList.remove('border-red-500');
-              }
-            });
-            radioGroups.forEach(group => {
-                const radios = document.getElementsByName(group.name);
-                let checked = false;
-                for (let i = 0; i < radios.length; i++) {
-                    if (radios[i].checked) {
-                        checked = true;
-                        break;
-                    }
-                }
-                if (!checked) {
-                    allFilled = false;
-                    missingFields.push(group.label);
-                    // Optionally, highlight the radio group label
-                    if (radios.length > 0) {
-                        radios[0].closest('fieldset')?.classList.add('border-red-500');
-                    }
-                } else {
-                    if (radios.length > 0) {
-                        radios[0].closest('fieldset')?.classList.remove('border-red-500');
-                    }
-                }
-            });
-
-            // Validate other required fields
-            const requiredFields = document.querySelectorAll('input[required], select[required]');
             requiredFields.forEach(field => {
-                // Skip radio buttons (already handled)
-                if (field.type === 'radio') return;
-                if (!field.value.trim()) {
-                    allFilled = false;
-                    field.classList.add('border-red-500');
-                    missingFields.push(field.previousElementSibling ? field.previousElementSibling.textContent.replace('*', '').trim() : field.id);
-                } else {
-                    field.classList.remove('border-red-500');
-                }
+            if (!field.value.trim()) {
+                allFilled = false;
+                field.classList.add('border-red-500');
+                missingFields.push(field.previousElementSibling.textContent.replace('*', '').trim());
+            } else {
+                field.classList.remove('border-red-500');
+            }
             });
 
             if (!allFilled) {
-                const modal = document.getElementById('validationModal');
-                const missingFieldsList = document.getElementById('missingFieldsList');
-                missingFieldsList.innerHTML = '';
-                // Remove duplicates
-                [...new Set(missingFields)].forEach(field => {
-                    const li = document.createElement('li');
-                    li.textContent = field;
-                    missingFieldsList.appendChild(li);
-                });
-                modal.classList.remove('hidden');
+            const modal = document.getElementById('validationModal');
+            const missingFieldsList = document.getElementById('missingFieldsList');
+            missingFieldsList.innerHTML = '';
+            missingFields.forEach(field => {
+                const li = document.createElement('li');
+                li.textContent = field;
+                missingFieldsList.appendChild(li);
+            });
+            modal.classList.remove('hidden');
             } else {
-                // Proceed to the next page
-                window.location.href = "applynowstep3.html";
+            // Proceed to the next page
+            window.location.href = "applynowstep3.html";
             }
         }
 
