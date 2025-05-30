@@ -25,9 +25,9 @@
        </style>
 </head>
 
-<body class="bg-gray-100 antialiased">
+<body class="bg-white antialiased">
   <!-- Header Section -->
-  <header class="bg-white shadow-md">
+  <header class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 animate-fade-in w-full">
     <div class="container-lg mx-auto flex justify-between items-center p-4">
     <!-- Logo and Title -->
     <div class="flex items-center space-x-4 overflow-hidden ">
@@ -101,15 +101,15 @@
 
   <!-- Hero Section -->
   <section class="relative animate-zoom-in">
-    <img src="path/images/LANDINGPAGE.png" alt="Greater Bulacan" class="w-full h-[540px] object-fill">
+    <img src="path/images/LANDINGPAGE.png" alt="Greater Bulacan" class="w-full h-[540px] object-fill" style="filter: brightness(0.8); position: relative; z-index: 1; top: 50px; left: 0;">
   </section>
-  <section class="py-14 px-6 text-center mt-5">
+  <section class="py-14 px-6 text-center mt-10">
     <h2 class="text-4xl font-medium text-teal-900 mb-2 animate-fade-in-up">Our Products</h2>
     <p class="text-gray-600 mb-10 tracking-wide animate-fade-in">Build your future according to how you want it to be</p>
   
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-2xl mx-auto text-left">
       <!-- Card 1 - Loan -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
         <span class="absolute -top-8 -right-8 w-32 h-32 bg-green-200 opacity-30 rounded-full blur-2xl pointer-events-none animate-pulse"></span>
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Loan</h3>
@@ -117,38 +117,38 @@
         </div>
         <img src="path/images/gbldc-loan.png" alt="Loan" class="w-56 h-56 mb-6 mt-6 animate-fade-in-up group-hover:scale-110 transition-transform duration-300 drop-shadow-xl group-hover:rotate-3">
         <a href="loan.html">
-          <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">Learn More</button>
+          <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See More</button>
         </a>
       </div>
 
       <!-- Card 2 - Deposit -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-200">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-200">
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Deposit</h3>
           <p class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Save up for your long-term needs or your next travel through creating a savings plan that is right for you.</p>
         </div>
         <img src="path/images/gbldc-deposit.png" alt="Deposit" class="w-56 h-56 mb-4 mt-6 animate-fade-in-up group-hover:scale-110 transition-transform duration-300 drop-shadow-xl group-hover:-rotate-3">
-        <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">Learn More</button>
+        <a href="deposit.html"><button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See More</button></a>
       </div>
 
       <!-- Card 3 - Insurance -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-400">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-400">
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Insurance</h3>
           <p class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Set yourself up for life through a lifelong insurance plan for you and your family’s future.</p>
         </div>
         <img src="path/images/gbldc-insurance.png" alt="Insurance" class="w-56 h-56 mb-4 mt-6 animate-fade-in-up group-hover:scale-110 transition-transform duration-300 drop-shadow-xl group-hover:rotate-6">
-        <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">Learn More</button>
+        <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See More</button>
       </div>
 
       <!-- Card 4 - Social Services -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-600">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-600">
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Social Services</h3>
           <p class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Enjoy and be entitled to various social services benefits especially designed for members in every step of their lives.</p>
         </div>
         <img src="path/images/gbldc-socialservices.png" alt="Social Services" class="w-56 h-56 mb-4 mt-6 animate-fade-in-up group-hover:scale-110 transition-transform duration-300 drop-shadow-xl group-hover:-rotate-6">
-        <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">Learn More</button>
+        <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See More</button>
       </div>
         </div>
     </section>
@@ -184,7 +184,7 @@
   
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 tracking-normal text-center  "> 
       <!-- Card 1 -->
-      <div class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
+      <div class="bg-white rounded-xl shadow transition-all duration-300 animate-bounce-slow hover:shadow-lg hover:scale-105 animate-card-fade-in">
        <a href="#"><img src="path/images/event1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-54 object-cover animate-fade-in-up"/>
       <h3 class="text-lg  text-slate-800 mb-2 p-3">
         22nd Annual General Assembly of Greater Bulacan Livelihood Development Cooperative - held last March 22, 2024 @ Cafe De Apati, Makinabang, Baliuag, Bulacan
@@ -193,7 +193,7 @@
       </div>
   
       <!-- Card 2 -->
-      <div class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
+      <div class="bg-white rounded-xl shadow transition-all duration-300 animate-bounce-slow hover:shadow-lg hover:scale-105 animate-card-fade-in">
       <a href="#"><img src="path/images/event1.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-54 object-cover animate-fade-in-up"/>
       <h3 class="text-lg text-slate-800 mb-2 p-3 ">
         Greater Bulacan Livelihood Development Cooperative - Supports Coop Parade, Kick-Off Ceremony and Launching of Go Koop - 
@@ -205,12 +205,12 @@
       </div>
   
       <!-- Card 3 -->
-      <div class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
+      <div class="bg-white rounded-xl shadow transition-all duration-300 animate-bounce-slow hover:shadow-lg hover:scale-105 animate-card-fade-in">
       <a href="#"><img src="path/images/event1.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-54 object-cover animate-fade-in-up"/>
       <h3 class="text-lg text-slate-800 mb-2 p-3">
       Greater Bulacan Livelihood Development Cooperative - Family Outing and Team Building held last April 12-13, 2025 @ Paynawa Beach Resort, Brgy. Laoag, Cabangan, Zambales
       </h3></a> 
-      <p class="text-sm text-gray-600 p-3 mb-4"></p>
+      <p class="text-sm text-gray-600"></p>
       Join us for a fun-filled day of activities and bonding with fellow members.
       </p>
       </div>
@@ -313,45 +313,31 @@
     <script src="../src/javascript/chatbot.js"></script>
     <!-- Animation CSS -->
     <style>
-    @keyframes fade-in {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      @keyframes fade-in {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
     }
-    @keyframes fade-in-up {
+    @keyframes fade-up {
       from { opacity: 0; transform: translateY(40px);}
       to { opacity: 1; transform: translateY(0);}
     }
-    @keyframes fade-in-down {
-      from { opacity: 0; transform: translateY(-40px);}
+    @keyframes fade-down {
+      from { opacity: 0; transform: translateY(-30px);}
       to { opacity: 1; transform: translateY(0);}
     }
-    @keyframes fade-in-left {
-      from { opacity: 0; transform: translateX(-40px);}
-      to { opacity: 1; transform: translateX(0);}
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0);}
+      50% { transform: translateY(-8px);}
     }
-    @keyframes fade-in-right {
-      from { opacity: 0; transform: translateX(40px);}
-      to { opacity: 1; transform: translateX(0);}
-    }
-    @keyframes zoom-in {
-      from { opacity: 0; transform: scale(0.95);}
-      to { opacity: 1; transform: scale(1);}
-    }
-    @keyframes bounce-in {
-      0% { opacity: 0; transform: scale(0.8);}
-      60% { opacity: 1; transform: scale(1.05);}
-      80% { transform: scale(0.97);}
-      100% { transform: scale(1);}
-    }
-    .animate-fade-in { animation: fade-in 1s ease; }
-    .animate-fade-in-up { animation: fade-in-up 1s ease; }
-    .animate-fade-in-down { animation: fade-in-down 1s ease; }
-    .animate-fade-in-left { animation: fade-in-left 1s ease; }
-    .animate-fade-in-right { animation: fade-in-right 1s ease; }
-    .animate-zoom-in { animation: zoom-in 1s ease; }
-    .animate-bounce-in { animation: bounce-in 1s; }
-    .animate-card-fade-in { animation: fade-in-up 1.2s cubic-bezier(.39,.575,.565,1) both; }
-    .animate-carousel-slide { animation: fade-in 1.2s; }
+    .animate-fade-in { animation: fade-in 0.8s cubic-bezier(.4,0,.2,1) both;}
+    .animate-fade-up { animation: fade-up 0.8s cubic-bezier(.4,0,.2,1) both;}
+    .animate-fade-down { animation: fade-down 0.8s cubic-bezier(.4,0,.2,1) both;}
+    .animate-bounce-slow { animation: bounce-slow 2s infinite;}
+    .delay-100 { animation-delay: 0.1s;}
+    .delay-200 { animation-delay: 0.2s;}
+    .delay-300 { animation-delay: 0.3s;}
+    .delay-400 { animation-delay: 0.4s;}
+    .delay-500 { animation-delay: 0.5s;}
     </style>
 </body>
 </html>
