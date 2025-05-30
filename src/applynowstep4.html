@@ -198,20 +198,15 @@
         </div>
       </section>
       <div
-        class="max-w-7xl mx-auto bg-white p-7 shadow-lg rounded-lg mt-6 mb-6">
-
-        <form class="space-y-6 font-normal max-w-7xl mx-auto p-11">
-          <h3 class="text-2xl font-medium text-teal-900">Employment
-            Information</h3>
-          <p class="text-sm text-black">Please provide your employment
-            information to help us understand your financial background.</p>
+        class="max-w-7xl mx-auto bg-white p-7 shadow-lg rounded-lg mt-6 mb-10">
+        <form action="submit" method="POST" class="space-y-6 font-normal max-w-7xl mx-auto p-11" id="employmentForm">
+          <h3 class="text-2xl font-medium text-teal-900">Employment Information</h3>
+          <p class="text-sm text-black">Please provide your employment information to help us understand your financial background.</p>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">Employment
-                Status
+              <label class="block text-normal font-medium mb-1">Employment Status
                 <span class="text-red-500">*</span></label>
-              <select
-                class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
+              <select class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Employed</option>
                 <option>Self-Employed</option>
@@ -229,12 +224,10 @@
                 <option>Others</option>
               </select>
             </div>
-
             <div>
               <label class="block text-normal font-medium mb-1">Source of Funds
                 <span class="text-red-500">*</span></label>
-              <select
-                class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
+              <select class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Salary</option>
                 <option>Business</option>
@@ -247,22 +240,14 @@
               </select>
             </div>
           </div>
-
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label
-                class="block text-normal font-medium mb-1">Employer/Business
-                Name <span class="text-red-500">*</span></label>
-              <input type="text"
-                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-                placeholder="Employer/Business Name">
+              <label class="block text-normal font-medium mb-1">Employer/Business Name <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Employer/Business Name">
             </div>
-
             <div>
-              <label class="block text-normal font-medium mb-1">Occupation <span
-                  class="text-red-500">*</span></label>
-              <select
-                class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-normal font-medium mb-1">Occupation <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select Occupation</option>
                 <option>Accountant</option>
                 <option>Engineer</option>
@@ -288,21 +273,15 @@
               </select>
             </div>
           </div>
-
           <div>
-            <label class="block text-normal font-medium mb-1">Company/Business
-              Address <span class="text-red-500">*</span></label>
-            <input type="text"
-              class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-              placeholder="Company/Business Address">
+            <label class="block text-normal font-medium mb-1">Company/Business Address <span class="text-red-500">*</span></label>
+            <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Company/Business Address">
           </div>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">Gross Monthly
-                Income
+              <label class="block text-normal font-medium mb-1">Gross Monthly Income
                 <span class="text-red-500">*</span></label>
-              <select
-                class="w-full border rounded  px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <select class="w-full border rounded  px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Below ₱10,000</option>
                 <option>₱10,000 - ₱20,000</option>
@@ -312,12 +291,9 @@
                 <option>Above ₱100,000</option>
               </select>
             </div>
-
             <div>
-              <label class="block text-normal font-medium mb-1">Nature/Type of
-                Employment/Business <span class="text-red-500">*</span></label>
-              <select
-                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-normal font-medium mb-1">Nature/Type of Employment/Business <span class="text-red-500">*</span></label>
+              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Government</option>
                 <option>Private</option>
@@ -336,96 +312,63 @@
               </select>
             </div>
           </div>
-
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">SSS/GSIS No.
-                <span
-                  class="text-red-500">*</span></label>
-              <input type="text"
-                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-                placeholder="SSS/GSIS No.">
+              <label class="block text-normal font-medium mb-1">SSS/GSIS No. <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="SSS/GSIS No.">
             </div>
-
             <div>
-              <label class="block text-normal font-medium mb-1">TIN No. <span
-                  class="text-red-500">*</span></label>
-              <input type="text"
-                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
-                placeholder="TIN No.">
+              <label class="block text-normal font-medium mb-1">TIN No. <span class="text-red-500">*</span></label>
+              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="TIN No.">
             </div>
           </div>
-
           <div class="pt-6 border-t">
             <h3 class="text-2xl font-medium mb-2 text-teal-900">Attachments</h3>
             <label class="block font-normal mb-1 text-normal">Required Documents
               <span class="text-red-500">*</span></label>
             <div class="flex items-center gap-3">
-              <input type="text" id="docName"
-                class="border px-3 py-2 rounded w-96 mt-3"
-                placeholder="Required Documents" readonly>
+              <input type="text" id="docName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Required Documents" readonly>
               <input type="file" id="docFile" class="text-sm" accept="image/*">
-              <button type="button" id="docRemove"
-                class="hidden text-red-500 text-base">Remove</button>
-              <button type="button" id="docReplace"
-                class="hidden text-blue-500 text-base">Replace</button>
+              <button type="button" id="docRemove" class="hidden text-red-500 text-base">Remove</button>
+              <button type="button" id="docReplace" class="hidden text-blue-500 text-base">Replace</button>
             </div>
-            <img id="docPreview"
-              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            <img id="docPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
           </div>
-
           <div class="mt-6">
-            <label class="block font-normal mb-1 text-normal">2x2 Picture <span
-                class="text-red-500">*</span></label>
+            <label class="block font-normal mb-1 text-normal">2x2 Picture <span class="text-red-500">*</span></label>
             <div class="flex items-center gap-3">
-              <input type="text" id="picName"
-                class="border px-3 py-2 rounded w-96 mt-3"
-                placeholder="2x2 Picture" readonly>
+              <input type="text" id="picName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="2x2 Picture" readonly>
               <input type="file" id="picFile" class="text-sm" accept="image/*">
-              <button type="button" id="picRemove"
-                class="hidden text-red-500  text-base">Remove</button>
-              <button type="button" id="picReplace"
-                class="hidden text-blue-500  text-base">Replace</button>
+              <button type="button" id="picRemove" class="hidden text-red-500  text-base">Remove</button>
+              <button type="button" id="picReplace" class="hidden text-blue-500  text-base">Replace</button>
             </div>
-            <img id="picPreview"
-              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            <img id="picPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
           </div>
-
           <div class="mt-6">
             <label class="block font-normal mb-1 text-normal">Proof of Billing
               <span class="text-red-500">*</span></label>
             <div class="flex items-center gap-3">
-              <input type="text" id="billingName"
-                class="border px-3 py-2 rounded w-96 mt-3"
-                placeholder="Proof of Billing" readonly>
-              <input type="file" id="billingFile" class="text-sm"
-                accept="image/*">
-              <button type="button" id="billingRemove"
-                class="hidden text-red-500 text-base">Remove</button>
-              <button type="button" id="billingReplace"
-                class="hidden text-blue-500 text-base">Replace</button>
+              <input type="text" id="billingName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Proof of Billing" readonly>
+              <input type="file" id="billingFile" class="text-sm" accept="image/*">
+              <button type="button" id="billingRemove" class="hidden text-red-500 text-base">Remove</button>
+              <button type="button" id="billingReplace" class="hidden text-blue-500 text-base">Replace</button>
             </div>
-            <img id="billingPreview"
-              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            <img id="billingPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
           </div>
-          <p class="text-sm text-gray-500 mt-2">Maximum upload file size:
-            1MB</p>
-
+          <p class="text-sm text-gray-500 mt-2">Maximum upload file size: 1MB</p>
           <!-- CAPTCHA Section -->
           <div class="mt-6">
             <!-- hCaptcha Widget -->
             <div class="mt-2">
-              <div class="h-captcha"
-                data-sitekey="ES_8135d46fe39d4d37ac652d3c461c0f8c"></div>
+              <div class="h-captcha" data-sitekey="441cb5b6-238c-41fe-972c-6ed6db4cc3c4"></div>
             </div>
             <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-            <!-- On submit, hCaptcha will validate automatically.
-             Make sure to verify the response on your server after form submission. -->
+            <div id="captchaError" class="text-red-500 text-sm mt-2 hidden">Please complete the CAPTCHA.</div>
             <div class="flex justify-end pt-6">
-              <button type="submit"
-                class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
+              <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
             </div>
-
+          </div>
+        </form>
             <!-- Loading Modal -->
             <div id="loadingModal"
               class="fixed inset-0 p-10 flex items-center justify-center z-50 hidden">
@@ -576,11 +519,25 @@
           document.getElementById(prefix + "File").classList.remove("hidden");
               });
               // Redirect to landing page
-              window.location.href = "landingpage.html";
+              window.location.href = "#";
             }, 2000);
           }, 1800);
         });
       </script>
+        <script>
+          // hCaptcha client-side validation
+          document.getElementById("employmentForm").addEventListener("submit", function (e) {
+            var captcha = document.querySelector('textarea[name="h-captcha-response"]');
+            var error = document.getElementById("captchaError");
+            if (!captcha || !captcha.value) {
+              e.preventDefault();
+              if (error) error.classList.remove("hidden");
+              return false;
+            } else {
+              if (error) error.classList.add("hidden");
+            }
+          });
+        </script>
        <style>
     @keyframes fade-in {
       from { opacity: 0; }
