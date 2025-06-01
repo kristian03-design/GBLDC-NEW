@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./output.css" rel="stylesheet">
- <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+  <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
   <title>Greater Bulacan Livelihood Development Cooperative</title>
 </head>
 <body class="bg-gray-100 flex items-center justify-center min-h-screen">
@@ -12,7 +12,7 @@
     <div class="bg-white shadow-lg rounded-2xl flex max-w-5xl w-full overflow-hidden">
       
       <!-- Left Column -->
-      <div class="bg-gray-100 p-8 w-1/2">
+      <div class="bg-gray-200 p-8 w-1/2">
         <h2 class="text-3xl font-bold mb-6 text-center">WELCOME TO</h2>
         <img src="path/images/482445912_1229903975417783_6143904361897729543_n-Picsart-AiImageEnhancer 1.png" alt="GBLDC Logo" class="w-full mb-6">
         <p class="text-sm text-gray-700 mb-4">
@@ -32,7 +32,7 @@
           <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo Icon" class="w-24 h-24 object-contain">
         </div>
   
-        <form method="post" action="register.php" class="space-y-4">
+        <form method="POST" action="/src/php/register.php" class="space-y-4">
           <div>
             <label class="block text-sm font-medium text-gray-700">Email</label>
             <input type="email" name="email" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your Email">
@@ -43,23 +43,30 @@
             <input type="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your password">
           </div>
   
-          <div>
+            <div>
             <label class="block text-sm font-medium text-gray-700">Confirm Password</label>
             <input type="password" name="confirm_password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your confirm password">
-          </div>
-  
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Verify OTP</label>
-            <input type="text" name="otp" maxlength="6" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your 6 digit OTP">
-          </div>
-  
+            </div>
+            <!-- OTP Section: Hidden by default, shown after sending OTP -->
+            <div id="otp-section" class="hidden">
+            <label class="block text-sm font-medium text-gray-700">4-Digit OTP</label>
+            <input type="text" name="otp" pattern="\d{4}" maxlength="4" class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter 4-digit OTP">
+            <div id="otp-timer" class="text-xs text-gray-500 mt-2"></div>
+            </div>
+            <div>
+            <div class="flex justify-end">
+              <button type="button" id="send-otp-btn" class="text-black py-2 rounded-md text-sm font-normal">
+              Click to send OTP
+              </button>
+            </div>
+            </div>
           <div class="text-center text-sm text-gray-500 mt-2">or Signup with</div>
           <div class="flex justify-center space-x-4">
-            <button type="button" class="flex items-center px-4 py-2 border rounded-md hover:bg-gray-100">
-              <img src="https://img.icons8.com/color/24/google-logo.png" class="mr-2" alt="Google Icon"> Google
+            <button type="button" class="flex items-center px-4 py-2  rounded-md hover:bg-gray-100">
+              <img src="path/images/google.png" class="mr-2 w-8 h-5" alt="Google Icon">
             </button>
-            <button type="button" class="flex items-center px-4 py-2 border rounded-md hover:bg-gray-100">
-              <img src="https://img.icons8.com/color/24/facebook-new.png" class="mr-2" alt="Facebook Icon"> Facebook
+            <button type="button" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-100">
+              <img src="path/images/facebook.png" class="mr-2 w-8 h-5" alt="Facebook Icon">
             </button>
           </div>
   
@@ -68,11 +75,86 @@
           </button>
   
           <p class="text-sm text-center mt-2 text-gray-700">
-            Already have an account? <a href="index.html" class="text-green-600 font-medium">Login</a>
+            Already have an account? <a href="landingpage.html" class="text-green-600 font-medium">Login</a>
           </p>
         </form>
       </div>
     </div>
-  
-  </body>
-  </html>
+      <script>
+            const sendOtpBtn = document.getElementById('send-otp-btn');
+            const otpSection = document.getElementById('otp-section');
+            const otpTimer = document.getElementById('otp-timer');
+            let timerInterval;
+            let timerRunning = false;
+
+            function startOtpTimer(duration) {
+              let timeLeft = duration;
+              otpTimer.textContent = `Resend OTP in ${timeLeft}s`;
+              sendOtpBtn.disabled = true;
+              sendOtpBtn.classList.add('opacity-50', 'cursor-not-allowed');
+              timerRunning = true;
+              timerInterval = setInterval(() => {
+              timeLeft--;
+              if (timeLeft > 0) {
+                otpTimer.textContent = `Resend OTP in ${timeLeft}s`;
+              } else {
+                clearInterval(timerInterval);
+                otpTimer.textContent = '';
+                sendOtpBtn.disabled = false;
+                sendOtpBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                sendOtpBtn.textContent = 'Resend OTP';
+                timerRunning = false;
+              }
+              }, 1000);
+            }
+
+            function sendOtp() {
+                // Custom styled alert (centered) with background opacity
+                const overlay = document.createElement('div');
+                overlay.style.position = 'fixed';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100vw';
+                overlay.style.height = '100vh';
+                overlay.style.background = 'rgba(0,0,0,0.3)';
+                overlay.style.zIndex = '9998';
+
+                const alertBox = document.createElement('div');
+                alertBox.textContent = 'OTP has been sent to your email!';
+                alertBox.style.position = 'fixed';
+                alertBox.style.top = '50%';
+                alertBox.style.left = '50%';
+                alertBox.style.transform = 'translate(-50%, -50%)';
+                alertBox.style.background = '#22c55e';
+                alertBox.style.color = '#fff';
+                alertBox.style.padding = '16px 32px';
+                alertBox.style.borderRadius = '8px';
+                alertBox.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+                alertBox.style.fontSize = '1rem';
+                alertBox.style.zIndex = '9999';
+
+                document.body.appendChild(overlay);
+                document.body.appendChild(alertBox);
+
+                setTimeout(() => {
+                  alertBox.remove();
+                  overlay.remove();
+                }, 2500);
+              otpSection.classList.remove('hidden');
+              sendOtpBtn.textContent = 'Sending...';
+              sendOtpBtn.disabled = true;
+              sendOtpBtn.classList.add('opacity-50', 'cursor-not-allowed');
+              setTimeout(() => {
+              sendOtpBtn.textContent = 'Resend OTP';
+              startOtpTimer(30); // 30 seconds timer
+              }, 1000); // Simulate sending delay
+            }
+
+            sendOtpBtn.addEventListener('click', function() {
+              if (!timerRunning) {
+              sendOtp();
+              }
+            });
+            </script>
+</body>
+</html>
