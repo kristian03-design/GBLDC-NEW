@@ -7,8 +7,11 @@
     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png" sizes="512x512"/>
     <link href="./output.css" rel="stylesheet">
+       <!-- Slick JS & CSS (add in <head> if not already included) -->
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
-
       <style>
       /* Modern pulse animation for background blobs */
       @keyframes pulse {
@@ -153,28 +156,27 @@
         </div>
     </section>
   <!-- CO-OP Member Meetings Section -->
-  <section class="container mx-auto my-14 px-7">
+   <section class="container mx-auto my-14 px-7">
     <h2 class="text-center text-teal-900 text-3xl font-medium animate-fade-in-up">CO-OP MEMBER MEETINGS</h2>
     <p class="text-center text-gray-700 mt-2 font-normal tracking-wide animate-fade-in">Join us for our upcoming meetings and events to stay informed and engaged with your cooperative community.</p>
     <div class="relative w-full mt-6">
-      <div class="overflow-hidden relative w-full h-96 " id="carousel">
-        <div class="flex w-full h-full transition-transform duration-500 gap-5 "  id="carousel-inner">
-          <img src="path/images/meeting 1.png" class="w-full h-full object-cover rounded-xl drop-shadow-2xl animate-carousel-slide" alt="Meeting 1">
-          <img src="path/images/meeting 2.png" class="w-full h-full object-cover rounded-xl drop-shadow-2xl animate-carousel-slide" alt="Meeting 2">
-          <img src="path/images/meeting 3.png" class="w-full h-full object-cover rounded-xl drop-shadow-2xl animate-carousel-slide" alt="Meeting 3">
+      <!-- Slick Carousel Container -->
+      <div class="w-full h-96 relative overflow-hidden" id="carousel">
+      <div class="carousel-slider h-full w-full flex gap-4 overflow-hidden scroll-smooth snap-x snap-mandatory">
+        <div class="px-2">
+          <img src="path/images/meeting 1.png" class="w-full h-96 object-cover rounded-xl drop-shadow-2xl flex" alt="Meeting 1">
+        </div>
+        <div class="px-2">
+          <img src="path/images/meeting 2.png" class="w-full h-96 object-cover rounded-xl drop-shadow-2xl" alt="Meeting 2">
+        </div>
+        <div class="px-2">
+          <img src="path/images/meeting 3.png" class="w-full h-96 object-cover rounded-xl drop-shadow-2xl" alt="Meeting 3">
+        </div>
+        <div class="px-2">
+          <img src="path/images/meeting 3.png" class="w-full h-96 object-cover rounded-xl drop-shadow-2xl" alt="Meeting 3">
         </div>
       </div>
-      <div class="absolute inset-0 flex justify-between items-center px-4">
-        <button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200" onclick="prevSlide()" aria-label="Previous Slide">
-          <i class="fas fa-chevron-left text-xl text-green-700"></i>
-        </button>
-        <button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200" onclick="nextSlide()" aria-label="Next Slide">
-          <i class="fas fa-chevron-right text-xl text-green-700"></i>
-        </button>
-      </div>
-    </div>
   </section>
-  
   <!-- Events & Announcements Section -->
   <section class="py-12 px-6 max-w-screen-2xl mx-auto mb-10">
     <div class="text-center mb-10">

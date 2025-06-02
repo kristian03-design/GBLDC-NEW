@@ -496,6 +496,7 @@
         form.addEventListener("submit", function (e) {
           e.preventDefault();
           // Show loading modal
+          loadingModal.style.background = "rgba(0,0,0,0.4)";
           loadingModal.classList.remove("hidden");
           loadingContent.classList.remove("hidden");
           successContent.classList.add("hidden");
