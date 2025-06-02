@@ -5,7 +5,7 @@ session_start();
 $servername = "localhost";
 $username = "root"; // Change this if needed
 $password = "";     // Change this if needed
-$dbname = "gblc_db";
+$dbname = "gbldc_db";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
