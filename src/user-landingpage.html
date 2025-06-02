@@ -221,34 +221,33 @@
     </div>
 
        <!-- Chatbot Widget --> 
-       <button onclick="toggleChatbot()" class="fixed bottom-10 right-10 bg-green-600 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-700 transition-transform transform hover:scale-110 animate-bounce-in">
-      <i class="fas fa-comments text-2xl"></i>
-      </button>
-      <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster" id="chatbot-widget">
-      <div class="bg-green-600 px-4 py-2 text-lg font-medium flex justify-between items-center text-white">
-      <span>Chat with Us</span>
-      <div>
-        <button onclick="expandChatbot()" id="expand-btn" class="text-white focus:outline-none hover:text-gray-300 transition-colors mr-2" title="Expand">
-        <i class="fas fa-expand"></i>
-        </button>
-        <button onclick="shrinkChatbot()" id="shrink-btn" class="text-white focus:outline-none hover:text-gray-300 transition-colors mr-2 hidden" title="Shrink">
-        <i class="fas fa-compress"></i>
-        </button>
-        <button onclick="toggleChatbot()" class="text-white focus:outline-none hover:text-gray-300 transition-colors" title="Close">
-        <i class="fas fa-times"></i>
-        </button>
-      </div>
-      </div>
-      <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black" style="height: 300px;">
-      <!-- Messages will appear here -->
-      </div>
-      <form id="chat-form" class="flex p-2 border-t text-black">
-      <input id="chat-input" type="text" placeholder="Type your message..."
-      class="flex-1 px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400 text-black transition-shadow" />
-      <button type="submit" class="bg-green-600 text-white px-4 rounded-r-md hover:bg-green-700 transition-colors">Send</button>
-      </form>
-      </div>
-      </button>
+      <button onclick="toggleChatbot()" class="fixed bottom-10 right-10 bg-green-600 text-white p-4 rounded-full shadow-lg z-50 hover:bg-green-700 transition-transform transform hover:scale-110 animate-bounce-in animate-fade-in-up">
+          <i class="fas fa-comments text-2xl"></i>
+          </button>
+          <div class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-white rounded-md shadow-lg border flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster" id="chatbot-widget">
+          <div class="bg-green-600 px-4 py-2 text-lg font-medium flex justify-between items-center text-white animate-fade-in-down">
+          <span>Chat with Us</span>
+          <div>
+       <button onclick="expandChatbot()" id="expand-btn" class="text-white focus:outline-none hover:text-gray-300 transition-colors mr-2" title="Expand">
+       <i class="fas fa-expand"></i>
+       </button>
+       <button onclick="shrinkChatbot()" id="shrink-btn" class="text-white focus:outline-none hover:text-gray-300 transition-colors mr-2 hidden" title="Shrink">
+       <i class="fas fa-compress"></i>
+       </button>
+       <button onclick="toggleChatbot()" class="text-white focus:outline-none hover:text-gray-300 transition-colors" title="Close">
+       <i class="fas fa-times"></i>
+       </button>
+          </div>
+          </div>
+          <div id="chat-messages" class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black animate-fade-in" style="height: 300px;">
+          <!-- Messages will appear here -->
+          </div>
+          <form id="chat-form" class="flex p-2 border-t text-black animate-fade-in-up">
+          <input id="chat-input" type="text" placeholder="Type your message..."
+          class="flex-1 px-3 py-2 border rounded-l-md focus:outline-none focus:ring-2 focus:ring-green-400 text-black transition-shadow" />
+          <button type="submit" class="bg-green-600 text-white px-4 rounded-r-md hover:bg-green-700 transition-colors">Send</button>
+          </form>
+          </div>
     </section>
   <!-- Logout Modal -->
   <!-- Logout Modal Section -->

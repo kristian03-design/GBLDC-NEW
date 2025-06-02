@@ -54,22 +54,25 @@
             <div id="otp-timer" class="text-xs text-gray-500 mt-2"></div>
             </div>
             <div>
-            <div class="flex justify-end">
+            <div class="flex justify-end mb-4">
               <button type="button" id="send-otp-btn" class="text-black py-2 rounded-md text-sm font-normal">
               Click to send OTP
               </button>
             </div>
+            <div class="flex justify-center mb-2" id="captcha-container">
+              <div class="h-captcha" data-sitekey="441cb5b6-238c-41fe-972c-6ed6db4cc3c4"></div>
+            </div>
+            <script src="https://hcaptcha.com/1/api.js" async defer></script>
             </div>
           <div class="text-center text-sm text-gray-500 mt-2">or Signup with</div>
           <div class="flex justify-center space-x-4">
             <button type="button" class="flex items-center px-4 py-2  rounded-md hover:bg-gray-100">
-              <img src="path/images/google.png" class="mr-2 w-8 h-5" alt="Google Icon">
+              <img src="path/images/google.png" class="mr-2 w-8 h-8" alt="Google Icon">
             </button>
             <button type="button" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-100">
-              <img src="path/images/facebook.png" class="mr-2 w-8 h-5" alt="Facebook Icon">
+              <img src="path/images/facebook.png" class="mr-2 w-8 h-8" alt="Facebook Icon">
             </button>
           </div>
-  
           <button type="submit" class="w-72 mt-4 mx-20 bg-black text-white py-2 rounded-md hover:bg-gray-800 font-semibold">
             CREATE ACCOUNT
           </button>
