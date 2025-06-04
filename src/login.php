@@ -5,7 +5,7 @@ session_start();
 $servername = "localhost";
 $username = "root"; // Change this if needed
 $password = "";     // Change this if needed
-$dbname = "gbldc_db";
+$dbname = "registration_db"; // Change this to your database name
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -41,7 +41,7 @@ if ($result->num_rows === 1) {
         $_SESSION['email'] = $email;
         
         // Redirect to dashboard or homepage
-        header("Location: landingpage.html");
+        header("Location: user-landingpage.html");
         exit;
     } else {
         echo "Invalid password.";

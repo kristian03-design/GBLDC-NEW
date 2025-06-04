@@ -1,17 +1,16 @@
  $(document).ready(function(){
         $('.carousel-slider').slick({
-          centerMode: true,
+          centerMode: false,
           centerPadding: '0px',
           dots: false,
-          arrows: true,
+          arrows: false,
           infinite: true,
           speed: 500,
           fade: false,
           cssEase: 'linear',
           slidesToShow: 3,
           slidesToScroll: 1,
-          prevArrow: '<button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200 absolute left-4 top-1/2 -translate-y-1/2 z-10" aria-label="Previous Slide"><i class="fas fa-chevron-left text-xl text-green-700"></i></button>',
-          nextArrow: '<button class="bg-white font-semibold p-2 rounded-full shadow-md w-10 flex items-center justify-center hover:bg-green-100 transition-colors duration-200 absolute right-4 top-1/2 -translate-y-1/2 z-10" aria-label="Next Slide"><i class="fas fa-chevron-right text-xl text-green-700"></i></button>',
+         
           autoplay: true,
           autoplaySpeed: 3500,
           adaptiveHeight: true,

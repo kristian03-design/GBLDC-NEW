@@ -32,7 +32,7 @@
           <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo Icon" class="w-24 h-24 object-contain">
         </div>
   
-        <form method="POST" action="/src/php/register.php" class="space-y-4">
+        <form method="POST" action="user-landingpage.html" class="space-y-4">
           <div>
             <label class="block text-sm font-medium text-gray-700">Email</label>
             <input type="email" name="email" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your Email">
@@ -84,80 +84,111 @@
       </div>
     </div>
       <script>
-            const sendOtpBtn = document.getElementById('send-otp-btn');
-            const otpSection = document.getElementById('otp-section');
-            const otpTimer = document.getElementById('otp-timer');
-            let timerInterval;
-            let timerRunning = false;
+      const sendOtpBtn = document.getElementById('send-otp-btn');
+      const otpSection = document.getElementById('otp-section');
+      const otpTimer = document.getElementById('otp-timer');
+      const emailInput = document.querySelector("input[name='email']");
+      let timerInterval;
+      let timerRunning = false;
 
-            function startOtpTimer(duration) {
-              let timeLeft = duration;
-              otpTimer.textContent = `Resend OTP in ${timeLeft}s`;
-              sendOtpBtn.disabled = true;
-              sendOtpBtn.classList.add('opacity-50', 'cursor-not-allowed');
-              timerRunning = true;
-              timerInterval = setInterval(() => {
-              timeLeft--;
-              if (timeLeft > 0) {
-                otpTimer.textContent = `Resend OTP in ${timeLeft}s`;
-              } else {
-                clearInterval(timerInterval);
-                otpTimer.textContent = '';
-                sendOtpBtn.disabled = false;
-                sendOtpBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                sendOtpBtn.textContent = 'Resend OTP';
-                timerRunning = false;
-              }
-              }, 1000);
-            }
+      function showCustomAlert(message, color = '#22c55e') {
+        // Remove any existing alert
+        document.querySelectorAll('.custom-alert-overlay, .custom-alert-box').forEach(el => el.remove());
 
-            function sendOtp() {
-                // Custom styled alert (centered) with background opacity
-                const overlay = document.createElement('div');
-                overlay.style.position = 'fixed';
-                overlay.style.top = '0';
-                overlay.style.left = '0';
-                overlay.style.width = '100vw';
-                overlay.style.height = '100vh';
-                overlay.style.background = 'rgba(0,0,0,0.3)';
-                overlay.style.zIndex = '9998';
+        const overlay = document.createElement('div');
+        overlay.className = 'custom-alert-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0,0,0,0.3)';
+        overlay.style.zIndex = '9998';
 
-                const alertBox = document.createElement('div');
-                alertBox.textContent = 'OTP has been sent to your email!';
-                alertBox.style.position = 'fixed';
-                alertBox.style.top = '50%';
-                alertBox.style.left = '50%';
-                alertBox.style.transform = 'translate(-50%, -50%)';
-                alertBox.style.background = '#22c55e';
-                alertBox.style.color = '#fff';
-                alertBox.style.padding = '16px 32px';
-                alertBox.style.borderRadius = '8px';
-                alertBox.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
-                alertBox.style.fontSize = '1rem';
-                alertBox.style.zIndex = '9999';
+        const alertBox = document.createElement('div');
+        alertBox.className = 'custom-alert-box';
+        alertBox.textContent = message;
+        alertBox.style.position = 'fixed';
+        alertBox.style.top = '50%';
+        alertBox.style.left = '50%';
+        alertBox.style.transform = 'translate(-50%, -50%)';
+        alertBox.style.background = color;
+        alertBox.style.color = '#fff';
+        alertBox.style.padding = '16px 32px';
+        alertBox.style.borderRadius = '8px';
+        alertBox.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+        alertBox.style.fontSize = '1rem';
+        alertBox.style.zIndex = '9999';
 
-                document.body.appendChild(overlay);
-                document.body.appendChild(alertBox);
+        document.body.appendChild(overlay);
+        document.body.appendChild(alertBox);
 
-                setTimeout(() => {
-                  alertBox.remove();
-                  overlay.remove();
-                }, 2500);
-              otpSection.classList.remove('hidden');
-              sendOtpBtn.textContent = 'Sending...';
-              sendOtpBtn.disabled = true;
-              sendOtpBtn.classList.add('opacity-50', 'cursor-not-allowed');
-              setTimeout(() => {
-              sendOtpBtn.textContent = 'Resend OTP';
-              startOtpTimer(30); // 30 seconds timer
-              }, 1000); // Simulate sending delay
-            }
+        setTimeout(() => {
+          alertBox.remove();
+          overlay.remove();
+        }, 2500);
+      }
 
-            sendOtpBtn.addEventListener('click', function() {
-              if (!timerRunning) {
-              sendOtp();
-              }
-            });
+      function startOtpTimer(duration) {
+        let timeLeft = duration;
+        otpTimer.textContent = `Resend OTP in ${timeLeft}s`;
+        sendOtpBtn.disabled = true;
+        sendOtpBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        timerRunning = true;
+        timerInterval = setInterval(() => {
+          timeLeft--;
+          if (timeLeft > 0) {
+            otpTimer.textContent = `Resend OTP in ${timeLeft}s`;
+          } else {
+            clearInterval(timerInterval);
+            otpTimer.textContent = '';
+            sendOtpBtn.disabled = false;
+            sendOtpBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            sendOtpBtn.textContent = 'Resend OTP';
+            timerRunning = false;
+          }
+        }, 1000);
+      }
+
+      function sendOtp() {
+        const email = emailInput.value.trim();
+        if (!email) {
+          showCustomAlert("Please enter your email first!", "#ef4444");
+          emailInput.focus();
+          return;
+        }
+
+        sendOtpBtn.textContent = 'Sending...';
+        sendOtpBtn.disabled = true;
+        sendOtpBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+        fetch("send_otp.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: `email=${encodeURIComponent(email)}`
+        })
+        .then(response => response.text())
+        .then(data => {
+          otpSection.classList.remove('hidden');
+          showCustomAlert(data);
+          sendOtpBtn.textContent = 'Resend OTP';
+          startOtpTimer(30);
+        })
+        .catch(error => {
+          showCustomAlert("Failed to send OTP. Please try again.", "#ef4444");
+          sendOtpBtn.textContent = 'Click to send OTP';
+          sendOtpBtn.disabled = false;
+          sendOtpBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+          console.error("Error:", error);
+        });
+      }
+
+      sendOtpBtn.addEventListener('click', function() {
+        if (!timerRunning) {
+          sendOtp();
+        }
+      });
+      </script>
             </script>
 </body>
 </html>
