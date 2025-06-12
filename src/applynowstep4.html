@@ -498,81 +498,179 @@
 
             const reader = new FileReader();
             reader.onload = function (e) {
-        preview.src = e.target.result;
-        preview.classList.remove("hidden");
-        if (nameInput) nameInput.value = file.name;
-        if (removeBtn) removeBtn.classList.remove("hidden");
-        if (replaceBtn) replaceBtn.classList.remove("hidden");
-        if (input) input.classList.add("hidden");
-            };
-            reader.readAsDataURL(file);
-          }
+              preview.src = e.target.result;
+              preview.classList.remove("hidden");
+              if (nameInput) nameInput.value = file.name;
+              if (removeBtn) removeBtn.classList.remove("hidden");
+              if (replaceBtn) replaceBtn.classList.remove("hidden");
+              if (input) input.classList.add("hidden");
+                // Make all attachment previews clickable for verification
+                preview.style.cursor = "pointer";
+                preview.title = "Click to view full size";
+                preview.onclick = function () {
+                // Show image in a modal using SweetAlert2 instead of opening a new window
+                Swal.fire({
+                  imageUrl: preview.src,
+                  imageAlt: nameInput ? nameInput.value : "Attachment Preview",
+                  showConfirmButton: true,
+                  confirmButtonText: "Close",
+                  width: 760,
+                  padding: '1.5em',
+                  background: '#fff',
+                  customClass: {
+                  popup: 'rounded-lg shadow-lg',
+                  confirmButton: 'bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700'
+                  }
+                });
+                };
+              };
+              reader.readAsDataURL(file);
+              }
 
-          function removeImage(previewId, nameId, fileId, removeId, replaceId) {
-            const preview = document.getElementById(previewId);
-            const nameInput = document.getElementById(nameId);
-            const fileInput = document.getElementById(fileId);
-            const removeBtn = removeId ? document.getElementById(removeId) : null;
-            const replaceBtn = replaceId ? document.getElementById(replaceId) : null;
+              function removeImage(previewId, nameId, fileId, removeId, replaceId) {
+              const preview = document.getElementById(previewId);
+              const nameInput = document.getElementById(nameId);
+              const fileInput = document.getElementById(fileId);
+              const removeBtn = removeId ? document.getElementById(removeId) : null;
+              const replaceBtn = replaceId ? document.getElementById(replaceId) : null;
 
-            preview.src = "";
-            preview.classList.add("hidden");
-            if (nameInput) nameInput.value = "";
-            if (fileInput) {
-        fileInput.value = "";
-        fileInput.classList.remove("hidden");
-            }
-            if (removeBtn) removeBtn.classList.add("hidden");
-            if (replaceBtn) replaceBtn.classList.add("hidden");
-          }
+              preview.src = "";
+              preview.classList.add("hidden");
+              if (nameInput) nameInput.value = "";
+              if (fileInput) {
+                fileInput.value = "";
+                fileInput.classList.remove("hidden");
+              }
+              if (removeBtn) removeBtn.classList.add("hidden");
+              if (replaceBtn) replaceBtn.classList.add("hidden");
+              // Remove click event for preview
+              preview.style.cursor = "";
+              preview.title = "";
+              preview.onclick = null;
+              }
 
-          function replaceImage(fileId) {
-            const fileInput = document.getElementById(fileId);
-            if (fileInput) {
-        fileInput.click();
-            }
-          }
+              function replaceImage(fileId) {
+              const fileInput = document.getElementById(fileId);
+              if (fileInput) {
+                fileInput.click();
+              }
+              }
 
-          document.getElementById("docFile").addEventListener("change", function () {
-            previewImage(this, "docPreview", "docName", "docRemove", "docReplace");
-          });
-          document.getElementById("docRemove").addEventListener("click", function () {
-            removeImage("docPreview", "docName", "docFile", "docRemove", "docReplace");
-          });
-          document.getElementById("docReplace").addEventListener("click", function () {
-            replaceImage("docFile");
-          });
+              // --- Multiple Attachments for Required Documents ---
+              // Container for previews
+              const docFileInput = document.getElementById("docFile");
+              const docNameInput = document.getElementById("docName");
+              const docPreview = document.getElementById("docPreview");
+              const docRemove = document.getElementById("docRemove");
+              const docReplace = document.getElementById("docReplace");
 
-          document.getElementById("picFile").addEventListener("change", function () {
-            previewImage(this, "picPreview", "picName", "picRemove", "picReplace");
-          });
-          document.getElementById("picRemove").addEventListener("click", function () {
-            removeImage("picPreview", "picName", "picFile", "picRemove", "picReplace");
-          });
-          document.getElementById("picReplace").addEventListener("click", function () {
-            replaceImage("picFile");
-          });
+              // Create a container for multiple previews if not exists
+              let docPreviewContainer = document.getElementById("docPreviewContainer");
+              if (!docPreviewContainer) {
+              docPreviewContainer = document.createElement("div");
+              docPreviewContainer.id = "docPreviewContainer";
+              docPreviewContainer.className = "flex flex-wrap gap-3 mt-2";
+              docPreview.parentNode.insertBefore(docPreviewContainer, docPreview.nextSibling);
+              }
 
-          document.getElementById("billingFile").addEventListener("change", function () {
-            previewImage(this, "billingPreview", "billingName", "billingRemove", "billingReplace");
-          });
-          document.getElementById("billingRemove").addEventListener("click", function () {
-            removeImage("billingPreview", "billingName", "billingFile", "billingRemove", "billingReplace");
-          });
-          document.getElementById("billingReplace").addEventListener("click", function () {
-            replaceImage("billingFile");
-          });
-           // Show error if captcha not completed before submit
+              // Hide the single preview image
+              docPreview.style.display = "none";
+
+              docFileInput.setAttribute("multiple", "multiple");
+
+              docFileInput.addEventListener("change", function () {
+              // Clear previous previews
+              docPreviewContainer.innerHTML = "";
+              docNameInput.value = "";
+              const files = Array.from(this.files);
+              if (files.length === 0) {
+                docRemove.classList.add("hidden");
+                docReplace.classList.add("hidden");
+                return;
+              }
+              docRemove.classList.remove("hidden");
+              docReplace.classList.remove("hidden");
+              docNameInput.value = files.map(f => f.name).join(", ");
+
+              files.forEach((file, idx) => {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                const img = document.createElement("img");
+                img.src = e.target.result;
+                img.className = "w-32 h-32 object-cover rounded border cursor-pointer";
+                img.title = file.name;
+                img.alt = file.name;
+                img.onclick = function () {
+                  Swal.fire({
+                  imageUrl: img.src,
+                  imageAlt: file.name,
+                  showConfirmButton: true,
+                  confirmButtonText: "Close",
+                  width: 760,
+                  padding: '1.5em',
+                  background: '#fff',
+                  customClass: {
+                    popup: 'rounded-lg shadow-lg',
+                    confirmButton: 'bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700'
+                  }
+                  });
+                };
+                docPreviewContainer.appendChild(img);
+                };
+                reader.readAsDataURL(file);
+              });
+              // Hide the file input after selection
+              docFileInput.classList.add("hidden");
+              });
+
+              docRemove.addEventListener("click", function () {
+              docPreviewContainer.innerHTML = "";
+              docNameInput.value = "";
+              docFileInput.value = "";
+              docFileInput.classList.remove("hidden");
+              docRemove.classList.add("hidden");
+              docReplace.classList.add("hidden");
+              });
+
+              docReplace.addEventListener("click", function () {
+              docFileInput.click();
+              });
+
+              // --- End Multiple Attachments ---
+
+              // 2x2 Picture (single)
+              document.getElementById("picFile").addEventListener("change", function () {
+              previewImage(this, "picPreview", "picName", "picRemove", "picReplace");
+              });
+              document.getElementById("picRemove").addEventListener("click", function () {
+              removeImage("picPreview", "picName", "picFile", "picRemove", "picReplace");
+              });
+              document.getElementById("picReplace").addEventListener("click", function () {
+              replaceImage("picFile");
+              });
+
+              // Proof of Billing (single)
+              document.getElementById("billingFile").addEventListener("change", function () {
+              previewImage(this, "billingPreview", "billingName", "billingRemove", "billingReplace");
+              });
+              document.getElementById("billingRemove").addEventListener("click", function () {
+              removeImage("billingPreview", "billingName", "billingFile", "billingRemove", "billingReplace");
+              });
+              document.getElementById("billingReplace").addEventListener("click", function () {
+              replaceImage("billingFile");
+              });
+
+              // Show error if captcha not completed before submit
               document.getElementById("employmentForm").addEventListener("submit", function (e) {
-                var captcha = document.querySelector('textarea[name="h-captcha-response"]');
-                var error = document.getElementById("captchaError");
-                if (!captcha || !captcha.value) {
-                  e.preventDefault();
-                  if (error) error.classList.remove("hidden");
-                  return false;
-                } else {
-                  if (error) error.classList.add("hidden");
-                }
+              var captcha = document.querySelector('textarea[name="h-captcha-response"]');
+              var error = document.getElementById("captchaError");
+              if (!captcha || !captcha.value) {
+                e.preventDefault();
+                if (error) error.classList.remove("hidden");
+                return false;
+              } else {
+                if (error) error.classList.add("hidden");
+              }
               });
           </script>
       <style>
