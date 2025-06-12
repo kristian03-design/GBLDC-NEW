@@ -562,6 +562,18 @@
           document.getElementById("billingReplace").addEventListener("click", function () {
             replaceImage("billingFile");
           });
+           // Show error if captcha not completed before submit
+              document.getElementById("employmentForm").addEventListener("submit", function (e) {
+                var captcha = document.querySelector('textarea[name="h-captcha-response"]');
+                var error = document.getElementById("captchaError");
+                if (!captcha || !captcha.value) {
+                  e.preventDefault();
+                  if (error) error.classList.remove("hidden");
+                  return false;
+                } else {
+                  if (error) error.classList.add("hidden");
+                }
+              });
           </script>
       <style>
     @keyframes fade-in {
