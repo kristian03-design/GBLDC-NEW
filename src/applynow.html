@@ -139,7 +139,7 @@
         </div>
     </div>
     
-    <form class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10">
+    <form class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10" >
         <!-- Branch -->
         <h3 class="text-2xl font-medium text-teal-900">Personal Information</h3>
         <p class="text-gray-600 mb-4">Please fill out the form below with your personal information.</p>
@@ -235,7 +235,7 @@
                     <label for="contact" class="block text-black">Contact Number<span class="text-red-500">*</span></label>
                     <div class="flex items-center">
                         <span class="px-2 text-black">+63</span>
-                        <input id="contact" type="text" class="p-2 rounded-sm w-full border focus:outline-none focus:ring-2 focus:ring-green-400" required>
+                        <input id="contact" type="tel" pattern="[0-9]{10}" maxlength="10" class="p-2 rounded-sm w-full border focus:outline-none focus:ring-2 focus:ring-green-400" required inputmode="numeric" placeholder="9123456789">
                     </div>
                 </div>
             </div>
@@ -459,17 +459,6 @@
     .animate-bounce-in { animation: bounce-in 1s; }
     .animate-card-fade-in { animation: fade-in-up 1.2s cubic-bezier(.39,.575,.565,1) both; }
     .animate-carousel-slide { animation: fade-in 1.2s; }
-    </style>
-      <style>
-            .custom-asterisk-list {
-                list-style-type: none;
-                padding-left: 0;
-            }
-            .custom-asterisk-list li::before {
-                content: "* ";
-                color: #ef4444; /* Tailwind red-500 */
-                font-weight: bold;
-            }
     </style>
 </body>
 </html>

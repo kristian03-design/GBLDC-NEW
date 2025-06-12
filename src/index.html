@@ -53,7 +53,7 @@
             <button type="button" class="flex items-center px-4 py-2  rounded-md hover:bg-gray-100">
               <img src="path/images/google.png" class="mr-2 w-8 h-8" alt="Google Icon">
             </button>
-            <button type="button" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-100">
+            <button type="button" onclick="fbLogin()" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-100">
               <img src="path/images/facebook.png" class="mr-2 w-8 h-8" alt="Facebook Icon">
             </button>
             </div>
@@ -67,6 +67,48 @@
       </div>
     </div>
    <script src="../src/javascript/eye-toggle.js"></script>
-   <script src="../src/login.php"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script>
+  // Ensure FB SDK is loaded before using FB functions
+  function fbLogin() {
+    if (typeof FB === "undefined") {
+      alert("Facebook SDK not loaded. Please check your internet connection and try again.");
+      return;
+    }
+    FB.login(function(response) {
+      if (response.authResponse) {
+        FB.api('/me', {fields: 'name,email'}, function(profile) {
+          if (!profile.email) {
+            alert("Unable to retrieve email from Facebook. Please ensure your Facebook account has a verified email.");
+            return;
+          }
+          fetch('facebook_register.php', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+            body: `email=${encodeURIComponent(profile.email)}&name=${encodeURIComponent(profile.name)}`
+          })
+          .then(res => res.text())
+          .then(data => {
+            window.location.href = 'user-landingpage.php';
+          })
+          .catch(err => {
+            alert("Error during Facebook login: " + err);
+          });
+        });
+      } else {
+        alert("Facebook login was not successful.");
+      }
+    }, {scope: 'email'});
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '4093222834242920', // Replace with your App ID
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v23.0'
+    });
+  };
+</script>
   </body>
   </html>

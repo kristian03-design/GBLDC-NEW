@@ -8,7 +8,12 @@
       crossorigin="anonymous"></script>
     <link rel="icon" type="image/png"
       href="path/images/logocoop-removebg-preview 2.png">
+    <!-- SweetAlert2 with custom CSS import -->
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Greater Bulacan Livelihood Development Cooperative</title>
   </head>
 
@@ -199,14 +204,20 @@
       </section>
       <div
         class="max-w-7xl mx-auto bg-white p-7 shadow-lg rounded-lg mt-6 mb-10">
-        <form action="submit" method="POST" class="space-y-6 font-normal max-w-7xl mx-auto p-11" id="employmentForm">
-          <h3 class="text-2xl font-medium text-teal-900">Employment Information</h3>
-          <p class="text-sm text-black">Please provide your employment information to help us understand your financial background.</p>
+        <form action="#" method="POST"
+          class="space-y-6 font-normal max-w-7xl mx-auto p-11"
+          id="employmentForm">
+          <h3 class="text-2xl font-medium text-teal-900">Employment
+            Information</h3>
+          <p class="text-sm text-gray-600">Please provide your employment
+            information to help us understand your financial background.</p>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">Employment Status
+              <label class="block text-normal font-medium mb-1">Employment
+                Status
                 <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
+              <select
+                class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Employed</option>
                 <option>Self-Employed</option>
@@ -227,7 +238,8 @@
             <div>
               <label class="block text-normal font-medium mb-1">Source of Funds
                 <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
+              <select
+                class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Salary</option>
                 <option>Business</option>
@@ -242,12 +254,18 @@
           </div>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">Employer/Business Name <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Employer/Business Name">
+              <label
+                class="block text-normal font-medium mb-1">Employer/Business
+                Name <span class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="Employer/Business Name">
             </div>
             <div>
-              <label class="block text-normal font-medium mb-1">Occupation <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-normal font-medium mb-1">Occupation <span
+                  class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded px-3 py-2  focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select Occupation</option>
                 <option>Accountant</option>
                 <option>Engineer</option>
@@ -274,14 +292,19 @@
             </div>
           </div>
           <div>
-            <label class="block text-normal font-medium mb-1">Company/Business Address <span class="text-red-500">*</span></label>
-            <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Company/Business Address">
+            <label class="block text-normal font-medium mb-1">Company/Business
+              Address <span class="text-red-500">*</span></label>
+            <input type="text"
+              class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+              placeholder="Company/Business Address">
           </div>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">Gross Monthly Income
+              <label class="block text-normal font-medium mb-1">Gross Monthly
+                Income
                 <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded  px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <select
+                class="w-full border rounded  px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Below ₱10,000</option>
                 <option>₱10,000 - ₱20,000</option>
@@ -292,8 +315,10 @@
               </select>
             </div>
             <div>
-              <label class="block text-normal font-medium mb-1">Nature/Type of Employment/Business <span class="text-red-500">*</span></label>
-              <select class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <label class="block text-normal font-medium mb-1">Nature/Type of
+                Employment/Business <span class="text-red-500">*</span></label>
+              <select
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
                 <option>Select</option>
                 <option>Government</option>
                 <option>Private</option>
@@ -314,12 +339,18 @@
           </div>
           <div class="grid md:grid-cols-2 gap-6">
             <div>
-              <label class="block text-normal font-medium mb-1">SSS/GSIS No. <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="SSS/GSIS No.">
+              <label class="block text-normal font-medium mb-1">SSS/GSIS No.
+                <span class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="SSS/GSIS No.">
             </div>
             <div>
-              <label class="block text-normal font-medium mb-1">TIN No. <span class="text-red-500">*</span></label>
-              <input type="text" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="TIN No.">
+              <label class="block text-normal font-medium mb-1">TIN No. <span
+                  class="text-red-500">*</span></label>
+              <input type="text"
+                class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                placeholder="TIN No.">
             </div>
           </div>
           <div class="pt-6 border-t">
@@ -327,89 +358,135 @@
             <label class="block font-normal mb-1 text-normal">Required Documents
               <span class="text-red-500">*</span></label>
             <div class="flex items-center gap-3">
-              <input type="text" id="docName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Required Documents" readonly>
+              <input type="text" id="docName"
+                class="border px-3 py-2 rounded w-96 mt-3"
+                placeholder="Required Documents" readonly>
               <input type="file" id="docFile" class="text-sm" accept="image/*">
-              <button type="button" id="docRemove" class="hidden text-red-500 text-base">Remove</button>
-              <button type="button" id="docReplace" class="hidden text-blue-500 text-base">Replace</button>
+              <button type="button" id="docRemove"
+                class="hidden text-red-500 text-base">Remove</button>
+              <button type="button" id="docReplace"
+                class="hidden text-blue-500 text-base">Replace</button>
             </div>
-            <img id="docPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            <img id="docPreview"
+              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
           </div>
           <div class="mt-6">
-            <label class="block font-normal mb-1 text-normal">2x2 Picture <span class="text-red-500">*</span></label>
+            <label class="block font-normal mb-1 text-normal">2x2 Picture <span
+                class="text-red-500">*</span></label>
             <div class="flex items-center gap-3">
-              <input type="text" id="picName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="2x2 Picture" readonly>
+              <input type="text" id="picName"
+                class="border px-3 py-2 rounded w-96 mt-3"
+                placeholder="2x2 Picture" readonly>
               <input type="file" id="picFile" class="text-sm" accept="image/*">
-              <button type="button" id="picRemove" class="hidden text-red-500  text-base">Remove</button>
-              <button type="button" id="picReplace" class="hidden text-blue-500  text-base">Replace</button>
+              <button type="button" id="picRemove"
+                class="hidden text-red-500  text-base">Remove</button>
+              <button type="button" id="picReplace"
+                class="hidden text-blue-500  text-base">Replace</button>
             </div>
-            <img id="picPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            <img id="picPreview"
+              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
           </div>
           <div class="mt-6">
             <label class="block font-normal mb-1 text-normal">Proof of Billing
               <span class="text-red-500">*</span></label>
             <div class="flex items-center gap-3">
-              <input type="text" id="billingName" class="border px-3 py-2 rounded w-96 mt-3" placeholder="Proof of Billing" readonly>
-              <input type="file" id="billingFile" class="text-sm" accept="image/*">
-              <button type="button" id="billingRemove" class="hidden text-red-500 text-base">Remove</button>
-              <button type="button" id="billingReplace" class="hidden text-blue-500 text-base">Replace</button>
+              <input type="text" id="billingName"
+                class="border px-3 py-2 rounded w-96 mt-3"
+                placeholder="Proof of Billing" readonly>
+              <input type="file" id="billingFile" class="text-sm"
+                accept="image/*">
+              <button type="button" id="billingRemove"
+                class="hidden text-red-500 text-base">Remove</button>
+              <button type="button" id="billingReplace"
+                class="hidden text-blue-500 text-base">Replace</button>
             </div>
-            <img id="billingPreview" class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+            <img id="billingPreview"
+              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
           </div>
-          <p class="text-sm text-gray-500 mt-2">Maximum upload file size: 1MB</p>
+          <p class="text-sm text-gray-500 mt-2">Maximum upload file size:
+            1MB</p>
           <!-- CAPTCHA Section -->
           <div class="mt-6">
             <!-- hCaptcha Widget -->
             <div class="mt-2">
-              <div class="h-captcha" data-sitekey="441cb5b6-238c-41fe-972c-6ed6db4cc3c4"></div>
+              <div class="h-captcha"
+                data-sitekey="4db0c162-5c22-405c-ba18-aa1ae5ee22c2"></div>
             </div>
             <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
-            <div id="captchaError" class="text-red-500 text-sm mt-2 hidden">Please complete the CAPTCHA.</div>
+            <div id="captchaError"
+              class="text-red-500 text-sm mt-2 hidden">Please complete the
+              CAPTCHA.</div>
             <div class="flex justify-end pt-6">
-              <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
+              <button type="submit"
+                class="bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700">Submit</button>
             </div>
           </div>
         </form>
-            <!-- Loading Modal -->
-            <div id="loadingModal"
-              class="fixed inset-0 p-10 flex items-center justify-center z-50 hidden">
-              <div class="bg-black rounded-md p-8 flex flex-col items-center"
-                id="loadingContent">
-                <svg class="animate-spin h-10 w-10 text-green-600 mb-4"
-                  xmlns="http://www.w3.org/2000/svg" fill="none"
-                  viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10"
-                    stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor"
-                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-                </svg>
-                <style>
-          #loadingModal .animate-spin {
-            animation: spin 1s linear infinite;
+        <script>
+          // Show SweetAlert2 loading on submit, then success after 1.5s
+          document.getElementById("employmentForm").addEventListener("submit", function (e) {
+            var captcha = document.querySelector('textarea[name="h-captcha-response"]');
+            var error = document.getElementById("captchaError");
+            if (!captcha || !captcha.value) {
+              // Let the other script handle error
+              return;
+            }
+            e.preventDefault();
+          Swal.fire({
+          title: 'Submitting, please wait...',
+          allowOutsideClick: false,
+            didOpen: () => {
+            Swal.showLoading();
+            // Add custom color to loading spinner
+          },
+          customClass: {
+            popup: 'rounded-lg shadow-lg bg-white p-8',
+            title: 'text-green-700 font-normal'
           }
-          @keyframes spin {
-            100% { transform: rotate(360deg); }
-          }
-        </style>
-                <span class="text-lg text-white">Submitting, please
-                  wait...</span>
-              </div>
-              <div
-                class="bg-black rounded-md p-9 flex flex-col items-center hidden"
-                id="successContent">
-                <svg class="h-16 w-16 text-green-500 mb-4" fill="none"
-                  viewBox="0 0 24 24" stroke="currentColor">
-                  <circle cx="12" cy="12" r="10" stroke="currentColor"
-                    stroke-width="4" class="opacity-25" />
-                  <path stroke="currentColor" stroke-width="4"
-                    stroke-linecap="round" stroke-linejoin="round"
-                    d="M7 13l3 3 7-7" />
-                </svg>
-                <span class="text-lg text-white">Submitted successfully!</span>
-              </div>
-            </div>
-          </form>
-          <script src="../src/javascript/dropdown.js"></script>
-          <script>
+        });
+
+        setTimeout(function () {
+          Swal.fire({
+            icon: 'success',
+            title: 'Submitted successfully!',
+            showConfirmButton: true,
+            customClass: {
+          popup: 'rounded-lg shadow-lg',
+          title: 'text-green-700 font-normal',
+          confirmButton: 'bg-green-600 text-white px-10 py-2 rounded-md font-normal hover:bg-green-700',
+          confirmButtonIcon: 'text-white',
+            },
+            timer: 2000,
+            timerProgressBar: true,
+            didOpen: () => {
+              // Change progress bar color to green
+              const progressBar = document.querySelector('.swal2-timer-progress-bar');
+              if (progressBar) {
+              progressBar.style.background = '#22c55e'; // Tailwind green-500
+              }
+            },
+            didClose: () => {
+            // Redirect to next step
+            },
+            backdrop: 'rgba(0, 0, 0, 0.5)',
+            position: 'center',
+            showClass: {
+              popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+              popup: 'animate__animated animate__fadeOutUp'
+            },
+            iconColor: '#5f995e', // Green color for success icon
+            customIcon: {
+          icon: 'text-green-900'
+            }
+          });
+        }, 1500);
+              });
+        </script>
+      </form>
+      <script src="../src/javascript/dropdown.js"></script>
+      <script>
           function previewImage(input, previewId, nameId, removeId, replaceId) {
             const file = input.files[0];
             if (!file) return;
@@ -486,60 +563,7 @@
             replaceImage("billingFile");
           });
           </script>
-          <script>
-        // Modal logic for loading and success
-        const form = document.querySelector("form");
-        const loadingModal = document.getElementById("loadingModal");
-        const loadingContent = document.getElementById("loadingContent");
-        const successContent = document.getElementById("successContent");
-
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-          // Show loading modal
-          loadingModal.style.background = "rgba(0,0,0,0.4)";
-          loadingModal.classList.remove("hidden");
-          loadingContent.classList.remove("hidden");
-          successContent.classList.add("hidden");
-
-          // Simulate async submit (replace with real AJAX if needed)
-          setTimeout(() => {
-            loadingContent.classList.add("hidden");
-            successContent.classList.remove("hidden");
-            // Hide modal after 2 seconds
-            setTimeout(() => {
-              loadingModal.classList.add("hidden");
-              successContent.classList.add("hidden");
-              form.reset();
-              // Optionally, reset file previews and buttons
-              ["doc", "pic", "billing"].forEach(prefix => {
-          document.getElementById(prefix + "Preview").classList.add("hidden");
-          document.getElementById(prefix + "Name").value = "";
-          document.getElementById(prefix + "File").value = "";
-          document.getElementById(prefix + "Remove").classList.add("hidden");
-          document.getElementById(prefix + "Replace").classList.add("hidden");
-          document.getElementById(prefix + "File").classList.remove("hidden");
-              });
-              // Redirect to landing page
-              window.location.href = "#";
-            }, 2000);
-          }, 1800);
-        });
-      </script>
-        <script>
-          // hCaptcha client-side validation
-          document.getElementById("employmentForm").addEventListener("submit", function (e) {
-            var captcha = document.querySelector('textarea[name="h-captcha-response"]');
-            var error = document.getElementById("captchaError");
-            if (!captcha || !captcha.value) {
-              e.preventDefault();
-              if (error) error.classList.remove("hidden");
-              return false;
-            } else {
-              if (error) error.classList.add("hidden");
-            }
-          });
-        </script>
-       <style>
+      <style>
     @keyframes fade-in {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -580,5 +604,5 @@
     .animate-card-fade-in { animation: fade-in-up 1.2s cubic-bezier(.39,.575,.565,1) both; }
     .animate-carousel-slide { animation: fade-in 1.2s; }
     </style>
-        </body>
-      </html>
+    </body>
+  </html>

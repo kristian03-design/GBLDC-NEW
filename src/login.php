@@ -15,8 +15,8 @@ if ($conn->connect_error) {
 }
 
 // Get form data safely
-$email = trim($_POST['email']);
-$password = $_POST['password'];
+$email = isset($_POST['email']) ? trim($_POST['email']) : '';
+$password = isset($_POST['password']) ? $_POST['password'] : '';
 
 // Validate email and password
 if (empty($email) || empty($password)) {
@@ -24,8 +24,8 @@ if (empty($email) || empty($password)) {
     exit;
 }
 
-// Prepare and execute query
-$stmt = $conn->prepare("SELECT id, password FROM users WHERE email = ?");
+// Prepare and execute query (fetch name too)
+$stmt = $conn->prepare("SELECT id, name, password FROM users WHERE email = ?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -41,10 +41,10 @@ if ($result->num_rows === 1) {
         $_SESSION['email'] = $email;
         
         // Redirect to dashboard or homepage
-        header("Location: user-landingpage.html");
+        header("Location: user-landingpage.php");
         exit;
     } else {
-        echo "Invalid password.";
+        echo "Invalid password. Please try again.";
     }
 } else {
     echo "No account found with that email.";

@@ -1,6 +1,24 @@
 /** @type {import('tailwindcss').Config} */
-// tailwind.config.js
 module.exports = {
+  content: [
+    './**/*.html',
+    './**/*.js'
+  ],
+  safelist: [
+    'rounded-xl',
+    'rounded-lg',
+    'shadow-lg',
+    'text-green-700',
+    'font-semibold',
+    'font-normal',
+    'bg-green-600',
+    'text-white',
+    'px-4',
+    'py-2',
+    'rounded-md',
+    'hover:bg-green-700',
+    'text-green-900'
+  ],
   theme: {
     extend: {
       colors: {
@@ -29,8 +47,6 @@ module.exports = {
           900: '#881337',
         },
       },
-
-      // Add gradient color stops if you want to use custom names in `from-`, `via-`, and `to-` classes
       gradientColorStops: theme => ({
         ...theme('colors'),
         'primary-start': '#3b82f6',
@@ -41,5 +57,4 @@ module.exports = {
     },
   },
   plugins: [],
-}
-
+};

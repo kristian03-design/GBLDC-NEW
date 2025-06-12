@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 session_start();
 
 // Database connection
@@ -24,6 +27,10 @@ if ($password !== $confirm_password) {
 }
 
 // Verify OTP
+if (!isset($_SESSION['otp']) || !isset($_SESSION['otp_expires']) || time() > $_SESSION['otp_expires']) {
+    die("OTP expired or not set. Please request a new OTP.");
+}
+
 if ($otp !== $_SESSION['otp']) {
   die("Invalid OTP!");
 }
@@ -40,9 +47,14 @@ if ($stmt->execute()) {
   // Clear OTP session data
   unset($_SESSION['otp']);
   unset($_SESSION['email']);
-
-  // Redirect to user landing page
-  header("Location: /src/user-landingpage.html");
+  unset($_SESSION['otp_expires']);
+  unset($_SESSION['password']);
+  unset($_SESSION['confirm_password']);
+  unset($_SESSION['otp_email']);
+  unset($_SESSION['otp']);
+  
+  // Redirect to login page or user landing page
+  header("Location: user-landingpage.php");
   exit();
 } else {
   echo "Error: " . $stmt->error;
