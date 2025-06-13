@@ -103,7 +103,7 @@ if (!isset($_SESSION['user_id'])) {
   
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-screen-2xl mx-auto text-left">
       <!-- Card 1 - Loan -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in  hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
         <span class="absolute -top-8 -right-8 w-32 h-32 bg-green-200 opacity-30 rounded-full blur-2xl pointer-events-none animate-pulse"></span>
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Loan</h3>
@@ -116,7 +116,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
 
       <!-- Card 2 - Deposit -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-200">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in  hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-200">
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Deposit</h3>
           <p class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Save up for your long-term needs or your next travel through creating a savings plan that is right for you.</p>
@@ -126,7 +126,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
 
       <!-- Card 3 - Insurance -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-400">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in  hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-400">
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Insurance</h3>
           <p class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Set yourself up for life through a lifelong insurance plan for you and your family’s future.</p>
@@ -136,7 +136,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
 
       <!-- Card 4 - Social Services -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in animate-bounce-slow hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-600">
+      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in  hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-600">
         <div>
           <h3 class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Social Services</h3>
           <p class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Enjoy and be entitled to various social services benefits especially designed for members in every step of their lives.</p>
@@ -178,7 +178,7 @@ if (!isset($_SESSION['user_id'])) {
   
     <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 tracking-normal text-center  "> 
       <!-- Card 1 -->
-      <div class="bg-white rounded-xl shadow transition-all duration-300 animate-bounce-slow hover:shadow-lg hover:scale-105 animate-card-fade-in">
+      <div class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
        <a href="#"><img src="path/images/event1.jpg" alt="Event 1" class="rounded-md mb-4 w-full h-54 object-cover animate-fade-in-up"/>
       <h3 class="text-lg  text-slate-800 mb-2 p-3">
         22nd Annual General Assembly of Greater Bulacan Livelihood Development Cooperative - held last March 22, 2024 @ Cafe De Apati, Makinabang, Baliuag, Bulacan
@@ -187,7 +187,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
   
       <!-- Card 2 -->
-      <div class="bg-white rounded-xl shadow transition-all duration-300 animate-bounce-slow hover:shadow-lg hover:scale-105 animate-card-fade-in">
+      <div class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
       <a href="#"><img src="path/images/event1.jpg" alt="Event 2" class="rounded-md mb-4 w-full h-54 object-cover animate-fade-in-up"/>
       <h3 class="text-lg text-slate-800 mb-2 p-3 ">
         Greater Bulacan Livelihood Development Cooperative - Supports Coop Parade, Kick-Off Ceremony and Launching of Go Koop - 
@@ -199,7 +199,7 @@ if (!isset($_SESSION['user_id'])) {
       </div>
   
       <!-- Card 3 -->
-      <div class="bg-white rounded-xl shadow transition-all duration-300 animate-bounce-slow hover:shadow-lg hover:scale-105 animate-card-fade-in">
+      <div class="bg-white rounded-xl shadow transition-all duration-300  hover:shadow-lg hover:scale-105 animate-card-fade-in">
       <a href="#"><img src="path/images/event1.jpg" alt="Event 3" class="rounded-md mb-4 w-full h-54 object-cover animate-fade-in-up"/>
       <h3 class="text-lg text-slate-800 mb-2 p-3">
       Greater Bulacan Livelihood Development Cooperative - Family Outing and Team Building held last April 12-13, 2025 @ Paynawa Beach Resort, Brgy. Laoag, Cabangan, Zambales
