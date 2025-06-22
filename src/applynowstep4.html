@@ -361,7 +361,7 @@
               <input type="text" id="docName"
                 class="border px-3 py-2 rounded w-96 mt-3"
                 placeholder="Required Documents" readonly>
-              <input type="file" id="docFile" class="text-sm" accept="image/*">
+              <input type="file" id="docFile" class="text-sm cursor-pointer" accept="image/*">
               <button type="button" id="docRemove"
                 class="hidden text-red-500 text-base">Remove</button>
               <button type="button" id="docReplace"
@@ -377,7 +377,7 @@
               <input type="text" id="picName"
                 class="border px-3 py-2 rounded w-96 mt-3"
                 placeholder="2x2 Picture" readonly>
-              <input type="file" id="picFile" class="text-sm" accept="image/*">
+              <input type="file" id="picFile" class="text-sm cursor-pointer" accept="image/*">
               <button type="button" id="picRemove"
                 class="hidden text-red-500  text-base">Remove</button>
               <button type="button" id="picReplace"
@@ -393,7 +393,7 @@
               <input type="text" id="billingName"
                 class="border px-3 py-2 rounded w-96 mt-3"
                 placeholder="Proof of Billing" readonly>
-              <input type="file" id="billingFile" class="text-sm"
+              <input type="file" id="billingFile" class="text-sm cursor-pointer"
                 accept="image/*">
               <button type="button" id="billingRemove"
                 class="hidden text-red-500 text-base">Remove</button>
@@ -440,8 +440,8 @@
             // Add custom color to loading spinner
           },
           customClass: {
-            popup: 'rounded-lg shadow-lg bg-white p-8',
-            title: 'text-green-700 font-normal'
+            popup: 'rounded-lg shadow-lg bg-white p-6',
+            title: 'text-green-700 font-semibold'
           }
         });
 
@@ -452,7 +452,7 @@
             showConfirmButton: true,
             customClass: {
           popup: 'rounded-lg shadow-lg',
-          title: 'text-green-700 font-normal',
+          title: 'text-green-700 font-semibold',
           confirmButton: 'bg-green-600 text-white px-10 py-2 rounded-md font-normal hover:bg-green-700',
           confirmButtonIcon: 'text-white',
             },
@@ -518,8 +518,8 @@
                   padding: '1.5em',
                   background: '#fff',
                   customClass: {
-                  popup: 'rounded-lg shadow-lg',
-                  confirmButton: 'bg-green-600 text-white px-6 py-2 rounded-md font-normal hover:bg-green-700'
+                  popup: 'rounded-md shadow-lg',
+                  confirmButton: 'text-white px-6 py-2 rounded-md font-normal'
                   }
                 });
                 };
