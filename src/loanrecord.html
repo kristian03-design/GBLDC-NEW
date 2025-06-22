@@ -1,116 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./output.css" rel="stylesheet">
-      <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
-    <title>User Dashboard</title>
-    <!-- Add Font Awesome for icons -->
+    <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+    <title>Loan Dashboard</title>
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+  </head>
+  <body>
+    <div class="min-h-screen flex">
+      <!-- Sidebar -->
+      <aside class="w-1/5 bg-white h-screen p-5 shadow-lg flex flex-col">
+        <div class="flex items-center space-x-3">
+          <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo" class="w-22 h-16">
+          <h1 class="text-3xl font-bold tracking-wider">GBLDC</h1>
+        </div>
+        <div class="mt-6">
+          <div class="flex items-center space-x-3 mb-4">
+            <img src="path/images/Kristian.png" alt="Profile" class="w-17 h-16 rounded-full">
+            <div>
+              <p class="font-semibold">Kristian Lloyd Hernandez</p>
+              <p class="text-sm text-gray-500">hkristianlloyd2@gmail.com</p>
+            </div>
+          </div>
+          <nav class="flex flex-col gap-2">
+            <a href="#" class="flex items-center p-4 bg-green-500 text-white rounded-lg font-medium">
+              <i class="fa-solid fa-house mr-3"></i>Loan Dashboard
+            </a>
+            <a href="#" class="flex items-center p-4 hover:bg-gray-200 rounded-lg font-medium">
+              <i class="fas fa-bell mr-3"></i>Notifications
+            </a>
+            <a href="checkloanstatus.html" class="flex items-center p-4 hover:bg-gray-200 rounded-lg font-medium">
+              <i class="fa-solid fa-money-bill-wave mr-3"></i>Check Loan Status
+            </a>
+            <a href="#" class="flex items-center p-4 hover:bg-gray-200 rounded-lg font-medium">
+              <i class="fas fa-envelope mr-3"></i>Contact Us
+            </a>
+            <a href="user-faq.html" class="flex items-center p-4 hover:bg-gray-200 rounded-lg font-medium">
+              <i class="fas fa-question-circle mr-3"></i>FAQ
+            </a>
+            <a href="landingpage.html" class="flex items-center p-4 hover:bg-gray-200 rounded-lg font-medium">
+              <i class="fas fa-sign-out-alt mr-3"></i>Logout
+            </a>
+          </nav>
+          <div class="mt-10 text-left mx-3">
+            <h2 class="text-base font-bold">Get the App Now</h2>
+            <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo" class="w-24 h-18 mx-2 mt-2">
+            <button class="w-32 mt-1 px-4 py-2 bg-green-600 text-white rounded-lg font-medium">Download</button>
+          </div>
+        </div>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 mx-auto p-4">
+        <h1 class="text-2xl font-bold mt-4">Welcome, Kristian!</h1>
+        <p class="text-gray-600">Here’s your loan status and payment details.</p>
+        <hr class="border-black mt-6 border-solid">
 
-<body>
-    <div class="bg-gray-100">
-        <div class="flex">
-            <!-- Sidebar -->
-            <div class="w-1/5 bg-white h-screen p-5 shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo" class="w-22 h-16">
-                    <h1 class="text-3xl font-bold tracking-wider">GBLDC</h1>
-                </div>
-                <div class="mt-6">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="path/images/Kristian.png" alt="Profile" class="w-17 h-16 rounded-full">
-                        <div>
-                            <p class="font-semibold">Kristian Lloyd Hernandez</p>
-                            <p class="text-sm text-gray-500">hkristianlloyd2@gmail.com</p>
-                        </div>
-                    </div>
-                    <nav>
-                        <a href="user-dashboard-updated.html" class="flex items-center p-4 mt-6  text-black hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fa-solid fa-house mr-3"></i>Dashboard
-                        </a>
-                        <a href="#" class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-bell mr-3"></i>Notifications
-                        </a>
-                        <a href="#" class="flex items-center p-4 mt-4 bg-green-500 text-white rounded-lg font-medium">
-                            <i class="fas fa-file-invoice-dollar mr-3"></i>Loan Record
-                        </a>
-                        <a href="#" class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-envelope mr-3"></i>Contact Us
-                        </a>
-                        <a href="user-faq.html" class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-question-circle mr-3"></i>FAQ
-                        </a>
-                        <a href="landingpage.html"
-                            class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-sign-out-alt mr-3"></i>Logout
-                        </a>
-                        <div class="mt-23 text-left mx-3">
-                            <h2 class="text-base font-bold">Get the App Now</h2>
-                            <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo"
-                                class="w-24 h-18 mx-2 mt-2">
-                            <button
-                                class="w-32 mt-1 px-4 py-2 bg-green-600 text-white rounded-lg font-medium">Download</button>
-                    </nav>
-                </div>
+        <!-- Loan Status and Credit Score Side by Side -->
+        <div class="flex flex-col md:flex-row gap-6 mt-6">
+          <!-- Loan Details Card -->
+            <section class="bg-white rounded-lg shadow p-6 flex-1 drop-shadow-xl">
+            <h2 class="text-xl font-semibold text-gray-800">Loan Details</h2>
+            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+              <p class="text-gray-500 text-sm">Application ID:</p>
+              <p class="text-gray-800 font-bold">LOAN123A</p>
+              </div>
+              <div>
+              <p class="text-gray-500 text-sm">Approved Amount:</p>
+              <p class="text-gray-800 font-bold">PHP 50,000</p>
+              </div>
+              <div>
+              <p class="text-gray-500 text-sm">Interest Rate:</p>
+              <p class="text-gray-800 font-bold">5%</p>
+              </div>
+              <div>
+              <p class="text-gray-500 text-sm">Repayment Period:</p>
+              <p class="text-gray-800 font-bold">12 months</p>
+              </div>
+              <div class="col-span-2 mt-4">
+              <p class="text-gray-500 text-sm">Credit Score Impact:</p>
+              <p class="text-gray-800 font-bold">
+                Your current credit score is 
+                <span id="loan-credit-score" class="text-green-600">--</span>
+                <span class="text-xs text-gray-500">(affected by your loan payments)</span>
+              </p>
+              </div>
+              <div class="col-span-2 mt-2">
+              <p class="text-gray-500 text-sm">Real-time Payment Amount:</p>
+              <p class="text-gray-800 font-bold">
+                <span id="realtimeAmountDisplay">PHP 4,375</span>
+                <span class="text-xs text-gray-500">(updates as you type in the payment modal)</span>
+              </p>
+              </div>
             </div>
-            <!-- Main Content -->
-            <div class="w-4/5 p-6">
-                <h1 class="text-2xl font-bold w-64 inline-block justify-between">Welcome, Kristian!</h1>
-                <hr class="border-black mt-6 border-solid">
-                <p class="text-gray-600 mt-4">Here are your loan records and offers.</p>
-                <div class="overflow-x-auto ">
-                    <table class="w-full text-left border border-gray-300 mt-4 rounded-lg shadow-md table-auto">
-                      <thead class="bg-green-600 text-white">
-                        <tr>
-                          <th class="p-3 font-medium">Borrower</th>
-                          <th class="p-3 font-medium">Amount</th>
-                          <th class="p-3 font-medium">Loan Date</th>
-                          <th class="p-3 font-medium">Due Date</th>
-                          <th class="p-3 font-medium">Status</th>
-                        </tr>
-                      </thead>
-                      <tbody class="bg-white divide-y divide-gray-200">
-                        <tr>
-                          <td class="p-3">Kristian Lloyd Hernandez</td>
-                          <td class="p-3">Php 5,000</td>
-                          <td class="p-3">2025-04-01</td>
-                          <td class="p-3">2025-07-01</td>
-                          <td class="p-3"><span class="text-red-600 font-medium">Ongoing</span></td>
-                        </tr>
-                        <tr>
-                            <td class="p-3">Kristian Lloyd Hernandez</td>
-                            <td class="p-3">Php 10,000</td>
-                            <td class="p-3">2025-03-01</td>
-                            <td class="p-3">2025-08-01</td>
-                            <td class="p-3"><span class="text-green-600 font-medium">Complete</span></td>
-                          </tr>
-                          <tr>
-                            <td class="p-3">Kristian Lloyd Hernandez</td>
-                            <td class="p-3">Php 15,000</td>
-                            <td class="p-3">2025-02-01</td>
-                            <td class="p-3">2025-10-01</td>
-                            <td class="p-3"><span class="text-green-600 font-medium">Complete</span></td>
-                          </tr>
-                          <tr>
-                            <td class="p-3">Kristian Lloyd Hernandez</td>
-                            <td class="p-3">Php 25,000</td>
-                            <td class="p-3">2025-06-01</td>
-                            <td class="p-3">2025-12-01</td>
-                            <td class="p-3"><span class="text-green-600 font-medium">Complete</span></td>
-                          </tr>
-                          <tr>
-                            <td class="p-3">Kristian Lloyd Hernandez</td>
-                            <td class="p-3">Php 20,000</td>
-                            <td class="p-3">2025-03-01</td>
-                            <td class="p-3">2025-08-01</td>
-                            <td class="p-3"><span class="text-green-600 font-medium">Complete</span></td>
-                          </tr>
-                      </tbody>
-                    </table>
-                </div>
+            </section>
+          <!-- Credit Score Card -->
+          <section class="bg-white p-6 rounded-lg shadow-lg text-center w-full md:w-1/3 flex flex-col items-center justify-center">
+            <h2 class="text-lg font-bold">Credit Score</h2>
+            <div class="mt-4">
+              <div class="relative inline-block w-24 h-24">
+                <svg class="w-full h-full" viewBox="0 0 100 100">
+                  <circle cx="50" cy="50" r="40" stroke="#e5e7eb" stroke-width="10" fill="none"></circle>
+                  <circle id="credit-score-circle" cx="50" cy="50" r="40" stroke="#22c55e" stroke-width="10" fill="none" stroke-dasharray="420" stroke-dashoffset="165"></circle>
+                </svg>
+                <div id="credit-score-text" class="absolute inset-0 flex items-center justify-center text-xl font-bold">100%</div>
+              </div>
             </div>
-          </body>
-          </html>
+            <p class="text-sm text-black mt-2">What is Credit Score?</p>
+            <p class="text-xs text-black mt-2">This is your Coop Trust Score, used as a basis to determine the various activities you do on Coop</p>
+            <p class="text-xs text-black mt-2">Increase your credit score by paying on-time</p>
+          </section>
+        </div>
+
+        <!-- Payment Status Section -->
+        <section class="bg-white rounded-lg shadow p-6 mt-6 drop-shadow-xl">
+          <h2 class="text-xl font-semibold text-gray-800">Repayment Status</h2>
+          <div class="mt-4">
+            <p class="text-teal-900">Next Due Date: <span class="font-bold text-black">July 15, 2025</span></p>
+            <p class="text-teal-900">Monthly Payment: <span class="font-bold text-black">PHP 4,375</span></p>
+          </div>
+          <div class="mt-4 flex space-x-3">
+            <button id="makePaymentBtn" class="bg-green-600 text-white rounded-lg py-2 px-4 hover:bg-green-700">Make a Payment</button>
+            <a href="#" class="bg-gray-200 text-gray-800 rounded-lg py-2 px-4 hover:bg-gray-300">View Payment Schedule</a>
+          </div>
+        </section>
+
+        <!-- Payment History Table -->
+        <section class="bg-white rounded-lg shadow p-6 mt-6 drop-shadow-xl">
+          <h2 class="text-xl font-semibold text-gray-800">Payment History</h2>
+          <table class="w-full mt-4 text-left border-collapse" id="paymentHistoryTable">
+            <thead>
+              <tr class="bg-gray-100 text-gray-600">
+          <th class="p-2">Date</th>
+          <th class="p-2">Amount</th>
+          <th class="p-2">Mode of Payment</th>
+          <th class="p-2">Status</th>
+              </tr>
+            </thead>
+            <tbody id="paymentHistoryBody">
+              <tr class="border-t">
+          <td class="p-2">June 15, 2025</td>
+          <td class="p-2">PHP 4,375</td>
+          <td class="p-2">Credit/Debit Card</td>
+          <td class="p-2 text-green-600 font-bold">Paid</td>
+              </tr>
+              <tr class="border-t">
+          <td class="p-2">May 15, 2025</td>
+          <td class="p-2">PHP 4,375</td>
+          <td class="p-2">Gcash</td>
+          <td class="p-2 text-green-600 font-bold">Paid</td>
+              </tr>
+              <tr class="border-t">
+          <td class="p-2">April 15, 2025</td>
+          <td class="p-2">PHP 4,375</td>
+          <td class="p-2">Credit/Debit Card</td>
+          <td class="p-2 text-green-600 font-bold">Paid</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+        <script>
+     
+        </script>
+      </main>
+
+      <!-- Payment Modal -->
+      <div id="paymentModal" class="fixed inset-0 flex items-center justify-center hidden z-50 transition-opacity duration-300 ease-in-out animate-fadeIn">
+        <div class="bg-white rounded-lg p-8 w-1/3 shadow-lg">
+          <h2 class="text-xl font-bold text-teal-900">Make a Payment</h2>
+          <p class="text-sm text-gray-600 mt-1">Enter your payment details to proceed.</p>
+          <form id="paymentForm" class="mt-4 space-y-4">
+            <div>
+              <label class="block text-gray-600 text-sm">Amount (PHP):</label>
+              <input id="paymentAmount" type="number" value="4375" required class="w-full p-2 mt-1 border rounded focus:border-green-500 focus:ring-green-500">
+            </div>
+            <div>
+              <label class="block text-gray-600 text-sm">Payment Method:</label>
+              <select id="paymentMethod" class="w-full p-2 mt-1 border rounded focus:border-green-500 focus:ring-green-500">
+                <option value="card">Credit/Debit Card</option>
+                <option value="gcash">Gcash</option>
+              </select>
+            </div>
+            <div class="flex justify-end space-x-3 mt-4">
+              <button id="cancelPayment" type="button" class="bg-gray-300 text-gray-800 rounded py-2 px-4 hover:bg-gray-400">Cancel</button>
+              <button id="submitPayment" type="submit" class="bg-green-600 text-white rounded py-2 px-4 hover:bg-green-700">Pay Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Load SweetAlert2 if not already loaded
+        if (!document.getElementById('swal2-cdn')) {
+          const script = document.createElement('script');
+          script.id = 'swal2-cdn';
+          script.src = 'https://cdn.jsdelivr.net/npm/sweetalert2@11';
+          document.head.appendChild(script);
+        }
+
+        // Element references
+        const makePaymentBtn = document.getElementById('makePaymentBtn');
+        const paymentModal = document.getElementById('paymentModal');
+        const cancelButton = document.getElementById('cancelPayment');
+        const paymentForm = document.getElementById('paymentForm');
+        const paymentAmountInput = document.getElementById('paymentAmount');
+        const paymentMethodInput = document.getElementById('paymentMethod');
+        const circle = document.getElementById("credit-score-circle");
+        const scoreText = document.getElementById("credit-score-text");
+        const loanScore = document.getElementById("loan-credit-score");
+        const paymentHistoryBody = document.getElementById('paymentHistoryBody');
+
+        // Credit score calculation
+        function getCreditScore(amount) {
+          amount = Number(amount);
+          if (amount >= 20000) return 90;
+          if (amount >= 10000) return 70;
+          if (amount >= 5000) return 55;
+          return 60;
+        }
+
+        // Update credit score UI
+        function updateCreditScoreUI(score) {
+          if (circle && scoreText) {
+            const radius = 40;
+            const circumference = 2 * Math.PI * radius;
+            circle.setAttribute("stroke", score < 50 ? "#f87171" : "#22c55e");
+            const offset = circumference * (1 - score / 100);
+            circle.setAttribute("stroke-dasharray", circumference);
+            circle.setAttribute("stroke-dashoffset", offset);
+            scoreText.textContent = `${score}%`;
+          }
+          if (loanScore) loanScore.textContent = `${score}%`;
+        }
+
+        // Modal helpers
+        function showModal() {
+          paymentModal.classList.remove('hidden');
+          paymentModal.style.background = 'rgba(0,0,0,0.5)';
+        }
+        function hideModal() {
+          paymentModal.classList.add('hidden');
+          paymentModal.style.background = '';
+        }
+
+        // Payment method text
+        function getPaymentMethodText(method) {
+          if (method === 'card') return 'Credit/Debit Card';
+          if (method === 'gcash') return 'Gcash';
+          return method;
+        }
+
+        // Add new payment to history table
+        function addPaymentToHistory(date, amount, method) {
+          const tr = document.createElement('tr');
+          tr.className = 'border-t';
+          tr.innerHTML = `
+            <td class="p-2">${date}</td>
+            <td class="p-2">PHP ${Number(amount).toLocaleString()}</td>
+            <td class="p-2">${getPaymentMethodText(method)}</td>
+            <td class="p-2 text-green-600 font-bold">Paid</td>
+          `;
+          if (paymentHistoryBody.firstChild) {
+            paymentHistoryBody.insertBefore(tr, paymentHistoryBody.firstChild);
+          } else {
+            paymentHistoryBody.appendChild(tr);
+          }
+        }
+
+        // Initial credit score
+        let creditScore = getCreditScore(paymentAmountInput?.value || 0);
+        updateCreditScoreUI(creditScore);
+
+        // Event: Open modal
+        makePaymentBtn?.addEventListener('click', function (e) {
+          e.preventDefault();
+          showModal();
+        });
+
+        // Event: Cancel modal
+        cancelButton?.addEventListener('click', function (e) {
+          e.preventDefault();
+          hideModal();
+          if (window.Swal) {
+            Swal.fire({
+              icon: 'info',
+              title: 'Payment Cancelled',
+              text: 'You have cancelled the payment.',
+              confirmButtonColor: '#22c55e'
+            });
+          }
+        });
+
+        // Event: Payment form submit
+        paymentForm?.addEventListener('submit', function (e) {
+          e.preventDefault();
+          const amount = paymentAmountInput.value;
+          const method = paymentMethodInput.value;
+          hideModal();
+          if (window.Swal) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Payment Successful!',
+              html: `Processing payment of <b>PHP ${amount}</b> via <b>${getPaymentMethodText(method)}</b>.`,
+              confirmButtonColor: '#22c55e'
+            });
+          } else {
+            alert(`Processing payment of PHP ${amount} via ${getPaymentMethodText(method)}!`);
+            alert('✅ Payment successful!');
+          }
+          // Add payment to history after modal/alert
+          setTimeout(function () {
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            });
+            addPaymentToHistory(dateStr, amount, method);
+          }, 500);
+        });
+
+        // Event: Real-time payment amount and credit score update
+        paymentAmountInput?.addEventListener('input', function () {
+          // Update real-time amount display
+          const realtimeDisplay = document.getElementById('realtimeAmountDisplay');
+          if (realtimeDisplay) {
+            realtimeDisplay.textContent = `PHP ${Number(paymentAmountInput.value).toLocaleString()}`;
+          }
+          // Update credit score
+          const newScore = getCreditScore(paymentAmountInput.value);
+          updateCreditScoreUI(newScore);
+        });
+      });
+    </script>
+  </body>
+</html>
