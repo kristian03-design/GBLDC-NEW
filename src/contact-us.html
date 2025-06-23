@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact Us | GBLDC</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="bg-gray-50">
+    <div class="min-h-screen flex relative">
+      <!-- Sidebar -->
+      <aside class="w-80 lg:w-1/5 bg-white h-screen p-3 lg:p-5 shadow-lg flex flex-col fixed lg:relative z-50 sidebar-transition">
+        <div class="flex items-center space-x-2 lg:space-x-3 mb-4">
+          <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center">
+            <img src="path/images/logocoop-removebg-preview 2.png" />
+          </div>
+          <h1 class="text-xl lg:text-3xl font-bold tracking-wider text-gray-800">GBLDC</h1>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center space-x-3 mb-4 p-2 bg-gray-50 rounded-lg">
+            <div class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center">
+              <img src="path/images/Kristian.png" class="rounded-full" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold text-sm lg:text-base truncate">Kristian Lloyd Hernandez</p>
+              <p class="text-xs lg:text-sm text-gray-500 truncate">hkristianlloyd2@gmail.com</p>
+            </div>
+          </div>
+          <nav class="flex flex-col gap-1 lg:gap-2">
+            <a href="loandashboard.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fa-solid fa-house mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Loan Dashboard</span>
+            </a>
+            <a href="checkloanstatus.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fa-solid fa-money-bill-wave mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Check Loan Status</span>
+            </a>
+            <a href="contact-us.html" class="flex items-center p-3 lg:p-4 bg-green-500 text-white rounded-lg font-medium text-sm lg:text-base">
+              <i class="fas fa-envelope mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Contact Us</span>
+            </a>
+            <a href="user-faq.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fas fa-question-circle mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">FAQ</span>
+            </a>
+            <a href="account-settings.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fas fa-cog mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Account Settings</span>
+            </a>
+            <a href="#" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fas fa-sign-out-alt mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Logout</span>
+            </a>
+          </nav>
+        </div>
+        <div class="mt-6 lg:mt-10 text-center p-4 bg-green-50 rounded-lg">
+          <h2 class="text-sm lg:text-base font-bold text-green-800">Get the App Now</h2>
+          <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg flex items-center justify-center mx-auto mt-2">
+            <img src="path/images/logocoop-removebg-preview 2.png" />
+          </div>
+          <button class="w-full mt-3 px-4 py-2 bg-green-600 text-white rounded-lg font-medium text-sm hover:bg-green-700 transition-colors">
+            Download
+          </button>
+        </div>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 p-4 lg:p-6 ml-0 lg:ml-0">
+        <div class="mt-12 lg:mt-0 mb-6">
+          <h1 class="text-xl lg:text-2xl xl:text-3xl font-bold">Contact Us</h1>
+          <p class="text-gray-600 text-sm lg:text-base">Have a question or need help? Send us a message below.</p>
+          <hr class="border-gray-300 mt-4 lg:mt-6">
+        </div>
+        <section class="bg-white rounded-lg shadow-md p-6 max-w-xl mx-auto">
+          <form>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-medium mb-2">Your Name</label>
+              <input type="text" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Enter your name" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-medium mb-2">Your Email</label>
+              <input type="email" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" placeholder="Enter your email" />
+            </div>
+            <div class="mb-4">
+              <label class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+              <textarea class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400" rows="5" placeholder="Type your message"></textarea>
+            </div>
+            <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">Send Message</button>
+          </form>
+          <div class="mt-6 text-center text-gray-600 text-sm">
+            Or email us directly at <a href="mailto:support@gblcd.com" class="text-green-700 underline">support@gblcd.com</a>
+          </div>
+        </section>
+      </main>
+    </div>
+    </body>
+</html>

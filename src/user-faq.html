@@ -1,142 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="./output.css" rel="stylesheet">
-       <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
-    <title>User Dashboard</title>
-    <!-- Add Font Awesome for icons -->
-    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-    <div class="bg-gray-100 ">
-        <div class="flex ">
-            <!-- Sidebar -->
-            <div class="w-1/5 bg-white h-screen p-5 shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo" class="w-22 h-16">
-                    <h1 class="text-3xl font-bold tracking-wider">GBLDC</h1>
-                </div>
-                <div class="mt-6">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <img src="path/images/Kristian.png" alt="Profile" class="w-17 h-16 rounded-full">
-                        <div>
-                            <p class="font-semibold">Kristian Lloyd Hernandez</p>
-                            <p class="text-sm text-gray-500">hkristianlloyd2@gmail.com</p>
-                        </div>
-                    </div>
-                    <nav>
-                        <a href="user-dashboard-updated.html" class="flex items-center p-4 mt-6  text-black hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fa-solid fa-house mr-3"></i>Dashboard
-                        </a>
-                        <a href="#" class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-bell mr-3"></i>Notifications
-                        </a>
-                        <a href="loanrecord.html" class="flex items-center p-4 mt-4  hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-file-invoice-dollar mr-3"></i>Loan Record
-                        </a>
-                        <a href="#" class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-envelope mr-3"></i>Contact Us
-                        </a>
-                        <a href="user-faq.html" class="flex items-center p-4 mt-4 bg-green-500 text-white rounded-lg font-medium">
-                            <i class="fas fa-question-circle mr-3"></i>FAQ
-                        </a>
-                        <a href="landingpage.html"
-                            class="flex items-center p-4 mt-4 hover:bg-gray-200 rounded-lg font-medium">
-                            <i class="fas fa-sign-out-alt mr-3"></i>Logout
-                        </a>
-                        <div class="mt-23 text-left mx-3">
-                            <h2 class="text-base font-bold">Get the App Now</h2>
-                            <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo"
-                                class="w-24 h-18 mx-2 mt-2">
-                            <button
-                                class="w-32 mt-1 px-4 py-2 bg-green-600 text-white rounded-lg font-medium">Download</button>
-                    </nav>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>FAQ | GBLDC</title>
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body class="bg-gray-50">
+    <div class="min-h-screen flex relative">
+      <!-- Sidebar -->
+      <aside class="w-80 lg:w-1/5 bg-white h-screen p-3 lg:p-5 shadow-lg flex flex-col fixed lg:relative z-50 sidebar-transition">
+        <div class="flex items-center space-x-2 lg:space-x-3 mb-4">
+          <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center">
+            <img src="path/images/logocoop-removebg-preview 2.png" />
+          </div>
+          <h1 class="text-xl lg:text-3xl font-bold tracking-wider text-gray-800">GBLDC</h1>
+        </div>
+        <div class="mb-6">
+          <div class="flex items-center space-x-3 mb-4 p-2 bg-gray-50 rounded-lg">
+            <div class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center">
+              <img src="path/images/Kristian.png" class="rounded-full" />
             </div>
-            <section class="max-w-7xl mx-auto px-10 py-14 text-center">
-                <h2 class="text-2xl md:text-3xl font-semibold text-teal-900">
-                  Get to know more about our cooperative works
-                </h2>
-                <p class="mt-2 text-sm text-gray-600">
-                  We are here to clarify all the details you need to know before joining our community
-                </p>
-            
-                <!-- Top Cards -->
-                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <!-- Card -->
-                  <div class="bg-white shadow-md p-6 rounded-md hover:shadow-lg transition">
-                    <div class="flex justify-center">
-                      <div class="bg-green-600 p-4 rounded-full">
-                        <!-- Icon for Member -->
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M9 12h6m2 0a2 2 0 002-2V6a2 2 0 00-2-2H7a2 2 0 00-2 2v4a2 2 0 002 2m2 4h6m2 0a2 2 0 002-2v-2a2 2 0 00-2-2H7a2 2 0 00-2 2v2a2 2 0 002 2"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-teal-800">How to Become A Member?</h3>
-                  </div>
-            
-                  <!-- Card -->
-                  <div class="bg-white shadow-md p-6 rounded-md hover:shadow-lg transition">
-                    <div class="flex justify-center">
-                      <div class="bg-green-600 p-4 rounded-full">
-                        <!-- Icon for Jobs -->
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M16 7V4a1 1 0 00-1-1H9a1 1 0 00-1 1v3H5a1 1 0 00-1 1v11a2 2 0 002 2h12a2 2 0 002-2V8a1 1 0 00-1-1h-4z"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-teal-800">Jobs</h3>
-                  </div>
-            
-                  <!-- Card -->
-                  <div class="bg-white shadow-md p-6 rounded-md hover:shadow-lg transition">
-                    <div class="flex justify-center">
-                      <div class="bg-green-600 p-6 rounded-full">
-                        <!-- Icon for General -->
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" stroke-width="2"
-                             viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"/>
-                        </svg>
-                      </div>
-                    </div>
-                    <h3 class="mt-4 text-lg font-medium text-teal-800">General</h3>
-                  </div>
-                </div>
-            
-                <!-- Bottom Cards -->
-                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-                  <!-- News and Events -->
-                  <div class="border p-6 rounded-md text-left bg-white shadow-md hover:shadow-lg transition tracking-wide">
-                    <h4 class="text-xl font-semibold text-teal-900 ">News and Events</h4>
-                    <p class="mt-6 text-sm text-gray-600">
-                      Stay updated and be informed with what’s happening
-                    </p>
-                    <button class="mt-6 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-                      Subscribe
-                    </button>
-                  </div>
-            
-                  <!-- Online Application -->
-                  <div class="border p-7 rounded-md text-left bg-white shadow-md hover:shadow-lg transition tracking-wide">
-                    <h4 class="text-xl font-semibold text-teal-900">Online Application</h4>
-                    <p class="mt-6 text-sm text-gray-600">
-                      Begin your financial journey with us through answering our application form
-                    </p>
-                    <a href="applynow.html"><button class="mt-4 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
-                      Apply Now
-                    </button></a>
-                  </div>
-                </div>
-              </section>
-            </body>
-            </html>
-            
+            <div class="flex-1 min-w-0">
+              <p class="font-semibold text-sm lg:text-base truncate">Kristian Lloyd Hernandez</p>
+              <p class="text-xs lg:text-sm text-gray-500 truncate">hkristianlloyd2@gmail.com</p>
+            </div>
+          </div>
+          <nav class="flex flex-col gap-1 lg:gap-2">
+            <a href="loandashboard.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fa-solid fa-house mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Loan Dashboard</span>
+            </a>
+            <a href="checkloanstatus.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fa-solid fa-money-bill-wave mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Check Loan Status</span>
+            </a>
+            <a href="contact-us.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fas fa-envelope mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Contact Us</span>
+            </a>
+            <a href="user-faq.html" class="flex items-center p-3 lg:p-4 bg-green-500 text-white rounded-lg font-medium text-sm lg:text-base">
+              <i class="fas fa-question-circle mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">FAQ</span>
+            </a>
+            <a href="account-settings.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fas fa-cog mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Account Settings</span>
+            </a>
+            <a href="#" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+              <i class="fas fa-sign-out-alt mr-2 lg:mr-3 w-4"></i>
+              <span class="truncate">Logout</span>
+            </a>
+          </nav>
+        </div>
+        <div class="mt-6 lg:mt-10 text-center p-4 bg-green-50 rounded-lg">
+          <h2 class="text-sm lg:text-base font-bold text-green-800">Get the App Now</h2>
+          <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg flex items-center justify-center mx-auto mt-2">
+            <img src="path/images/logocoop-removebg-preview 2.png" />
+          </div>
+          <button class="w-full mt-3 px-4 py-2 bg-green-600 text-white rounded-lg font-medium text-sm hover:bg-green-700 transition-colors">
+            Download
+          </button>
+        </div>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 p-4 lg:p-6 ml-0 lg:ml-0">
+        <div class="mt-12 lg:mt-0 mb-6">
+          <h1 class="text-xl lg:text-2xl xl:text-3xl font-bold">Frequently Asked Questions</h1>
+          <p class="text-gray-600 text-sm lg:text-base">Find answers to common questions below.</p>
+          <hr class="border-gray-300 mt-4 lg:mt-6">
+        </div>
+        <section class="space-y-4">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="font-semibold text-teal-950 mb-2">How do I apply for a loan?</h2>
+            <p class="text-gray-700 text-sm">Go to the Loan Dashboard and click "Apply for Loan". Fill out the required information and submit your application.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="font-semibold text-teal-950 mb-2">How can I check my loan status?</h2>
+            <p class="text-gray-700 text-sm">Navigate to "Check Loan Status" in the sidebar to view your current loan application and payment status.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="font-semibold text-teal-950 mb-2">How do I change my account information?</h2>
+            <p class="text-gray-700 text-sm">Go to "Account Settings" to update your profile details or change your password.</p>
+          </div>
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="font-semibold text-teal-950 mb-2">Who do I contact for support?</h2>
+            <p class="text-gray-700 text-sm">You can use the "Contact Us" link in the sidebar or email support@gblcd.com for assistance.</p>
+          </div>
+        </section>
+        <div class="mt-8 text-center">
+          <p class="text-gray-700 text-sm">Still have questions?</p>
+          <a href="mailto:support@gblcd.com" class="inline-block mt-2 px-6 py-2 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors">Contact Support</a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
