@@ -299,13 +299,17 @@
                             account
                             and all associated data. This action cannot be
                             undone.</p>
-                        <button
-                            class="bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors">Delete
-                            Account</button>
+                      <button
+    id="deleteAccountBtn"
+    type="button"
+    class="bg-red-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-red-700 transition-colors">
+    Delete Account
+</button>
                     </section>
                 </main>
             </div>
  <script>
+    // JavaScript for dynamic payment methods management
 const paymentTableBody = document.getElementById('paymentTableBody');
 const paymentForm = document.getElementById('paymentForm');
 const paymentType = document.getElementById('paymentType');
@@ -398,6 +402,28 @@ renderPayments();
             e.target.value = '';
         }
     });
+    // Delete account confirmation
+    document.getElementById('deleteAccountBtn').addEventListener('click', function() {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "This will permanently delete your account and all associated data. This action cannot be undone.",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: '#006425',
+        confirmButtonText: 'Yes, delete it!',
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            Swal.fire(
+                'Deleted!',
+                'Your account has been deleted.',
+                'success'
+            );
+            // Here you would add your account deletion logic (e.g., AJAX request)
+        }
+    });
+});
 </script>
  </body>
  </html>
