@@ -29,9 +29,10 @@
                     <div
                         class="flex items-center space-x-3 mb-4 p-2 bg-gray-50 rounded-lg">
                         <div
-                            class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden">
-                            <img src="path/images/Kristian.png"
-                                class="rounded-full" />
+                            class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center overflow-hidden aspect-square">
+                            <img id="asideProfilePic"
+                                src="path/images/Kristian.png"
+                                class="rounded-full object-cover w-full h-full" />
                         </div>
                         <div class="flex-1 min-w-0">
                             <p
@@ -370,6 +371,13 @@ renderPayments();
         // Update aside profile picture if changed
         const profilePic = document.getElementById('profilePicPreview').src;
         const asideImg = document.querySelector('aside img.rounded-full');
+        if (asideImg) {
+            asideImg.classList.add('rounded-full', 'object-cover');
+            asideImg.style.width = '100%';
+            asideImg.style.height = '100%';
+            asideImg.style.aspectRatio = '1/1';
+            asideImg.style.objectFit = 'cover';
+        }
         if (asideImg) asideImg.src = profilePic;
         Swal.fire({
             icon: 'success',
@@ -379,16 +387,16 @@ renderPayments();
         });
     });
 
-    // Update aside profile picture live when changed
+    // Update profile picture preview and aside profile picture live when changed
     document.getElementById('profilePicInput')?.addEventListener('change', function(e) {
         const file = e.target.files[0];
         if (file && file.size <= 2 * 1024 * 1024) {
             const reader = new FileReader();
             reader.onload = function(ev) {
+                // Update main preview
                 document.getElementById('profilePicPreview').src = ev.target.result;
-                // Also update aside image live
-                const asideImg = document.querySelector('aside img.rounded-full');
-                if (asideImg) asideImg.src = ev.target.result;
+                // Update aside profile picture
+                document.getElementById('asideProfilePic').src = ev.target.result;
                 Swal.fire({
                     icon: 'success',
                     title: 'Profile picture changed!',
@@ -401,6 +409,22 @@ renderPayments();
             alert('File is too large. Max size is 2MB.');
             e.target.value = '';
         }
+    });
+
+    // Allow clicking aside profile picture to view enlarged
+    document.getElementById('asideProfilePic')?.addEventListener('click', function() {
+        Swal.fire({
+            imageUrl: this.src,
+            imageAlt: 'Profile Picture',
+            showConfirmButton: false,
+            showCloseButton: true,
+            width: 460,
+            padding: '1em',
+            background: '#fff',
+            beforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
     });
     // Delete account confirmation
     document.getElementById('deleteAccountBtn').addEventListener('click', function() {
@@ -424,6 +448,7 @@ renderPayments();
         }
     });
 });
+  // (Removed duplicate event listener for aside profile picture preview)
 </script>
  </body>
  </html>
