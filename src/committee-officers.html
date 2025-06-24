@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Committee Officers | GBLDC</title>
+        <link rel="stylesheet" href="output.css" />
+        <link rel="icon" type="image/png"
+            href="path/images/logocoop-removebg-preview 2.png">
+        <link href="../src/animation/animation.css" rel="stylesheet">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <script src="../src/javascript/dropdown.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body class="bg-gray-50 text-gray-800 font-sans antialiased">
+        <header
+            class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
+            <div
+                class="container-lg mx-auto flex justify-between items-center p-4">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-4 overflow-hidden ">
+                    <a href="landingpage.html"><img
+                            src="path/images/logocoop-removebg-preview 2.png"
+                            alt="GBLDC Logo"
+                            class="w-18 h-16 bg-auto"></a>
+                    <h1
+                        class="text-lg font-medium animate-fade-in-right">Greater
+                        Bulacan
+                        Livelihood Development Cooperative</h1>
+                </div>
+                <!-- Navigation -->
+                <nav
+                    class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
+                    <a href="landingpage.html"
+                        class="hover:text-green-600 transition-colors duration-300">HOME</a>
+                    <div class="toggle relative" id="dropdown-trigger">
+                        <a href="#"
+                            class="hover:text-green-600 flex items-center transition-colors duration-300"
+                            onclick="toggleDropdownProducts(event)">PRODUCT &
+                            SERVICES<span
+                                class="ml-1"><i
+                                    class="fas fa-chevron-down"></i></span></a>
+                        <div
+                            class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                            id="dropdown-menu-products">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Deposits</a>
+                            <a href="insurance.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Insurance</a>
+                            <a href="social-services.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Social
+                                Services</a>
+                        </div>
+                    </div>
+                    <div class="toggle relative" id="dropdown-trigger">
+                        <a href="#"
+                            class="hover:text-green-600 flex items-center transition-colors duration-300"
+                            onclick="toggleDropdown(event)">ABOUT<span
+                                class="ml-1"><i
+                                    class="fas fa-chevron-down"></i></span></a>
+                        <div
+                            class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                            id="dropdown-menu">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+                    <a href="news&events.html"
+                        class="hover:text-green-600 transition-colors duration-300">NEWS
+                        &
+                        EVENTS</a>
+                </nav>
+                <!-- Apply now Button -->
+                <div class="button gap-4 hidden md:flex items-center mr-10">
+                    <a href="index.html"
+                        class=" bg-green-500 text-white px-7 py-2 hover:bg-green-600 rounded-md font-normal">Login</a>
+                    <a href="applynow.html"
+                        class="border border-green-600 text-black px-6 py-2 rounded-md font-normal hover:bg-green-50">Apply
+                        Now</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button
+                    class="md:hidden text-black focus:outline-none animate-fade-in"
+                    onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+                <a href="landingpage.html"
+                    class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">HOME</a>
+                <div class="relative">
+                    <a href="#"
+                        class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
+                        onclick="toggleDropdownProductsMobile(event)">PRODUCT &
+                        SERVICES<span class="ml-1"><i
+                                class="fas fa-chevron-down"></i></span></a>
+                    <div
+                        class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
+                        id="dropdown-menu-products-mobile">
+                        <a href="loan.html"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Loans</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Deposits</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Insurance</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Social
+                            Services</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <a href="#"
+                        class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
+                        onclick="toggleDropdownMobileAbout(event)">ABOUT<span
+                            class="ml-1"><i
+                                class="fas fa-chevron-down"></i></span></a>
+                    <div
+                        class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
+                        id="dropdown-menu-about-mobile">
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">About
+                            GBLDC</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Mission
+                            & Vision</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Board
+                            of Directors</a>
+                        <a href="committee-officers.html"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Committee
+                            Officers</a>
+                    </div>
+                </div>
+                <a href="news&events.html"
+                    class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">NEWS
+                    & EVENTS</a>
+                <div class="flex flex-col items-left mt-4 w-44 px-4 ">
+                    <a href="index.html"
+                        class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
+                    <a href="applynow.html"
+                        class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50">Apply
+                        Now</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Committee Officers Section -->
+        <section
+            class="pt-28 pb-12 px-4 bg-gradient-to-r from-green-50 to-white">
+            <div class="max-w-5xl mx-auto text-center mb-10">
+                <h2
+                    class="text-3xl md:text-4xl font-semibold text-teal-900 mb-2">Committee
+                    Officers</h2>
+                <p class="text-gray-700 text-sm mb-4">Meet the dedicated
+                    committee officers supporting GBLDC’s mission and
+                    vision.</p>
+                <hr class="border-green-200 mb-6">
+            </div>
+            <div
+                class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <!-- Example Committee Officer 1 -->
+                <div
+                    class="bg-white rounded-md shadow-md p-6 flex flex-col items-center text-center animate-fade-in">
+                    <img src="path/images/committee1.jpg" alt="Credit Committee"
+                        class="w-32 h-32 object-cover rounded-full mb-4 shadow" />
+                    <h3 class="text-xl font-semibold text-green-700 mb-1">Elena
+                        Cruz</h3>
+                    <p class="text-gray-600 mb-2">Credit Committee Chair</p>
+                    <p class="text-gray-700 text-sm">Elena oversees loan
+                        approvals and ensures fair credit practices for all
+                        members.</p>
+                </div>
+                <!-- Example Committee Officer 2 -->
+                <div
+                    class="bg-white  rounded-md  shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-100">
+                    <img src="path/images/committee2.jpg" alt="Audit Committee"
+                        class="w-32 h-32 object-cover rounded-full mb-4 shadow" />
+                    <h3 class="text-xl font-semibold text-green-700 mb-1">Miguel
+                        Santos</h3>
+                    <p class="text-gray-600 mb-2">Audit Committee Chair</p>
+                    <p class="text-gray-700 text-sm">Miguel leads the audit team
+                        to maintain transparency and accountability in
+                        cooperative operations.</p>
+                </div>
+                <!-- Example Committee Officer 3 -->
+                <div
+                    class="bg-white rounded-md  shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-200">
+                    <img src="path/images/committee3.jpg"
+                        alt="Election Committee"
+                        class="w-32 h-32 object-cover rounded-full mb-4 shadow" />
+                    <h3 class="text-xl font-semibold text-green-700 mb-1">Grace
+                        Villanueva</h3>
+                    <p class="text-gray-600 mb-2">Election Committee Chair</p>
+                    <p class="text-gray-700 text-sm">Grace manages the election
+                        process, ensuring fairness and integrity in leadership
+                        selection.</p>
+                </div>
+                <!-- Example Committee Officer 4 -->
+                <div
+                    class="bg-white rounded-md  shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-300">
+                    <img src="path/images/committee4.jpg"
+                        alt="Mediation Committee"
+                        class="w-32 h-32 object-cover rounded-full mb-4 shadow" />
+                    <h3 class="text-xl font-semibold text-green-700 mb-1">Pedro
+                        Ramos</h3>
+                    <p class="text-gray-600 mb-2">Mediation Committee Chair</p>
+                    <p class="text-gray-700 text-sm">Pedro facilitates conflict
+                        resolution and promotes harmony among members.</p>
+                </div>
+                <!-- Example Committee Officer 5 -->
+                <div
+                    class="bg-white rounded-md  shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-400">
+                    <img src="path/images/committee5.jpg"
+                        alt="Education Committee"
+                        class="w-32 h-32 object-cover rounded-full mb-4 shadow" />
+                    <h3 class="text-xl font-semibold text-green-700 mb-1">Lorna
+                        Dela Cruz</h3>
+                    <p class="text-gray-600 mb-2">Education Committee Chair</p>
+                    <p class="text-gray-700 text-sm">Lorna organizes training
+                        and seminars for the continuous development of
+                        members.</p>
+                </div>
+                <!-- Example Committee Officer 6 -->
+                <div
+                    class="bg-white rounded-md  shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-500">
+                    <img src="path/images/committee6.jpg"
+                        alt="Gender and Development Committee"
+                        class="w-32 h-32 object-cover rounded-full mb-4 shadow" />
+                    <h3
+                        class="text-xl font-semibold text-green-700 mb-1">Marites
+                        Garcia</h3>
+                    <p class="text-gray-600 mb-2">Gender and Development
+                        Chair</p>
+                    <p class="text-gray-700 text-sm">Marites advocates for
+                        gender equality and leads related programs in the
+                        cooperative.</p>
+                </div>
+                <p class="col-span-full text-base text-gray-500 mt-4 text-center">Note: The pictures and names above are for demo purposes only.</p>
+            </div>
+        </section>
+         <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
+      <div class="max-w-7xl mx-auto px-4 mt-4">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
+
+          <!-- Products & Services -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Products &
+              Services</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="loan.html"
+                  class="hover:underline transition-colors duration-200">Loan
+                  Products</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Deposit
+                  Products</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Insurance
+                  Products</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Social
+                  Services</a></li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">About
+                  Greater Bulacan Livelihood Development Cooperative</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Senior
+                  Management</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Officers
+                  & Committees</a></li>
+            </ul>
+          </div>
+
+          <!-- Other Quicklinks -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Other
+              Quicklinks</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">News &
+                  Events</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">FAQs</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Contact</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Apply
+                  Now</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Downloadable
+                  Forms</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Privacy
+                  Policy</a></li>
+            </ul>
+          </div>
+          <!-- Download Our App -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Download Our
+              App</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Click
+                  Here to Download App</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="mt-12 text-center text-sm text-white font-normal">
+          GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS
+          RESERVED.
+        </div>
+      </div>
+    </footer>
+    </body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>About GBLDC | Greater Bulacan Livelihood Development
+            Cooperative</title>
+        <link rel="stylesheet" href="output.css" />
+        <link rel="icon" type="image/png"
+            href="path/images/logocoop-removebg-preview 2.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="../src/animation/animation.css" rel="stylesheet">
+           <script src="../src/javascript/dropdown.js"></script>
+        <style>
+    .about-hero {
+      background: linear-gradient(90deg, #e6f4ea 60%, #fff 100%);
+    }
+  </style>
+    </head>
+    <body class="bg-gray-50 text-gray-800 font-sans antialiased">
+        <!-- Header Section -->
+        <header
+            class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
+            <div
+                class="container-lg mx-auto flex justify-between items-center p-4">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-2 overflow-hidden ">
+                    <a href="landingpage.html"><img
+                            src="path/images/logocoop-removebg-preview 2.png"
+                            alt="GBLDC Logo" class="w-18 h-16 bg-auto"></a>
+                    <h1
+                        class="text-lg font-medium animate-fade-in-right">Greater
+                        Bulacan Livelihood Development Cooperative</h1>
+                </div>
+                <!-- Navigation -->
+                <nav
+                    class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
+                    <a href="landingpage.html"
+                        class="hover:text-green-600 transition-colors duration-300">HOME</a>
+                    <div class="toggle relative">
+                        <a href="#"
+                            class="hover:text-green-600 flex items-center transition-colors duration-300"
+                            onclick="toggleDropdownProducts(event)">PRODUCT &
+                            SERVICES<span class="ml-1"><i
+                                    class="fas fa-chevron-down"></i></span></a>
+                        <div
+                            class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                            id="dropdown-menu-products">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Deposits</a>
+                            <a href="insurance.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Insurance</a>
+                            <a href="social-services.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Social
+                                Services</a>
+                        </div>
+                    </div>
+                    <div class="toggle relative">
+                        <a href="#"
+                            class="hover:text-green-600 flex items-center transition-colors duration-300"
+                            onclick="toggleDropdown(event)">ABOUT<span
+                                class="ml-1"><i
+                                    class="fas fa-chevron-down"></i></span></a>
+                        <div
+                            class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                            id="dropdown-menu">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+                    <a href="news&events.html"
+                        class="hover:text-green-600 transition-colors duration-300">NEWS
+                        & EVENTS</a>
+                </nav>
+                <!-- Apply now Button -->
+                <div class="button gap-4 hidden md:flex items-center mr-10">
+                    <a href="index.html"
+                        class=" bg-green-500 text-white px-7 py-2 hover:bg-green-600 rounded-md font-normal">Login</a>
+                    <a href="applynow.html"
+                        class="border border-green-600 text-black px-6 py-2 rounded-md font-normal hover:bg-green-50">Apply
+                        Now</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button
+                    class="md:hidden text-black focus:outline-none animate-fade-in"
+                    onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <!-- Mobile Navigation -->
+            <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
+                <a href="landingpage.html"
+                    class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">HOME</a>
+                <div class="relative">
+                    <a href="#"
+                        class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
+                        onclick="toggleDropdownProductsMobile(event)">PRODUCT &
+                        SERVICES<span class="ml-1"><i
+                                class="fas fa-chevron-down"></i></span></a>
+                    <div
+                        class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
+                        id="dropdown-menu-products-mobile">
+                        <a href="loan.html"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Loans</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Deposits</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Insurance</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Social
+                            Services</a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <a href="#"
+                        class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
+                        onclick="toggleDropdownMobileAbout(event)">ABOUT<span
+                            class="ml-1"><i
+                                class="fas fa-chevron-down"></i></span></a>
+                    <div
+                        class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
+                        id="dropdown-menu-about-mobile">
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">About
+                            GBLDC</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Mission
+                            & Vision</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Board
+                            of Directors</a>
+                        <a href="#"
+                            class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Committee
+                            Officers</a>
+                    </div>
+                </div>
+                <a href="news&events.html"
+                    class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">NEWS
+                    & EVENTS</a>
+                <div class="flex flex-col items-left mt-4 w-44 px-4 ">
+                    <a href="index.html"
+                        class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
+                    <a href="applynow.html"
+                        class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50">Apply
+                        Now</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="about-hero pt-28 pb-12 px-4">
+            <div
+                class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-1 animate-fade-in">
+                    <h2
+                        class="text-3xl md:text-4xl font-semibold text-teal-900 mb-4">About
+                        Greater Bulacan Livelihood Development Cooperative</h2>
+                    <p class="text-gray-700 text-lg mb-6">
+                        The Greater Bulacan Livelihood Development Cooperative
+                        (GBLDC) is a community-based cooperative dedicated to
+                        empowering individuals and families in Bulacan through
+                        accessible financial services, livelihood programs, and
+                        social development initiatives. Our mission is to foster
+                        economic growth, financial inclusion, and sustainable
+                        development for our members and the wider community.
+                    </p>
+                    <ul class="list-disc list-inside text-gray-700 mb-6">
+                        <li>Inclusive financial solutions</li>
+                        <li>Livelihood and training programs</li>
+                        <li>Community-driven social services</li>
+                    </ul>
+                    <a href="applynow.html"
+                        class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">Become
+                        a Member</a>
+                </div>
+                <div class="flex-1 flex justify-center animate-fade-up">
+                    <img src="path/images/coop-group.jpg" alt="GBLDC Community"
+                        class="rounded-xl shadow-lg w-full max-w-md object-cover" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission, Vision, Core Values -->
+        <section class="max-w-5xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+            <div
+                class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-100">
+                <img src="path/images/mission.jpg" alt="Mission"
+                    class="w-24 h-24 object-cover rounded-full mb-4 shadow" />
+                <h3
+                    class="text-xl font-semibold text-green-700 mb-2">Mission</h3>
+                <p class="text-gray-700 text-sm">
+                    To provide quality financial products, livelihood
+                    opportunities, and social services that uplift the lives of
+                    our members and contribute to the progress of Bulacan.
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-200">
+                <img src="path/images/vision.jpg" alt="Vision"
+                    class="w-24 h-24 object-cover rounded-full mb-4 shadow" />
+                <h3
+                    class="text-xl font-semibold text-green-700 mb-2">Vision</h3>
+                <p class="text-gray-700 text-sm">
+                    To be the leading cooperative in Bulacan, recognized for
+                    excellence in service, innovation, and community impact.
+                </p>
+            </div>
+            <div
+                class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-300">
+                <img src="path/images/values.jpg" alt="Core Values"
+                    class="w-24 h-24 object-cover rounded-full mb-4 shadow" />
+                <h3 class="text-xl font-semibold text-green-700 mb-2">Core
+                    Values</h3>
+                <ul
+                    class="list-disc list-inside text-gray-700 text-sm text-left mx-auto"
+                    style="max-width: 180px;">
+                    <li>Integrity</li>
+                    <li>Service</li>
+                    <li>Empowerment</li>
+                    <li>Innovation</li>
+                    <li>Community</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- What We Offer Section -->
+        <section class="max-w-5xl mx-auto px-4 py-10">
+            <h2 class="text-2xl font-bold text-teal-900 mb-6 text-center">What
+                We Offer</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in">
+                    <img src="path/images/loan.jpg" alt="Loan Products"
+                        class="w-28 h-28 object-cover rounded-lg mb-4 shadow" />
+                    <h4 class="text-lg font-semibold text-green-700 mb-2">Loan
+                        Products</h4>
+                    <p class="text-gray-700 text-sm">Flexible loan options for
+                        business, education, and personal needs.</p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-100">
+                    <img src="path/images/savings.jpg" alt="Savings"
+                        class="w-28 h-28 object-cover rounded-lg mb-4 shadow" />
+                    <h4
+                        class="text-lg font-semibold text-green-700 mb-2">Savings
+                        & Deposits</h4>
+                    <p class="text-gray-700 text-sm">Secure savings and deposit
+                        services for members’ financial growth.</p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-200">
+                    <img src="path/images/insurance.jpg" alt="Insurance"
+                        class="w-28 h-28 object-cover rounded-lg mb-4 shadow" />
+                    <h4
+                        class="text-lg font-semibold text-green-700 mb-2">Insurance</h4>
+                    <p class="text-gray-700 text-sm">Affordable insurance and
+                        protection programs for peace of mind.</p>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-300">
+                    <img src="path/images/livelihood.jpg" alt="Livelihood"
+                        class="w-28 h-28 object-cover rounded-lg mb-4 shadow" />
+                    <h4
+                        class="text-lg font-semibold text-green-700 mb-2">Livelihood
+                        & Training</h4>
+                    <p class="text-gray-700 text-sm">Skills training and
+                        livelihood programs for sustainable development.</p>
+                </div>
+            </div>
+        </section>
+       <!-- FOOTER -->
+    <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
+      <div class="max-w-7xl mx-auto px-4 mt-4">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
+
+          <!-- Products & Services -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Products &
+              Services</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="loan.html"
+                  class="hover:underline transition-colors duration-200">Loan
+                  Products</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Deposit
+                  Products</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Insurance
+                  Products</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Social
+                  Services</a></li>
+            </ul>
+          </div>
+
+          <!-- About -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">About
+                  Greater Bulacan Livelihood Development Cooperative</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Senior
+                  Management</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Officers
+                  & Committees</a></li>
+            </ul>
+          </div>
+
+          <!-- Other Quicklinks -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Other
+              Quicklinks</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">News &
+                  Events</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">FAQs</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Contact</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Apply
+                  Now</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Downloadable
+                  Forms</a></li>
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Privacy
+                  Policy</a></li>
+            </ul>
+          </div>
+          <!-- Download Our App -->
+          <div>
+            <h4 class="font-semibold uppercase mb-4 text-white">Download Our
+              App</h4>
+            <ul class="space-y-2 font-light">
+              <li><a href="#"
+                  class="hover:underline transition-colors duration-200">Click
+                  Here to Download App</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Copyright -->
+        <div class="mt-12 text-center text-sm text-white font-normal">
+          GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS
+          RESERVED.
+        </div>
+      </div>
+    </footer>
+    </body>
+</html>
