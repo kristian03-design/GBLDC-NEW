@@ -5,7 +5,7 @@
           dots: false,
           arrows: false,
           infinite: true,
-          speed: 500,
+          speed: 1000,
           fade: false,
           cssEase: 'linear',
           slidesToShow: 3,
@@ -19,7 +19,7 @@
           breakpoint: 1024,
           settings: {
             slidesToShow: 2,
-            centerMode: true,
+            centerMode: false,
             centerPadding: '0px'
           }
         },
