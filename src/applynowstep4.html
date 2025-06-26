@@ -20,141 +20,222 @@
 
   <body class="bg-gray-50 font-sans antialiased">
     <!-- Header Section -->
-    <header class="bg-white shadow-md">
+    <header
+      class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
       <div class="container-lg mx-auto flex justify-between items-center p-4">
         <!-- Logo and Title -->
-        <div class="flex items-center space-x-4 overflow-hidden ">
-          <a href="landingpage.html"><img
-              src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo"
-              class="w-18 h-16 bg-auto"></a>
-          <h1 class="text-lg font-medium">Greater Bulacan Livelihood Development
-            Cooperative</h1>
-        </div>
-        <!-- Navigation -->
-        <nav
-          class="hidden md:flex space-x-7 text-black font-normal tracking-normal">
-          <a href="landingpage.html"
-            class="hover:text-green-600 transition-colors duration-300">HOME</a>
-          <div class="toggle relative">
-            <a href="#"
-              class="hover:text-green-600 flex items-center transition-colors duration-300"
-              onclick="toggleDropdownProducts(event)">PRODUCT & SERVICES<span
-                class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-            <div
-              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
-              id="dropdown-menu-products">
-              <a href="loan.html"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Loans</a>
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Deposits</a>
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Insurance</a>
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Social
-                Services</a>
-            </div>
-          </div>
-          <div class="toggle relative">
-            <a href="#"
-              class="hover:text-green-600 flex items-center transition-colors duration-300"
-              onclick="toggleDropdown(event)">ABOUT<span class="ml-1"><i
-                  class="fas fa-chevron-down"></i></span></a>
-            <div
-              class="absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 z-20 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
-              id="dropdown-menu">
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">About
-                GBLDC</a>
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Mission
-                & Vision</a>
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Board
-                of Directors</a>
-              <a href="#"
-                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">Committee
-                Officers</a>
-            </div>
-          </div>
-          <a href="news&events.html"
-            class="hover:text-green-600 transition-colors duration-300">NEWS &
-            EVENTS</a>
-        </nav>
-        <!-- Apply now Button -->
-        <div class="button gap-4 hidden md:flex items-center mr-10">
-          <a href="index.html"
-            class="bg-green-600 text-white px-7 py-2 rounded-lg font-normal hover:bg-green-800">Login</a>
-          <a href="applynow.html"
-            class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply
-            Now</a>
+        <div
+          class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
+          <a href="landingpage.html" class="flex-shrink-0">
+            <img src="path/images/logocoop-removebg-preview 2.png"
+              alt="GBLDC Logo"
+              class="w-12 h-12 sm:w-16 sm:h-14 lg:w-18 lg:h-16 bg-auto">
+          </a>
+          <h1
+            class="text-xs sm:text-base md:text-lg lg:text-xl font-medium animate-fade-in-right truncate">
+            Greater Bulacan Livelihood Development Cooperative
+          </h1>
         </div>
 
-        <!--Responsiveness for Other Devices Code Below-->
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
+          <a href="landingpage.html"
+            class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+            HOME
+          </a>
+
+          <!-- Products & Services Dropdown -->
+          <div class="relative" id="dropdown-trigger">
+            <a href="#"
+              class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+              onclick="toggleDropdownProducts(event)">
+              PRODUCT & SERVICES
+              <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+            </a>
+            <div
+              class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+              id="dropdown-menu-products">
+              <a href="loan-products.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Loans
+              </a>
+              <a href="deposit.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Deposits
+              </a>
+              <a href="insurance.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Insurance
+              </a>
+              <a href="social-services.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Social Services
+              </a>
+            </div>
+          </div>
+
+          <!-- About Dropdown -->
+          <div class="relative" id="dropdown-trigger-about">
+            <a href="#"
+              class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+              onclick="toggleDropdown(event)">
+              ABOUT
+              <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+            </a>
+            <div
+              class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+              id="dropdown-menu">
+              <a href="about-gbldc.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                About GBLDC
+              </a>
+              <a href="#"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Mission & Vision
+              </a>
+              <a href="board-of-directors.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Board of Directors
+              </a>
+              <a href="committee-officers.html"
+                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                Committee Officers
+              </a>
+            </div>
+          </div>
+
+          <a href="news&events.html"
+            class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+            NEWS & EVENTS
+          </a>
+        </nav>
+
+        <!-- Desktop Buttons -->
+        <div class="hidden lg:flex items-center gap-3 xl:gap-4">
+          <a href="index.html"
+            class="bg-green-500 text-white px-4 xl:px-7 py-2 hover:bg-green-600 rounded-md font-normal whitespace-nowrap text-sm xl:text-base">
+            Login
+          </a>
+          <a href="applynow.html"
+            class="border border-green-600 text-black px-4 xl:px-6 py-2 rounded-md font-normal hover:bg-green-50 whitespace-nowrap text-sm xl:text-base">
+            Apply Now
+          </a>
+        </div>
+
+        <!-- Tablet Buttons (hidden on mobile and desktop) -->
+        <div class="hidden md:flex lg:hidden items-center gap-2">
+          <a href="index.html"
+            class="bg-green-500 text-white px-3 py-2 hover:bg-green-600 rounded-md font-normal text-sm">
+            Login
+          </a>
+          <a href="applynow.html"
+            class="border border-green-600 text-black px-3 py-2 rounded-md font-normal hover:bg-green-50 text-sm">
+            Apply
+          </a>
+        </div>
 
         <!-- Mobile Menu Button -->
-        <button class="md:hidden text-black focus:outline-none animate-fade-in"
+        <button
+          class="lg:hidden text-black focus:outline-none animate-fade-in ml-2 flex-shrink-0"
           onclick="toggleMobileMenu()">
-          <i class="fas fa-bars text-2xl"></i>
+          <i class="fas fa-bars text-xl sm:text-2xl"></i>
         </button>
       </div>
+
       <!-- Mobile Navigation -->
-      <nav class="md:hidden bg-white shadow-lg hidden" id="mobile-menu">
-        <a href="landingpage.html"
-          class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">HOME</a>
-        <div class="relative">
-          <a href="#"
-            class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
-            onclick="toggleDropdownProductsMobile(event)">PRODUCT &
-            SERVICES<span class="ml-1"><i
-                class="fas fa-chevron-down"></i></span></a>
-          <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
-            id="dropdown-menu-products-mobile">
-            <a href="loan.html"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Loans</a>
+      <nav class="lg:hidden bg-white shadow-lg hidden" id="mobile-menu">
+        <div class="px-4 py-2 space-y-1">
+          <a href="landingpage.html"
+            class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+            HOME
+          </a>
+
+          <!-- Mobile Products & Services Dropdown -->
+          <div class="relative">
             <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Deposits</a>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Insurance</a>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Social
-              Services</a>
+              class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+              onclick="toggleDropdownProductsMobile(event)">
+              <span>PRODUCT & SERVICES</span>
+              <i class="fas fa-chevron-down transition-transform duration-200"
+                id="products-arrow"></i>
+            </a>
+            <div
+              class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden"
+              id="dropdown-menu-products-mobile">
+              <a href="loan-products.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Loans
+              </a>
+              <a href="deposit.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Deposits
+              </a>
+              <a href="insurance.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Insurance
+              </a>
+              <a href="social-services.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Social Services
+              </a>
+            </div>
           </div>
-        </div>
-        <div class="relative">
-          <a href="#"
-            class="flex px-4 py-2 hover:bg-green-200 items-center transition-colors duration-200"
-            onclick="toggleDropdownMobileAbout(event)">ABOUT<span
-              class="ml-1"><i class="fas fa-chevron-down"></i></span></a>
-          <div class="hidden bg-slate-50 p-3 rounded-sm shadow-xl mt-2 w-full"
-            id="dropdown-menu-about-mobile">
+
+          <!-- Mobile About Dropdown -->
+          <div class="relative">
             <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">About
-              GBLDC</a>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Mission
-              & Vision</a>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Board
-              of Directors</a>
-            <a href="#"
-              class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">Committee
-              Officers</a>
+              class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+              onclick="toggleDropdownMobileAbout(event)">
+              <span>ABOUT</span>
+              <i class="fas fa-chevron-down transition-transform duration-200"
+                id="about-arrow"></i>
+            </a>
+            <div
+              class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden"
+              id="dropdown-menu-about-mobile">
+              <a href="about-gbldc.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                About GBLDC
+              </a>
+              <a href="#"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Mission & Vision
+              </a>
+              <a href="board-of-directors.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Board of Directors
+              </a>
+              <a href="committee-officers.html"
+                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                Committee Officers
+              </a>
+            </div>
           </div>
-        </div>
-        <a href="news&events.html"
-          class="block px-4 py-2 hover:bg-green-200 transition-colors duration-200">NEWS
-          & EVENTS</a>
-        <div class="flex flex-col items-left mt-4 w-44 px-4 ">
-          <a href="index.html"
-            class="bg-green-600 text-white px-4 py-2 rounded-lg font-normal hover:bg-green-800 mb-2 text-center">Login</a>
-          <a href="applynow.html"
-            class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal mb-5 hover:bg-green-50">Apply
-            Now</a>
+
+          <a href="news&events.html"
+            class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+            NEWS & EVENTS
+          </a>
+
+          <!-- Mobile Buttons -->
+          <div class="flex flex-col items-stretch mt-4 space-y-2 px-4 pb-4">
+            <a href="index.html"
+              class="bg-green-600 text-white px-4 py-3 rounded-lg font-normal hover:bg-green-800 text-center transition-colors duration-200">
+              Login
+            </a>
+            <a href="applynow.html"
+              class="border border-green-600 text-black px-4 py-3 rounded-lg font-normal hover:bg-green-50 text-center transition-colors duration-200">
+              Apply Now
+            </a>
+          </div>
         </div>
       </nav>
     </header>
+
+    <!-- Main Content Apply Now Step 4 -->
     <section>
-      <div class="max-w-4xl mx-auto mt-6 p-7 ">
+      <div class="max-w-4xl mx-auto mt-24 p-7 ">
         <h2 class="text-center text-4xl font-semibold text-gray-800">Online
           Application</h2>
         <p class="text-center text-bl mt-3">Let’s talks and learn your finances
@@ -162,7 +243,7 @@
         <div class="flex items-center justify-center my-6">
           <div class="flex items-center gap-8">
             <div class="flex flex-col items-center text-black">
-              <a href>
+              <a href ="#" onclick="validateStep4(event)">
                 <div
                   class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   1
@@ -174,7 +255,7 @@
             </div>
             <div class="w-20 h-1 bg-green-300"></div>
             <div class="flex flex-col items-center text-black">
-              <a href="applynowstep2.html">
+              <a href="#" onclick="validateStep4(event)">
                 <div
                   class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   2
@@ -184,7 +265,7 @@
             </div>
             <div class="w-20 h-1 bg-green-300"></div>
             <div class="flex flex-col items-center text-black">
-              <a href="applynowstep2.html">
+              <a href="#" onclick="validateStep4(event)">
                 <div
                   class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
                   3
@@ -194,10 +275,12 @@
             </div>
             <div class="w-20 h-1 bg-gray-300"></div>
             <div class="flex flex-col items-center text-black">
+              <a href="#" onclick="validateStep4(event)">
               <div
                 class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
                 4
               </div>
+              </a>
               <p class="text-sm mt-2 text-center">Employment Information</p>
             </div>
           </div>
@@ -362,7 +445,9 @@
               <input type="text" id="docName"
                 class="border px-3 py-2 rounded w-96 mt-3"
                 placeholder="Required Documents" readonly>
-              <input type="file" id="docFile" class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100" accept="image/*">
+              <input type="file" id="docFile"
+                class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                accept="image/*">
               <button type="button" id="docRemove"
                 class="hidden text-red-500 text-base">Remove</button>
               <button type="button" id="docReplace"
@@ -378,7 +463,9 @@
               <input type="text" id="picName"
                 class="border px-3 py-2 rounded w-96 mt-3"
                 placeholder="2x2 Picture" readonly>
-              <input type="file" id="picFile" class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100" accept="image/*">
+              <input type="file" id="picFile"
+                class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                accept="image/*">
               <button type="button" id="picRemove"
                 class="hidden text-red-500  text-base">Remove</button>
               <button type="button" id="picReplace"
@@ -394,7 +481,8 @@
               <input type="text" id="billingName"
                 class="border px-3 py-2 rounded w-96 mt-3"
                 placeholder="Proof of Billing" readonly>
-              <input type="file" id="billingFile" class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+              <input type="file" id="billingFile"
+                class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
                 accept="image/*">
               <button type="button" id="billingRemove"
                 class="hidden text-red-500 text-base">Remove</button>
@@ -413,6 +501,16 @@
               <div class="h-captcha"
                 data-sitekey="4db0c162-5c22-405c-ba18-aa1ae5ee22c2"></div>
             </div>
+              <!-- Terms and Conditions (full width) -->
+                        <div class="md:col-span-2 flex items-start mt-10">
+                            <input type="checkbox" id="terms" required
+                                class="mt-1 mr-2">
+                            <label for="terms" class="text-sm text-gray-700">I
+                                confirm that all information provided is true
+                                and I agree to the <a href="#"
+                                    class="text-green-700 underline">Terms &
+                                    Conditions</a> of GBLDC.</label>
+                        </div>
             <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
             <div id="captchaError"
               class="text-red-500 text-sm mt-2 hidden">Please complete the
@@ -433,57 +531,42 @@
               return;
             }
             e.preventDefault();
-          Swal.fire({
-          title: 'Submitting, please wait...',
-          allowOutsideClick: false,
-            didOpen: () => {
-            Swal.showLoading();
-            // Add custom color to loading spinner
-          },
-          customClass: {
-            popup: 'rounded-lg shadow-lg bg-white p-6',
-            title: 'text-green-700 font-semibold'
-          }
-        });
-
-        setTimeout(function () {
-          Swal.fire({
-            icon: 'success',
-            title: 'Submitted successfully!',
-            showConfirmButton: true,
-            customClass: {
-          popup: 'rounded-lg shadow-lg',
-          title: 'text-green-700 font-semibold',
-          confirmButton: 'bg-green-600 text-white px-10 py-2 rounded-md font-normal hover:bg-green-700',
-          confirmButtonIcon: 'text-white',
-            },
-            timer: 2000,
-            timerProgressBar: true,
-            didOpen: () => {
-              // Change progress bar color to green
-              const progressBar = document.querySelector('.swal2-timer-progress-bar');
-              if (progressBar) {
-              progressBar.style.background = '#22c55e'; // Tailwind green-500
+            Swal.fire({
+              title: 'Submitting, please wait...',
+              allowOutsideClick: false,
+              didOpen: () => {
+                Swal.showLoading();
               }
-            },
-            didClose: () => {
-            // Redirect to next step
-            },
-            backdrop: 'rgba(0, 0, 0, 0.5)',
-            position: 'center',
-            showClass: {
-              popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
-            },
-            iconColor: '#5f995e', // Green color for success icon
-            customIcon: {
-          icon: 'text-green-900'
-            }
-          });
-        }, 1500);
+            });
+
+            setTimeout(function () {
+              Swal.fire({
+                icon: 'success',
+                title: 'Submitted successfully!',
+                showConfirmButton: true,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: () => {
+                  const progressBar = document.querySelector('.swal2-timer-progress-bar');
+                  if (progressBar) {
+                    progressBar.style.background = '#22c55e';
+                  }
+                },
+                didClose: () => {
+                  // Redirect to next step
+                },
+                backdrop: 'rgba(0, 0, 0, 0.5)',
+                position: 'center',
+                showClass: {
+                  popup: 'animate__animated animate__fadeInDown'
+                },
+                hideClass: {
+                  popup: 'animate__animated animate__fadeOutUp'
+                },
+                iconColor: '#5f995e'
               });
+            }, 1500);
+          });
         </script>
       </form>
       <script src="../src/javascript/dropdown.js"></script>
@@ -673,6 +756,87 @@
                 if (error) error.classList.add("hidden");
               }
               });
+                // Function to validate step 4
+                function validateStep4(event) {
+                event.preventDefault();
+                // Check required fields in Employment Information
+                const form = document.getElementById("employmentForm");
+                const requiredSelects = form.querySelectorAll("select");
+                const requiredInputs = [
+                  ...form.querySelectorAll('input[type="text"]:not([readonly])')
+                ];
+                let valid = true;
+
+                // Validate selects (must not be "Select" or "Select Occupation")
+                requiredSelects.forEach(sel => {
+                  if (
+                  sel.value === "Select" ||
+                  sel.value === "Select Occupation" ||
+                  sel.value.trim() === ""
+                  ) {
+                  sel.classList.add("ring-2", "ring-red-400");
+                  valid = false;
+                  } else {
+                  sel.classList.remove("ring-2", "ring-red-400");
+                  }
+                });
+
+                // Validate text inputs (must not be empty)
+                requiredInputs.forEach(inp => {
+                  if (inp.value.trim() === "") {
+                  inp.classList.add("ring-2", "ring-red-400");
+                  valid = false;
+                  } else {
+                  inp.classList.remove("ring-2", "ring-red-400");
+                  }
+                });
+
+                // Validate file attachments (Required Documents, 2x2, Billing)
+                const docFiles = document.getElementById("docFile").files;
+                const picFiles = document.getElementById("picFile").files;
+                const billingFiles = document.getElementById("billingFile").files;
+                if (docFiles.length === 0 || picFiles.length === 0 || billingFiles.length === 0) {
+                  Swal.fire({
+                  icon: "error",
+                  title: "Missing Attachments",
+                  text: "Please upload all required attachments.",
+                  confirmButtonColor: "#22c55e"
+                  });
+                  valid = false;
+                }
+
+                // Validate Terms and Conditions
+                const terms = document.getElementById("terms");
+                if (!terms.checked) {
+                  Swal.fire({
+                  icon: "error",
+                  title: "Terms Not Accepted",
+                  text: "You must agree to the Terms & Conditions.",
+                  confirmButtonColor: "#22c55e"
+                  });
+                  valid = false;
+                }
+
+                // Validate hCaptcha
+                const captcha = document.querySelector('textarea[name="h-captcha-response"]');
+                if (!captcha || !captcha.value) {
+                  document.getElementById("captchaError").classList.remove("hidden");
+                  valid = false;
+                } else {
+                  document.getElementById("captchaError").classList.add("hidden");
+                }
+
+                if (!valid) {
+                  // Scroll to first error
+                  const firstError = form.querySelector(".ring-red-400");
+                  if (firstError) firstError.scrollIntoView({ behavior: "smooth", block: "center" });
+                  return false;
+                }
+
+                // If valid, submit the form
+                form.requestSubmit();
+                }
           </script>
+        </section>
     </body>
   </html>

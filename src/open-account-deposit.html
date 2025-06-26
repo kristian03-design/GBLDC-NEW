@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Open Deposit Account | GBLDC</title>
+        <link rel="stylesheet" href="output.css" />
+        <link rel="icon" type="image/png"
+            href="path/images/logocoop-removebg-preview 2.png">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <link href="../src/animation/animation.css" rel="stylesheet">
+        <script src="../src/javascript/dropdown.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body class="bg-gray-50 text-gray-800 font-sans antialiased">
+        <!-- Header Section -->
+        <header
+            class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
+            <div
+                class="container-lg mx-auto flex justify-between items-center p-4">
+                <!-- Logo and Title -->
+                <div
+                    class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
+                    <a href="landingpage.html" class="flex-shrink-0">
+                        <img src="path/images/logocoop-removebg-preview 2.png"
+                            alt="GBLDC Logo"
+                            class="w-12 h-12 sm:w-16 sm:h-14 lg:w-18 lg:h-16 bg-auto">
+                    </a>
+                    <h1
+                        class="text-xs sm:text-base md:text-lg lg:text-xl font-medium animate-fade-in-right truncate">
+                        Greater Bulacan Livelihood Development Cooperative
+                    </h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <nav
+                    class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
+                    <a href="landingpage.html"
+                        class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                        HOME
+                    </a>
+
+                    <!-- Products & Services Dropdown -->
+                    <div class="relative" id="dropdown-trigger">
+                        <a href="#"
+                            class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                            onclick="toggleDropdownProducts(event)">
+                            PRODUCT & SERVICES
+                            <span class="ml-1"><i
+                                    class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div
+                            class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                            id="dropdown-menu-products">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Loans
+                            </a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Deposits
+                            </a>
+                            <a href="insurance.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Insurance
+                            </a>
+                            <a href="social-services.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Social Services
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- About Dropdown -->
+                    <div class="relative" id="dropdown-trigger-about">
+                        <a href="#"
+                            class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                            onclick="toggleDropdown(event)">
+                            ABOUT
+                            <span class="ml-1"><i
+                                    class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div
+                            class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                            id="dropdown-menu">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                About GBLDC
+                            </a>
+                            <a href="#"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Mission & Vision
+                            </a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Board of Directors
+                            </a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Committee Officers
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="news&events.html"
+                        class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                        NEWS & EVENTS
+                    </a>
+                </nav>
+
+                <!-- Desktop Buttons -->
+                <div class="hidden lg:flex items-center gap-3 xl:gap-4">
+                    <a href="index.html"
+                        class="bg-green-500 text-white px-4 xl:px-7 py-2 hover:bg-green-600 rounded-md font-normal whitespace-nowrap text-sm xl:text-base">
+                        Login
+                    </a>
+                    <a href="applynow.html"
+                        class="border border-green-600 text-black px-4 xl:px-6 py-2 rounded-md font-normal hover:bg-green-50 whitespace-nowrap text-sm xl:text-base">
+                        Apply Now
+                    </a>
+                </div>
+
+                <!-- Tablet Buttons (hidden on mobile and desktop) -->
+                <div class="hidden md:flex lg:hidden items-center gap-2">
+                    <a href="index.html"
+                        class="bg-green-500 text-white px-3 py-2 hover:bg-green-600 rounded-md font-normal text-sm">
+                        Login
+                    </a>
+                    <a href="applynow.html"
+                        class="border border-green-600 text-black px-3 py-2 rounded-md font-normal hover:bg-green-50 text-sm">
+                        Apply
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button
+                    class="lg:hidden text-black focus:outline-none animate-fade-in ml-2 flex-shrink-0"
+                    onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-xl sm:text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <nav class="lg:hidden bg-white shadow-lg hidden" id="mobile-menu">
+                <div class="px-4 py-2 space-y-1">
+                    <a href="landingpage.html"
+                        class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+                        HOME
+                    </a>
+
+                    <!-- Mobile Products & Services Dropdown -->
+                    <div class="relative">
+                        <a href="#"
+                            class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+                            onclick="toggleDropdownProductsMobile(event)">
+                            <span>PRODUCT & SERVICES</span>
+                            <i
+                                class="fas fa-chevron-down transition-transform duration-200"
+                                id="products-arrow"></i>
+                        </a>
+                        <div
+                            class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden"
+                            id="dropdown-menu-products-mobile">
+                            <a href="loan-products.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Loans
+                            </a>
+                            <a href="deposit.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Deposits
+                            </a>
+                            <a href="insurance.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Insurance
+                            </a>
+                            <a href="social-services.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Social Services
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile About Dropdown -->
+                    <div class="relative">
+                        <a href="#"
+                            class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+                            onclick="toggleDropdownMobileAbout(event)">
+                            <span>ABOUT</span>
+                            <i
+                                class="fas fa-chevron-down transition-transform duration-200"
+                                id="about-arrow"></i>
+                        </a>
+                        <div
+                            class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden"
+                            id="dropdown-menu-about-mobile">
+                            <a href="about-gbldc.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                About GBLDC
+                            </a>
+                            <a href="#"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Mission & Vision
+                            </a>
+                            <a href="board-of-directors.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Board of Directors
+                            </a>
+                            <a href="committee-officers.html"
+                                class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                                Committee Officers
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="news&events.html"
+                        class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+                        NEWS & EVENTS
+                    </a>
+
+                    <!-- Mobile Buttons -->
+                    <div
+                        class="flex flex-col items-stretch mt-4 space-y-2 px-4 pb-4">
+                        <a href="index.html"
+                            class="bg-green-600 text-white px-4 py-3 rounded-lg font-normal hover:bg-green-800 text-center transition-colors duration-200">
+                            Login
+                        </a>
+                        <a href="applynow.html"
+                            class="border border-green-600 text-black px-4 py-3 rounded-lg font-normal hover:bg-green-50 text-center transition-colors duration-200">
+                            Apply Now
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Open Deposit Account Form Section -->
+        <section
+            class="pt-28 pb-12 px-4 bg-gradient-to-r from-green-50 to-white min-h-screen">
+            <div class="max-w-7xl mx-auto bg-white rounded-xl shadow-lg p-10">
+                <h2
+                    class="text-2xl md:text-3xl font-bold text-green-800 mb-2 text-center">Open
+                    a Deposit Account</h2>
+                <p class="text-gray-700 mb-6 text-center">Fill out the form
+                    below to start your savings journey with GBLDC.</p>
+                <div
+                    class="mb-8 bg-green-50 border-l-8 border-green-400 p-4 rounded">
+                    <h3
+                        class="text-lg font-semibold text-green-700 mb-2">Requirements
+                        & Information</h3>
+                    <ul
+                        class="list-disc list-inside text-gray-700 text-sm space-y-1">
+                        <li>Applicant must be at least 18 years old (or
+                            accompanied by a guardian for minors).</li>
+                        <li>Provide a valid government-issued ID (e.g., UMID,
+                            Driver's License, Passport).</li>
+                        <li>Minimum initial deposit: <span
+                                class="font-semibold">₱500</span> for Regular
+                            Savings, <span class="font-semibold">₱5,000</span>
+                            for Time Deposit.</li>
+                        <li>Proof of address may be required (e.g., utility
+                            bill, barangay certificate).</li>
+                        <li>For Kiddie Savings, bring birth certificate and
+                            guardian's ID.</li>
+                        <li>All information provided must be accurate and
+                            verifiable.</li>
+                    </ul>
+                    <p class="mt-3 text-xs text-gray-600">For questions, contact
+                        us at <a href="mailto:info@gbldc.com"
+                            class="text-green-700 underline">info@gbldc.com</a>
+                        or visit your nearest GBLDC branch.</p>
+                </div>
+                <form class="space-y-6">
+                    <!-- Personal Information -->
+                    <div>
+                        <h3
+                            class="text-lg font-semibold text-teal-900 mb-2">Personal
+                            Information</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label
+                                    class="block text-sm font-medium mb-1">First
+                                    Name</label>
+                                <input type="text"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    placeholder="Juan" required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-medium mb-1">Last
+                                    Name</label>
+                                <input type="text"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    placeholder="Dela Cruz" required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-medium mb-1">Email
+                                    Address</label>
+                                <input type="email"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    placeholder="juan@email.com" required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-medium mb-1">Mobile
+                                    Number</label>
+                                <input type="tel"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    placeholder="09XXXXXXXXX" required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-medium mb-1">Date
+                                    of Birth</label>
+                                <input type="date"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    required>
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-sm font-medium mb-1">Place
+                                    of Birth</label>
+                                <input type="text"
+                                    class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    placeholder="City, Province" required>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Account Type -->
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Account Type -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Account
+                                Type</h3>
+                            <select
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                required>
+                                <option value>Select Account Type</option>
+                                <option value="regular">Regular Savings
+                                    Account</option>
+                                <option value="time">Time Deposit</option>
+                                <option value="kiddie">Kiddie Savings</option>
+                                <option value="pension">Pension Savings</option>
+                            </select>
+                        </div>
+                        <!-- Initial Deposit -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Initial
+                                Deposit</h3>
+                            <input type="number" min="0"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                placeholder="Enter amount (₱)" required>
+                        </div>
+                        <!-- Address -->
+                        <div class="md:col-span-2">
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Address</h3>
+                            <input type="text"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                placeholder="Street, Barangay, City/Municipality, Province"
+                                required>
+                        </div>
+                        <!-- Civil Status -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Civil
+                                Status</h3>
+                            <select
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                required>
+                                <option value>Select Civil Status</option>
+                                <option value="single">Single</option>
+                                <option value="married">Married</option>
+                                <option value="widowed">Widowed</option>
+                                <option value="separated">Separated</option>
+                            </select>
+                        </div>
+                        <!-- Occupation -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Occupation</h3>
+                            <input type="text"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                placeholder="e.g., Teacher, Business Owner"
+                                required>
+                        </div>
+                        <!-- Upload Valid ID -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Upload
+                                Valid ID</h3>
+                            <input type="file" accept="image/*,.pdf"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                required
+                                onchange="showPreview(event, 'id-preview')">
+                            <p class="text-xs text-gray-500 mt-1">Accepted:
+                                Government-issued ID (e.g., UMID, Driver's
+                                License, Passport)</p>
+                            <div id="id-preview" class="mt-2"></div>
+                        </div>
+                        <!-- Proof of Address -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Upload
+                                Proof of Address</h3>
+                            <input type="file" accept="image/*,.pdf"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                onchange="showPreview(event, 'address-preview')">
+                            <p class="text-xs text-gray-500 mt-1">Accepted:
+                                Utility bill, Barangay certificate, etc.
+                                (optional but recommended)</p>
+                            <div id="address-preview" class="mt-2"></div>
+                        </div>
+                        <!-- Birth Certificate (for Kiddie Savings) -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Upload
+                                Birth Certificate <span class="text-xs text-gray-500">(for Kiddie Savings)</span></h3>
+                            <input type="file" accept="image/*,.pdf"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                onchange="showPreview(event, 'birth-preview')">
+                            <p class="text-xs text-gray-500 mt-1">Accepted: PSA/NSO Birth Certificate (required for Kiddie Savings applicants)</p>
+                            <div id="birth-preview" class="mt-2"></div>
+                        </div>
+                        <!-- Guardian's Valid ID (for Kiddie Savings) -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Upload
+                                Guardian's Valid ID <span class="text-xs text-gray-500">(for Kiddie Savings)</span></h3>
+                            <input type="file" accept="image/*,.pdf"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                onchange="showPreview(event, 'guardian-preview')">
+                            <p class="text-xs text-gray-500 mt-1">Accepted: Government-issued ID of guardian (required for Kiddie Savings applicants)</p>
+                            <div id="guardian-preview" class="mt-2"></div>
+                        </div>
+                        <!-- 2x2 Photo -->
+                        <div>
+                            <h3
+                                class="text-lg font-semibold text-teal-900 mb-2">Upload
+                                2x2 Photo</h3>
+                            <input type="file" accept="image/*"
+                                class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
+                                required
+                                onchange="showPreview(event, 'photo-preview')">
+                            <p class="text-xs text-gray-500 mt-1">Accepted: Recent 2x2 photo (image only, required)</p>
+                            <div id="photo-preview" class="mt-2"></div>
+                        </div>
+                     
+                        <!-- Terms and Conditions (full width) -->
+                        <div class="md:col-span-2 flex items-start">
+                            <input type="checkbox" id="terms" required
+                                class="mt-1 mr-2">
+                            <label for="terms" class="text-sm text-gray-700">I
+                                confirm that all information provided is true
+                                and I agree to the <a href="#"
+                                    class="text-green-700 underline">Terms &
+                                    Conditions</a> of GBLDC.</label>
+                        </div>
+                        <!-- Submit Button (full width, centered) -->
+                        <div class="md:col-span-2 text-center">
+                            <button type="submit"
+                                class="bg-green-600 text-white px-8 py-2 rounded-lg font-semibold hover:bg-green-700 transition-colors">Submit
+                                Application</button>
+                        </div>
+                        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                        <script>
+                            document.querySelector('form').addEventListener('submit', function(e) {
+                                e.preventDefault();
+                                Swal.fire({
+                                    icon: 'success',
+                                    title: 'Application Submitted!',
+                                    text: 'Thank you for opening a deposit account. We will contact you soon.',
+                                    confirmButtonColor: '#16a34a'
+                                });
+                            });
+                            
+                            function showPreview(event, previewId) {
+                                const preview = document.getElementById(previewId);
+                                preview.innerHTML = '';
+                                const file = event.target.files[0];
+                                if (!file) return;
+                                if (file.type.startsWith('image/')) {
+                                    const img = document.createElement('img');
+                                    img.src = URL.createObjectURL(file);
+                                    img.className = 'max-h-32 mt-1 rounded shadow border';
+                                    img.onload = () => URL.revokeObjectURL(img.src);
+                                    preview.appendChild(img);
+                                } else if (file.type === 'application/pdf') {
+                                    const pdfIcon = document.createElement('span');
+                                    pdfIcon.innerHTML = '<i class="fas fa-file-pdf text-red-600 text-3xl"></i> <span class="ml-2 text-sm">' + file.name + '</span>';
+                                    preview.appendChild(pdfIcon);
+                                }
+                            }
+                        </script>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
