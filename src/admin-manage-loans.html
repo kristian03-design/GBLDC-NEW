@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Loans | GBLDC Admin</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen">
+  <!-- Header Section -->
+  <header class="bg-white shadow-md fixed left-0 top-0 z-50 w-full">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center space-x-4">
+        <a href="admin-page.html">
+          <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-12 h-12 object-cover" />
+        </a>
+        <h1 class="text-lg md:text-xl font-semibold text-green-800">GBLDC Admin - Manage Loans</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class=" md:inline text-gray-700">Admin</span>
+        <img src="path/images/admin-avatar.png" alt="Admin Avatar" class="w-10 h-10 rounded-full border-2 border-green-600 object-cover" />
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-12 px-4 max-w-7xl mx-auto">
+    <!-- Page Title and Actions -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-green-800 mb-1">Manage Loan Applications</h2>
+        <p class="text-gray-700">Review, approve, or reject loan applications from members.</p>
+      </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+      <div class="flex items-center gap-2">
+        <input type="text" placeholder="Search by applicant or type..." class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 w-64" />
+        <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <select class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+        <option value="">All Status</option>
+        <option value="pending">Pending</option>
+        <option value="approved">Approved</option>
+        <option value="rejected">Rejected</option>
+      </select>
+    </div>
+
+    <!-- Loans Table -->
+    <div class="bg-white rounded-xl shadow p-6 mb-10">
+      <h3 class="text-lg font-semibold text-green-700 mb-4">Loan Applications</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead>
+            <tr class="bg-green-100 text-green-900">
+              <th class="py-2 px-4 text-left">Application Number</th>
+              <th class="py-2 px-4 text-left">Applicant</th>
+              <th class="py-2 px-4 text-left">Type</th>
+              <th class="py-2 px-4 text-left">Amount</th>
+              <th class="py-2 px-4 text-left">Status</th>
+              <th class="py-2 px-4 text-left">Date Applied</th>
+              <th class="py-2 px-4 text-left">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">1001</td>
+              <td class="py-2 px-4">Juan Dela Cruz</td>
+              <td class="py-2 px-4">Personal Loan</td>
+              <td class="py-2 px-4">₱50,000</td>
+              <td class="py-2 px-4"><span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded">Pending</span></td>
+              <td class="py-2 px-4">2024-06-01</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-green-600 hover:underline view-loan-btn"
+                  data-applicant="Juan Dela Cruz"
+                  data-type="Personal Loan"
+                  data-amount="₱50,000"
+                  data-status="Pending"
+                  data-date="2024-06-01"
+                  data-id="1001"
+                  data-step1='{"Full Name":"Juan Dela Cruz","Birthday":"1990-01-01","Gender":"Male","Civil Status":"Single"}'
+                  data-step2='{"Address":"123 Main St, Manila","Contact":"09171234567","Email":"juan@email.com"}'
+                  data-step3='{"Employer":"ABC Corp","Position":"Staff","Monthly Income":"₱20,000"}'
+                  data-step4='{"Loan Purpose":"Medical","Collateral":"None"}'
+                >View Details</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">1002</td>
+              <td class="py-2 px-4">Maria Santos</td>
+              <td class="py-2 px-4">Motorcycle Loan</td>
+              <td class="py-2 px-4">₱80,000</td>
+              <td class="py-2 px-4"><span class="bg-green-200 text-green-800 px-2 py-1 rounded">Approved</span></td>
+              <td class="py-2 px-4">2024-05-20</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-green-600 hover:underline view-loan-btn"
+                  data-applicant="Maria Santos"
+                  data-type="Motorcycle Loan"
+                  data-amount="₱80,000"
+                  data-status="Approved"
+                  data-date="2024-05-20"
+                  data-id="1002"
+                  data-step1='{"Full Name":"Maria Santos","Birthday":"1988-05-05","Gender":"Female","Civil Status":"Married"}'
+                  data-step2='{"Address":"456 Rizal Ave, Quezon City","Contact":"09181234567","Email":"maria@email.com"}'
+                  data-step3='{"Employer":"XYZ Inc","Position":"Manager","Monthly Income":"₱35,000"}'
+                  data-step4='{"Loan Purpose":"Motorcycle Purchase","Collateral":"Motorcycle"}'
+                >View Details</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">1003</td>
+              <td class="py-2 px-4">Pedro Reyes</td>
+              <td class="py-2 px-4">Sunergy Loan</td>
+              <td class="py-2 px-4">₱120,000</td>
+              <td class="py-2 px-4"><span class="bg-red-200 text-red-800 px-2 py-1 rounded">Rejected</span></td>
+              <td class="py-2 px-4">2024-05-10</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-green-600 hover:underline view-loan-btn"
+                  data-applicant="Pedro Reyes"
+                  data-type="Sunergy Loan"
+                  data-amount="₱120,000"
+                  data-status="Rejected"
+                  data-date="2024-05-10"
+                  data-id="1003"
+                  data-step1='{"Full Name":"Pedro Reyes","Birthday":"1985-09-09","Gender":"Male","Civil Status":"Single"}'
+                  data-step2='{"Address":"789 Mabini St, Makati","Contact":"09192223333","Email":"pedro@email.com"}'
+                  data-step3='{"Employer":"Sunergy PH","Position":"Technician","Monthly Income":"₱25,000"}'
+                  data-step4='{"Loan Purpose":"Solar Panel","Collateral":"House"}'
+                > View Details</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function renderStep(title, data) {
+        let html = `<h4 style="margin:10px 0 5px 0;font-weight:bold;">${title}</h4><ul style="margin:0 0 10px 0;padding-left:18px;">`;
+        for (const key in data) {
+          html += `<li><strong>${key}:</strong> ${data[key]}</li>`;
+        }
+        html += '</ul>';
+        return html;
+      }
+
+      document.querySelectorAll('.view-loan-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const applicant = this.dataset.applicant;
+          const type = this.dataset.type;
+          const amount = this.dataset.amount;
+          const status = this.dataset.status;
+          const date = this.dataset.date;
+
+          const step1 = JSON.parse(this.dataset.step1 || '{}');
+          const step2 = JSON.parse(this.dataset.step2 || '{}');
+          const step3 = JSON.parse(this.dataset.step3 || '{}');
+          const step4 = JSON.parse(this.dataset.step4 || '{}');
+
+          Swal.fire({
+            title: 'Loan Application Details',
+            html: `
+              <div class="text-left" style="max-height:400px;overflow:auto;">
+                ${renderStep('Step 1: Personal Information', step1)}
+                ${renderStep('Step 2: Contact Information', step2)}
+                ${renderStep('Step 3: Employment Information', step3)}
+                ${renderStep('Step 4: Loan Details', step4)}
+                <h4 style="margin:10px 0 5px 0;font-weight:bold;">Summary</h4>
+                <ul style="margin:0 0 10px 0;padding-left:18px;">
+                  <li><strong>Loan Type:</strong> ${type}</li>
+                  <li><strong>Amount:</strong> ${amount}</li>
+                  <li><strong>Status:</strong> ${status}</li>
+                  <li><strong>Date Applied:</strong> ${date}</li>
+                </ul>
+              </div>
+            `,
+            showDenyButton: true,
+            showCancelButton: true,
+            confirmButtonText: 'Approve',
+            denyButtonText: 'Reject',
+            cancelButtonText: 'Close',
+            customClass: {
+              htmlContainer: 'swal2-html-container text-left'
+            }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              Swal.fire('Approved!', 'The loan application has been approved.', 'success');
+              // Here you can add AJAX or logic to update status
+            } else if (result.isDenied) {
+              Swal.fire('Rejected!', 'The loan application has been rejected.', 'error');
+              // Here you can add AJAX or logic to update status
+            }
+          });
+        });
+      });
+    </script>
+
+    <!-- Pagination Example -->
+    <div class="flex justify-end gap-2">
+      <button class="px-3 py-1 rounded bg-green-100 text-green-700 font-semibold">1</button>
+      <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">2</button>
+      <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">3</button>
+      <span class="px-3 py-1 text-gray-400">...</span>
+      <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">Next</button>
+    </div>
+    </main>
+</body>
+</html>

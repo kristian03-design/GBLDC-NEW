@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Users | GBLDC Admin</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen">
+  <!-- Header Section -->
+  <header class="bg-white shadow-md fixed left-0 top-0 z-50 w-full">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center space-x-4">
+        <a href="admin-page.html">
+          <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-12 h-12 object-cover" />
+        </a>
+        <h1 class="text-lg md:text-xl font-semibold text-teal-900">GBLDC Admin - Manage Users</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class="md:inline text-gray-700">Admin</span>
+        <img src="path/images/admin-avatar.png" alt="Admin Avatar" class="w-10 h-10 rounded-full border-2 border-green-600 object-cover" />
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-12 px-4 max-w-7xl mx-auto">
+    <!-- Page Title and Actions -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-teal-900 mb-1">Manage Users</h2>
+        <p class="text-gray-700">View, search, edit, or remove users from the cooperative system.</p>
+      </div>
+    </div>
+
+    <!-- Search and Filter -->
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4">
+      <div class="flex items-center gap-2">
+        <input type="text" placeholder="Search by name or email..." class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400 w-64" />
+        <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+      <select class="border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+        <option value="">All Roles</option>
+        <option value="admin">Admin</option>
+        <option value="member">Member</option>
+        <option value="staff">Staff</option>
+    </select>
+    <div class="flex justify-end w-full">
+        <button class="bg-green-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-green-700 transition flex items-center gap-2">
+            <i class="fas fa-user-plus"></i> Add User
+        </button>
+    </div>
+    </div>
+
+    <!-- Users Table -->
+    <div class="bg-white rounded-xl shadow p-6 mb-10">
+      <h3 class="text-lg font-semibold text-teal-900 mb-4">User List</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead>
+            <tr class="bg-green-100 text-green-900">
+              <th class="py-2 px-4 text-left">#</th>
+              <th class="py-2 px-4 text-left">Name</th>
+              <th class="py-2 px-4 text-left">Email</th>
+              <th class="py-2 px-4 text-left">Role</th>
+              <th class="py-2 px-4 text-left">Status</th>
+              <th class="py-2 px-4 text-left">Joined</th>
+              <th class="py-2 px-4 text-left">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="py-2 px-4">1</td>
+              <td class="py-2 px-4 flex items-center gap-2">
+                <img src="path/images/user1.jpg" alt="Ana Cruz" class="w-8 h-8 rounded-full object-cover border border-green-300" />
+                Ana Cruz
+              </td>
+              <td class="py-2 px-4">ana@email.com</td>
+              <td class="py-2 px-4">Member</td>
+              <td class="py-2 px-4"><span class="bg-green-200 text-green-800 px-2 py-1 rounded">Active</span></td>
+              <td class="py-2 px-4">2024-05-01</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-blue-600 hover:underline"><i class="fas fa-edit"></i> Edit</button>
+                <button class="text-red-600 hover:underline"><i class="fas fa-trash"></i> Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">2</td>
+              <td class="py-2 px-4 flex items-center gap-2">
+                <img src="path/images/user2.jpg" alt="Ben Santos" class="w-8 h-8 rounded-full object-cover border border-green-300" />
+                Ben Santos
+              </td>
+              <td class="py-2 px-4">ben@email.com</td>
+              <td class="py-2 px-4">Staff</td>
+              <td class="py-2 px-4"><span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded">Pending</span></td>
+              <td class="py-2 px-4">2024-04-28</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-blue-600 hover:underline"><i class="fas fa-edit"></i> Edit</button>
+                <button class="text-red-600 hover:underline"><i class="fas fa-trash"></i> Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">3</td>
+              <td class="py-2 px-4 flex items-center gap-2">
+                <img src="path/images/user3.jpg" alt="Maria Santos" class="w-8 h-8 rounded-full object-cover border border-green-300" />
+                Maria Santos
+              </td>
+              <td class="py-2 px-4">maria@email.com</td>
+              <td class="py-2 px-4">Admin</td>
+              <td class="py-2 px-4"><span class="bg-green-200 text-green-800 px-2 py-1 rounded">Active</span></td>
+              <td class="py-2 px-4">2024-02-20</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-blue-600 hover:underline"><i class="fas fa-edit"></i> Edit</button>
+                <button class="text-red-600 hover:underline"><i class="fas fa-trash"></i> Remove</button>
+              </td>
+            </tr>
+            <tr>
+              <td class="py-2 px-4">4</td>
+              <td class="py-2 px-4 flex items-center gap-2">
+                <img src="path/images/user4.jpg" alt="Pedro Reyes" class="w-8 h-8 rounded-full object-cover border border-green-300" />
+                Pedro Reyes
+              </td>
+              <td class="py-2 px-4">pedro@email.com</td>
+              <td class="py-2 px-4">Member</td>
+              <td class="py-2 px-4"><span class="bg-red-200 text-red-800 px-2 py-1 rounded">Inactive</span></td>
+              <td class="py-2 px-4">2024-01-10</td>
+              <td class="py-2 px-4 flex gap-2">
+                <button class="text-blue-600 hover:underline"><i class="fas fa-edit"></i> Edit</button>
+                <button class="text-red-600 hover:underline"><i class="fas fa-trash"></i> Remove</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Pagination Example -->
+    <div class="flex justify-end gap-2">
+      <button class="px-3 py-1 rounded bg-green-100 text-green-700 font-semibold">1</button>
+      <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">2</button>
+      <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">3</button>
+      <span class="px-3 py-1 text-gray-400">...</span>
+      <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">Next</button>
+    </div>
+  </main>

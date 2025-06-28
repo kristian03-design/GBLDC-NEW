@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Settings | GBLDC Admin</title>
+  <link rel="stylesheet" href="output.css" />
+  <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen">
+  <!-- Header Section -->
+  <header class="bg-white shadow-md fixed left-0 top-0 z-50 w-full">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+      <div class="flex items-center space-x-4">
+        <a href="admin-page.html">
+          <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-12 h-12 object-cover" />
+        </a>
+        <h1 class="text-lg md:text-xl font-semibold text-green-800">GBLDC Admin - Settings</h1>
+      </div>
+      <div class="flex items-center gap-4">
+        <span class=" md:inline text-gray-700">Admin</span>
+        <img src="path/images/admin-avatar.png" alt="Admin Avatar" class="w-10 h-10 rounded-full border-2 border-green-600 object-cover" />
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-28 pb-12 px-4 max-w-7xl mx-auto">
+    <!-- Page Title -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold text-green-800 mb-1 flex items-center gap-2">
+        <i class="fas fa-cog text-green-600"></i> Settings
+      </h2>
+      <p class="text-gray-700">Update your profile, change password, and manage system preferences.</p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Profile Section -->
+        <div class="bg-white rounded-xl shadow p-6 mb-10 lg:col-span-2 flex flex-col gap-8">
+            <h3 class="text-lg font-semibold text-green-700 mb-4 flex items-center gap-2">
+                <i class="fas fa-user-cog text-green-500"></i> Profile Information
+            </h3>
+            <form class="space-y-6">
+                <div class="flex items-center gap-6">
+                    <div class="relative group">
+                        <img src="path/images/logocoop-removebg-preview 2.png" alt="Admin Avatar" class="w-20 h-20 rounded-full border-2 border-green-600 object-cover transition-transform duration-200 group-hover:scale-105" />
+                        <span class="absolute bottom-0 right-0 bg-green-600 text-white rounded-full p-1 text-xs shadow-lg group-hover:bg-green-700 transition"></span>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Change Profile Picture</label>
+                        <input type="file" accept="image/*" class="block w-full text-sm text-gray-600 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100" />
+                        <p class="text-xs text-gray-400 mt-1">JPG, PNG, or GIF. Max 2MB.</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Full Name</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" value="Admin User" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Email</label>
+                        <input type="email" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" value="gbldc@gmail.com" />
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Contact Number</label>
+                        <input type="tel" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" value="09123456789" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Role</label>
+                        <input type="text" class="w-full border border-gray-300 rounded-md px-3 py-2 bg-gray-100 cursor-not-allowed" value="Administrator" readonly />
+                    </div>
+                </div>
+                <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">Save Changes</button>
+            </form>
+        </div>
+        <!-- Right Column: Password & Support -->
+        <div class="flex flex-col gap-8">
+            <!-- Password Section -->
+            <div class="bg-white rounded-xl shadow p-6 flex-1">
+                <h3 class="text-lg font-semibold text-green-700 mb-4 flex items-center gap-2">
+                    <i class="fas fa-key text-green-500"></i> Change Password
+                </h3>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Current Password</label>
+                        <input type="password" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-1">New Password</label>
+                            <input type="password" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-1">Confirm New Password</label>
+                            <input type="password" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2 text-xs text-gray-500">
+                        <i class="fas fa-info-circle"></i>
+                        Password must be at least 8 characters, include a number and a symbol.
+                    </div>
+                    <button type="submit" class="bg-green-600 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">Update Password</button>
+                </form>
+            </div>
+            <!-- Contact Support Section -->
+            <div class="bg-white rounded-xl shadow p-6 flex-1">
+                <h3 class="text-lg font-semibold text-green-700 mb-4 flex items-center gap-2">
+                    <i class="fas fa-life-ring text-green-500"></i> Contact Support
+                </h3>
+                <p class="text-gray-600 mb-4">For any issues or questions, please contact our support team.</p>
+                <form class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Your Email</label>
+                        <input type="email" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Message</label>
+                        <textarea rows="4" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"></textarea>
+                    </div>
+                    <button type="submit" class="bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-2 rounded-lg font-semibold hover:shadow-lg transition">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </main>
+</body>
+</html>
