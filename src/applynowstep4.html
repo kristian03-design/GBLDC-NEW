@@ -533,6 +533,7 @@
             e.preventDefault();
             Swal.fire({
               title: 'Submitting, please wait...',
+              color: '#1e2939',
               allowOutsideClick: false,
               didOpen: () => {
                 Swal.showLoading();
@@ -542,8 +543,11 @@
             setTimeout(function () {
               Swal.fire({
                 icon: 'success',
+                iconColor: '#16a34a',
+                titleText: 'Your Loan Application has been submitted successfully.',
+               color: '#1e2939',
                 title: 'Submitted successfully!',
-                showConfirmButton: true,
+                showConfirmButton: false,
                 timer: 2000,
                 timerProgressBar: true,
                 didOpen: () => {
@@ -563,7 +567,7 @@
                 hideClass: {
                   popup: 'animate__animated animate__fadeOutUp'
                 },
-                iconColor: '#5f995e'
+                iconColor: '#16a34a',
               });
             }, 1500);
           });

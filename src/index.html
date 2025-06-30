@@ -1,114 +1,469 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
-  <link href="./output.css" rel="stylesheet">
-  <title>Greater Bulacan Livelihood Development Cooperative</title>
-</head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen ">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Login | GBLDC</title>
+  </head>
+  <body class="bg-gray-50 flex items-center justify-center min-h-screen font-sans">
+    <div class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden">
 
-    <div class="bg-white shadow-lg rounded-2xl flex max-w-5xl w-full overflow-hidden ">
-      
-      <!-- Left Column -->
-      <div class="bg-gray-200 p-8 w-1/2">
-        <h2 class="text-3xl font-bold mb-6 text-center">WELCOME TO</h2>
-        <img src="path/images/482445912_1229903975417783_6143904361897729543_n-Picsart-AiImageEnhancer 1.png" alt="GBLDC Logo" class="w-full mb-6">
-        <p class="text-sm text-gray-700 mb-4">
-          We are the Greater Bulacan Livelihood Development Cooperative (GBLDC)—a community-driven cooperative dedicated to empowering individuals and businesses through financial solutions, livelihood programs, and cooperative services.
-        </p>
-        <p class="text-sm text-gray-700 mb-6">
-          Join us and experience a secure, innovative, and member-focused financial system designed to help you grow and achieve financial stability.
-        </p>
-        <p class="italic text-sm text-gray-600">
-          Sign up today and be part of our growing cooperative family!
-        </p>
-      </div>
-  
-      <!-- Right Column -->
-      <div class="p-8 w-1/2">
-        <div class="flex justify-center mb-6">
-          <img src="path/images/logocoop-removebg-preview 2.png" alt="Logo Icon" class="w-24 h-24 object-contain">
-        </div>
-  
-        <form class="space-y-4" action="login.php" method="POST">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Email</label>
-            <input type="email" name="email" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your Email">
-          </div>
-        
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Password</label>
-            <div class="relative">
-              <input type="password" id="password" name="password" required class="mt-1 w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your password">
-              <button type="button" id="togglePassword" class="absolute inset-y-0 right-0 pr-5 flex items-center text-gray-500">
-          <i id="eyeIcon" class="fa-regular fa-eye" aria-hidden="true" style="font-size: 1.5rem;" ></i>
+      <!-- Left Side: Login Form -->
+      <div id="loginSect" class="w-1/2 p-10 flex flex-col justify-between">
+        <!-- Logo -->
+        <div>
+          <img src="path/images/logocoop-removebg-preview 2.png"
+            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            style="image-rendering: auto;">
+          <h2 class="text-2xl font-bold mb-2 text-center text-green-600 tracking-wide">
+            Welcome to GBLDC
+          </h2>
+          <p class="text-sm text-gray-800 mb-8 text-center">Securely
+            access your account to manage your loans and finances.</p>
+
+          <form class="space-y-6">
+            <div>
+              <label class="text-sm text-gray-600">Email Address</label>
+              <input type="email" placeholder="example@mail.com"
+                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+
+            <div>
+              <label class="text-sm text-gray-600">Password</label>
+              <input type="password" placeholder="••••••••"
+                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              <div class="text-right mt-1">
+                <a href="#" class="text-sm text-green-600 hover:underline" id="forgotPasswordLink">Forgot Password?</a>
+              </div>
+            </div>
+
+            <button
+              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Log
+              in</button>
+
+            <div class="flex gap-4">
+              <button onclick="fbLogin()" type="button"
+                class="flex-1 border border-blue-600 text-blue-600 py-2 rounded-md hover:bg-blue-100 flex items-center justify-center gap-2">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
+                  class="h-5" alt="Facebook">
+                Log in with Facebook
+              </button>
+              <button
+                class="flex-1 border border-red-600 text-red-600 py-2 rounded-md hover:bg-red-100 flex items-center justify-center gap-2">
+                <img
+                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                  class="h-5" alt="Google">
+                Log in with Google
               </button>
             </div>
-          </div>
-          <div class="text-center text-sm text-gray-500 mt-2">or Signup with</div>
-          <div class="flex justify-center space-x-4">
-            <button type="button" class="flex items-center px-4 py-2  rounded-md hover:bg-gray-100">
-              <img src="path/images/google.png" class="mr-2 w-8 h-8" alt="Google Icon">
-            </button>
-            <button type="button" onclick="fbLogin()" class="flex items-center px-4 py-2 rounded-md hover:bg-gray-100">
-              <img src="path/images/facebook.png" class="mr-2 w-8 h-8" alt="Facebook Icon">
-            </button>
-            </div>
-          <button type="submit" class="w-72 mt-4 mx-20 bg-black text-white py-2 rounded-md hover:bg-gray-800 font-semibold">
-            LOGIN
-          </button>
-          <p class="text-sm text-center mt-2 text-gray-700">
-            Dont have an account yet? <a href="register.html" class="text-green-600 font-medium">Register Now</a>
+          </form>
+
+          <p class="text-sm text-gray-600 mt-6 text-center">
+            Don’t have an account?
+            <a href="#" class="text-green-600 hover:underline" onclick="event.preventDefault(); showRegisterSection();">Create an account</a>
           </p>
-        </form>
+        </div>
+
+        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan
+          Livelihood Development Cooperative</p>
+      </div>
+      <!-- Right Side: Illustration (for login only) -->
+      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+        <img src="path/images/gbldc-login.png" alt="Loan Illustration"
+          class="object-cover w-full h-full">
       </div>
     </div>
-   <script src="../src/javascript/eye-toggle.js"></script>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-<script>
-  // Ensure FB SDK is loaded before using FB functions
-  function fbLogin() {
-    if (typeof FB === "undefined") {
-      alert("Facebook SDK not loaded. Please check your internet connection and try again.");
-      return;
-    }
-    FB.login(function(response) {
-      if (response.authResponse) {
-        FB.api('/me', {fields: 'name,email'}, function(profile) {
-          if (!profile.email) {
-            alert("Unable to retrieve email from Facebook. Please ensure your Facebook account has a verified email.");
-            return;
+
+    <!-- Forgot Password Section -->
+      <div id="forgotPasswordSection" class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
+        <!-- Left Side: Illustration -->
+        <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+          <img src="path/images/gbldc-forgot-password.jpg" alt="Loan Illustration"
+        class="object-cover w-full h-full shadow-2xl">
+        </div>
+        <!-- Right Side: Forgot Password Form -->
+        <div class="w-1/2 p-10 flex flex-col justify-between">
+          <div>
+        <img src="path/images/logocoop-removebg-preview 2.png"
+          alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+          style="image-rendering: auto;">
+        <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Forgot Password</h2>
+        <p class="text-sm text-gray-700 mb-8 text-center">
+          Enter your registered email address and we'll send you a link to reset your password.
+        </p>
+        <form id="forgotPasswordForm" class="space-y-6">
+          <div>
+            <label class="block text-sm text-gray-600 mb-1">Email Address</label>
+            <input type="email" placeholder="example@mail.com" required
+          class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+          </div>
+          <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
+            Send Reset Link
+          </button>
+        </form>
+        <p class="text-sm text-gray-600 text-center mt-4">
+          Remembered your password?
+          <a href="#" onclick="scrollToLogin();" class="text-green-600 hover:underline">Log in</a>
+        </p>
+          </div>
+          <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan Livelihood Development Cooperative</p>
+        </div>
+      </div>
+    
+    <!-- Registration Section -->
+    <div id="registerSection" class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
+      <!-- Left Side: Illustration -->
+      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+        <img src="path/images/gbldc-login.png" alt="Loan Illustration"
+          class="object-cover w-full h-full">
+      </div>
+      <!-- Right Side: Registration Form -->
+      <div class="w-1/2 p-10 flex flex-col justify-between">
+        <div>
+          <img src="path/images/logocoop-removebg-preview 2.png"
+            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            style="image-rendering: auto;">
+          <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Create Account</h2>
+          <p class="text-sm text-gray-700 mb-8 text-center">
+            Join GBLDC to easily manage your loans, track your finances, and access exclusive member benefits. Fill out the form below to get started.
+          </p>
+          <form class="grid grid-cols-2 gap-6">
+            <div class="col-span-2">
+              <label class="block text-sm text-gray-600 mb-1">Full Name</label>
+              <input type="text" placeholder="Your Name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div class="col-span-2">
+              <label class="block text-sm text-gray-600 mb-1">Email Address</label>
+              <input type="email" placeholder="example@mail.com" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            </div>
+            <div class="col-span-2 grid grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm text-gray-600 mb-1">Password</label>
+                <input type="password" placeholder="••••••••" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+              <div>
+                <label class="block text-sm text-gray-600 mb-1">Confirm Password</label>
+                <input type="password" placeholder="••••••••" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              </div>
+            </div>
+            <!-- Terms and Conditions (full width) -->
+            <div class="md:col-span-2 flex items-start ">
+              <input type="checkbox" id="terms" required class="mt-1 mr-2">
+              <label for="terms" class="text-sm text-gray-700">I confirm that all information provided is true  and I agree to the <a href="#"  class="text-green-700 underline">Terms & Conditions</a> of GBLDC.</label>
+            </div>
+            <div class="col-span-2">
+              <button type="button" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
+                onclick="showOtpSection();">
+                Continue
+              </button>
+            </div>
+          </form>
+          <p class="text-sm text-gray-600 text-center col-span-2 mt-4">
+            Already have an account?
+            <a href="#" onclick="scrollToLogin();" class="text-green-600 hover:underline">Log in</a>
+          </p>
+        </div>
+        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan Livelihood Development Cooperative</p>
+      </div>
+    </div>
+
+    <!-- OTP Section -->
+    <div id="otpSection" class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
+      <!-- Left Side: Illustration -->
+      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+        <img src="path/images/gbldc-verify-account.jpg" alt="Loan Illustration"
+          class="object-cover w-full h-full shadow-2xl">
+      </div>
+      <!-- Right Side: OTP Form -->
+      <div class="w-1/2 p-10 flex flex-col justify-between mt-10">
+        <div>
+          <img src="path/images/logocoop-removebg-preview 2.png"
+            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            style="image-rendering: auto;">
+          <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Verify Your Email</h2>
+          <p class="text-sm text-gray-700 mb-8 text-center">
+            Enter the 6-digit code sent to your email address to complete your registration.
+          </p>
+          <form class="space-y-6">
+            <div class="flex justify-center gap-2 mb-4">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl" inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl" inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl" inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl" inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl" inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1" class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl" inputmode="numeric" pattern="[0-9]*">
+            </div>
+            <button type="submit" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Verify</button>
+            <p class="text-sm text-gray-600 text-center">
+              Didn't receive the code?
+              <a href="#" class="text-green-600 hover:underline">Resend</a>
+            </p>
+          </form>
+        </div>
+        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan Livelihood Development Cooperative</p>
+      </div>
+    </div>
+
+    <!-- Facebook SDK -->
+    <script async defer crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script>
+      // Ensure FB SDK is loaded before using FB functions
+      function fbLogin() {
+        if (typeof FB === "undefined") {
+          alert("Facebook SDK not loaded. Please check your internet connection and try again.");
+          return;
+        }
+        FB.login(function(response) {
+          if (response.authResponse) {
+            FB.api('/me', {fields: 'name,email'}, function(profile) {
+              if (!profile.email) {
+                alert("Unable to retrieve email from Facebook. Please ensure your Facebook account has a verified email.");
+                return;
+              }
+              fetch('facebook_register.php', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+                body: `email=${encodeURIComponent(profile.email)}&name=${encodeURIComponent(profile.name)}`
+              })
+              .then(res => res.text())
+              .then(data => {
+                window.location.href = 'user-landingpage.php';
+              })
+              .catch(err => {
+                alert("Error during Facebook login: " + err);
+              });
+            });
+          } else {
+            alert("Facebook login was not successful.");
           }
-          fetch('facebook_register.php', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-            body: `email=${encodeURIComponent(profile.email)}&name=${encodeURIComponent(profile.name)}`
-          })
-          .then(res => res.text())
-          .then(data => {
-            window.location.href = 'user-landingpage.php';
-          })
-          .catch(err => {
-            alert("Error during Facebook login: " + err);
+        }, {scope: 'email'});
+      }
+
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '4093222834242920', // Replace with your App ID
+          cookie     : true,
+          xfbml      : true,
+          version    : 'v23.0'
+        });
+      };
+    </script>
+    <script>
+      function showRegisterSection() {
+        const reg = document.getElementById('registerSection');
+        const login = document.querySelector('.max-w-6xl.flex.rounded-2xl.shadow-xl.overflow-hidden:not(#registerSection):not(#otpSection):not(#forgotPasswordSection)');
+        // Hide login section
+        if (login) {
+          login.classList.add('hidden', 'invisible', 'pointer-events-none');
+          login.style.display = 'none';
+        }
+        // Show registration section
+        reg.classList.remove('hidden', 'invisible', 'pointer-events-none');
+        reg.style.display = 'flex';
+        reg.style.opacity = 0;
+        reg.style.transition = 'opacity 0.5s';
+        setTimeout(() => {
+          reg.style.opacity = 1;
+        }, 10);
+        reg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Scroll to login section when "Log in" is clicked
+      function scrollToLogin() {
+        const login = document.querySelector('.max-w-6xl.flex.rounded-2xl.shadow-xl.overflow-hidden:not(#registerSection):not(#otpSection):not(#forgotPasswordSection)');
+        const reg = document.getElementById('registerSection');
+        const otp = document.getElementById('otpSection');
+        const forgot = document.getElementById('forgotPasswordSection');
+        // Hide registration, OTP, and forgot password sections
+        if (reg) {
+          reg.classList.add('hidden', 'invisible', 'pointer-events-none');
+          reg.style.display = 'none';
+        }
+        if (otp) {
+          otp.classList.add('hidden', 'invisible', 'pointer-events-none');
+          otp.style.display = 'none';
+        }
+        if (forgot) {
+          forgot.classList.add('hidden', 'invisible', 'pointer-events-none');
+          forgot.style.display = 'none';
+        }
+        // Show login section
+        if (login) {
+          login.classList.remove('hidden', 'invisible', 'pointer-events-none');
+          login.style.display = 'flex';
+          login.style.opacity = 0;
+          login.style.transition = 'opacity 0.5s';
+          setTimeout(() => {
+            login.style.opacity = 1;
+          }, 10);
+          login.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      // Show OTP section and hide registration
+      function showOtpSection() {
+        // Show SweetAlert2 before showing OTP section with timer, no confirm button
+        Swal.fire({
+            icon: 'success',
+            iconColor: '#16a34a',
+            customClass: {
+              popup: 'swal2-custom-popup'
+            },
+            title: 'Check your email',
+            titleText: 'Email Verification',
+            color: '#1e2939',
+            text: 'Your 6-digit code has been sent to your email address.',
+            timer: 2000,
+            showConfirmButton: false,
+            willClose: () => {
+              const otp = document.getElementById('otpSection');
+              const reg = document.getElementById('registerSection');
+              if (reg) {
+                reg.classList.add('hidden', 'invisible', 'pointer-events-none');
+                reg.style.display = 'none';
+              }
+              if (otp) {
+                otp.classList.remove('hidden', 'invisible', 'pointer-events-none');
+                otp.style.display = 'flex';
+                otp.style.opacity = 0;
+                otp.style.transition = 'opacity 0.5s';
+                setTimeout(() => {
+                  otp.style.opacity = 1;
+                }, 10);
+                otp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              }
+            }
+        });
+      }
+
+      // OTP input auto-focus and form logic
+      document.addEventListener('DOMContentLoaded', function () {
+        const otpInputs = document.querySelectorAll('#otpSection input[type="text"]');
+        otpInputs.forEach((input, idx) => {
+          input.addEventListener('input', function () {
+            if (this.value.length === 1 && idx < otpInputs.length - 1) {
+              otpInputs[idx + 1].focus();
+            }
+          });
+          input.addEventListener('keydown', function (e) {
+            if (e.key === 'Backspace' && !this.value && idx > 0) {
+              otpInputs[idx - 1].focus();
+            }
           });
         });
-      } else {
-        alert("Facebook login was not successful.");
-      }
-    }, {scope: 'email'});
-  }
 
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '4093222834242920', // Replace with your App ID
-      cookie     : true,
-      xfbml      : true,
-      version    : 'v23.0'
-    });
-  };
-</script>
+        // OTP form submit handler using SweetAlert2
+        const otpForm = document.querySelector('#otpSection form');
+        if (otpForm) {
+          otpForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let otpCode = '';
+            otpInputs.forEach(inp => otpCode += inp.value);
+            if (otpCode.length === 6) {
+              Swal.fire({
+                icon: 'success',
+                iconColor: '#16a34a',
+                customClass: {
+                  popup: 'swal2-custom-popup'
+                },
+                title: 'Account Created!',
+                titleText: 'Welcome to GBLDC',
+                text: 'Your account has been successfully created.',
+                color: '#1e2939',
+                timer: 2000,
+                showConfirmButton: false,
+                willClose: () => {
+                  scrollToLogin();
+                }
+              });
+            } else {
+              Swal.fire({
+                icon: 'warning',
+                iconColor: '#dc2626',
+                title: 'Incomplete Code',
+                titleText: 'Invalid OTP',
+                color: '#1e2939',
+                text: 'Please enter the 6-digit code.',
+                confirmButtonColor: '#16a34a'
+              });
+            }
+          });
+        }
+
+        // Optional: Resend OTP handler using SweetAlert2
+        const resendLink = document.querySelector('#otpSection a[href="#"]');
+        if (resendLink) {
+          resendLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            Swal.fire({
+              icon: 'info',
+              iconColor: '#dc2626',
+              title: 'OTP Resent',
+              titleText: 'Resend OTP',
+              color: '#1e2939',
+              text: 'A new OTP has been sent to your email.',
+              confirmButtonColor: '#16a34a'
+            });
+          });
+        }
+
+        // Forgot Password link logic
+        const forgotLink = document.getElementById('forgotPasswordLink');
+        if (forgotLink) {
+          forgotLink.addEventListener('click', function (e) {
+            e.preventDefault();
+            showForgotPasswordSection();
+          });
+        }
+
+        // Handle forgot password form submit
+        const forgotForm = document.getElementById('forgotPasswordForm');
+        if (forgotForm) {
+          forgotForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            Swal.fire({
+              icon: 'success',
+              iconColor: '#16a34a',
+              customClass: { popup: 'swal2-custom-popup' },
+              title: 'Reset Link Sent',
+              text: 'A password reset link has been sent to your email address.',
+              color: '#1e2939',
+              timer: 2000,
+              showConfirmButton: false,
+              willClose: () => {
+                scrollToLogin();
+              }
+            });
+          });
+        }
+      });
+
+      function showForgotPasswordSection() {
+        const forgot = document.getElementById('forgotPasswordSection');
+        const login = document.querySelector('.max-w-6xl.flex.rounded-2xl.shadow-xl.overflow-hidden:not(#registerSection):not(#otpSection):not(#forgotPasswordSection)');
+        // Hide login section
+        if (login) {
+          login.classList.add('hidden', 'invisible', 'pointer-events-none');
+          login.style.display = 'none';
+        }
+        // Show forgot password section
+        forgot.classList.remove('hidden', 'invisible', 'pointer-events-none');
+        forgot.style.display = 'flex';
+        forgot.style.opacity = 0;
+        forgot.style.transition = 'opacity 0.5s';
+        setTimeout(() => {
+          forgot.style.opacity = 1;
+        }, 10);
+        forgot.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    </script>
   </body>
-  </html>
+</html>
