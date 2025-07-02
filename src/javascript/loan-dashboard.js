@@ -209,26 +209,27 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const logoutBtn = document.getElementById("logoutBtn");
-  if (logoutBtn) {
-    logoutBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      Swal.fire({
-        title: "Are you sure you want to logout?",
-        icon: "warning",
-        iconColor: "#ef4444",
-        color: "#1e2939",
-        showCancelButton: true,
-        confirmButtonColor: "#22c55e",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, logout",
-        cancelButtonText: "Cancel",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          // Redirect to login page or perform logout logic here
-          window.location.href = "index.html";
-        }
-      });
-    });
-  }
+    const logoutBtn = document.getElementById("logoutBtn");
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", function (e) {
+            e.preventDefault();
+            Swal.fire({
+                title: "Are you sure you want to logout?",
+                icon: "warning",
+                iconColor: "#ef4444",
+                color: "#1e2939",
+                showCancelButton: true,
+                reverseButtons: true, // Confirm button on right
+                confirmButtonColor: "#22c55e",
+                cancelButtonColor: "#d33",
+                cancelButtonText: "Cancel",
+                confirmButtonText: "Yes, logout",
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Redirect to login page or perform logout logic here
+                    window.location.href = "index.html";
+                }
+            });
+        });
+    }
 });
