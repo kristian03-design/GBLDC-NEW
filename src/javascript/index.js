@@ -336,3 +336,77 @@ function showRegisterSection() {
             });
             }
         });
+          function validateLoginFields() {
+            const email = document.querySelector('input[type="email"][placeholder="example@mail.com"]');
+            const password = document.querySelector('input[type="password"][placeholder="••••••••"]');
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+
+            // Simple email format check
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailValue && !passwordValue) {
+              Swal.fire({
+                icon: 'warning',
+                iconColor: '#dc2626',
+                color: '#1e2939',
+                title: 'Missing Fields',
+                text: 'Please fill both Email Address and Password fields.'
+              });
+            } else if (!emailValue && passwordValue) {
+              Swal.fire({
+                icon: 'warning',
+                iconColor: '#dc2626',
+                color: '#1e2939',
+                title: 'Missing Email',
+                text: 'Please enter your email address.'
+              });
+            } else if (emailValue && !passwordValue) {
+              Swal.fire({
+                icon: 'warning',
+                iconColor: '#dc2626',
+                color: '#1e2939',
+                title: 'Missing Password',
+                text: 'Please enter your password.'
+              });
+            } else if (!emailPattern.test(emailValue)) {
+              Swal.fire({
+                icon: 'warning',
+                iconColor: '#dc2626',
+                color: '#1e2939',
+                title: 'Invalid Email',
+                text: 'Please enter a valid email address.'
+              });
+            } else {
+                // Proceed with login (show OTP section for login verification)
+                Swal.fire({
+                icon: 'success',
+                iconColor: '#16a34a',
+                customClass: { popup: 'swal2-custom-popup' },
+                title: 'Check your email',
+                titleText: 'Login Verification',
+                color: '#1e2939',
+                text: 'Your 6-digit code has been sent to your email address.',
+                timer: 2000,
+                showConfirmButton: false,
+                willClose: () => {
+                  const otp = document.getElementById('loginOtpSection');
+                  const login = document.getElementById('loginSect').parentElement;
+                  if (login) {
+                  login.classList.add('hidden', 'invisible', 'pointer-events-none');
+                  login.style.display = 'none';
+                  }
+                  if (otp) {
+                  otp.classList.remove('hidden', 'invisible', 'pointer-events-none');
+                  otp.style.display = 'flex';
+                  otp.style.opacity = 0;
+                  otp.style.transition = 'opacity 0.5s';
+                  setTimeout(() => {
+                    otp.style.opacity = 1;
+                  }, 10);
+                  otp.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  }
+                }
+                });
+            }
+          }
