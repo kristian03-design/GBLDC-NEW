@@ -295,7 +295,7 @@ function showRegisterSection() {
           timer: 2000,
           showConfirmButton: false,
           willClose: () => {
-            window.location.href = 'landingpage.html';
+            window.location.href = 'user-landingpage.php'; // Redirect to user landing page
           }
             });
           } else {

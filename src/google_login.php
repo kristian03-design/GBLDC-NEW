@@ -1,10 +1,8 @@
 <?php
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use Google_Client;
-
-// Use environment variable or config for client ID
-$googleClientId = getenv('Test Account') ?: '528123102514-o8vap3bmgnogbgvtfuipgkgea739ov3c.apps.googleusercontent.com';
+// Set your Google Client ID here
+$googleClientId = '528123102514-o8vap3bmgnogbgvtfuipgkgea739ov3c.apps.googleusercontent.com';
 
 header('Content-Type: application/json');
 
@@ -13,21 +11,28 @@ if (empty($_POST['credential'])) {
     echo json_encode(['success' => false, 'error' => 'Missing credential']);
     exit;
 }
+
 // Initialize Google Client
-// Ensure you have set the correct Google Client ID in your environment or config
-$client = new \Google_Client(['client_id' => $googleClientId]);
+$client = new Google_Client();
+$client->setClientId($googleClientId);
 
 try {
     $payload = $client->verifyIdToken($_POST['credential']);
     if ($payload) {
-        // Example: $payload['email'], $payload['name'], etc.
-        // TODO: Log in or register the user in your database
+        $email = $payload['email'] ?? null;
+        $name = $payload['name'] ?? null;
+        $sub = $payload['sub'] ?? null;
 
-        echo json_encode(['success' => true, 'user' => [
-            'email' => $payload['email'] ?? null,
-            'name' => $payload['name'] ?? null,
-            'sub' => $payload['sub'] ?? null
-        ]]);
+        // --- Example DB logic here ---
+
+        echo json_encode([
+            'success' => true,
+            'user' => [
+                'email' => $email,
+                'name' => $name,
+                'sub' => $sub
+            ]
+        ]);
     } else {
         echo json_encode(['success' => false, 'error' => 'Invalid token']);
     }
