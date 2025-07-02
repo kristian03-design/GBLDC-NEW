@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+      <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../src/javascript/check-loan-status.js"></script>
+    <script src="../src/javascript/loan-dashboard.js"></script>
     <link href="./output.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
     <title>Check Loan Status | GBLDC</title>
@@ -78,7 +82,7 @@
       </button>
 
       <!-- Sidebar -->
-      <aside id="sidebar" class="w-80 lg:w-1/5 bg-white h-screen p-3 lg:p-5 shadow-lg flex flex-col fixed lg:relative z-50 transform -translate-x-full lg:translate-x-0 sidebar-transition">
+      <aside id="sidebar" class="w-80 lg:w-1/5 bg-white h-screen p-3 lg:p-5 shadow-lg flex flex-col fixed lg:relative z-50 transform -translate-x-full lg:translate-x-0 sidebar-transition transition-transform duration-300 ease-in-out">
         <!-- Close button for mobile -->
         <button id="closeSidebarBtn" class="self-end mb-4 lg:hidden">
           <i class="fas fa-times text-gray-600"></i>
@@ -126,9 +130,10 @@
               <i class="fas fa-cog mr-2 lg:mr-3 w-4"></i>
               <span class="truncate">Account Settings</span>
             </a>
-            <a href="#" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+           <a href="#" id="logoutBtn" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
               <i class="fas fa-sign-out-alt mr-2 lg:mr-3 w-4"></i>
               <span class="truncate">Logout</span>
+            </a>
             </a>
           </nav>
           
@@ -167,8 +172,6 @@
           <p class="text-gray-600 text-sm lg:text-base">Here you can check the status of your loan application and manage your account.</p>
           <hr class="border-gray-300 mt-4 lg:mt-6">
         </div>
-
-
                     <!-- Loan Status Form Container -->
                     <div id="loanStatusContainer" class="w-full max-w-4xl mx-auto">
                         <div class="bg-white rounded-lg shadow-md p-6 lg:p-8 xl:p-10">
@@ -203,7 +206,7 @@
                                 
                                 <div class="flex justify-center pt-4">
                                     <button type="submit" 
-                                            class="mobile-btn lg:w-auto lg:px-8 lg:py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm lg:text-base">
+                                            class="mobile-btn lg:w-auto lg:px-8 lg:py-3 md:py-2 md:px-4 md:rounded-lg md:font-medium bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 text-sm lg:text-base">
                                         Check Status
                                     </button>
                                 </div>
@@ -271,195 +274,5 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- SweetAlert2 CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
-    <script>
-        // Sidebar functionality
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const sidebarClose = document.getElementById('sidebarClose');
-        const sidebar = document.getElementById('sidebar');
-        const sidebarOverlay = document.getElementById('sidebarOverlay');
-
-        function openSidebar() {
-            sidebar.classList.remove('-translate-x-full');
-            sidebarOverlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeSidebar() {
-            sidebar.classList.add('-translate-x-full');
-            sidebarOverlay.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        if (sidebarToggle) {
-            sidebarToggle.addEventListener('click', openSidebar);
-        }
-
-        if (sidebarClose) {
-            sidebarClose.addEventListener('click', closeSidebar);
-        }
-
-        if (sidebarOverlay) {
-            sidebarOverlay.addEventListener('click', closeSidebar);
-        }
-
-        // Close sidebar on window resize if screen becomes large
-        window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) {
-                closeSidebar();
-            }
-        });
-
-        // Application ID input: enforce uppercase alphanumeric, max 10 chars
-        const loanIdInput = document.getElementById('loan-id');
-        if (loanIdInput) {
-            loanIdInput.addEventListener('input', function () {
-                this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
-            });
-        }
-
-        // Timeline and progress bar update logic
-        function updateTimelineAndProgress(isApproved) {
-            const approvedMessage = document.getElementById('approvedMessage');
-            const timelineStatus = document.getElementById('timelineStatus');
-            const step1 = document.getElementById('progressStep1');
-            const step2 = document.getElementById('progressStep2');
-            const step3 = document.getElementById('progressStep3');
-            const bar1 = document.getElementById('progressBar1');
-            const bar2 = document.getElementById('progressBar2');
-
-            // Update progress steps
-            step1.querySelector('div').classList.add('bg-green-500');
-            step1.querySelector('div').classList.remove('bg-gray-300');
-            step1.querySelector('span').classList.add('text-green-700');
-            step1.querySelector('span').classList.remove('text-gray-500');
-            bar1.classList.add('bg-green-500');
-            bar1.classList.remove('bg-gray-300');
-
-            step2.querySelector('div').classList.add('bg-green-500');
-            step2.querySelector('div').classList.remove('bg-gray-300');
-            step2.querySelector('span').classList.add('text-green-700');
-            step2.querySelector('span').classList.remove('text-gray-500');
-
-            if (isApproved) {
-                step3.querySelector('div').classList.add('bg-green-500');
-                step3.querySelector('div').classList.remove('bg-gray-300');
-                step3.querySelector('span').classList.add('text-green-700');
-                step3.querySelector('span').classList.remove('text-gray-500');
-                step3.querySelector('span').textContent = 'Approved';
-                bar2.classList.add('bg-green-500');
-                bar2.classList.remove('bg-gray-300');
-            } else {
-                step3.querySelector('div').classList.remove('bg-green-500');
-                step3.querySelector('div').classList.add('bg-gray-300');
-                step3.querySelector('span').classList.remove('text-green-700');
-                step3.querySelector('span').classList.add('text-gray-500');
-                step3.querySelector('span').textContent = 'Decision';
-                bar2.classList.remove('bg-green-500');
-                bar2.classList.add('bg-gray-300');
-            }
-
-            // Update timeline status
-            if (timelineStatus) {
-                const statusSpan = timelineStatus.querySelector('span');
-                const statusH4 = timelineStatus.querySelector('h4');
-                const statusP = timelineStatus.querySelector('p');
-                const statusIcon = statusSpan.querySelector('i');
-                
-                if (isApproved) {
-                    approvedMessage.classList.remove('hidden');
-                    statusSpan.classList.remove('bg-gray-300');
-                    statusSpan.classList.add('bg-green-500');
-                    statusH4.textContent = 'Approved';
-                    statusH4.classList.remove('text-gray-700');
-                    statusH4.classList.add('text-green-700');
-                    statusP.textContent = 'Your loan application has been approved! Congratulations!';
-                    statusIcon.classList.remove('fa-clock');
-                    statusIcon.classList.add('fa-check');
-                } else {
-                    approvedMessage.classList.add('hidden');
-                    statusSpan.classList.remove('bg-green-500');
-                    statusSpan.classList.add('bg-gray-300');
-                    statusH4.textContent = 'Pending Decision';
-                    statusH4.classList.remove('text-green-700');
-                    statusH4.classList.add('text-gray-700');
-                    statusP.textContent = 'You will be notified once a decision is made on your application.';
-                    statusIcon.classList.remove('fa-check');
-                    statusIcon.classList.add('fa-clock');
-                }
-            }
-        }
-
-        // Loan status form submission
-        const loanStatusForm = document.getElementById('loanStatusForm');
-        const statusTimeline = document.getElementById('statusTimeline');
-        const loanStatusContainer = document.getElementById('loanStatusContainer');
-
-        if (loanStatusForm) {
-            loanStatusForm.addEventListener('submit', function (e) {
-                e.preventDefault();
-                
-                const loanId = loanIdInput.value.trim();
-                const email = document.getElementById('email').value.trim();
-                
-                if (loanId && email) {
-                    // Show timeline and hide form
-                    if (statusTimeline) {
-                        statusTimeline.classList.remove('hidden');
-                        setTimeout(() => {
-                            statusTimeline.classList.add('show');
-                        }, 50);
-                    }
-                    if (loanStatusContainer) {
-                        loanStatusContainer.classList.add('hidden');
-                    }
-                    
-                    // Determine status based on loan ID
-                    const isApproved = loanId.toUpperCase().endsWith('A');
-                    updateTimelineAndProgress(isApproved);
-                    
-                    // Show SweetAlert
-                    if (isApproved) {
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Loan Status',
-                            text: `Status for Application ID "${loanId}": Approved.`,
-                            confirmButtonColor: '#16a34a',
-                            confirmButtonText: 'Continue'
-                        });
-                    } else {
-                        Swal.fire({
-                            icon: 'info',
-                            title: 'Loan Status',
-                            text: `Status for Application ID "${loanId}": Pending Review.`,
-                            confirmButtonColor: '#16a34a',
-                            confirmButtonText: 'Continue'
-                        });
-                    }
-                } else {
-                    Swal.fire({
-                        icon: 'warning',
-                        title: 'Missing Information',
-                        text: 'Please fill in all required fields.',
-                        confirmButtonColor: '#16a34a'
-                    });
-                }
-            });
-        }
-
-        // Handle escape key to close sidebar
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeSidebar();
-            }
-        });
-    </script>
 </body>
 </html>
