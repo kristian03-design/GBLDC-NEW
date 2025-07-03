@@ -156,6 +156,8 @@
                         Swal.fire({
                             icon: 'success',
                             title: 'Loan Status',
+                            iconColor: '#16a34a',
+                            color: '#1e2939',
                             text: `Status for Application ID "${loanId}": Approved.`,
                             confirmButtonColor: '#16a34a',
                             confirmButtonText: 'Continue'
@@ -164,6 +166,8 @@
                         Swal.fire({
                             icon: 'info',
                             title: 'Loan Status',
+                            iconColor: '#ef4444',
+                            color: '#1e2939',
                             text: `Status for Application ID "${loanId}": Pending Review.`,
                             confirmButtonColor: '#16a34a',
                             confirmButtonText: 'Continue'
@@ -172,6 +176,8 @@
                 } else {
                     Swal.fire({
                         icon: 'warning',
+                        iconColor: '#ef4444',
+                        color: '#1e2939',
                         title: 'Missing Information',
                         text: 'Please fill in all required fields.',
                         confirmButtonColor: '#16a34a'

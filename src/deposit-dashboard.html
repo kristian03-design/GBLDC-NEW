@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposit Dashboard | GBLDC</title>
+    <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      .sidebar-transition {
+        transition: transform 0.3s ease-in-out;
+      }
+      .table-container {
+        overflow-x: auto;
+      }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <div class="min-h-screen flex relative">
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+        <!-- Mobile Menu Button -->
+        <button id="mobileMenuBtn" class="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-md shadow-md">
+            <i class="fas fa-bars text-gray-600"></i>
+        </button>
+        <!-- Sidebar -->
+        <aside id="sidebar" class="w-80 lg:w-1/5 bg-white h-screen p-3 lg:p-5 shadow-lg flex flex-col fixed lg:relative z-50 transform -translate-x-full lg:translate-x-0 sidebar-transition">
+            <button id="closeSidebarBtn" class="self-end mb-4 lg:hidden">
+                <i class="fas fa-times text-gray-600"></i>
+            </button>
+            <!-- Logo Section -->
+            <div class="flex items-center space-x-2 lg:space-x-3 mb-4">
+                <div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center">
+                    <img src="path/images/logocoop-removebg-preview 2.png" class="text-xl lg:text-2xl" />
+                </div>
+                <h1 class="text-xl lg:text-3xl font-bold tracking-wider text-gray-800">GBLDC</h1>
+            </div>
+            <!-- User Profile -->
+            <div class="mb-6">
+                <div class="flex items-center space-x-3 mb-4 p-2 bg-gray-50 rounded-lg">
+                    <div class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center">
+                        <img src="path/images/Kristian.png" class="rounded-full :text-lg lg:text-xl" />
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <p class="font-semibold text-sm lg:text-base truncate">Kristian Lloyd Hernandez</p>
+                        <p class="text-xs lg:text-sm text-gray-500 truncate">hkristianlloyd2@gmail.com</p>
+                    </div>
+                </div>
+                <!-- Navigation -->
+                <nav class="flex flex-col gap-1 lg:gap-2">
+                    <a href="loan-dashboard.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+                        <i class="fa-solid fa-house mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">Loan Dashboard</span>
+                    </a>
+                    <a href="deposit-dashboard.html" class="flex items-center p-3 lg:p-4 bg-green-500 text-white rounded-lg font-medium text-sm lg:text-base">
+                        <i class="fa-solid fa-piggy-bank mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">Deposit Dashboard</span>
+                    </a>
+                    <a href="checkloanstatus.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+                        <i class="fa-solid fa-money-bill-wave mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">Check Loan Status</span>
+                    </a>
+                    <a href="contact-us.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+                        <i class="fas fa-envelope mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">Contact Us</span>
+                    </a>
+                    <a href="user-faq.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+                        <i class="fas fa-question-circle mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">FAQ</span>
+                    </a>
+                    <a href="account-settings.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+                        <i class="fas fa-cog mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">Account Settings</span>
+                    </a>
+                    <a href="#" id="logoutBtn" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+                        <i class="fas fa-sign-out-alt mr-2 lg:mr-3 w-4"></i>
+                        <span class="truncate">Logout</span>
+                    </a>
+                </nav>
+                <!-- App Download Section -->
+                <div class="mt-6 lg:mt-10 text-center p-4 bg-green-50 rounded-lg">
+                    <h2 class="text-sm lg:text-base font-bold text-green-800">Get the App Now</h2>
+                    <div class="w-16 h-16 lg:w-20 lg:h-20 rounded-lg flex items-center justify-center mx-auto mt-2">
+                        <img src="path/images/logocoop-removebg-preview 2.png" />
+                    </div>
+                    <a href="https://play.google.com/store" target="_blank" class="w-full inline-block mt-3 px-4 py-2 bg-green-600 text-white rounded-lg font-medium text-sm hover:bg-green-700 transition-colors text-center">
+                        Download from Google Play
+                    </a>
+                    <a href="https://www.apple.com/app-store/" target="_blank" class="w-full inline-block mt-2 px-4 py-2 bg-gray-800 text-white rounded-lg font-medium text-sm hover:bg-gray-900 transition-colors text-center">
+                        Download from App Store
+                    </a>
+                    <p class="text-xs text-gray-500 mt-3">
+                        Example links. Replace with your app's store URLs.
+                    </p>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content -->
+        <main class="flex-1 flex items-center justify-center p-4 lg:p-6 ml-0">
+            <div class="max-w-7xl w-full bg-white rounded-lg shadow-lg p-8 animate-fadeIn">
+                <div class="flex flex-col items-center mb-8">
+                    <img src="path/images/deposit-services.png" alt="Deposit" class="w-60 h-60 mb-4 object-cover" />
+                    <h2 class="text-2xl font-bold mb-2 text-gray-800">Deposit Dashboard</h2>
+                    <p class="text-lg text-gray-700 mb-4 text-center">
+                        View your deposit balance, recent transactions, and make new deposits.
+                    </p>
+                </div>
+                <!-- Deposit Summary -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8" id="depositSummary">
+                    <div class="bg-green-50 p-6 rounded-lg flex flex-col items-center">
+                        <i class="fa-solid fa-wallet text-3xl text-green-600 mb-2"></i>
+                        <span class="text-gray-500 text-sm">Total Balance</span>
+                        <span class="text-2xl font-bold text-green-700 mt-1" id="totalBalance">₱25,000.00</span>
+                    </div>
+                    <div class="bg-blue-50 p-6 rounded-lg flex flex-col items-center">
+                        <i class="fa-solid fa-arrow-down text-3xl text-blue-600 mb-2"></i>
+                        <span class="text-gray-500 text-sm">Last Deposit</span>
+                        <span class="text-xl font-bold text-blue-700 mt-1" id="lastDepositAmount">₱5,000.00</span>
+                        <span class="text-xs text-gray-400 mt-1" id="lastDepositDate">June 28, 2025</span>
+                    </div>
+                    <div class="bg-yellow-50 p-6 rounded-lg flex flex-col items-center">
+                        <i class="fa-solid fa-clock-rotate-left text-3xl text-yellow-600 mb-2"></i>
+                        <span class="text-gray-500 text-sm">Pending Deposits</span>
+                        <span class="text-xl font-bold text-yellow-700 mt-1" id="pendingDeposits">₱1,000.00</span>
+                    </div>
+                </div>
+                <!-- Deposit Actions -->
+                <div class="flex flex-col md:flex-row gap-4 mb-8 justify-center">
+                    <button id="makeDepositBtn" class="px-6 py-3 bg-green-600 text-white rounded-lg font-medium hover:bg-green-700 transition-colors text-center">
+                        <i class="fa-solid fa-plus mr-2"></i>Make a Deposit
+                    </button>
+                    <a href="deposit-history.html" class="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-medium hover:bg-gray-300 transition-colors text-center">
+                        <i class="fa-solid fa-list mr-2"></i>View Deposit History
+                    </a>
+                </div>
+                <!-- Recent Transactions Table -->
+                <div class="table-container">
+                    <h3 class="text-lg font-semibold mb-3 text-gray-700">Recent Deposit Transactions</h3>
+                    <table class="min-w-full bg-white rounded-lg overflow-hidden" id="transactionsTable">
+                        <thead>
+                            <tr class="bg-gray-100 text-gray-700 text-sm">
+                                <th class="py-3 px-4 text-left">Date</th>
+                                <th class="py-3 px-4 text-left">Amount</th>
+                                <th class="py-3 px-4 text-left">Status</th>
+                                <th class="py-3 px-4 text-left">Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transactionsBody">
+                            <!-- Transactions will be rendered here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        // Sample data for demonstration
+        let deposits = [
+            { date: "June 28, 2025", amount: 5000, status: "Completed", reference: "DEP123456" },
+            { date: "June 25, 2025", amount: 1000, status: "Pending", reference: "DEP123455" },
+            { date: "June 20, 2025", amount: 2000, status: "Completed", reference: "DEP123454" }
+        ];
+
+        function formatCurrency(amount) {
+            return "₱" + amount.toLocaleString("en-PH", {minimumFractionDigits: 2});
+        }
+
+        function renderDeposits() {
+            // Render summary
+            let total = deposits
+                .filter(d => d.status === "Completed")
+                .reduce((sum, d) => sum + d.amount, 0);
+            let pending = deposits
+                .filter(d => d.status === "Pending")
+                .reduce((sum, d) => sum + d.amount, 0);
+            let lastDeposit = deposits.find(d => d.status === "Completed");
+
+            document.getElementById("totalBalance").textContent = formatCurrency(total);
+            document.getElementById("pendingDeposits").textContent = formatCurrency(pending);
+            if (lastDeposit) {
+                document.getElementById("lastDepositAmount").textContent = formatCurrency(lastDeposit.amount);
+                document.getElementById("lastDepositDate").textContent = lastDeposit.date;
+            } else {
+                document.getElementById("lastDepositAmount").textContent = "₱0.00";
+                document.getElementById("lastDepositDate").textContent = "-";
+            }
+
+            // Render transactions
+            let tbody = document.getElementById("transactionsBody");
+            tbody.innerHTML = "";
+            deposits.forEach(d => {
+                let statusColor = d.status === "Completed" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700";
+                tbody.innerHTML += `
+                    <tr class="border-b">
+                        <td class="py-3 px-4">${d.date}</td>
+                        <td class="py-3 px-4">${formatCurrency(d.amount)}</td>
+                        <td class="py-3 px-4">
+                            <span class="inline-block px-3 py-1 rounded-full ${statusColor} text-xs font-semibold">${d.status}</span>
+                        </td>
+                        <td class="py-3 px-4">${d.reference}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        // Add deposit functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            renderDeposits();
+
+            document.getElementById("makeDepositBtn").addEventListener("click", function() {
+                Swal.fire({
+                    title: 'Make a Deposit',
+                    html:
+                        '<input id="swal-amount" type="number" min="1" class="swal2-input" placeholder="Enter amount">',
+                    showCancelButton: true,
+                    confirmButtonText: 'Submit',
+                    preConfirm: () => {
+                        const amount = parseFloat(document.getElementById('swal-amount').value);
+                        if (!amount || amount <= 0) {
+                            Swal.showValidationMessage('Please enter a valid amount');
+                        }
+                        return amount;
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed && result.value) {
+                        // Add new deposit as pending
+                        const today = new Date();
+                        const dateStr = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                        const ref = "DEP" + Math.floor(Math.random() * 900000 + 100000);
+                        deposits.unshift({
+                            date: dateStr,
+                            amount: result.value,
+                            status: "Pending",
+                            reference: ref
+                        });
+                        renderDeposits();
+                        Swal.fire('Success', 'Your deposit has been added and is pending.', 'success');
+                    }
+                });
+            });
+
+            // Sidebar mobile functionality
+            const sidebar = document.getElementById('sidebar');
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            mobileMenuBtn.addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+                mobileOverlay.classList.remove('hidden');
+            });
+            closeSidebarBtn.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+                mobileOverlay.classList.add('hidden');
+            });
+            mobileOverlay.addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+                mobileOverlay.classList.add('hidden');
+            });
+
+            // Logout button functionality
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                Swal.fire({
+                    title: 'Logout',
+                    text: 'Are you sure you want to logout?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Logout'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'login.html';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
