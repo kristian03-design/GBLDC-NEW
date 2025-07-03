@@ -42,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
     paymentForm.reset();
     Swal.fire({
       icon: "success",
+      iconColor: '#16a34a',
+      color: '#1e2939',
       title: "Payment method added!",
       showConfirmButton: false,
       timer: 1500,
@@ -76,6 +78,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       Swal.fire({
         icon: "success",
+        iconColor: '#16a34a',
+        color: '#1e2939',
         title: "Profile updated!",
         showConfirmButton: false,
         timer: 1500,
@@ -94,6 +98,8 @@ document.addEventListener("DOMContentLoaded", function () {
           document.getElementById("asideProfilePic").src = ev.target.result;
           Swal.fire({
             icon: "success",
+            iconColor: '#16a34a',
+            color: '#1e2939',
             title: "Profile picture changed!",
             showConfirmButton: false,
             timer: 1500,
