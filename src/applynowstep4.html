@@ -438,62 +438,107 @@
             </div>
           </div>
           <div class="pt-6 border-t">
-            <h3 class="text-2xl font-medium mb-2 text-teal-900">Attachments</h3>
-            <label class="block font-normal mb-1 text-normal">Required Documents
-              <span class="text-red-500">*</span></label>
-            <div class="flex items-center gap-3">
-              <input type="text" id="docName"
-                class="border px-3 py-2 rounded w-96 mt-3"
-                placeholder="Required Documents" readonly>
-              <input type="file" id="docFile"
-                class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
-                accept="image/*">
-              <button type="button" id="docRemove"
-                class="hidden text-red-500 text-base">Remove</button>
-              <button type="button" id="docReplace"
-                class="hidden text-blue-500 text-base">Replace</button>
+           <h3 class="text-2xl font-medium mb-2 text-teal-900">Attachments</h3>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Required Documents -->
+                <div>
+                  <label class="block font-normal mb-1 text-normal">Required Documents
+                    <span class="text-red-500">*</span></label>
+                  <div class="flex items-center gap-3">
+                    <input type="text" id="docName"
+                      class="border px-3 py-2 rounded w-72 mt-3"
+                      placeholder="Required Documents" readonly>
+                    <input type="file" id="docFile"
+                      class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                      accept="image/*">
+                    <button type="button" id="docRemove"
+                      class="hidden text-red-500 text-base">Remove</button>
+                    <button type="button" id="docReplace"
+                      class="hidden text-blue-500 text-base">Replace</button>
+                  </div>
+                  <img id="docPreview"
+                    class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+                </div>
+                <!-- 2x2 Picture -->
+                <div>
+                  <label class="block font-normal mb-1 text-normal">2x2 Picture <span
+                      class="text-red-500">*</span></label>
+                  <div class="flex items-center gap-3">
+                    <input type="text" id="picName"
+                      class="border px-3 py-2 rounded w-72 mt-3"
+                      placeholder="2x2 Picture" readonly>
+                    <input type="file" id="picFile"
+                      class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                      accept="image/*">
+                    <button type="button" id="picRemove"
+                      class="hidden text-red-500  text-base">Remove</button>
+                    <button type="button" id="picReplace"
+                      class="hidden text-blue-500  text-base">Replace</button>
+                  </div>
+                  <img id="picPreview"
+                    class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+                </div>
+                <!-- Proof of Billing -->
+                <div>
+                  <label class="block font-normal mb-1 text-normal">Proof of Billing
+                    <span class="text-red-500">*</span></label>
+                  <div class="flex items-center gap-3">
+                    <input type="text" id="billingName"
+                      class="border px-3 py-2 rounded w-72 mt-3"
+                      placeholder="Proof of Billing" readonly>
+                    <input type="file" id="billingFile"
+                      class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                      accept="image/*">
+                    <button type="button" id="billingRemove"
+                      class="hidden text-red-500 text-base">Remove</button>
+                    <button type="button" id="billingReplace"
+                      class="hidden text-blue-500 text-base">Replace</button>
+                  </div>
+                  <img id="billingPreview"
+                    class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+                </div>
+                <!-- Valid ID -->
+                <div>
+                  <label class="block font-normal mb-1 text-normal">Valid ID
+                    <span class="text-red-500">*</span></label>
+                  <div class="flex items-center gap-3">
+                    <input type="text" id="validIdName"
+                      class="border px-3 py-2 rounded w-72 mt-3"
+                      placeholder="Valid ID" readonly>
+                    <input type="file" id="validIdFile"
+                      class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                      accept="image/*">
+                    <button type="button" id="validIdRemove"
+                      class="hidden text-red-500 text-base">Remove</button>
+                    <button type="button" id="validIdReplace"
+                      class="hidden text-blue-500 text-base">Replace</button>
+                  </div>
+                  <img id="validIdPreview"
+                    class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+                </div>
+                <!-- Signature Specimen -->
+                <div>
+                    <label class="block font-normal mb-1 text-normal">Signature Specimen
+                    <span class="text-red-500">*</span></label>
+                    <div class="flex items-center gap-3">
+                    <input type="text" id="signatureName"
+                      class="border px-3 py-2 rounded w-72 mt-3"
+                      placeholder="Signature Specimen" readonly>
+                    <input type="file" id="signatureFile"
+                      class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
+                      accept="image/*">
+                    <button type="button" id="signatureRemove"
+                      class="hidden text-red-500 text-base">Remove</button>
+                    <button type="button" id="signatureReplace"
+                      class="hidden text-blue-500 text-base">Replace</button>
+                  </div>
+                  <img id="signaturePreview"
+                    class="mt-2 w-32 h-32 object-cover rounded border hidden" />
+                </div>
+              </div>
+              <p class="text-sm text-gray-500 mt-6">Please ensure all attachments are clear and legible.</p>
+              <p class="text-sm text-gray-500 mt-2">Accepted file formats: JPG, PNG, PDF</p>
             </div>
-            <img id="docPreview"
-              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
-          </div>
-          <div class="mt-6">
-            <label class="block font-normal mb-1 text-normal">2x2 Picture <span
-                class="text-red-500">*</span></label>
-            <div class="flex items-center gap-3">
-              <input type="text" id="picName"
-                class="border px-3 py-2 rounded w-96 mt-3"
-                placeholder="2x2 Picture" readonly>
-              <input type="file" id="picFile"
-                class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
-                accept="image/*">
-              <button type="button" id="picRemove"
-                class="hidden text-red-500  text-base">Remove</button>
-              <button type="button" id="picReplace"
-                class="hidden text-blue-500  text-base">Replace</button>
-            </div>
-            <img id="picPreview"
-              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
-          </div>
-          <div class="mt-6">
-            <label class="block font-normal mb-1 text-normal">Proof of Billing
-              <span class="text-red-500">*</span></label>
-            <div class="flex items-center gap-3">
-              <input type="text" id="billingName"
-                class="border px-3 py-2 rounded w-96 mt-3"
-                placeholder="Proof of Billing" readonly>
-              <input type="file" id="billingFile"
-                class="text-sm cursor-pointer file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100"
-                accept="image/*">
-              <button type="button" id="billingRemove"
-                class="hidden text-red-500 text-base">Remove</button>
-              <button type="button" id="billingReplace"
-                class="hidden text-blue-500 text-base">Replace</button>
-            </div>
-            <img id="billingPreview"
-              class="mt-2 w-32 h-32 object-cover rounded border hidden" />
-          </div>
-          <p class="text-sm text-gray-500 mt-2">Maximum upload file size:
-            1MB</p>
           <!-- CAPTCHA Section -->
           <div class="mt-6">
             <!-- hCaptcha Widget -->
@@ -802,6 +847,8 @@
                 if (docFiles.length === 0 || picFiles.length === 0 || billingFiles.length === 0) {
                   Swal.fire({
                   icon: "error",
+                  iconColor: '#dc2626',
+                  color: '#1e2939',
                   title: "Missing Attachments",
                   text: "Please upload all required attachments.",
                   confirmButtonColor: "#22c55e"
@@ -814,6 +861,8 @@
                 if (!terms.checked) {
                   Swal.fire({
                   icon: "error",
+                   iconColor: '#dc2626',
+                   color: '#1e2939',
                   title: "Terms Not Accepted",
                   text: "You must agree to the Terms & Conditions.",
                   confirmButtonColor: "#22c55e"

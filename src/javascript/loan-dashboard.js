@@ -132,9 +132,11 @@ document.addEventListener("DOMContentLoaded", function () {
     hideModal();
     Swal.fire({
       icon: "info",
+      iconColor: '#ef4444',
+      color: '#1e2939',
       title: "Payment Cancelled",
       text: "You have cancelled the payment.",
-      confirmButtonColor: "#22c55e",
+      confirmButtonColor: "#ef4444",
     });
   });
 
@@ -147,6 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     Swal.fire({
       icon: "success",
+      iconColor: '#22c55e',
+      color: '#1e2939',
       title: "Payment Successful!",
       html: `Processing payment of <b>PHP ${amount}</b> via <b>${getPaymentMethodText(
         method

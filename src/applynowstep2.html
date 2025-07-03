@@ -272,21 +272,29 @@
         </div>
       </div>
       <!-- Birth Details -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div>
-          <label for="birthPlace1" class="block text-black">Place of Birth<span class="text-red-500">*</span></label>
-          <input id="birthPlace1" type="text" placeholder="Place of Birth" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
-        </div>
-        <div>
-          <label for="birthDate1" class="block text-black">Birth Date<span class="text-red-500">*</span></label>
-          <input id="birthDate1" type="date" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black" required>
-        </div>
-        <div>
-          <span class="block text-black">Gender<span class="text-red-500">*</span></span>
-          <div class="flex gap-4">
-            <label><input type="radio" name="gender1" value="Male" class="mr-1 mt-3"> Male</label>
-            <label><input type="radio" name="gender1" value="Female" class="mr-1 mt-3"> Female</label>
-          </div>
+     <!-- Birth Details -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+                <label for="birthPlace" class="block text-black">Place of Birth<span class="text-red-500">*</span></label>
+                <input id="birthPlace" type="text" placeholder="Place of Birth" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+            <div>
+                <label for="birthDate" class="block text-black">Birth Date<span class="text-red-500">*</span></label>
+                <input id="birthDate" type="date" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black" required onchange="calculateAge()">
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <label for="age" class="block text-black">Age<span class="text-red-500">*</span></label>
+                    <input id="age" type="number" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black bg-gray-100" readonly required>
+                </div>
+                 <div>
+                    <label class="block text-black">Gender<span class="text-red-500">*</span></label>
+                    <div class="flex gap-4 mt-2">
+                        <label><input type="radio" name="gender" value="Male" class="mr-1 mt-0.5"> Male</label>
+                        <label><input type="radio" name="gender" value="Female" class="mr-1 mt-0.5"> Female</label>
+                    </div>
+                </div>
+            </div>
         </div>
       </div>
       <!-- Religion, Nationality, Status -->
@@ -496,6 +504,8 @@
         function showSwal() {
             Swal.fire({
           icon: 'warning',
+          iconColor: '#dc2626',
+          color: '#1e2939',
           title: 'Missing Required Fields',
           html: `<div style="text-align:left">Please fill out the following required fields before proceeding:<ul style="margin-top:10px;color:#dc2626">${missingFields.map(f => `<li>• ${f}</li>`).join('')}</ul></div>`,
           confirmButtonColor: '#16a34a'
@@ -514,6 +524,23 @@
       function closeModal() {
           // No longer needed with SweetAlert2, but kept for compatibility
       }
+         function calculateAge() {
+            const birthDateInput = document.getElementById('birthDate');
+            const ageInput = document.getElementById('age');
+            const birthDateValue = birthDateInput.value;
+            if (!birthDateValue) {
+            ageInput.value = '';
+            return;
+            }
+            const today = new Date();
+            const birthDate = new Date(birthDateValue);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+            }
+            ageInput.value = age >= 0 ? age : '';
+        }
     </script>
 </body>
 </html>
