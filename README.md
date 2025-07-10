@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**GBLDC-NEW** is a repository created for educational purposes. It serves as a platform for learning and experimenting with various web development technologies.
+**GBLDC-NEW** is a repository created for my capstone project. This project aims to demonstrate my skills and knowledge in web development by building a comprehensive application that incorporates various technologies and best practices. The project serves as a platform for learning, experimentation, and showcasing my capabilities in creating a functional and user-friendly web application.
 
 ## Tech Stack
 
