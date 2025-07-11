@@ -62,7 +62,7 @@ function toggleChatbot() {
         const userMsg = document.createElement('div');
         userMsg.className = 'flex items-start gap-2 justify-end';
         userMsg.innerHTML = `
-            <div class="bg-green-600 text-white px-4 py-2 rounded-2xl rounded-br-none shadow max-w-[80%] ml-auto">${message}</div>
+            <div class="bg-green-200 text-black px-4 py-2 rounded-2xl rounded-br-none shadow max-w-[80%] ml-auto text-left">${message}</div>
             <img src="path/images/logocoop-removebg-preview 2.png" alt="You" class="w-7 h-7 rounded-full border border-green-200" style="order:2" />
         `;
         chatMessages.appendChild(userMsg);
@@ -94,7 +94,7 @@ function toggleChatbot() {
             }
             botMsg.innerHTML = `
                 <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC" class="w-7 h-7 rounded-full border border-green-200" />
-                <div class="bg-green-600 text-white px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[80%]">
+                <div class="bg-green-200 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[80%] text-left">
                     ${botResponse}
                 </div>
             `;

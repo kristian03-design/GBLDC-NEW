@@ -393,7 +393,7 @@
       </main>
 
        <!-- Payment Modal -->
-      <div id="paymentModal" class="fixed inset-0 flex items-center justify-center hidden z-50 p-4">
+     <div id="paymentModal" class="fixed inset-0 flex items-center justify-center hidden z-50 p-4">
         <div class="bg-white rounded-lg p-6 lg:p-8 w-full max-w-md shadow-xl">
           <h2 class="text-xl font-bold text-gray-800 mb-2">Make a Payment</h2>
           <p class="text-sm text-gray-600 mb-6">Enter your payment details to proceed.</p>
@@ -410,6 +410,11 @@
                 <option value="card">Credit/Debit Card</option>
                 <option value="gcash">Gcash</option>
               </select>
+            </div>
+            <div id="card-element-container" style="display:none;">
+              <label class="block text-gray-700 text-sm font-medium mb-2">Card Details:</label>
+              <div id="card-element" class="w-full p-3 border border-gray-300 rounded-lg"></div>
+              <div id="card-errors" class="text-red-600 text-xs mt-2"></div>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 pt-4">
               <button id="cancelPayment" type="button" 

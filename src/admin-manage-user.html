@@ -146,3 +146,226 @@
       <button class="px-3 py-1 rounded hover:bg-green-100 text-green-700">Next</button>
     </div>
   </main>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.querySelector("input[type='text']");
+    const roleFilter = document.querySelector("select");
+    const searchBtn = document.querySelector("button.bg-green-600 i.fa-search")?.closest("button");
+    const tableBody = document.querySelector("tbody");
+    const getRows = () => tableBody.querySelectorAll("tr");
+
+    // === Filter Function (called manually on button click) ===
+   function filterUsers(showAlert = false) {
+  const searchTerm = searchInput.value.toLowerCase();
+  const selectedRole = roleFilter.value.toLowerCase();
+  let anyVisible = false;
+
+  getRows().forEach(row => {
+    const name = row.children[1].textContent.toLowerCase();
+    const email = row.children[2].textContent.toLowerCase();
+    const role = row.children[3].textContent.toLowerCase();
+
+    const matchesSearch = name.includes(searchTerm) || email.includes(searchTerm);
+    const matchesRole = selectedRole === "" || role === selectedRole;
+
+    const shouldShow = matchesSearch && matchesRole;
+    row.style.display = shouldShow ? "" : "none";
+    if (shouldShow) anyVisible = true;
+  });
+
+  if (showAlert) {
+    if (anyVisible) {
+      Swal.fire({
+        icon: 'success',
+        iconColor: '#16a34a',
+        color: '#1e2939',
+        title: 'User(s) Found!',
+        text: `Results match "${searchTerm}".`,
+        timer: 1500,
+        showConfirmButton: false
+      });
+    } else {
+      Swal.fire({
+        icon: 'info',
+        color: '#1e2939',
+        iconColor: '#f59e0b',
+        title: 'No users found',
+        text: `No users match "${searchTerm}".`,
+        timer: 2000,
+        showConfirmButton: false
+      });
+    }
+  }
+}
+
+    // === Trigger search only when clicking the button ===
+    searchBtn?.addEventListener("click", (e) => {
+      e.preventDefault();
+      filterUsers(true); // alert when no match
+    });
+
+    // === Trigger filter only (no alert) when changing dropdown
+    roleFilter.addEventListener("change", () => filterUsers(false));
+
+    // === Remove User with SweetAlert2 ===
+    function setupRemoveButtons() {
+      const removeButtons = document.querySelectorAll("button.text-red-600");
+      removeButtons.forEach(button => {
+        button.onclick = (e) => {
+          e.preventDefault();
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            iconColor: '#d33',
+            color: '#1e2939',
+            showCancelButton: true,
+            confirmButtonColor: '#d33',
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Yes, remove user'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              const row = button.closest('tr');
+              row.remove();
+              Swal.fire('Deleted!', 'User has been removed.', 'success');
+            }
+          });
+        };
+      });
+    }
+
+    // === Edit User with SweetAlert2 ===
+    function setupEditButtons() {
+      const editButtons = document.querySelectorAll("button.text-blue-600");
+      editButtons.forEach(button => {
+        button.onclick = (e) => {
+          e.preventDefault();
+          const row = button.closest('tr');
+          const nameCell = row.children[1];
+          const emailCell = row.children[2];
+          const roleCell = row.children[3];
+
+          const currentName = nameCell.textContent.trim();
+          const currentEmail = emailCell.textContent.trim();
+          const currentRole = roleCell.textContent.trim();
+
+          Swal.fire({
+            title: 'Edit User',
+            icon: 'info',
+            iconColor: '#2563eb',
+            color: '#1e2939',
+            html: `
+              <input type="text" id="edit-name" class="swal2-input" value="${currentName}">
+              <input type="email" id="edit-email" class="swal2-input" value="${currentEmail}">
+              <select id="edit-role" class="swal2-select">
+                <option value="Admin" ${currentRole === 'Admin' ? 'selected' : ''}>Admin</option>
+                <option value="Staff" ${currentRole === 'Staff' ? 'selected' : ''}>Staff</option>
+                <option value="Member" ${currentRole === 'Member' ? 'selected' : ''}>Member</option>
+              </select>
+            `,
+            focusConfirm: false,
+            preConfirm: () => {
+              const name = document.getElementById('edit-name').value.trim();
+              const email = document.getElementById('edit-email').value.trim();
+              const role = document.getElementById('edit-role').value;
+
+              if (!name || !email || !role) {
+                Swal.showValidationMessage("All fields are required");
+              } else {
+                return { name, email, role };
+              }
+            }
+          }).then(result => {
+            if (result.isConfirmed) {
+              const { name, email, role } = result.value;
+
+              nameCell.innerHTML = `
+                <img src="path/images/default-avatar.jpg" class="w-8 h-8 rounded-full object-cover border border-green-300 mr-2" />
+                ${name}
+              `;
+              emailCell.textContent = email;
+              roleCell.textContent = role;
+
+              Swal.fire('Updated!', 'User information updated.', 'success');
+            }
+          });
+        };
+      });
+    }
+
+    // === Add User with SweetAlert2 ===
+    const addUserBtn = document.querySelector(".fa-user-plus")?.closest("button");
+
+    addUserBtn?.addEventListener("click", () => {
+      Swal.fire({
+        title: 'Add New User',
+        icon: 'info',
+        iconColor: '#2563eb',
+        color: '#1e2939',
+        html: `
+          <input type="text" id="swal-name" class="swal2-input" placeholder="Full Name">
+          <input type="email" id="swal-email" class="swal2-input" placeholder="Email">
+          <select id="swal-role" class="swal2-select">
+            <option value="">Select Role</option>
+            <option value="Admin">Admin</option>
+            <option value="Staff">Staff</option>
+            <option value="Member">Member</option>
+          </select>
+        `,
+        focusConfirm: false,
+        preConfirm: () => {
+          const name = document.getElementById('swal-name').value.trim();
+          const email = document.getElementById('swal-email').value.trim();
+          const role = document.getElementById('swal-role').value;
+          if (!name || !email || !role) {
+            Swal.showValidationMessage('All fields are required');
+          } else {
+            return { name, email, role };
+          }
+        }
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const { name, email, role } = result.value;
+
+          const newIndex = getRows().length + 1;
+          const today = new Date().toISOString().split("T")[0];
+          const status = `<span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded">Pending</span>`;
+          const avatar = "path/images/default-avatar.jpg";
+
+          const newRow = document.createElement("tr");
+          newRow.innerHTML = `
+            <td class="py-2 px-4">${newIndex}</td>
+            <td class="py-2 px-4 flex items-center gap-2">
+              <img src="${avatar}" alt="${name}" class="w-8 h-8 rounded-full object-cover border border-green-300" />
+              ${name}
+            </td>
+            <td class="py-2 px-4">${email}</td>
+            <td class="py-2 px-4">${role}</td>
+            <td class="py-2 px-4">${status}</td>
+            <td class="py-2 px-4">${today}</td>
+            <td class="py-2 px-4 flex gap-2">
+              <button class="text-blue-600 hover:underline"><i class="fas fa-edit"></i> Edit</button>
+              <button class="text-red-600 hover:underline"><i class="fas fa-trash"></i> Remove</button>
+            </td>
+          `;
+          tableBody.appendChild(newRow);
+
+          // Re-bind buttons
+          setupRemoveButtons();
+          setupEditButtons();
+
+          Swal.fire('User Added!', `${name} has been added.`, 'success');
+        }
+      });
+    });
+
+    // Initialize everything
+    setupRemoveButtons();
+    setupEditButtons();
+  });
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</body>
+</html>
