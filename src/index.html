@@ -18,25 +18,25 @@
     <title>Login | GBLDC</title>
   </head>
   <body
-    class="bg-gray-50 flex items-center justify-center min-h-screen font-sans">
+    class="bg-gray-50 flex items-center justify-center min-h-screen font-sans p-4">
     <div
-      class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden">
+      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden">
 
       <!-- Left Side: Login Form -->
-      <div id="loginSect" class="w-1/2 p-10 flex flex-col justify-between">
+      <div id="loginSect" class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
         <!-- Logo -->
         <div>
           <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
             style="image-rendering: auto;">
           <h2
-            class="text-2xl font-bold mb-2 text-center text-green-600 tracking-wide">
+            class="text-xl sm:text-2xl font-bold mb-2 text-center text-green-600 tracking-wide">
             Welcome to GBLDC
           </h2>
-          <p class="text-sm text-gray-800 mb-8 text-center">Securely
+          <p class="text-sm text-gray-800 mb-6 sm:mb-8 text-center">Securely
             access your account to manage your loans and finances.</p>
 
-          <form class="space-y-6">
+          <form class="space-y-4 sm:space-y-6">
             <div>
               <label class="text-sm text-gray-600">Email Address</label>
               <input type="email" placeholder="example@mail.com"
@@ -57,37 +57,39 @@
               onclick="validateLoginFields()">
               Log in
             </button>
-            <div class="flex gap-4">
+            <div class="flex flex-col sm:flex-row gap-4">
               <button onclick="fbLogin()" type="button"
-                class="flex-1 border border-blue-600 text-blue-600 py-2 rounded-md hover:bg-blue-100 flex items-center justify-center gap-2">
+                class="flex-1 border border-blue-600 text-blue-600 py-2 rounded-md hover:bg-blue-100 flex items-center justify-center gap-2 text-sm">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
                   class="h-5" alt="Facebook">
-                Log in with Facebook
+                <span class="hidden sm:inline">Log in with Facebook</span>
+                <span class="sm:hidden">Facebook</span>
               </button>
               <button id="googleLoginBtn"
                 type="button"
-                class="flex-1 border border-red-600 text-red-600 py-2 rounded-md hover:bg-red-100 flex items-center justify-center gap-2">
+                class="flex-1 border border-red-600 text-red-600 py-2 rounded-md hover:bg-red-100 flex items-center justify-center gap-2 text-sm">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
                   class="h-5" alt="Google">
-                Log in with Google
+                <span class="hidden sm:inline">Log in with Google</span>
+                <span class="sm:hidden">Google</span>
               </button>
             </div>
           </form>
-          <p class="text-sm text-gray-600 mt-6 text-center">
-            Don’t have an account?
+          <p class="text-sm text-gray-600 mt-4 sm:mt-6 text-center">
+            Don't have an account?
             <a href="#" class="text-green-600 hover:underline"
               onclick="event.preventDefault(); showRegisterSection();">Create an
               account</a>
           </p>
         </div>
 
-        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan
+        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
           Livelihood Development Cooperative</p>
       </div>
       <!-- Right Side: Illustration (for login only) -->
-      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-login.png" alt="Loan Illustration"
           class="object-cover w-full h-full">
       </div>
@@ -95,32 +97,32 @@
 
     <!-- Forgot Password Section -->
     <div id="forgotPasswordSection"
-      class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
+      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
       <!-- Left Side: Illustration -->
-      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-forgot-password.jpg" alt="Loan Illustration"
           class="object-cover w-full h-full shadow-2xl">
       </div>
       <!-- Right Side: Forgot Password Form -->
-      <div class="w-1/2 p-10 flex flex-col justify-between">
+      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
         <div>
           <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
             style="image-rendering: auto;">
-          <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Forgot
+          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Forgot
             Password</h2>
-          <p class="text-sm text-gray-700 mb-8 text-center">
+          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
             Enter your registered email address and we'll send you a link to
             reset your password.
           </p>
-          <form id="forgotPasswordForm" class="space-y-6">
+          <form id="forgotPasswordForm" class="space-y-4 sm:space-y-6">
             <div>
               <label class="block text-sm text-gray-600 mb-1">Email
                 Address</label>
-              <input type="email" placeholder="example@mail.com" required
+              <input type="email" id="forgotPasswordEmail" placeholder="example@mail.com" required
                 class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-            <button type="submit"
+            <button type="button" onclick="sendForgotPasswordOtp();"
               class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
               Send Reset Link
             </button>
@@ -131,53 +133,109 @@
               class="text-green-600 hover:underline">Log in</a>
           </p>
         </div>
-        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan
+        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
+          Livelihood Development Cooperative</p>
+      </div>
+    </div>
+
+    <!-- Forgot Password OTP Section -->
+    <div id="forgotPasswordOtpSection"
+      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
+      <!-- Left Side: Illustration -->
+      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
+        <img src="path/images/gbldc-verify-account.jpg" alt="OTP Verification Illustration"
+          class="object-cover w-full h-full shadow-2xl">
+      </div>
+      <!-- Right Side: OTP Form -->
+      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+        <div>
+          <img src="path/images/logocoop-removebg-preview 2.png"
+            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
+            style="image-rendering: auto;">
+          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify
+            Your Email</h2>
+          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
+            Enter the 6-digit code sent to your email address to reset your password.<br>
+            <span id="forgotPasswordOtpEmailHint"
+              class="block text-xs text-gray-500 mt-2"></span>
+          </p>
+          <form id="forgotPasswordOtpForm" class="space-y-4 sm:space-y-6">
+            <div class="flex justify-center gap-1 sm:gap-2 mb-4">
+              <input type="text" maxlength="1"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
+                inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
+                inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
+                inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
+                inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
+                inputmode="numeric" pattern="[0-9]*">
+              <input type="text" maxlength="1"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
+                inputmode="numeric" pattern="[0-9]*">
+            </div>
+            <button type="submit"
+              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Verify</button>
+            <p class="text-sm text-gray-600 text-center">
+              Didn't receive the code?
+              <a href="#" id="forgotPasswordOtpResend"
+                class="text-green-600 hover:underline">Resend</a>
+            </p>
+          </form>
+        </div>
+        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
           Livelihood Development Cooperative</p>
       </div>
     </div>
     <!-- OTP Section (for login verification) -->
     <div id="loginOtpSection"
-      class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
+      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
       <!-- Left Side: Illustration -->
-      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-verify-account.jpg"
           alt="OTP Verification Illustration"
           class="object-cover w-full h-full shadow-2xl">
       </div>
       <!-- Right Side: OTP Form -->
-      <div class="w-1/2 p-10 flex flex-col justify-between mt-10">
+      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
         <div>
           <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
             style="image-rendering: auto;">
-          <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Verify
+          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify
             Login</h2>
-          <p class="text-sm text-gray-700 mb-8 text-center">
+          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
             Enter the 6-digit code sent to your email or phone to complete your
             login.<br>
             <span id="otpEmailHint"
               class="block text-xs text-gray-500 mt-2">Example:
               juandelacruz@gmail.com</span>
           </p>
-          <form id="loginOtpForm" class="space-y-6">
-            <div class="flex justify-center gap-2 mb-4">
+          <form id="loginOtpForm" class="space-y-4 sm:space-y-6">
+            <div class="flex justify-center gap-1 sm:gap-2 mb-4">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
             </div>
             <button type="submit"
@@ -187,35 +245,39 @@
               <a href="#" id="loginOtpResend"
                 class="text-green-600 hover:underline">Resend</a>
             </p>
+            <p class="text-sm text-gray-600 text-center">
+              <a href="#" onclick="scrollToLogin();"
+                class="text-green-600 hover:underline">Back to Login</a>
+            </p>
           </form>
         </div>
-        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan
+        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
           Livelihood Development Cooperative</p>
       </div>
     </div>
 
     <!-- Registration Section -->
     <div id="registerSection"
-      class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
+      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
       <!-- Left Side: Illustration -->
-      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-login.png" alt="Loan Illustration"
           class="object-cover w-full h-full">
       </div>
       <!-- Right Side: Registration Form -->
-      <div class="w-1/2 p-10 flex flex-col justify-between">
+      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
         <div>
           <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
             style="image-rendering: auto;">
-          <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Create
+          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Create
             Account</h2>
-          <p class="text-sm text-gray-700 mb-8 text-center">
+          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
             Join GBLDC to easily manage your loans, track your finances, and
             access exclusive member benefits. Fill out the form below to get
             started.
           </p>
-          <form class="grid grid-cols-2 gap-6">
+          <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
             <div class="col-span-1">
               <label class="block text-sm text-gray-600 mb-1">First Name</label>
               <input type="text" placeholder="First Name"
@@ -226,13 +288,13 @@
               <input type="text" placeholder="Last Name"
               class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-            <div class="col-span-2">
+            <div class="col-span-1 sm:col-span-2">
               <label class="block text-sm text-gray-600 mb-1">Email
                 Address</label>
               <input type="email" placeholder="example@mail.com"
                 class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-            <div class="col-span-2 grid grid-cols-2 gap-6">
+            <div class="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               <div>
                 <label class="block text-sm text-gray-600 mb-1">Password</label>
                 <input type="password" placeholder="••••••••"
@@ -246,14 +308,14 @@
               </div>
             </div>
             <!-- Terms and Conditions (full width) -->
-            <div class="md:col-span-2 flex items-start ">
+            <div class="col-span-1 sm:col-span-2 flex items-start">
               <input type="checkbox" id="terms" required class="mt-1 mr-2">
               <label for="terms" class="text-sm text-gray-700">I confirm that
                 all information provided is true and I agree to the <a href="#"
                   class="text-green-700 underline">Terms & Conditions</a> of
                 GBLDC.</label>
             </div>
-            <div class="col-span-2">
+            <div class="col-span-1 sm:col-span-2">
               <button type="button"
                 class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
                 onclick="showOtpSection();">
@@ -261,56 +323,56 @@
               </button>
             </div>
           </form>
-          <p class="text-sm text-gray-600 text-center col-span-2 mt-4">
+          <p class="text-sm text-gray-600 text-center mt-4">
             Already have an account?
             <a href="#" onclick="scrollToLogin();"
               class="text-green-600 hover:underline">Log in</a>
           </p>
         </div>
-        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan
+        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
           Livelihood Development Cooperative</p>
       </div>
     </div>
 
     <!-- OTP Section -->
     <div id="otpSection"
-      class="bg-white w-full max-w-6xl flex rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
+      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
       <!-- Left Side: Illustration -->
-      <div class="w-1/2 bg-green-500 relative flex items-center justify-center">
+      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-verify-account.jpg" alt="Loan Illustration"
           class="object-cover w-full h-full shadow-2xl">
       </div>
       <!-- Right Side: OTP Form -->
-      <div class="w-1/2 p-10 flex flex-col justify-between mt-10">
+      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
         <div>
           <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-24 h-24 mb-6 mx-auto"
+            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
             style="image-rendering: auto;">
-          <h2 class="text-2xl font-bold mb-6 text-center text-green-600">Verify
+          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify
             Your Email</h2>
-          <p class="text-sm text-gray-700 mb-8 text-center">
+          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
             Enter the 6-digit code sent to your email address to complete your
             registration.
           </p>
-          <form class="space-y-6">
-            <div class="flex justify-center gap-2 mb-4">
+          <form class="space-y-4 sm:space-y-6">
+            <div class="flex justify-center gap-1 sm:gap-2 mb-4">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
               <input type="text" maxlength="1"
-                class="w-12 h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-2xl"
+                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
                 inputmode="numeric" pattern="[0-9]*">
             </div>
             <button type="submit"
@@ -319,9 +381,14 @@
               Didn't receive the code?
               <a href="#" class="text-green-600 hover:underline">Resend</a>
             </p>
+             <p class="text-sm text-gray-600 text-center">
+              Want to use a different email?
+              <a href="#" onclick="event.preventDefault(); showRegisterSection()();"
+                class="text-green-600 hover:underline">Back to Registration</a>
+            </p>
           </form>
         </div>
-        <p class="text-xs text-gray-400 text-center mt-10">©2025 Greater Bulacan
+        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
           Livelihood Development Cooperative</p>
       </div>
     </div>
