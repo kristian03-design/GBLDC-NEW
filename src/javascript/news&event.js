@@ -7,7 +7,7 @@ const newsData = [
   {
     title: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
     desc: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. ",
-    img: "/src/path/images/event1.jpg",
+    img: "/src/path/images/gbldc-teambuilding.jpg",
   },
   {
     title: "gbldc",
