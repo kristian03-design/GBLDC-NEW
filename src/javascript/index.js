@@ -290,7 +290,7 @@ function showRegisterSection() {
           iconColor: '#16a34a',
           customClass: { popup: 'swal2-custom-popup' },
           title: 'Login Successful!',
-          text: 'You have been logged in.',
+          text: 'Discover your financial future with GBLDC. Welcome User!',
           color: '#1e2939',
           timer: 2000,
           showConfirmButton: false,
