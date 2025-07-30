@@ -449,137 +449,161 @@
               View More
             </button></a>
 
-        <button onclick="toggleChatbot()"
-          class="fixed bottom-10 right-10 bg-gradient-to-br from-green-500 via-green-600 to-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-transform transform hover:scale-110 focus:outline-none ring-4 ring-green-300/30 animate-pulse"
-          style="box-shadow: 0 0 24px 4px #22c55e55; width: 64px; height: 64px;">
-          <i alt="Chatbot"
-            class="fas fa-comments text-2xl"></i>
-        </button>
-        <div
-          class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-gradient-to-br from-green-50 to-white rounded-xl shadow-2xl border border-green-200 flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster"
-          id="chatbot-widget"
-          style="backdrop-filter: blur(2px);">
-          <!-- Header with avatar/logo -->
+          <button onclick="toggleChatbot()"
+            class="fixed bottom-10 right-10 bg-gradient-to-br from-green-500 via-green-600 to-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-transform transform hover:scale-110 focus:outline-none ring-4 ring-green-300/30 animate-pulse"
+            style="box-shadow: 0 0 24px 4px #22c55e55; width: 64px; height: 64px;">
+            <i alt="Chatbot"
+              class="fas fa-comments text-2xl"></i>
+          </button>
           <div
-            class="bg-green-600 px-4 py-3 flex items-center gap-3 text-white animate-fade-in-down shadow">
-            <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC"
-              class="w-10 h-10 rounded-full border-2 border-white shadow" />
-            <span class="font-medium text-left text-lg flex-1">Chat with GBLDC</span>
-            <button onclick="toggleChatbot()"
-              class="text-white focus:outline-none hover:text-gray-300 transition-colors"
-              title="Close">
-            <i class="fa-solid fa-xmark"></i>
-            </button>
-          </div>
-          <!-- Chat messages area -->
-          <div id="chat-messages"
-            class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black animate-fade-in custom-scrollbar"
-            style="height: 320px; background: transparent;">
-            <!-- Welcome message -->
-            <div class="flex items-start gap-2">
+            class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-gradient-to-br from-green-50 to-white rounded-xl shadow-2xl border border-green-200 flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster"
+            id="chatbot-widget"
+            style="backdrop-filter: blur(2px);">
+            <!-- Header with avatar/logo -->
+            <div
+              class="bg-green-600 px-4 py-3 flex items-center gap-3 text-white animate-fade-in-down shadow">
               <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC"
-                class="w-7 h-7 rounded-full border border-green-200" />
-              <div
-                class="bg-green-200 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[100%]">
-                Welcome to GBLDC Chatbot! How can I assist you today?
+                class="w-10 h-10 rounded-full border-2 border-white shadow" />
+              <span class="font-medium text-left text-lg flex-1">Chat with
+                GBLDC</span>
+              <button onclick="toggleChatbot()"
+                class="text-white focus:outline-none hover:text-gray-300 transition-colors"
+                title="Close">
+                <i class="fa-solid fa-xmark"></i>
+              </button>
+            </div>
+            <!-- Chat messages area -->
+            <div id="chat-messages"
+              class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black animate-fade-in custom-scrollbar"
+              style="height: 320px; background: transparent;">
+              <!-- Welcome message -->
+              <div class="flex items-start gap-2">
+                <img src="path/images/logocoop-removebg-preview 2.png"
+                  alt="GBLDC"
+                  class="w-7 h-7 rounded-full border border-green-200" />
+                <div
+                  class="bg-green-200 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[100%]">
+                  Welcome to GBLDC Chatbot! How can I assist you today?
+                </div>
+              </div>
+              <!-- Messages will appear here -->
+            </div>
+            <!-- Typing indicator (hidden by default, show via JS) -->
+            <div id="typing-indicator"
+              class="px-6 pb-2 text-xs text-gray-500 hidden">
+              <span
+                class="border bg-green-600 text-white py-2 px-2 rounded-lg">GBLDC
+                is typing...</span>
+            </div>
+            <!-- Input area -->
+            <form id="chat-form"
+              class="flex p-2 border-t bg-white/80 backdrop-blur rounded-b-xl shadow-inner text-black animate-fade-in-up gap-2">
+              <input id="chat-input" type="text"
+                placeholder="Type your message..."
+                class="flex-1 px-4 py-2 border border-green-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 text-black transition-shadow shadow-sm" />
+              <button type="submit"
+                class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition-colors shadow">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </button>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
+        <div class="max-w-7xl mx-auto px-4 mt-4">
+          <div
+            class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
+
+            <!-- Products & Services -->
+            <div>
+              <h4 class="font-semibold uppercase mb-4 text-white">Products &
+                Services</h4>
+              <ul class="space-y-2 font-light">
+                <li><a href="loan.html"
+                    class="hover:underline transition-colors duration-200">Loan
+                    Products</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Deposit
+                    Products</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Insurance
+                    Products</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Social
+                    Services</a></li>
+              </ul>
+            </div>
+
+            <!-- About -->
+            <div>
+              <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
+              <ul class="space-y-2 font-light">
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">About
+                    Greater Bulacan Livelihood Development Cooperative</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Senior
+                    Management</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Officers
+                    & Committees</a></li>
+              </ul>
+            </div>
+
+            <!-- Other Quicklinks -->
+            <div>
+              <h4 class="font-semibold uppercase mb-4 text-white">Other
+                Quicklinks</h4>
+              <ul class="space-y-2 font-light">
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">News
+                    &
+                    Events</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">FAQs</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Contact</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Apply
+                    Now</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Downloadable
+                    Forms</a></li>
+                <li><a href="#"
+                    class="hover:underline transition-colors duration-200">Privacy
+                    Policy</a></li>
+              </ul>
+            </div>
+            <!-- Download Our App -->
+            <div>
+              <h4
+                class="font-semibold uppercase mb-4 text-center text-white">Download
+                Our
+                App</h4>
+              <!-- App Download Section -->
+              <div class="text-center p-4 bg-transparent">
+                <div
+                  class="w-16 h-16 lg:w-20 lg:h-20 flex items-center justify-center mx-auto bg-white mb-4 shadow-lg rounded-full">
+                  <img
+                    src="path/images/logocoop-removebg-preview 2.png" />
+                </div>
+                <a
+                  href="https://play.google.com/store" target="_blank"
+                  class="w-full inline-block px-4 py-2 bg-green-600 text-white rounded-lg font-medium text-sm hover:bg-green-700 transition-colors text-center">
+                  Download from Google Play
+                </a>
+                <a
+                  href="https://www.apple.com/app-store/" target="_blank"
+                  class="w-full inline-block mt-2 px-4 py-2 bg-gray-800 text-white rounded-lg font-medium text-sm hover:bg-gray-900 transition-colors text-center">
+                  Download from App Store
+                </a>
+                <p class="text-xs text-white mt-3">
+                  Example links. Replace with your app's store URLs.
+                </p>
               </div>
             </div>
-            <!-- Messages will appear here -->
-          </div>
-          <!-- Typing indicator (hidden by default, show via JS) -->
-          <div id="typing-indicator"
-            class="px-6 pb-2 text-xs text-gray-500 hidden">
-            <span class="border bg-green-600 text-white py-2 px-2 rounded-lg">GBLDC is typing...</span>
-          </div>
-          <!-- Input area -->
-          <form id="chat-form"
-            class="flex p-2 border-t bg-white/80 backdrop-blur rounded-b-xl shadow-inner text-black animate-fade-in-up gap-2">
-            <input id="chat-input" type="text"
-              placeholder="Type your message..."
-              class="flex-1 px-4 py-2 border border-green-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 text-black transition-shadow shadow-sm" />
-            <button type="submit"
-              class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition-colors shadow">
-              <i class="fas fa-paper-plane"></i>
-            </button>
-          </form>
-        </div>
-      </button>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
-      <div class="max-w-7xl mx-auto px-4 mt-4">
-        <div
-          class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
-
-          <!-- Products & Services -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Products &
-              Services</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="loan.html"
-                  class="hover:underline transition-colors duration-200">Loan
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Deposit
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Insurance
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Social
-                  Services</a></li>
-            </ul>
-          </div>
-
-          <!-- About -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">About
-                  Greater Bulacan Livelihood Development Cooperative</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Senior
-                  Management</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Officers
-                  & Committees</a></li>
-            </ul>
-          </div>
-
-          <!-- Other Quicklinks -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Other
-              Quicklinks</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">News &
-                  Events</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">FAQs</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Contact</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Apply
-                  Now</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Downloadable
-                  Forms</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Privacy
-                  Policy</a></li>
-            </ul>
-          </div>
-          <!-- Download Our App -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Download Our
-              App</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Click
-                  Here to Download App</a></li>
-            </ul>
           </div>
         </div>
         <!-- Copyright -->

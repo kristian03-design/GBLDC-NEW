@@ -8,13 +8,13 @@
     <link rel="icon" type="image/png"
       href="path/images/logocoop-removebg-preview 2.png">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="../src/javascript/index.js"></script>
     <!-- Facebook SDK -->
     <script async defer crossorigin="anonymous"
       src="https://connect.facebook.net/en_US/sdk.js"></script>
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <link href="./output.css" rel="stylesheet">
+    <script src="../src/javascript/index.js"></script>
+     <link href="./output.css" rel="stylesheet">
     <title>Login | GBLDC</title>
   </head>
   <body
@@ -101,7 +101,7 @@
       <!-- Left Side: Illustration -->
       <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-forgot-password.jpg" alt="Loan Illustration"
-          class="object-cover w-full h-full shadow-2xl">
+          class="object-cover w-full h-full">
       </div>
       <!-- Right Side: Forgot Password Form -->
       <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
@@ -122,7 +122,7 @@
               <input type="email" id="forgotPasswordEmail" placeholder="example@mail.com" required
                 class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
             </div>
-            <button type="button" onclick="sendForgotPasswordOtp();"
+            <button type="button" onclick="sendForgotPasswordLink();"
               class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
               Send Reset Link
             </button>
@@ -340,7 +340,7 @@
       <!-- Left Side: Illustration -->
       <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
         <img src="path/images/gbldc-verify-account.jpg" alt="Loan Illustration"
-          class="object-cover w-full h-full shadow-2xl">
+          class="object-cover w-full h-full">
       </div>
       <!-- Right Side: OTP Form -->
       <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
@@ -381,9 +381,9 @@
               Didn't receive the code?
               <a href="#" class="text-green-600 hover:underline">Resend</a>
             </p>
-             <p class="text-sm text-gray-600 text-center">
+            <p class="text-sm text-gray-600 text-center">
               Want to use a different email?
-              <a href="#" onclick="event.preventDefault(); showRegisterSection()();"
+              <a href="#" onclick="event.preventDefault(); showRegisterSection();"
                 class="text-green-600 hover:underline">Back to Registration</a>
             </p>
           </form>
@@ -392,78 +392,6 @@
           Livelihood Development Cooperative</p>
       </div>
     </div>
-    <script>
-      // Ensure FB SDK is loaded before using FB functions
-      function fbLogin() {
-        if (typeof FB === "undefined") {
-          alert("Facebook SDK not loaded. Please check your internet connection and try again.");
-          return;
-        }
-        FB.login(function(response) {
-          if (response.authResponse) {
-            FB.api('/me', {fields: 'name,email'}, function(profile) {
-              if (!profile.email) {
-                alert("Unable to retrieve email from Facebook. Please ensure your Facebook account has a verified email.");
-                return;
-              }
-              fetch('facebook_register.php', {
-                method: 'POST',
-                headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-                body: `email=${encodeURIComponent(profile.email)}&name=${encodeURIComponent(profile.name)}`
-              })
-              .then(res => res.text())
-              .then((data) => {
-                window.location.href = 'user-landingpage.php';
-              })
-              .catch(err => {
-                alert("Error during Facebook login: " + err);
-              });
-            });
-          } else {
-            alert("Facebook login was not successful.");
-          }
-        }, {scope: 'email'});
-      }
-
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '4093222834242920', // Replace with your App ID
-          cookie     : true,
-          xfbml      : true,
-          version    : 'v23.0'
-        });
-      };
-    </script>
-    <script>
-    window.onload = function() {
-  const googleBtn = document.getElementById('googleLoginBtn');
-  if (googleBtn) {
-    googleBtn.addEventListener('click', function() {
-      google.accounts.id.initialize({
-        client_id: '528123102514-o8vap3bmgnogbgvtfuipgkgea739ov3c.apps.googleusercontent.com', // Replace with your Google Client ID
-        callback: handleGoogleCredentialResponse
-      });
-      google.accounts.id.prompt(); // Shows the Google One Tap prompt
-    });
-  }
-};
-
-function handleGoogleCredentialResponse(response) {
-  // Send the credential to your backend for verification and login
-  fetch('google_login.php', {
-    method: 'POST',
-    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-    body: 'credential=' + encodeURIComponent(response.credential)
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.success) {
-      window.location.href = 'user-landingpage.php';
-    } else {
-      alert('Google login failed.');
-    }
-  });
-}
-</script>
-  </body>
+  </div>
+</body>
 </html>
