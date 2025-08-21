@@ -246,16 +246,6 @@
         <!-- Branch -->
         <h3 class="text-2xl font-medium text-teal-900">Personal Information</h3>
         <p class="text-gray-600 mb-4">Please fill out the form below with your personal information.</p>
-        <!-- Salutation -->
-        <fieldset>
-            <legend class="text-black font-medium">Salutation<span class="text-red-500">*</span></legend>
-            <div class="flex gap-4 flex-wrap">
-                <label><input type="radio" name="salutation" value="Mr." class="mr-1 mt-2" > Mr.</label>
-                <label><input type="radio" name="salutation" value="Mrs." class="mr-1 mt-2" > Mrs.</label>
-                <label><input type="radio" name="salutation" value="Ms." class="mr-1 mt-2" > Ms.</label>
-            </div>
-        </fieldset>
-    
         <!-- Name Fields -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
@@ -360,93 +350,19 @@
             <div>
                 <label for="province" class="block text-black">Province<span class="text-red-500">*</span></label>
                 <select id="province" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
-                    <option>Select Province</option>
-                    <option>Bulacan</option>
-                    <option>Pampanga</option>
-                    <option>Bataan</option>
-                    <option>Nueva Ecija</option>
-                    <option>Tarlac</option>
-                    <option>Zambales</option>
-                    <option>Aurora</option>
-                    <option>Other</option>
+                    <option value="">Select Province</option>
                 </select>
             </div>
             <div>
-                <label for="city" class="block text-black">City<span class="text-red-500">*</span></label>
+                <label for="city" class="block text-black">City/Municipality<span class="text-red-500">*</span></label>
                 <select id="city" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
-                    <option>Select City</option>
-                    <option>Baliuag</option>
-                    <option>Malolos</option>
-                    <option>Meycauayan</option>
-                    <option>San Jose del Monte</option>
-                    <option>Marilao</option>
-                    <option>Santa Maria</option>
-                    <option>Plaridel</option>
-                    <option>San Rafael</option>
-                    <option>San Ildefonso</option>
-                    <option>Guiguinto</option>
-                    <option>Balagtas</option>
-                    <option>Bocaue</option>
-                    <option>Obando</option>
-                    <option>Bulakan</option>
-                    <option>Angat</option>
-                    <option>Norzagaray</option>
-                    <option>Pulilan</option>
-                    <option>Hagonoy</option>
-                    <option>Paombong</option>
-                    <option>Calumpit</option>
-                    <option>Dona Remedios Trinidad</option>
-                    <option>Bustos</option>
-                    <option>Pandi</option>
-                    <option>Other</option>
+                    <option value="">Select City</option>
                 </select>
             </div>
             <div>
                 <label for="barangay" class="block text-black">Barangay<span class="text-red-500">*</span></label>
                 <select id="barangay" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
-                    <option>Select Barangay</option>
-                    <option>Bagong Nayon</option>
-                    <option>Baliuag</option>
-                    <option>Bambang</option>
-                    <option>Balagtas</option>
-                    <option>Bagong Barrio</option>
-                    <option>Bagong Silang</option>
-                    <option>Bagumbayan</option>
-                    <option>Bahay Pare</option>
-                    <option>Bancal</option>
-                    <option>Bintog</option>
-                    <option>Bocaue</option>
-                    <option>Bulakan</option>
-                    <option>Bustos</option>
-                    <option>Calumpit</option>
-                    <option>Catmon</option>
-                    <option>Concepcion</option>
-                    <option>Cruz na Daan</option>
-                    <option>Cutcot</option>
-                    <option>Dona Remedios Trinidad</option>
-                    <option>Guiguinto</option>
-                    <option>Hagonoy</option>
-                    <option>Iba</option>
-                    <option>Ibayo</option>
-                    <option>Longos</option>
-                    <option>Malolos</option>
-                    <option>Marilao</option>
-                    <option>Meycauayan</option>
-                    <option>Norzagaray</option>
-                    <option>Obando</option>
-                    <option>Pandi</option>
-                    <option>Paombong</option>
-                    <option>Plaridel</option>
-                    <option>Pulilan</option>
-                    <option>San Ildefonso</option>
-                    <option>San Jose del Monte</option>
-                    <option>San Miguel</option>
-                    <option>San Rafael</option>
-                    <option>Santa Maria</option>
-                    <option>Sapang Palay</option>
-                    <option>Tabang</option>
-                    <option>Tibag</option>
-                    <option>Other</option>
+                    <option value="">Select Barangay</option>
                 </select>
             </div>
         </div>
@@ -539,6 +455,63 @@
             }
             ageInput.value = age >= 0 ? age : '';
         }
+        // PSGC API base URL
+        const PSGC_API = 'https://psgc.gitlab.io/api';
+        
+        // Elements
+        const provinceSelect = document.getElementById('province');
+        const citySelect = document.getElementById('city');
+        const barangaySelect = document.getElementById('barangay');
+        
+        // Load provinces on page load
+        fetch(`${PSGC_API}/provinces/`)
+          .then(res => res.json())
+          .then(provinces => {
+            provinces.forEach(province => {
+              provinceSelect.innerHTML += `<option value="${province.code}">${province.name}</option>`;
+            });
+          });
+        
+        // When province changes, load cities/municipalities
+        provinceSelect.addEventListener('change', function() {
+          const provinceCode = this.value;
+          citySelect.innerHTML = '<option value="">Select City/Municipality</option>';
+          barangaySelect.innerHTML = '<option value="">Select Barangay</option>';
+          if (!provinceCode) return;
+        
+          fetch(`${PSGC_API}/provinces/${provinceCode}/cities-municipalities/`)
+            .then(res => res.json())
+            .then(cities => {
+              cities.forEach(city => {
+                citySelect.innerHTML += `<option value="${city.code}">${city.name}</option>`;
+              });
+            });
+        });
+        
+       // When city/municipality changes, load barangays and set zip code
+citySelect.addEventListener('change', function() {
+  const cityCode = this.value;
+  barangaySelect.innerHTML = '<option value="">Select Barangay</option>';
+  document.getElementById('zipCode').value = ''; // Clear zip code
+  if (!cityCode) return;
+
+  // Fetch barangays
+  fetch(`${PSGC_API}/cities-municipalities/${cityCode}/barangays/`)
+    .then(res => res.json())
+    .then(barangays => {
+      barangays.forEach(barangay => {
+        barangaySelect.innerHTML += `<option value="${barangay.code}">${barangay.name}</option>`;
+      });
+    });
+
+  // Fetch city/municipality details for zip code
+  fetch(`${PSGC_API}/cities-municipalities/${cityCode}/`)
+    .then(res => res.json())
+    .then(city => {
+      // PSGC API returns postalCode (zip code)
+      document.getElementById('zipCode').value = city.postalCode || '';
+    });
+});
     </script>
 </body>
 </html>

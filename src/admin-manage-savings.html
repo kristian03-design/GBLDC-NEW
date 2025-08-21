@@ -38,9 +38,7 @@
       <button onclick="window.history.back()" class="inline-flex items-center px-3 py-1.5 rounded bg-green-100 text-green-800 hover:bg-green-200 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 shadow-sm mr-3">
         <i class="fa fa-arrow-left mr-2"></i> Back
       </button>
-      <button id="openAddModalBtn" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow flex items-center gap-2">
-        <i class="fas fa-plus"></i> Add Savings Account
-      </button>
+    
     </div>
     <div class="mb-6">
       <h2 class="text-2xl font-bold text-teal-900 mb-1">Manage Saving Accounts</h2>
@@ -183,43 +181,6 @@
     </div>
   </main>
   <script>
-    // Modal open/close logic with opacity transition
-    const addModal = document.getElementById('addModal');
-    const openAddModalBtn = document.getElementById('openAddModalBtn');
-    const closeAddModalBtn = document.getElementById('closeAddModalBtn');
-    const cancelAddModalBtn = document.getElementById('cancelAddModalBtn');
-
-    // Add transition classes
-    addModal.classList.add('transition-opacity', 'duration-300', 'opacity-0');
-
-    function showAddModal() {
-      addModal.classList.remove('hidden');
-      addModal.classList.remove('opacity-0');
-      void addModal.offsetWidth;
-      addModal.classList.remove('opacity-0');
-      addModal.classList.add('opacity-100');
-    }
-
-    function hideAddModal() {
-      addModal.classList.remove('opacity-100');
-      addModal.classList.add('opacity-0');
-      // Wait for transition to finish before hiding
-      setTimeout(() => addModal.classList.add('hidden'), 300);
-    }
-
-    openAddModalBtn.addEventListener('click', showAddModal);
-    closeAddModalBtn.addEventListener('click', hideAddModal);
-    cancelAddModalBtn.addEventListener('click', hideAddModal);
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') hideAddModal(); });
-
-    // (Optional) Handle form submission (for demo, just close modal)
-    document.getElementById('addSavingsForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Here you would add logic to save the new account (AJAX or update table)
-      hideAddModal();
-      alert('Savings account added! (Demo only)');
-    });
-
     // ApexCharts Savings Growth Example
     const options = {
       chart: {
