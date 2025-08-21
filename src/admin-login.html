@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Admin Login | GBLDC Admin</title>
   <link rel="stylesheet" href="output.css" />
+  <link rel="stylesheet" href="../src/animation/animation.css" />
   <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,23 +26,34 @@
             class="text-xl sm:text-2xl font-bold mb-2 text-center text-green-600 tracking-wide">
             Admin Login
           </h2>
-          <form class="space-y-4 sm:space-y-6">
+          <form id="adminLoginForm" class="space-y-4 sm:space-y-6" autocomplete="on" onsubmit="return false;">
             <div>
-              <label class="text-sm text-gray-600">Email Address</label>
-              <input type="email" placeholder="example@mail.com"
-                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+              <label for="adminEmail" class="text-sm text-gray-600">Email Address</label>
+              <input id="adminEmail" name="email" type="email" placeholder="example@mail.com"
+                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-150"
+                required autocomplete="username">
+              <span id="emailError" class="error-message">Please enter a valid email address.</span>
             </div>
-            <div>
-              <label class="text-sm text-gray-600">Password</label>
-              <input type="password" placeholder="••••••••"
-                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+            <div class="relative">
+              <label for="adminPassword" class="text-sm text-gray-600">Password</label>
+              <input id="adminPassword" name="password" type="password" placeholder="••••••••"
+                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition-all duration-150 pr-10"
+                required autocomplete="current-password">
+              <button type="button" tabindex="-1" aria-label="Show password" onclick="togglePassword()"
+                class="absolute right-2 top-8 text-gray-400 hover:text-green-600 focus:outline-none">
+                <i id="togglePwdIcon" class="fa fa-eye"></i>
+              </button>
+              <span id="passwordError" class="error-message">Password is required.</span>
             </div>
             <button
-              type="button"
-              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
-              onclick="validateLoginFields()">
-              Log in
+              id="loginBtn"
+              type="submit"
+              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 focus:ring-2 focus:ring-green-400 focus:outline-none transition-all duration-150 flex items-center justify-center gap-2 relative disabled:opacity-60"
+            >
+              <span>Log in</span>
+              <span id="loginSpinner" class="spinner" style="display:none;"></span>
             </button>
+            <div id="loginFeedback" class="text-center mt-2 text-sm"></div>
           </form>
         </div>
 
@@ -56,4 +68,81 @@
     </div>
 
 </body>
+<script>
+// Show/hide password toggle
+function togglePassword() {
+  const pwdInput = document.getElementById('adminPassword');
+  const icon = document.getElementById('togglePwdIcon');
+  if (pwdInput.type === 'password') {
+    pwdInput.type = 'text';
+    icon.classList.remove('fa-eye');
+    icon.classList.add('fa-eye-slash');
+  } else {
+    pwdInput.type = 'password';
+    icon.classList.remove('fa-eye-slash');
+    icon.classList.add('fa-eye');
+  }
+}
+
+// Form validation and feedback
+const form = document.getElementById('adminLoginForm');
+const emailInput = document.getElementById('adminEmail');
+const pwdInput = document.getElementById('adminPassword');
+const emailError = document.getElementById('emailError');
+const pwdError = document.getElementById('passwordError');
+const loginBtn = document.getElementById('loginBtn');
+const loginSpinner = document.getElementById('loginSpinner');
+const loginFeedback = document.getElementById('loginFeedback');
+
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  let valid = true;
+  // Email validation
+  if (!emailInput.value || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(emailInput.value)) {
+    emailInput.classList.add('input-error');
+    emailError.classList.add('show');
+    valid = false;
+  } else {
+    emailInput.classList.remove('input-error');
+    emailError.classList.remove('show');
+  }
+  // Password validation
+  if (!pwdInput.value) {
+    pwdInput.classList.add('input-error');
+    pwdError.classList.add('show');
+    valid = false;
+  } else {
+    pwdInput.classList.remove('input-error');
+    pwdError.classList.remove('show');
+  }
+  if (!valid) return;
+  // Simulate loading
+  loginBtn.disabled = true;
+  loginSpinner.style.display = 'inline-block';
+  loginFeedback.textContent = '';
+  setTimeout(() => {
+    loginBtn.disabled = false;
+    loginSpinner.style.display = 'none';
+    // Simulate login result
+    if (emailInput.value === 'admin@gmail.com' && pwdInput.value === 'admin123') {
+      loginFeedback.textContent = 'Login successful! Redirecting...';
+      loginFeedback.className = 'text-green-600 text-center mt-2 text-sm';
+      // window.location.href = 'admin-page.html'; // Uncomment for real redirect
+    } else {
+      loginFeedback.textContent = 'Invalid email or password.';
+      loginFeedback.className = 'text-red-600 text-center mt-2 text-sm';
+    }
+  }, 1200);
+});
+
+// Remove error on input
+emailInput.addEventListener('input', () => {
+  emailInput.classList.remove('input-error');
+  emailError.classList.remove('show');
+});
+pwdInput.addEventListener('input', () => {
+  pwdInput.classList.remove('input-error');
+  pwdError.classList.remove('show');
+});
+</script>
 </html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Manage Member Registration | GBLDC Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="output.css" />
+  <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased min-h-screen">
+  <!-- Header -->
+  <header class="bg-white shadow-md fixed left-0 top-0 z-50 w-full">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 relative">
+      <div class="flex items-center space-x-4">
+        <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-12 h-12 object-cover" />
+        <h1 class="text-lg md:text-xl font-semibold text-teal-900">GBLDC Admin Dashboard</h1>
+      </div>
+      <div class="relative">
+        <button id="user-menu-button" class="flex items-center gap-3 focus:outline-none">
+          <span class="hidden md:inline text-gray-700 font-medium">Admin</span>
+          <img src="path/images/logocoop-removebg-preview 2.png" alt="Admin Avatar" class="w-10 h-10 rounded-full border-2 border-green-600 object-cover" />
+          <i class="fas fa-chevron-down text-gray-600 text-sm"></i>
+        </button>
+        <div id="user-menu" class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-100 py-2 hidden transition-all duration-200 ease-in-out">
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition">Profile</a>
+          <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition">Settings</a>
+          <div class="border-t my-1 border-gray-200"></div>
+          <a href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-red-50 hover:text-red-700 transition">Logout</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="pt-28 pb-12 px-4 max-w-7xl mx-auto">
+    <!-- Page Title & Add Button -->
+    <div class="flex items-center mb-4 justify-between">
+      <button onclick="window.history.back()" class="inline-flex items-center px-3 py-1.5 rounded bg-green-100 text-green-800 hover:bg-green-200 transition-colors focus:outline-none focus:ring-2 focus:ring-green-400 shadow-sm mr-3">
+        <i class="fa fa-arrow-left mr-2"></i> Back
+      </button>
+      <button id="openAddModalBtn" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg shadow flex items-center gap-2">
+        <i class="fas fa-user-plus"></i> Register New Member
+      </button>
+    </div>
+    <div class="mb-6">
+      <h2 class="text-2xl font-bold text-teal-900 mb-1">Manage Member Registration</h2>
+      <p class="text-gray-700">View, approve, or reject new member registrations.</p>
+    </div>
+    <!-- Add Member Registration Modal -->
+    <div id="addModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-40 hidden" style="background-color: rgba(0, 0, 0, 0.4);">
+      <div class="bg-white rounded-xl shadow-lg w-full max-w-md p-6 relative">
+        <button id="closeAddModalBtn" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-xl">&times;</button>
+        <h3 class="text-lg font-semibold text-teal-900 mb-4">Register New Member</h3>
+        <form id="addRegistrationForm" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <input type="text" name="fullname" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" name="email" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+            <input type="text" name="phone" required class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+            <select name="status" class="w-full border rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400">
+              <option value="Pending">Pending</option>
+              <option value="Approved">Approved</option>
+              <option value="Rejected">Rejected</option>
+            </select>
+          </div>
+          <div class="flex justify-end gap-2">
+            <button type="button" id="cancelAddModalBtn" class="px-4 py-2 rounded bg-gray-200 text-gray-700 hover:bg-gray-300">Cancel</button>
+            <button type="submit" class="px-4 py-2 rounded bg-green-600 text-white hover:bg-green-700">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Registration Table -->
+    <div class="bg-white rounded-xl shadow p-6 mb-10 overflow-x-auto">
+      <h3 class="text-lg font-semibold text-teal-900 mb-4">Member Registrations</h3>
+      <input type="text" id="searchInput" placeholder="Search by name or email..." class="mb-4 px-3 py-2 border rounded w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-green-400" />
+      <table class="min-w-full text-sm" id="registrationTable">
+        <thead>
+          <tr class="bg-green-100 text-green-900">
+            <th class="py-2 px-4 text-left">Full Name</th>
+            <th class="py-2 px-4 text-left">Email</th>
+            <th class="py-2 px-4 text-left">Phone</th>
+            <th class="py-2 px-4 text-left">Status</th>
+            <th class="py-2 px-4 text-left">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="registrationTableBody">
+          <tr>
+            <td class="py-2 px-4">Ana Cruz</td>
+            <td class="py-2 px-4">ana@email.com</td>
+            <td class="py-2 px-4">09123456789</td>
+            <td class="py-2 px-4"><span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded">Pending</span></td>
+            <td class="py-2 px-4 flex gap-2">
+              <button class="text-green-600 hover:underline approveBtn">Approve</button>
+              <button class="text-red-600 hover:underline rejectBtn">Reject</button>
+            </td>
+          </tr>
+          <tr>
+            <td class="py-2 px-4">Ben Santos</td>
+            <td class="py-2 px-4">ben@email.com</td>
+            <td class="py-2 px-4">09998887777</td>
+            <td class="py-2 px-4"><span class="bg-green-200 text-green-800 px-2 py-1 rounded">Approved</span></td>
+            <td class="py-2 px-4 flex gap-2">
+              <button class="text-gray-400 cursor-not-allowed" disabled>Approve</button>
+              <button class="text-red-600 hover:underline rejectBtn">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <script>
+    // Modal open/close logic
+    const addModal = document.getElementById('addModal');
+    const openAddModalBtn = document.getElementById('openAddModalBtn');
+    const closeAddModalBtn = document.getElementById('closeAddModalBtn');
+    const cancelAddModalBtn = document.getElementById('cancelAddModalBtn');
+    openAddModalBtn.addEventListener('click', () => addModal.classList.remove('hidden'));
+    closeAddModalBtn.addEventListener('click', () => addModal.classList.add('hidden'));
+    cancelAddModalBtn.addEventListener('click', () => addModal.classList.add('hidden'));
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') addModal.classList.add('hidden'); });
+    // Add registration (demo only, updates table)
+    document.getElementById('addRegistrationForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const name = form.fullname.value;
+      const email = form.email.value;
+      const phone = form.phone.value;
+      const status = form.status.value;
+      const statusClass = status === 'Approved' ? 'bg-green-200 text-green-800' : status === 'Rejected' ? 'bg-red-200 text-red-800' : 'bg-yellow-200 text-yellow-800';
+      const row = `<tr><td class='py-2 px-4'>${name}</td><td class='py-2 px-4'>${email}</td><td class='py-2 px-4'>${phone}</td><td class='py-2 px-4'><span class='${statusClass} px-2 py-1 rounded'>${status}</span></td><td class='py-2 px-4 flex gap-2'><button class='text-green-600 hover:underline approveBtn'>Approve</button><button class='text-red-600 hover:underline rejectBtn'>Reject</button></td></tr>`;
+      document.getElementById('registrationTableBody').insertAdjacentHTML('beforeend', row);
+      addModal.classList.add('hidden');
+      form.reset();
+    });
+    // Approve/Reject functionality
+    document.getElementById('registrationTableBody').addEventListener('click', function(e) {
+      if (e.target.classList.contains('approveBtn')) {
+        const row = e.target.closest('tr');
+        row.querySelector('span').className = 'bg-green-200 text-green-800 px-2 py-1 rounded';
+        row.querySelector('span').textContent = 'Approved';
+        e.target.disabled = true;
+        e.target.className = 'text-gray-400 cursor-not-allowed';
+      }
+      if (e.target.classList.contains('rejectBtn')) {
+        const row = e.target.closest('tr');
+        row.querySelector('span').className = 'bg-red-200 text-red-800 px-2 py-1 rounded';
+        row.querySelector('span').textContent = 'Rejected';
+      }
+    });
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', function(e) {
+      const value = e.target.value.toLowerCase();
+      document.querySelectorAll('#registrationTableBody tr').forEach(row => {
+        const name = row.children[0].textContent.toLowerCase();
+        const email = row.children[1].textContent.toLowerCase();
+        row.style.display = name.includes(value) || email.includes(value) ? '' : 'none';
+      });
+    });
+    // User menu logic
+    const userMenuBtn = document.getElementById("user-menu-button");
+    const userMenu = document.getElementById("user-menu");
+    userMenuBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      userMenu.classList.toggle("hidden");
+    });
+    document.addEventListener("click", (e) => {
+      if (!userMenu.contains(e.target) && !userMenuBtn.contains(e.target)) {
+        userMenu.classList.add("hidden");
+      }
+    });
+  </script>
+</body>
+</html>
