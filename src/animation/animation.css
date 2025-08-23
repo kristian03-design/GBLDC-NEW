@@ -367,3 +367,97 @@ select.border-red-500 {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
+
+    /* Mobile Menu Touch-Friendly Styles */
+
+/* Remove hover effects on touch devices and add active/focus states instead */
+@media (hover: none) and (pointer: coarse) {
+    /* Mobile menu items - remove hover, add active states */
+    #mobile-menu a:hover,
+    #mobile-menu button:hover {
+        background-color: transparent;
+    }
+    
+    #mobile-menu a:active,
+    #mobile-menu button:active {
+        background-color: #f0fdf4 !important; /* light green */
+        transform: scale(0.98);
+    }
+    
+    #mobile-menu a:focus,
+    #mobile-menu button:focus {
+        background-color: #dcfce7 !important; /* slightly darker green */
+        outline: 2px solid #16a34a;
+        outline-offset: 2px;
+    }
+}
+
+/* For devices that do support hover (desktop) */
+@media (hover: hover) and (pointer: fine) {
+    #mobile-menu a:hover,
+    #mobile-menu button:hover {
+        background-color: #f0fdf4 !important;
+        transition: background-color 0.2s ease;
+    }
+}
+
+/* Universal touch improvements for mobile menu */
+#mobile-menu a,
+#mobile-menu button {
+    /* Larger touch targets */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    
+    /* Better touch feedback */
+    -webkit-tap-highlight-color: rgba(16, 185, 129, 0.1);
+    tap-highlight-color: rgba(16, 185, 129, 0.1);
+    
+    /* Prevent text selection on mobile */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+    /* Smooth transitions */
+    transition: all 0.15s ease;
+}
+
+/* Active/pressed state for better touch feedback */
+#mobile-menu a:active,
+#mobile-menu button:active {
+    background-color: #dcfce7 !important;
+    transform: scale(0.98);
+}
+
+/* Dropdown items in mobile menu */
+#mobile-products-dropdown a,
+#mobile-about-dropdown a {
+    min-height: 40px;
+    margin-left: 8px;
+    padding: 8px 16px !important;
+    border-radius: 6px;
+}
+
+#mobile-products-dropdown a:active,
+#mobile-about-dropdown a:active {
+    background-color: #f0f9ff !important; /* light blue for sub-items */
+}
+
+/* Apply Now button specific styles */
+#mobile-menu a[href="applynow.html"]:active {
+    background-color: #dcfce7 !important;
+    border-color: #16a34a !important;
+}
+
+/* User profile section improvements */
+#mobile-menu .flex.items-center.space-x-3 {
+    padding: 12px 16px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+/* Logout button specific styling */
+#mobile-menu a[onclick*="openLogoutModal"]:active {
+    background-color: #fee2e2 !important; /* light red for logout */
+}

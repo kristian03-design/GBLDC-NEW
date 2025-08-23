@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat with Staff | GBLDC</title>
+        <link rel="stylesheet" href="output.css">
+        <link rel="stylesheet" href="./animation/animation.css">
+        <script src="../src/javascript/landingpage-user.js"></script>
+        <script src="../src/javascript/dropdown-js.js"></script>
+        <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <style>
+            .chat-container {
+                height: calc(100vh - 120px);
+            }
+            .message-bubble {
+                max-width: 70%;
+                word-wrap: break-word;
+            }
+            .typing-indicator {
+                display: none;
+            }
+            .typing-indicator.show {
+                display: block;
+            }
+            .file-preview {
+                max-width: 200px;
+                max-height: 150px;
+            }
+            .chat-sidebar {
+                transition: transform 0.3s ease;
+            }
+            @media (max-width: 768px) {
+                .chat-sidebar {
+                    transform: translateX(-100%);
+                }
+                .chat-sidebar.open {
+                    transform: translateX(0);
+                }
+            }
+        </style>
+    </head>
+    <body class="bg-gray-50 font-sans">
+        <!-- Header Section -->
+        <header class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
+            <div class="container-lg mx-auto flex justify-between items-center p-4">
+                <!-- Logo and Title -->
+                <div class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
+                    <a href="user-landingpage.php" class="flex-shrink-0">
+                        <img src="path/images/logocoop-removebg-preview 2.png" 
+                             alt="GBLDC Logo" 
+                             class="w-12 h-12 sm:w-16 sm:h-14 lg:w-16 lg:h-16 bg-auto">
+                    </a>
+                    <h1 class="sm:text-base md:text-xl lg:text-2xl font-semibold animate-fade-in-right truncate font-family: 'Montserrat', sans-serif;">
+                        GBLDC
+                    </h1>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
+                    <a href="user-landingpage.php" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                        HOME
+                    </a>
+                    
+                    <!-- Products & Services Dropdown -->
+                    <div class="relative" id="dropdown-trigger">
+                        <a href="#" 
+                           class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                           onclick="toggleDropdownProducts(event)">
+                            PRODUCT & SERVICES
+                            <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                             id="dropdown-menu-products">
+                            <a href="loan-products.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Loans
+                            </a>
+                            <a href="deposit.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Deposits
+                            </a>
+                            <a href="insurance.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Insurance
+                            </a>
+                            <a href="social-services.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Social Services
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- About Dropdown -->
+                    <div class="relative" id="dropdown-trigger-about">
+                        <a href="#" 
+                           class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                           onclick="toggleDropdown(event)">
+                            ABOUT
+                            <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+                        </a>
+                        <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                             id="dropdown-menu">
+                            <a href="about-gbldc.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                About GBLDC
+                            </a>
+                            <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Mission & Vision
+                            </a>
+                            <a href="board-of-directors.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Board of Directors
+                            </a>
+                            <a href="committee-officers.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                                Committee Officers
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                        NEWS & EVENTS
+                    </a>
+                </nav>
+
+                <!-- Desktop Apply Now Button and Profile -->
+                <div class="button gap-4 hidden lg:flex items-center mr-10">
+                    <!-- Apply Now Button -->
+                    <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
+                    
+                    <!-- User Profile Avatar with Dropdown -->
+                    <div class="relative group">
+                        <a href="#" title="User Profile" onclick="toggleProfileDropdown(event)">
+                            <img src="path/images/logocoop-removebg-preview 2.png" alt="User Avatar" class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
+                        </a>
+                        <!-- Desktop Profile Dropdown Menu -->
+                        <div id="profile-dropdown" class="absolute right-0 mt-2 w-76 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
+                            <div class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
+                                <?php echo isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : ''; ?>
+                            </div>
+                            <a href="loandashboard.html" class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan Dashboard</a>
+                            <a href="account-settings.html" class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
+                            <a href="help.html" class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help & Support</a>
+                            <div class="border-t my-1">
+                                <a href="index.html" onclick="openLogoutModal(event)" class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden flex items-center px-3 py-2 border rounded text-green-700 border-green-700 hover:text-white hover:bg-green-700 transition-colors duration-300 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-white z-50 hidden animate-fade-in">
+                <div class="flex justify-between items-center p-4 border-b">
+                    <div class="flex items-center space-x-2">
+                        <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-10 h-10">
+                        <span class="font-semibold text-lg">GBLDC</span>
+                    </div>
+                    <button id="mobile-menu-close" class="text-gray-700 hover:text-green-600 text-2xl focus:outline-none">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                
+                <nav class="flex flex-col space-y-2 p-6 text-base">
+                    <a href="user-landingpage.php" class="hover:bg-green-200 transition-colors duration-300 py-2 px-4 rounded">HOME</a>
+                    
+                    <!-- Mobile Products & Services Dropdown -->
+                    <div>
+                        <button type="button" id="mobile-products-toggle" class="w-full flex justify-between items-center py-2 px-4 rounded hover:bg-green-100 transition-colors">
+                            PRODUCT & SERVICES
+                            <i class="fas fa-chevron-down ml-2"></i>
+                        </button>
+                        <div id="mobile-products-dropdown" class="ml-4 mt-1 space-y-1 hidden">
+                            <a href="loan-products.html" class="block py-1 px-2 rounded hover:bg-green-50">Loans</a>
+                            <a href="deposit.html" class="block py-1 px-2 rounded hover:bg-green-50">Deposits</a>
+                            <a href="insurance.html" class="block py-1 px-2 rounded hover:bg-green-50">Insurance</a>
+                            <a href="social-services.html" class="block py-1 px-2 rounded hover:bg-green-50">Social Services</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Mobile About Dropdown -->
+                    <div>
+                        <button type="button" id="mobile-about-toggle" class="w-full flex justify-between items-center py-2 px-4 rounded hover:bg-green-100 transition-colors">
+                            ABOUT
+                            <i class="fas fa-chevron-down ml-2"></i>
+                        </button>
+                        <div id="mobile-about-dropdown" class="ml-4 mt-1 space-y-1 hidden">
+                            <a href="about-gbldc.html" class="block py-1 px-2 rounded hover:bg-green-50">About GBLDC</a>
+                            <a href="#" class="block py-1 px-2 rounded hover:bg-green-50">Mission & Vision</a>
+                            <a href="board-of-directors.html" class="block py-1 px-2 rounded hover:bg-green-50">Board of Directors</a>
+                            <a href="committee-officers.html" class="block py-1 px-2 rounded hover:bg-green-50">Committee Officers</a>
+                        </div>
+                    </div>
+                    
+                    <a href="news&events.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">NEWS & EVENTS</a>
+                    <a href="applynow.html" class="py-2 px-4 rounded border border-green-600 text-green-700 mt-2">Apply Now</a>
+                    
+                    <div class="border-t my-2"></div>
+                    
+                    <!-- Mobile User Profile Section -->
+                    <div class="flex items-center space-x-3 mt-2">
+                        <img src="path/images/logocoop-removebg-preview 2.png" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
+                        <span class="font-semibold"><?php echo isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : ''; ?></span>
+                    </div>
+                    <a href="loandashboard.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">Loan Dashboard</a>
+                    <a href="account-settings.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">Settings</a>
+                    <a href="help.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">Help & Support</a>
+                    <a href="index.html" onclick="openLogoutModal(event)" class="py-2 px-4 rounded hover:bg-green-100 transition-colors">Logout</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Chat Section -->
+        <main class="pt-20 pb-6">
+            <div class="container mx-auto px-4">
+                <!-- Page Header -->
+                <div class="mb-6 mt-8">
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Chat with Staff</h1>
+                    <p class="text-gray-600">Get instant help and support from our dedicated staff members</p>
+                </div>
+
+                <!-- Chat Container -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden chat-container">
+                    <div class="flex h-full">
+                        <!-- Staff Selection Sidebar -->
+                        <div class="w-80 bg-gray-50 border-r border-gray-200 chat-sidebar">
+                            <div class="p-4 border-b border-gray-200">
+                                <h3 class="text-lg font-semibold text-gray-800 mb-3">Available Staff</h3>
+                                <div class="relative">
+                                    <input type="text" id="staff-search" placeholder="Search staff..." 
+                                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+                                </div>
+                            </div>
+                            
+                            <div class="overflow-y-auto h-full">
+                                <div class="staff-list space-y-2 p-4">
+                                    <!-- Staff members will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Chat Area -->
+                        <div class="flex-1 flex flex-col">
+                            <!-- Chat Header -->
+                            <div class="bg-white border-b border-gray-200 p-4">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center space-x-3">
+                                        <div id="selected-staff-avatar" class="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
+                                            <i class="fas fa-user text-gray-600"></i>
+                                        </div>
+                                        <div>
+                                            <h4 id="selected-staff-name" class="font-semibold text-gray-800">Select a staff member</h4>
+                                            <p id="selected-staff-status" class="text-sm text-gray-500">Choose from the list to start chatting</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <button id="mobile-sidebar-toggle" class="lg:hidden p-2 hover:bg-gray-100 rounded-lg">
+                                            <i class="fas fa-bars"></i>
+                                        </button>
+                                        <button class="p-2 hover:bg-gray-100 rounded-lg" title="More options">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Messages Area -->
+                            <div class="flex-1 overflow-y-auto p-4 space-y-4" id="messages-container">
+                                <!-- Welcome message -->
+                                <div class="flex justify-center">
+                                    <div class="bg-gray-100 rounded-lg px-4 py-2 text-gray-600 text-sm">
+                                        Welcome! Select a staff member to start chatting
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Typing Indicator -->
+                            <div class="typing-indicator px-4 py-2" id="typing-indicator">
+                                <div class="flex items-center space-x-2 text-gray-500">
+                                    <div class="flex space-x-1">
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                        <div class="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                    </div>
+                                    <span class="text-sm">Staff is typing...</span>
+                                </div>
+                            </div>
+
+                            <!-- Message Input Area -->
+                            <div class="border-t border-gray-200 p-4">
+                                <div class="flex items-center space-x-3">
+                                    <!-- File Attachment Button -->
+                                    <button id="file-attach-btn" class="p-2 text-gray-500 hover:text-green-600 transition-colors" title="Attach file">
+                                        <i class="fas fa-paperclip text-lg"></i>
+                                    </button>
+                                    <input type="file" id="file-input" class="hidden" accept="image/*,.pdf,.doc,.docx,.txt">
+                                    
+                                    <!-- Message Input -->
+                                    <div class="flex-1 relative">
+                                        <textarea id="message-input" 
+                                                  placeholder="Type your message here..." 
+                                                  class="w-full px-4 py-3 border border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-green-500"
+                                                  rows="1"></textarea>
+                                    </div>
+                                    
+                                    <!-- Send Button -->
+                                    <button id="send-btn" class="px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                                
+                                <!-- File Preview -->
+                                <div id="file-preview" class="hidden mt-3 p-3 bg-gray-50 rounded-lg">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center space-x-2">
+                                            <i class="fas fa-file text-green-600"></i>
+                                            <span id="file-name" class="text-sm text-gray-700"></span>
+                                        </div>
+                                        <button id="remove-file" class="text-red-500 hover:text-red-700">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Scripts -->
+        <script src="./javascript/chatbot.js"></script>
+        <script>
+            // Staff data
+            const staffMembers = [
+                {
+                    id: 1,
+                    name: "Maria Santos",
+                    position: "Loan Officer",
+                    department: "Loans Department",
+                    status: "online",
+                    avatar: "path/images/logocoop-removebg-preview 2.png",
+                    specialties: ["Personal Loans", "Business Loans", "Loan Applications"]
+                },
+                {
+                    id: 2,
+                    name: "Juan Dela Cruz",
+                    position: "Deposit Specialist",
+                    department: "Deposits Department",
+                    status: "online",
+                    avatar: "path/images/logocoop-removebg-preview 2.png",
+                    specialties: ["Savings Accounts", "Time Deposits", "Investment Products"]
+                },
+                {
+                    id: 3,
+                    name: "Ana Rodriguez",
+                    position: "Insurance Agent",
+                    department: "Insurance Department",
+                    status: "online",
+                    avatar: "path/images/logocoop-removebg-preview 2.png",
+                    specialties: ["Life Insurance", "Health Insurance", "Property Insurance"]
+                },
+                {
+                    id: 4,
+                    name: "Carlos Mendoza",
+                    position: "Social Services Coordinator",
+                    department: "Social Services",
+                    status: "online",
+                    avatar: "path/images/logocoop-removebg-preview 2.png",
+                    specialties: ["Community Programs", "Social Welfare", "Member Benefits"]
+                },
+                {
+                    id: 5,
+                    name: "Luz Garcia",
+                    position: "Customer Service Representative",
+                    department: "Customer Service",
+                    status: "online",
+                    avatar: "path/images/logocoop-removebg-preview 2.png",
+                    specialties: ["General Inquiries", "Account Issues", "Technical Support"]
+                }
+            ];
+
+            let selectedStaff = null;
+            let chatHistory = {};
+            let currentFile = null;
+
+            // Initialize the chat page
+            document.addEventListener('DOMContentLoaded', function() {
+                initializeChat();
+                setupEventListeners();
+                populateStaffList();
+            });
+
+            function initializeChat() {
+                // Initialize chat history for each staff member
+                staffMembers.forEach(staff => {
+                    chatHistory[staff.id] = [];
+                });
+            }
+
+            function setupEventListeners() {
+                // Send button
+                document.getElementById('send-btn').addEventListener('click', sendMessage);
+                
+                // Enter key to send message
+                document.getElementById('message-input').addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        sendMessage();
+                    }
+                });
+
+                // File attachment
+                document.getElementById('file-attach-btn').addEventListener('click', () => {
+                    document.getElementById('file-input').click();
+                });
+
+                document.getElementById('file-input').addEventListener('change', handleFileSelect);
+                document.getElementById('remove-file').addEventListener('click', removeFile);
+
+                // Mobile sidebar toggle
+                document.getElementById('mobile-sidebar-toggle').addEventListener('click', toggleMobileSidebar);
+
+                // Staff search
+                document.getElementById('staff-search').addEventListener('input', filterStaff);
+            }
+
+            function populateStaffList() {
+                const staffList = document.querySelector('.staff-list');
+                staffList.innerHTML = '';
+
+                staffMembers.forEach(staff => {
+                    const staffItem = createStaffItem(staff);
+                    staffList.appendChild(staffItem);
+                });
+            }
+
+            function createStaffItem(staff) {
+                const div = document.createElement('div');
+                div.className = 'staff-item p-3 bg-white rounded-lg cursor-pointer hover:bg-green-50 transition-colors border border-gray-200';
+                div.innerHTML = `
+                    <div class="flex items-center space-x-3">
+                        <div class="relative">
+                            <img src="${staff.avatar}" alt="${staff.name}" class="w-12 h-12 rounded-full object-cover">
+                            <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-white"></div>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-semibold text-gray-800 truncate">${staff.name}</h4>
+                            <p class="text-sm text-gray-600 truncate">${staff.position}</p>
+                            <p class="text-xs text-gray-500 truncate">${staff.department}</p>
+                        </div>
+                    </div>
+                `;
+
+                div.addEventListener('click', () => selectStaff(staff));
+                return div;
+            }
+
+            function selectStaff(staff) {
+                selectedStaff = staff;
+                
+                // Update UI
+                document.getElementById('selected-staff-name').textContent = staff.name;
+                document.getElementById('selected-staff-status').textContent = `${staff.position} • ${staff.department}`;
+                document.getElementById('selected-staff-avatar').innerHTML = `<img src="${staff.avatar}" alt="${staff.name}" class="w-10 h-10 rounded-full object-cover">`;
+                
+                // Load chat history
+                loadChatHistory(staff.id);
+                
+                // Highlight selected staff
+                document.querySelectorAll('.staff-item').forEach(item => {
+                    item.classList.remove('ring-2', 'ring-green-500');
+                });
+                event.currentTarget.classList.add('ring-2', 'ring-green-500');
+                
+                // Send welcome message
+                setTimeout(() => {
+                    sendStaffMessage(staff, `Hello! I'm ${staff.name}, ${staff.position} from the ${staff.department}. How can I help you today?`);
+                }, 500);
+            }
+
+            function loadChatHistory(staffId) {
+                const messagesContainer = document.getElementById('messages-container');
+                messagesContainer.innerHTML = '';
+
+                if (chatHistory[staffId] && chatHistory[staffId].length > 0) {
+                    chatHistory[staffId].forEach(message => {
+                        displayMessage(message);
+                    });
+                }
+            }
+
+            function sendMessage() {
+                if (!selectedStaff) {
+                    alert('Please select a staff member first');
+                    return;
+                }
+
+                const messageInput = document.getElementById('message-input');
+                const message = messageInput.value.trim();
+                
+                if (!message && !currentFile) return;
+
+                // Create message object
+                const messageObj = {
+                    id: Date.now(),
+                    text: message,
+                    sender: 'user',
+                    timestamp: new Date(),
+                    file: currentFile
+                };
+
+                // Add to chat history
+                chatHistory[selectedStaff.id].push(messageObj);
+                
+                // Display message
+                displayMessage(messageObj);
+                
+                // Clear input
+                messageInput.value = '';
+                removeFile();
+                
+                // Simulate staff response
+                setTimeout(() => {
+                    simulateStaffResponse();
+                }, 1000 + Math.random() * 2000);
+            }
+
+            function displayMessage(message) {
+                const messagesContainer = document.getElementById('messages-container');
+                const messageDiv = document.createElement('div');
+                
+                const isUser = message.sender === 'user';
+                const timeString = message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+                
+                messageDiv.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+                
+                let messageContent = '';
+                if (message.file) {
+                    messageContent = `
+                        <div class="bg-gray-100 rounded-lg p-2 mb-2">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-file text-green-600"></i>
+                                <span class="text-sm text-gray-700">${message.file.name}</span>
+                            </div>
+                        </div>
+                    `;
+                }
+                
+                if (message.text) {
+                    messageContent += `<div class="text-gray-800">${message.text}</div>`;
+                }
+                
+                messageDiv.innerHTML = `
+                    <div class="message-bubble ${isUser ? 'bg-green-600 text-gray-500' : 'bg-gray-200 text-black'} rounded-lg px-4 py-2 shadow-sm">
+                        ${messageContent}
+                        <div class="text-xs ${isUser ? 'text-white' : 'text-gray-500'} mt-1">${timeString}</div>
+                    </div>
+                `;
+                
+                messagesContainer.appendChild(messageDiv);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+
+            function sendStaffMessage(staff, text) {
+                const messageObj = {
+                    id: Date.now(),
+                    text: text,
+                    sender: 'staff',
+                    timestamp: new Date(),
+                    staffName: staff.name
+                };
+
+                chatHistory[selectedStaff.id].push(messageObj);
+                displayMessage(messageObj);
+            }
+
+            function simulateStaffResponse() {
+                if (!selectedStaff) return;
+
+                const responses = [
+                    "Thank you for your message. I'm looking into this for you.",
+                    "I understand your concern. Let me check our system for more details.",
+                    "That's a great question! Here's what I can tell you...",
+                    "I'll need to verify some information. Can you provide more details?",
+                    "Based on our records, here's what I found...",
+                    "I'm here to help! Let me guide you through the process.",
+                    "Thank you for bringing this to my attention. I'll escalate this if needed.",
+                    "I can see your account details. Let me explain the next steps...",
+                    "That's correct! Here's what happens next...",
+                    "I appreciate your patience while I gather this information."
+                ];
+
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                sendStaffMessage(selectedStaff, randomResponse);
+            }
+
+            function handleFileSelect(event) {
+                const file = event.target.files[0];
+                if (file) {
+                    currentFile = file;
+                    document.getElementById('file-name').textContent = file.name;
+                    document.getElementById('file-preview').classList.remove('hidden');
+                }
+            }
+
+            function removeFile() {
+                currentFile = null;
+                document.getElementById('file-input').value = '';
+                document.getElementById('file-preview').classList.add('hidden');
+            }
+
+            function filterStaff(event) {
+                const searchTerm = event.target.value.toLowerCase();
+                const staffItems = document.querySelectorAll('.staff-item');
+                
+                staffItems.forEach(item => {
+                    const staffName = item.querySelector('h4').textContent.toLowerCase();
+                    const staffPosition = item.querySelector('p').textContent.toLowerCase();
+                    
+                    if (staffName.includes(searchTerm) || staffPosition.includes(searchTerm)) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            }
+
+            function toggleMobileSidebar() {
+                const sidebar = document.querySelector('.chat-sidebar');
+                sidebar.classList.toggle('open');
+            }
+
+            // Auto-resize textarea
+            document.getElementById('message-input').addEventListener('input', function() {
+                this.style.height = 'auto';
+                this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+            });
+
+            // Close mobile sidebar when clicking outside
+            document.addEventListener('click', function(event) {
+                const sidebar = document.querySelector('.chat-sidebar');
+                const toggleBtn = document.getElementById('mobile-sidebar-toggle');
+                
+                if (!sidebar.contains(event.target) && !toggleBtn.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Member Area</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+  <div class="max-w-2xl mx-auto mt-10 bg-white rounded shadow p-6">
+    <h1 class="text-2xl font-bold mb-6">Welcome, Member!</h1>
+    <nav class="flex space-x-4 mb-6">
+      <button class="tab-btn px-4 py-2 bg-blue-500 text-white rounded" data-tab="dashboard">Dashboard</button>
+      <button class="tab-btn px-4 py-2 bg-gray-200 rounded" data-tab="profile">Profile</button>
+      <button class="tab-btn px-4 py-2 bg-gray-200 rounded" data-tab="content">Exclusive Content</button>
+      <button class="tab-btn px-4 py-2 bg-gray-200 rounded" data-tab="settings">Settings</button>
+    </nav>
+    <div id="dashboard" class="tab-content">
+      <h2 class="text-xl font-semibold mb-2">Dashboard</h2>
+      <p>You have <span class="font-bold">3</span> new notifications.</p>
+      <p>Your last login: <span class="font-mono">2025-08-21</span></p>
+    </div>
+    <div id="profile" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Profile</h2>
+      <form id="profileForm" class="space-y-4">
+        <div>
+          <label class="block text-sm">Name</label>
+          <input type="text" class="w-full border rounded px-2 py-1" value="John Doe" id="nameInput">
+        </div>
+        <div>
+          <label class="block text-sm">Email</label>
+          <input type="email" class="w-full border rounded px-2 py-1" value="john@example.com" id="emailInput">
+        </div>
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Save</button>
+      </form>
+      <p id="profileMsg" class="text-green-600 mt-2 hidden">Profile updated!</p>
+    </div>
+    <div id="content" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Exclusive Content</h2>
+      <ul class="list-disc pl-5">
+        <li><a href="#" class="text-blue-600 underline">Download E-book</a></li>
+        <li><a href="#" class="text-blue-600 underline">Watch Members-only Webinar</a></li>
+      </ul>
+    </div>
+    <div id="settings" class="tab-content hidden">
+      <h2 class="text-xl font-semibold mb-2">Account Settings</h2>
+      <button id="logoutBtn" class="bg-red-500 text-white px-4 py-2 rounded">Log Out</button>
+    </div>
+  </div>
+  <script>
+    // Tab functionality
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBtns.forEach(b => b.classList.remove('bg-blue-500', 'text-white'));
+        btn.classList.add('bg-blue-500', 'text-white');
+        tabBtns.forEach(b => b.classList.add('bg-gray-200'));
+        btn.classList.remove('bg-gray-200');
+        tabContents.forEach(tc => tc.classList.add('hidden'));
+        document.getElementById(btn.dataset.tab).classList.remove('hidden');
+      });
+    });
+
+    // Profile form functionality
+    document.getElementById('profileForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('profileMsg').classList.remove('hidden');
+      setTimeout(() => {
+        document.getElementById('profileMsg').classList.add('hidden');
+      }, 2000);
+    });
+
+    // Logout button
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+      alert('You have been logged out!');
+      // Redirect or further logic here
+    });
+  </script>
+</body>
+</html>

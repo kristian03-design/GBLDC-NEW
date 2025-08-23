@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply Now Step 5 | GBLDC</title>
+    <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+    <link href="../src/animation/animation.css" rel="stylesheet">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header Section -->
+    <header class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
+        <div class="container-lg mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
+                <a href="landingpage.html" class="flex-shrink-0">
+                    <img src="path/images/logocoop-removebg-preview 2.png"
+                         alt="GBLDC Logo"
+                         class="w-12 h-12 sm:w-16 sm:h-14 lg:w-18 lg:h-16 bg-auto">
+                </a>
+                <h1 class="text-xs sm:text-base md:text-lg lg:text-xl font-medium animate-fade-in-right truncate">
+                    Greater Bulacan Livelihood Development Cooperative
+                </h1>
+            </div>
+            <nav class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
+                <a href="landingpage.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                    HOME
+                </a>
+                <div class="relative" id="dropdown-trigger">
+                    <a href="#"
+                       class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                       onclick="toggleDropdownProducts(event)">
+                        PRODUCT & SERVICES
+                        <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                         id="dropdown-menu-products">
+                        <a href="loan-products.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Loans
+                        </a>
+                        <a href="deposit.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Deposits
+                        </a>
+                        <a href="insurance.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Insurance
+                        </a>
+                        <a href="social-services.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Social Services
+                        </a>
+                    </div>
+                </div>
+                <div class="relative" id="dropdown-trigger-about">
+                    <a href="#"
+                       class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                       onclick="toggleDropdown(event)">
+                        ABOUT
+                        <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                         id="dropdown-menu">
+                        <a href="about-gbldc.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            About GBLDC
+                        </a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Mission & Vision
+                        </a>
+                        <a href="board-of-directors.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Board of Directors
+                        </a>
+                        <a href="committee-officers.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Committee Officers
+                        </a>
+                    </div>
+                </div>
+                <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                    NEWS & EVENTS
+                </a>
+            </nav>
+            <div class="hidden lg:flex items-center gap-3 xl:gap-4">
+                <a href="index.html" class="bg-green-500 text-white px-4 xl:px-7 py-2 hover:bg-green-600 rounded-md font-normal whitespace-nowrap text-sm xl:text-base">
+                    Login
+                </a>
+                <a href="applynow.html" class="border border-green-600 text-black px-4 xl:px-6 py-2 rounded-md font-normal hover:bg-green-50 whitespace-nowrap text-sm xl:text-base">
+                    Apply Now
+                </a>
+            </div>
+            <div class="hidden md:flex lg:hidden items-center gap-2">
+                <a href="index.html" class="bg-green-500 text-white px-3 py-2 hover:bg-green-600 rounded-md font-normal text-sm">
+                    Login
+                </a>
+                <a href="applynow.html" class="border border-green-600 text-black px-3 py-2 rounded-md font-normal hover:bg-green-50 text-sm">
+                    Apply
+                </a>
+            </div>
+            <button class="lg:hidden text-black focus:outline-none animate-fade-in ml-2 flex-shrink-0"
+                    onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl sm:text-2xl"></i>
+            </button>
+        </div>
+        <nav class="lg:hidden bg-white shadow-lg hidden" id="mobile-menu">
+            <div class="px-4 py-2 space-y-1">
+                <a href="landingpage.html" class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+                    HOME
+                </a>
+                <div class="relative">
+                    <a href="#"
+                       class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+                       onclick="toggleDropdownProductsMobile(event)">
+                        <span>PRODUCT & SERVICES</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200" id="products-arrow"></i>
+                    </a>
+                    <div class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden" id="dropdown-menu-products-mobile">
+                        <a href="loan-products.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Loans
+                        </a>
+                        <a href="deposit.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Deposits
+                        </a>
+                        <a href="insurance.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Insurance
+                        </a>
+                        <a href="social-services.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Social Services
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <a href="#"
+                       class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+                       onclick="toggleDropdownMobileAbout(event)">
+                        <span>ABOUT</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200" id="about-arrow"></i>
+                    </a>
+                    <div class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden" id="dropdown-menu-about-mobile">
+                        <a href="about-gbldc.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            About GBLDC
+                        </a>
+                        <a href="#" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Mission & Vision
+                        </a>
+                        <a href="board-of-directors.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Board of Directors
+                        </a>
+                        <a href="committee-officers.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Committee Officers
+                        </a>
+                    </div>
+                </div>
+                <a href="news&events.html" class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+                    NEWS & EVENTS
+                </a>
+                <div class="flex flex-col items-stretch mt-4 space-y-2 px-4 pb-4">
+                    <a href="index.html" class="bg-green-600 text-white px-4 py-3 rounded-lg font-normal hover:bg-green-800 text-center transition-colors duration-200">
+                        Login
+                    </a>
+                    <a href="applynow.html" class="border border-green-600 text-black px-4 py-3 rounded-lg font-normal hover:bg-green-50 text-center transition-colors duration-200">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="max-w-4xl mx-auto mt-24 p-7">
+        <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
+        <p class="text-center text-black mt-3">Let’s talk and learn your finances better</p>
+        <div class="flex items-center justify-center my-6">
+            <div class="flex items-center gap-8">
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">1</div>
+                    <p class="text-sm mt-2 text-center">Personal Information</p>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">2</div>
+                    <p class="text-sm mt-2 text-center">Emergency Contact 1</p>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">3</div>
+                    <p class="text-sm mt-2 text-center">Emergency Contact 2</p>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">4</div>
+                    <p class="text-sm mt-2 text-center">Employment Information</p>
+                </div>
+                <div class="w-20 h-1 bg-green-300"></div>
+                <div class="flex flex-col items-center text-black">
+                    <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">5</div>
+                    <p class="text-sm mt-2 text-center font-semibold text-green-700">Review & Submit</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10">
+        <h3 class="text-2xl font-medium text-teal-900 mb-4">Review &amp; Submit</h3>
+        <p class="text-gray-600 mb-8">Please review your information before submitting your application.</p>
+        <div class="space-y-8">
+            <!-- Personal Information -->
+            <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Personal Information</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-600">Full Name</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewFullName">Juan Dela Cruz</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Date of Birth</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewDOB">01/01/1990</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Email</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewEmail">juan@email.com</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Mobile Number</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewMobile">09171234567</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Address Information -->
+            <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Home Address</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-600">Street Address</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewStreet">123 Main St.</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Province</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewProvince">Bulacan</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">City/Municipality</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewCity">Pulilan</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Barangay</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewBarangay">Tinejero</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Zip Code</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewZip">3005</div>
+                    </div>
+                </div>
+            </div>
+            <!--Emergency Contact 1-->
+            <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Emergency Contact 1</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-600">Full Name</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewEmergencyContact1Name">Maria Dela Cruz</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Relationship</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewEmergencyContact1Relation">Sister</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Mobile Number</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewEmergencyContact1Mobile">09171234568</div>
+                    </div>
+                </div>
+
+            <!-- Employment Information -->
+            <div>
+                <h4 class="text-lg font-semibold text-gray-700 mb-2">Employment Information</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-gray-600">Employer</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewEmployer">ABC Corp</div>
+                    </div>
+                    <div>
+                        <label class="block text-gray-600">Position</label>
+                        <div class="bg-gray-100 rounded px-4 py-2" id="reviewPosition">Software Engineer</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Submit Button -->
+        <div class="flex justify-between mt-10">
+            <button type="button" onclick="window.history.back()" class="bg-gray-200 text-gray-700 px-8 py-2 rounded hover:bg-gray-300 transition">Back</button>
+            <button type="submit" class="bg-green-600 text-white px-8 py-2 rounded hover:bg-green-700 transition">Submit Application</button>
+        </div>
+    </form>
+    <script>
+        // Example: Populate review fields from localStorage/sessionStorage or previous steps
+        // Replace with your actual data retrieval logic
+        document.getElementById('reviewFullName').textContent = localStorage.getItem('fullName') || 'Juan Dela Cruz';
+        document.getElementById('reviewDOB').textContent = localStorage.getItem('dob') || '01/01/1990';
+        document.getElementById('reviewEmail').textContent = localStorage.getItem('email') || 'juan@email.com';
+        document.getElementById('reviewMobile').textContent = localStorage.getItem('mobile') || '09171234567';
+        document.getElementById('reviewStreet').textContent = localStorage.getItem('street') || '123 Main St.';
+        document.getElementById('reviewProvince').textContent = localStorage.getItem('province') || 'Bulacan';
+        document.getElementById('reviewCity').textContent = localStorage.getItem('city') || 'Pulilan';
+        document.getElementById('reviewBarangay').textContent = localStorage.getItem('barangay') || 'Tinejero';
+        document.getElementById('reviewZip').textContent = localStorage.getItem('zip') || '3005';
+        document.getElementById('reviewEmployer').textContent = localStorage.getItem('employer') || 'ABC Corp';
+        document.getElementById('reviewPosition').textContent = localStorage.getItem('position') || 'Software Engineer';
+
+        // Optional: Handle form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            Swal.fire({
+                icon: 'success',
+                title: 'Application Submitted!',
+                text: 'Thank you for submitting your application. We will review your information and contact you soon.',
+                confirmButtonColor: '#16a34a'
+            }).then(() => {
+                window.location.href = 'thankyou.html';
+            });
+        });
+    </script>
+</body>
+</html>
