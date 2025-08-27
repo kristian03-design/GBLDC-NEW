@@ -112,6 +112,13 @@
     --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);
     --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1);
     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
+>>>>>>> f77ea575fa3f9a1395b1d0830d492a348cef8973
+>>>>>>> c69a31db864527f0de16cc1d144b4f4a76d71f20
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --animate-bounce: bounce 1s infinite;
@@ -1118,6 +1125,8 @@
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
+<<<<<<< HEAD
+=======
   .rounded-t-2xl {
     border-top-left-radius: var(--radius-2xl);
     border-top-right-radius: var(--radius-2xl);
@@ -1134,6 +1143,7 @@
     border-bottom-right-radius: var(--radius-lg);
     border-bottom-left-radius: var(--radius-lg);
   }
+>>>>>>> f77ea575fa3f9a1395b1d0830d492a348cef8973
   .rounded-b-xl {
     border-bottom-right-radius: var(--radius-xl);
     border-bottom-left-radius: var(--radius-xl);
@@ -1700,6 +1710,8 @@
   .text-gray-900 {
     color: var(--color-gray-900);
   }
+<<<<<<< HEAD
+=======
   .text-green-100 {
     color: var(--color-green-100);
   }
@@ -1709,6 +1721,7 @@
   .text-green-400 {
     color: var(--color-green-400);
   }
+>>>>>>> f77ea575fa3f9a1395b1d0830d492a348cef8973
   .text-green-500 {
     color: var(--color-green-500);
   }
