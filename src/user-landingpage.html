@@ -1,31 +1,38 @@
 <?php
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: user-landingpage.php");
-    exit;
+header("Location: user-landingpage.php");
+exit;
 }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- FontAwesome for Icons -->
-    <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png" sizes="512x512"/>
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/e588cb9d47.js"
+      crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png"
+      href="path/images/logocoop-removebg-preview 2.png" sizes="512x512" />
     <link href="./output.css" rel="stylesheet">
     <link href="./animation/animation.css" rel="stylesheet">
-     <!-- Slick JS & CSS (add in <head> if not already included) -->
-      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-     <script src="../src/javascript/dropdown.js"></script>
-     <script src="../src/javascript/carousel.js"></script>
+    <!-- Slick JS & CSS (add in <head> if not already included) -->
+    <link rel="stylesheet" type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  
+      <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/javascript/dropdown.js"></script>
+    <script src="../src/javascript/carousel.js"></script>
     <script src="../src/javascript/chatbot.js"></script>
     <script src="../src/javascript/landingpage-user.js"></script>
-    <title>Greater Bulacan Livelihood Development Cooperative - LANDING PAGE</title>
+    <title>Greater Bulacan Livelihood Development Cooperative - LANDING
+      PAGE</title>
 
-      <style>
+    <style>
       /* Modern pulse animation for background blobs */
       @keyframes pulse {
         0%, 100% { opacity: 0.3; transform: scale(1);}
@@ -39,543 +46,915 @@ if (!isset($_SESSION['user_id'])) {
       .delay-600 { animation-delay: 0.9s !important; }
 
        </style>
-</head>
+  </head>
 
-<body class="bg-gray-50 text-gray-800 antialiased font-sans">
-<!-- Header Section -->
-<header class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
-    <div class="container-lg mx-auto flex justify-between items-center p-4">
-        <!-- Logo and Title -->
-        <div class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
-            <a href="user-landingpage.php" class="flex-shrink-0">
-                <img src="path/images/logocoop-removebg-preview 2.png" 
-                     alt="GBLDC Logo" 
-                     class="w-12 h-12 sm:w-16 sm:h-14 lg:w-16 lg:h-16 bg-auto">
-            </a>
-            <h1 class=" sm:text-base md:text-xl lg:text-2xl font-semibold animate-fade-in-right truncate font-family: 'Montserrat', sans-serif;">
-                GBLDC
-            </h1>
-        </div>
-        
-        <!-- Desktop Navigation -->
-        <nav class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
-            <a href="user-landingpage.php" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
-                HOME
-            </a>
-            
-            <!-- Products & Services Dropdown -->
-            <div class="relative" id="dropdown-trigger">
-                <a href="#" 
-                   class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
-                   onclick="toggleDropdownProducts(event)">
-                    PRODUCT & SERVICES
-                    <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
-                </a>
-                <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
-                     id="dropdown-menu-products">
-                    <a href="loan-products.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        Loans
-                    </a>
-                    <a href="deposit.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        Deposits
-                    </a>
-                    <a href="insurance.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        Savings
-                    </a>
-                  
-                </div>
-            </div>
-            
-            <!-- About Dropdown -->
-            <div class="relative" id="dropdown-trigger-about">
-                <a href="#" 
-                   class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
-                   onclick="toggleDropdown(event)">
-                    ABOUT
-                    <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
-                </a>
-                <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
-                     id="dropdown-menu">
-                    <a href="about-gbldc.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        About GBLDC
-                    </a>
-                    <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        Mission & Vision
-                    </a>
-                    <a href="board-of-directors.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        Board of Directors
-                    </a>
-                    <a href="committee-officers.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                        Committee Officers
-                    </a>
-                </div>
-            </div>
-            
-            <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
-                NEWS & EVENTS
-            </a>
-        </nav>
-
-        <!-- Desktop Apply Now Button and Profile -->
-        <div class="button gap-4 hidden lg:flex items-center mr-10">
-            <!-- Apply Now Button -->
-            <a href="applynow.html" class="border border-green-600 text-black px-6 py-2 rounded-lg font-normal hover:bg-green-50">Apply Now</a>
-            
-            <!-- User Profile Avatar with Dropdown -->
-            <div class="relative group">
-                <a href="#" title="User Profile" onclick="toggleProfileDropdown(event)">
-                    <img src="path/images/logocoop-removebg-preview 2.png" alt="User Avatar" class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
-                </a>
-                <!-- Desktop Profile Dropdown Menu -->
-                <div id="profile-dropdown" class="absolute right-0 mt-2 w-76 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
-                    <div class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
-                        <?php echo isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : ''; ?>
-                    </div>
-                    <a href="loandashboard.html" class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan Dashboard</a>
-                    <a href="account-settings.html" class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
-                    <a href="help.html" class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help & Support</a>
-                    <div class="border-t my-1">
-                        <a href="index.html" onclick="openLogoutModal(event)" class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu Button -->
-        <button id="mobile-menu-button" class="lg:hidden flex items-center px-3 py-2 border rounded text-green-700 border-green-700 hover:text-white hover:bg-green-700 transition-colors duration-300 focus:outline-none">
-            <i class="fas fa-bars text-xl"></i>
-        </button>
-    </div>
-
-    <!-- Mobile Navigation Menu -->
-    <div id="mobile-menu" class="lg:hidden fixed top-0 left-0 w-full h-full bg-white z-50 hidden animate-fade-in">
-        <div class="flex justify-between items-center p-4 border-b">
-            <div class="flex items-center space-x-2">
-                <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-10 h-10">
-                <span class="font-semibold text-lg">GBLDC</span>
-            </div>
-            <button id="mobile-menu-close" class="text-gray-700 hover:text-green-600 text-2xl focus:outline-none">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        
-        <nav class="flex flex-col space-y-2 p-6 text-base">
-            <a href="user-landingpage.php" class="hover:bg-green-200 transition-colors duration-300 py-2 px-4 rounded">HOME</a>
-            
-            <!-- Mobile Products & Services Dropdown -->
-            <div>
-                <button type="button" id="mobile-products-toggle" class="w-full flex justify-between items-center py-2 px-4 rounded hover:bg-green-100 transition-colors">
-                    PRODUCT & SERVICES
-                    <i class="fas fa-chevron-down ml-2"></i>
-                </button>
-                <div id="mobile-products-dropdown" class="ml-4 mt-1 space-y-1 hidden">
-                    <a href="loan-products.html" class="block py-1 px-2 rounded hover:bg-green-50">Loans</a>
-                    <a href="deposit.html" class="block py-1 px-2 rounded hover:bg-green-50">Deposits</a>
-                    <a href="insurance.html" class="block py-1 px-2 rounded hover:bg-green-50">Insurance</a>
-                    <a href="social-services.html" class="block py-1 px-2 rounded hover:bg-green-50">Social Services</a>
-                </div>
-            </div>
-            
-            <!-- Mobile About Dropdown -->
-            <div>
-                <button type="button" id="mobile-about-toggle" class="w-full flex justify-between items-center py-2 px-4 rounded hover:bg-green-100 transition-colors">
-                    ABOUT
-                    <i class="fas fa-chevron-down ml-2"></i>
-                </button>
-                <div id="mobile-about-dropdown" class="ml-4 mt-1 space-y-1 hidden">
-                    <a href="about-gbldc.html" class="block py-1 px-2 rounded hover:bg-green-50">About GBLDC</a>
-                    <a href="#" class="block py-1 px-2 rounded hover:bg-green-50">Mission & Vision</a>
-                    <a href="board-of-directors.html" class="block py-1 px-2 rounded hover:bg-green-50">Board of Directors</a>
-                    <a href="committee-officers.html" class="block py-1 px-2 rounded hover:bg-green-50">Committee Officers</a>
-                </div>
-            </div>
-            
-            <a href="news&events.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">NEWS & EVENTS</a>
-            <a href="applynow.html" class="py-2 px-4 rounded border border-green-600 text-green-700 mt-2">Apply Now</a>
-            
-            <div class="border-t my-2"></div>
-            
-            <!-- Mobile User Profile Section -->
-            <div class="flex items-center space-x-3 mt-2">
-                <img src="path/images/logocoop-removebg-preview 2.png" alt="User Avatar" class="w-10 h-10 rounded-full object-cover">
-                <span class="font-semibold"><?php echo isset($_SESSION['user_name']) ? htmlspecialchars($_SESSION['user_name']) : ''; ?></span>
-            </div>
-            <a href="loandashboard.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">Loan Dashboard</a>
-            <a href="account-settings.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">Settings</a>
-            <a href="help.html" class="py-2 px-4 rounded hover:bg-green-200 transition-colors">Help & Support</a>
-            <a href="index.html" onclick="openLogoutModal(event)" class="py-2 px-4 rounded hover:bg-green-100 transition-colors">Logout</a>
-        </nav>
-    </div>
-</header>
-
-  <!-- Hero Section -->
-   <section class="relative animate-zoom-in">
-      <img 
-        src="path/images/LANDINGPAGE.png"
-        alt="Greater Bulacan Development Cooperative Hero Image"
-        class="w-full h-[540px] object-fill"
-        style="filter: brightness(0.8); position: relative; z-index: 1; top: 50px; left: 0;">
-    </section>
-    <section class="py-14 px-6 text-center mt-10">
-      <h2 class="text-4xl font-medium text-teal-900 mb-2 animate-fade-in-up">Our
-        Products</h2>
-      <p class="text-gray-600 mb-10 tracking-wide animate-fade-in">Discover
-        practical financial solutions designed to help you achieve your goals
-        and support your everyday needs.</p>
-
+  <body class="bg-gray-50 text-gray-800 antialiased font-sans">
+    <!-- Header Section -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-screen-2xl mx-auto text-left">
-        <!-- Card 1 - Loan -->
-        <div
-          class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in  hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
-          <div>
-            <h3
-              class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Loan</h3>
-            <p
-              class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Get
-              financial assistance for your startup business, tuition fees, or
-              home appliances.</p>
-          </div>
-          <img src="path/images/gbldc-loan.png" alt="Loan"
-            class="w-56 h-56 mb-6 mt-6 animate-fade-in-up group-hover:scale-110 transition-transform duration-300 drop-shadow-xl">
-          <a href="loan-products.html">
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
+        <!-- Logo Section - Responsive sizing -->
+        <a href="landingpage.html"
+          class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
+          <img src="path/images/logocoop-removebg-preview 2.png"
+            alt="GBLDC Logo"
+            class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
+          <span
+            class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
+          <a href="landingpage.html"
+            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
+
+          <!-- Products & Services Dropdown -->
+          <div class="relative group">
             <button
-              class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See
-              More</button>
+              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+              <span class="whitespace-nowrap">Product &
+                Services</span>
+              <i
+                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+            </button>
+            <div
+              class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+              <a href="loan-products.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
+              <a href="deposit.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
+              <a href="deposit.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
+            </div>
+          </div>
+
+          <!-- About Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+              <span>About</span>
+              <i
+                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+            </button>
+            <div
+              class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+              <a href="about-gbldc.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
+                GBLDC</a>
+              <a href="#"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
+                & Vision</a>
+              <a href="board-of-directors.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
+                of Directors</a>
+              <a href="committee-officers.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
+                Officers</a>
+            </div>
+          </div>
+
+          <a href="news&events.html"
+            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
+            & Events</a>
+        </nav>
+
+        <!-- Desktop CTA Button -->
+        <div class="hidden lg:flex items-center">
+          <a href="loan-application.html"
+            class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap">
+            Apply loan
           </a>
+          <div class="ml-4">
+            <div class="relative group">
+              <a href="#" title="User Profile"
+                onclick="toggleProfileDropdown(event)"
+                class="flex items-center gap-2">
+                <img
+                  src="path/images/logocoop-removebg-preview 2.png"
+                  alt="User Avatar"
+                  class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
+                <i
+                  class="fas fa-chevron-down text-gray-500 text-base">
+                </a></i>
+              <!-- Desktop Profile Dropdown Menu -->
+              <div id="profile-dropdown"
+                class="absolute right-0 mt-2 w-72 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
+                <div
+                  class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
+                  <?php echo isset($_SESSION['user_name']) ?
+                  htmlspecialchars($_SESSION['user_name']) :
+                  ''; ?>
+                </div>
+                <a href="loandashboard.html"
+                  class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan
+                  Dashboard</a>
+                <a href="account-settings.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
+                <a href="help.html"
+                  class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help
+                  & Support</a>
+                <div class="border-t my-1">
+                  <a href="index.html"
+                    onclick="openLogoutModal(event)"
+                    class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button id="mobile-menu-btn"
+            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+            onclick="toggleMobileMenu()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+              viewBox="0 0 24 24" stroke-width="2.5"
+              stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
         </div>
 
-        <!-- Card 2 - Deposit -->
-        <div
-          class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
-          <div>
-            <h3
-              class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Deposit</h3>
-            <p
-              class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Save
-              up for your long-term needs or your next travel through creating a
-              savings plan that is right for you.</p>
-          </div>
-          <img src="path/images/gbldc-deposit.png" alt="Deposit"
-            class="w-56 h-56 mb-4 mt-6 drop-shadow-xl ">
-          <a href="deposit.html"><button
-              class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See
-              More</button></a>
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu"
+          class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+          <nav class="px-4 sm:px-6 py-4 space-y-1">
+            <!-- Mobile Home Link -->
+            <a href="landingpage.html"
+              class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+              Home
+            </a>
+
+            <!-- Mobile Products & Services -->
+            <div class="space-y-1">
+              <button
+                onclick="toggleDropdownProductsMobile(event)"
+                class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                <span>Product & Services</span>
+                <i id="products-chevron"
+                  class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+              </button>
+              <div id="dropdown-menu-products-mobile"
+                class="hidden ml-4 space-y-1">
+                <a href="loan-products.html"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
+                <a href="deposit.html"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
+                <a href="deposit.html"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+              </div>
+            </div>
+
+            <!-- Mobile About -->
+            <div class="space-y-1">
+              <button onclick="toggleDropdownMobileAbout(event)"
+                class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                <span>About</span>
+                <i id="about-chevron"
+                  class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+              </button>
+              <div id="dropdown-menu-about-mobile"
+                class="hidden ml-4 space-y-1">
+                <a href="about-gbldc.html"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
+                  GBLDC</a>
+                <a href="#"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
+                  & Vision</a>
+                <a href="board-of-directors.html"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
+                  of Directors</a>
+                <a href="committee-officers.html"
+                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
+                  Officers</a>
+              </div>
+            </div>
+
+            <!-- Mobile News & Events -->
+            <a href="news&events.html"
+              class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+              News & Events
+            </a>
+
+            <!-- Mobile CTA Button -->
+            <div class="pt-4 border-t border-gray-100 mt-4">
+              <a href="applynow.html"
+                class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 sm:text-center md:text-center">
+                Join Now
+              </a>
+            </div>
+          </nav>
         </div>
-        <!-- Card 3 - Savings -->
+      </header>
+      <section
+        class="relative w-full min-h-[70vh] flex items-center justify-center pt-20 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+        <img src="path/images/meeting 2.png" alt="Hero Banner"
+          class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
         <div
-          class="bg-white rounded-xl shadow-md p-6 flex flex-col justify-between items-center tracking-wide animate-card-fade-in hover:scale-105 hover:shadow-2xl transition-transform duration-300 group hover:bg-gradient-to-br hover:from-green-50 hover:to-green-100 relative overflow-hidden delay-0">
-          <div>
-            <h3
-              class="text-2xl font-semibold text-teal-900 mb-2 group-hover:animate-fade-in-up transition-all duration-300">Savings</h3>
-            <p
-              class="text-gray-600 mb-6 group-hover:animate-fade-in transition-all duration-300">Grow
-              your savings with our competitive interest rates and flexible
-              terms.</p>
+          class="absolute inset-0 bg-gradient-to-br from-green-700/80 to-green-800/80 opacity-75"></div>
+        <div class="relative z-10 max-w-3xl mx-auto text-center px-4">
+          <h1
+            class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">Your
+            Financial Growth,<br><span class="text-green-400">Our
+              Priority</span></h1>
+          <p class="text-lg md:text-2xl text-green-100 mb-8 font-light">Building
+            stronger communities through cooperative financial services. Join
+            thousands of members who trust us for their financial future.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="#join"
+              class="bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow hover:bg-green-700 transition">Become
+              a Member</a>
+            <a href="#services"
+              class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-green-700 transition">Our
+              Services</a>
           </div>
-          <img src="path/images/gbldc-savings.png" alt="Savings"
-            class="w-56 h-56 mb-4 mt-6 drop-shadow-xl ">
-          <a href="savings-page.html"><button
-              class="bg-green-600 text-white px-5 py-2 rounded-lg font-light hover:bg-green-400 transition-colors duration-300 group-hover:animate-bounce-in shadow-md hover:shadow-lg">See
-              More</button></a>
-    </section>
-    <!-- CO-OP Member Meetings Section -->
-    <section class="container mx-auto my-14 px-7">
-      <h2
-        class="text-center text-teal-900 text-3xl font-medium animate-fade-in-up">CO-OP
-        MEMBER MEETINGS</h2>
-      <p
-        class="text-center text-gray-700 mt-2 font-normal tracking-wide animate-fade-in">Join
-        us for our upcoming meetings and events to stay informed and engaged
-        with your cooperative community.</p>
-      <div class="relative w-full mt-6 bg-white">
-        <!-- Slick Carousel Container -->
-        <div class="w-full h-96 relative overflow-hidden" id="carousel">
-          <div
-            class="carousel-slider h-full w-full flex gap-4 overflow-hidden scroll-smooth snap-x snap-mandatory">
-            <div class="px-2">
-              <img src="path/images/meeting 1.png"
-                class="w-full h-96 object-cover  drop-shadow-2xl flex"
-                alt="Meeting 1">
+        </div>
+      </section>
+      <!-- Products/Services Section -->
+      <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our
+              Services</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Comprehensive
+              financial solutions designed to meet your needs and help you
+              achieve
+              your goals.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Loans Card -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl">
+              <div
+                class="w-16 h-16  flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="60" height="70"
+                  viewBox="0 0 24 24" fill="#0000000">
+                  <g clip-path="url(#clip0_4418_169761)">
+                    <path
+                      d="M21.9201 16.7496C21.5901 19.4096 19.4101 21.5896 16.7501 21.9196C15.1401 22.1196 13.6401 21.6796 12.4701 20.8196C11.8001 20.3296 11.9601 19.2896 12.7601 19.0496C15.7701 18.1396 18.1401 15.7596 19.0601 12.7496C19.3001 11.9596 20.3401 11.7996 20.8301 12.4596C21.6801 13.6396 22.1201 15.1396 21.9201 16.7496Z"
+                      fill="white" style="fill: var(--fillg);" />
+                    <path
+                      d="M9.99 2C5.58 2 2 5.58 2 9.99C2 14.4 5.58 17.98 9.99 17.98C14.4 17.98 17.98 14.4 17.98 9.99C17.97 5.58 14.4 2 9.99 2ZM9.05 8.87L11.46 9.71C12.33 10.02 12.75 10.63 12.75 11.57C12.75 12.65 11.89 13.54 10.84 13.54H10.75V13.59C10.75 14 10.41 14.34 10 14.34C9.59 14.34 9.25 14 9.25 13.59V13.53C8.14 13.48 7.25 12.55 7.25 11.39C7.25 10.98 7.59 10.64 8 10.64C8.41 10.64 8.75 10.98 8.75 11.39C8.75 11.75 9.01 12.04 9.33 12.04H10.83C11.06 12.04 11.24 11.83 11.24 11.57C11.24 11.22 11.18 11.2 10.95 11.12L8.54 10.28C7.68 9.98 7.25 9.37 7.25 8.42C7.25 7.34 8.11 6.45 9.16 6.45H9.25V6.41C9.25 6 9.59 5.66 10 5.66C10.41 5.66 10.75 6 10.75 6.41V6.47C11.86 6.52 12.75 7.45 12.75 8.61C12.75 9.02 12.41 9.36 12 9.36C11.59 9.36 11.25 9.02 11.25 8.61C11.25 8.25 10.99 7.96 10.67 7.96H9.17C8.94 7.96 8.76 8.17 8.76 8.43C8.75 8.77 8.81 8.79 9.05 8.87Z"
+                      fill="white" style="fill: var(--fillg);" />
+                  </g>
+                  <defs>
+                    <clippath id="clip0_4418_169761">
+                      <rect width="24" height="24" fill="white" />
+                    </clippath>
+                  </defs>
+                </svg>
+
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Flexible
+                Loans</h3>
+              <p class="text-gray-600 mb-6">Access competitive loan rates for
+                personal, business, or educational needs with flexible repayment
+                terms.</p>
+              <a href="loan-products.html"
+                class="text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">Learn
+                More →</a>
             </div>
-            <div class="px-2">
-              <img src="path/images/meeting 2.png"
-                class="w-full h-96 object-cover  drop-shadow-2xl"
-                alt="Meeting 2">
+
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl">
+              <div
+                class="w-16 h-16 flex items-center justify-center mb-6">
+                <svg viewBox="0 0 24 24" aria-label="Deposit" role="img"
+                  fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <!-- Base tray -->
+                  <path d="M3 17h18v3H3z" />
+                  <!-- Arrow down -->
+                  <path d="M12 4v8M8 10l4 4 4-4" />
+                  <!-- Coin -->
+                  <circle cx="12" cy="6" r="2" />
+                </svg>
+
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Secure
+                Deposits</h3>
+              <p class="text-gray-600 mb-6">Grow your savings with competitive
+                interest rates and flexible deposit options tailored to your
+                financial goals.</p>
+              <a href="deposit.html"
+                class="text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">Learn
+                More →</a>
             </div>
-            <div class="px-2">
-              <img src="path/images/meeting 3.png"
-                class="w-full h-96 object-cover  drop-shadow-2xl"
-                alt="Meeting 3">
-            </div>
-            <div class="px-2">
-              <img src="path/images/board-group-photo.jpg"
-                class="w-full h-96 object-cover drop-shadow-2xl"
-                alt="Meeting 3">
-            </div>
-            <div class="px-2">
-              <img src="path/images/event4.jpg"
-                class="w-full h-96 object-cover drop-shadow-2xl"
-                alt="Meeting 4">
-            </div>
-            <div class="px-2">
-              <img src="path/images/event2.jpg"
-                class="w-full h-96 object-cover drop-shadow-2xl"
-                alt="Meeting 5">
-            </div>
-            <div class="px-2">
-              <img src="path/images/event3.jpg"
-                class="w-full h-96 object-cover drop-shadow-2xl"
-                alt="Meeting 6">
+
+            <!-- Savings Card -->
+            <div
+              class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl">
+              <div
+                class="w-16 h-16 flex items-center justify-center mb-6">
+                <svg viewBox="0 0 24 24" aria-label="Savings jar" role="img"
+                  fill="none" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="6" y="6" width="12" height="14" rx="3" />
+                  <path d="M9 6V4h6v2" />
+                  <circle cx="12" cy="11" r="2.25" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-gray-900 mb-3">Savings</h3>
+              <p class="text-gray-600 mb-6">Secure your future and grow your
+                wealth
+                with our reliable savings options designed for every member.</p>
+              <a href="savings-page.html"
+                class="text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">Learn
+                More →</a>
             </div>
           </div>
         </section>
-        <!-- Events & Announcements Section -->
-        <section class="py-12 px-6 max-w-screen-2xl mx-auto mb-10">
-          <div class="text-center mb-10">
-            <h2
-              class="text-4xl font-medium text-teal-900 tracking-wide animate-fade-in-up">News
-              and Events</h2>
-            <p class="text-gray-500 mt-2 tracking-wide animate-fade-in">The
-              latest updates from your partners</p>
-          </div>
-
-          <div
-            class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 tracking-normal text-center  ">
-            <!-- Card 1 -->
-            <div
-              class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
-              <a href="#"><img src="path/images/event1.jpg" alt="Event 1"
-                  class="rounded-md mb-4 w-full h-72 object-cover animate-fade-in-up" />
-                <h3 class="text-lg  text-slate-800 mb-2 p-3">
-                  22nd Annual General Assembly of Greater Bulacan Livelihood
-                  Development Cooperative - held last March 22, 2024 @ Cafe De
-                  Apati, Makinabang, Baliuag, Bulacan
-                </h3></a>
-              <p class="text-medium text-gray-700 p-3">Join us for an engaging
-                discussion on cooperative development and future
-                initiatives.</p>
+        <!-- Member Meetings Carousel -->
+        <section class="py-20 bg-white">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+              <h2
+                class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Member
+                Meetings & Events</h2>
+              <p class="text-xl text-gray-600 max-w-2xl mx-auto">Stay connected
+                with our community through regular meetings and special
+                events.</p>
             </div>
-
-            <!-- Card 2 -->
-            <div
-              class="bg-white rounded-xl shadow transition-all duration-300 hover:shadow-lg hover:scale-105 animate-card-fade-in">
-              <a href="#"><img src="path/images/event2.jpg" alt="Event 2"
-                  class="rounded-md mb-4 w-full h-72 object-cover animate-fade-in-up" />
-                <h3 class="text-lg text-slate-800 mb-2 p-3 ">
-                  Greater Bulacan Livelihood Development Cooperative - Supports
-                  Coop Parade, Kick-Off Ceremony and Launching of Go Koop -
-                  Empowering Cooperatives in line with the Celebration of
-                  Cooperative Month 2023
-                </h3></a>
-              <p class="text-sm text-gray-600 p-3">
-                Join us for a day of celebration and awareness of the
-                cooperative movement in our community.
-              </p>
-            </div>
-
-            <!-- Card 3 -->
-            <div
-              class="bg-white rounded-xl shadow transition-all duration-300  hover:shadow-lg hover:scale-105 animate-card-fade-in">
-              <a href="#"><img src="path/images/event3.jpg" alt="Event 3"
-                  class="rounded-md mb-4 w-full h-72 object-cover animate-fade-in-up" />
-                <h3 class="text-lg text-slate-800 mb-2 p-3">
-                  Greater Bulacan Livelihood Development Cooperative - Family
-                  Outing and Team Building held last April 12-13, 2025 @ Paynawa
-                  Beach Resort, Brgy. Laoag, Cabangan, Zambales
-                </h3></a>
-              <p class="text-sm text-gray-600"></p>
-              Join us for a fun-filled day of activities and bonding with fellow
-              members.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-center mt-10">
-          <a href="news&events.html"><button
-              class="bg-green-600 hover:bg-green-700 text-white font-light py-2 px-6 rounded-lg transition-colors duration-300">
-              View More
-            </button></a>
-        </div>
-
-        <!-- Chatbot Widget -->
-        <button onclick="toggleChatbot()"
-        class="fixed bottom-10 right-10 bg-gradient-to-br from-green-500 via-green-600 to-green-700 text-white p-4 rounded-full shadow-2xl z-50 transition-transform transform hover:scale-110 focus:outline-none ring-4 ring-green-300/30 animate-pulse"
-        style="box-shadow: 0 0 24px 4px #22c55e55; width: 64px; height: 64px;">
-        <i alt="Chatbot"
-          class="fas fa-comments text-2xl"></i>
-      </button>
-      <div
-        class="fixed bottom-4 right-4 w-96 max-h-[80vh] bg-gradient-to-br from-green-50 to-white rounded-xl shadow-2xl border border-green-200 flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster"
-        id="chatbot-widget"
-        style="backdrop-filter: blur(2px);">
-        <!-- Header with avatar/logo -->
-        <div
-          class="bg-green-600 px-4 py-3 flex items-center gap-3 text-white animate-fade-in-down shadow">
-          <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC"
-            class="w-10 h-10 rounded-full border-2 border-white shadow" />
-          <span class="font-medium text-left text-lg flex-1">Chat with
-            GBLDC</span>
-          <button onclick="toggleChatbot()"
-            class="text-white focus:outline-none hover:text-gray-300 transition-colors"
-            title="Close">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-        <!-- Chat messages area -->
-        <div id="chat-messages"
-          class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black animate-fade-in custom-scrollbar"
-          style="height: 320px; background: transparent;">
-          <!-- Welcome message -->
-          <div class="flex items-start gap-2">
-            <img src="path/images/logocoop-removebg-preview 2.png"
-              alt="GBLDC"
-              class="w-7 h-7 rounded-full border border-green-200" />
-            <div
-              class="bg-green-200 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[100%]">
-              Welcome to GBLDC Chatbot! How can I assist you today?
+            <div class="relative">
+              <!-- Slick Carousel -->
+              <div class="slick-carousel flex " id="meetings-carousel">
+                <div>
+                  <img src="path/images/meeting 1.png"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Meeting 1">
+                </div>
+                <div>
+                  <img src="path/images/meeting 2.png"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Meeting 2">
+                </div>
+                <div>
+                  <img src="path/images/meeting 3.png"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Meeting 3">
+                </div>
+                <div>
+                  <img src="path/images/board-group-photo.jpg"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Board Group">
+                </div>
+                <div>
+                  <img src="path/images/event4.jpg"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Event 4">
+                </div>
+                <div>
+                  <img src="path/images/event2.jpg"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Event 5">
+                </div>
+                <div>
+                  <img src="path/images/event3.jpg"
+                    class="object-cover rounded-xl shadow-lg w-full h-72 md:h-96 px-2"
+                    alt="Event 6">
+                </div>
+              </div>
+              <!-- Slick Dots will appear here -->
             </div>
           </div>
-          <!-- Messages will appear here -->
-        </div>
-        <!-- Typing indicator (hidden by default, show via JS) -->
-        <div id="typing-indicator"
-          class="px-6 pb-2 text-xs text-gray-500 hidden">
-          <span
-            class="border bg-green-600 text-white py-2 px-2 rounded-lg">GBLDC
-            is typing...</span>
-        </div>
-        <!-- Input area -->
-        <form id="chat-form"
-          class="flex p-2 border-t bg-white/80 backdrop-blur rounded-b-xl shadow-inner text-black animate-fade-in-up gap-2">
-          <input id="chat-input" type="text"
-            placeholder="Type your message..."
-            class="flex-1 px-4 py-2 border border-green-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 text-black transition-shadow shadow-sm" />
-          <button type="submit"
-            class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition-colors shadow">
-            <i class="fas fa-paper-plane"></i>
-          </button>
-        </form>
-      </div>
-    </button>
+          <!-- SlickJS CSS & JS -->
+          <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+          <link rel="stylesheet" type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+          <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+          <script
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-<!-- Logout Confirmation Modal -->
-     <div id="logout-modal" class="fixed inset-0 z-[60] flex items-center justify-center hidden">
-    <div id="logout-modal-content" class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4 transform transition-all duration-300 relative z-[61]">
-        <div class="text-center">
+          <!-- News & Events Section -->
+          <section id="news" class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div class="text-center mb-16">
+                <h2
+                  class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Latest
+                  News & Updates</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Stay informed
+                  with the latest developments and opportunities at GBLDC.</p>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article
+                  class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl">
+                  <img src="path/images/event1.jpg" alt="Event 1"
+                    class="rounded-t-2xl w-full h-56 object-cover">
+                  <div class="p-6">
+                    <span
+                      class="text-sm text-green-600 font-semibold mb-6">March
+                      22,
+                      2024</span>
+                    <h3
+                      class="text-xl font-semibold text-gray-900 mt-2 mb-3">22nd
+                      Annual
+                      General Assembly of Greater Bulacan Livelihood Development
+                      Cooperative</h3>
+                    <p class="text-gray-600 mb-4">Held last March 22,
+                      2024 @ Cafe De Apati, Makinabang, Baliuag, Bulacan. Join
+                      us
+                      for
+                      an engaging discussion on cooperative development and
+                      future
+                      initiatives.</p>
+                    <a href="#"
+                      class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">
+                      Read More
+                      <svg class="w-4 h-4 ml-2" fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl">
+                  <img src="path/images/event2.jpg" alt="Event 2"
+                    class="rounded-t-2xl w-full h-56 object-cover">
+                  <div class="p-6">
+                    <span class="text-sm text-green-600 font-semibold">August
+                      15,
+                      2025</span>
+                    <h3
+                      class="text-xl font-semibold text-gray-900 mt-2 mb-3">Coop
+                      Parade,
+                      Kick-Off Ceremony and Launching of Go Koop</h3>
+                    <p class="text-gray-600 mb-4">Empowering
+                      Cooperatives in line with the Celebration of Cooperative
+                      Month
+                      2023. Join us for a day of celebration and awareness of
+                      the
+                      cooperative movement in our community.</p>
+                    <a href="#"
+                      class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">
+                      Read More
+                      <svg class="w-4 h-4 ml-2" fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+
+                <article
+                  class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl">
+                  <img src="path/images/event3.jpg" alt="Event 3"
+                    class="rounded-t-2xl w-full h-56 object-cover">
+                  <div class="p-6">
+                    <span class="text-sm text-green-600 font-semibold"> April
+                      12-13, 2025</span>
+                    <h3
+                      class="text-xl font-semibold text-gray-900 mt-2 mb-3">Family
+                      Outing and Team Building</h3>
+                    <p class="text-gray-600 mb-4">Join us for a day of fun and
+                      bonding activities designed to strengthen our cooperative
+                      spirit
+                      and teamwork.</p>
+                    <a href="#"
+                      class="inline-flex items-center text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">
+                      Read More
+                      <svg class="w-4 h-4 ml-2" fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                          stroke-width="2" d="M9 5l7 7-7 7"></path>
+                      </svg>
+                    </a>
+                  </div>
+                </article>
+
+                <article class="bg-white rounded-2xl shadow-lg overflow-hidden">
+
+                </div>
+
+                <div class="text-center mt-12">
+                  <a href="#"
+                    class="bg-green-700 hover:bg-green-900 text-white px-8 py-3 rounded-full font-semibold transition-colors">
+                    View All News
+                  </a>
+                </div>
+              </div>
+            </section>
+            <!-- Testimonial Section -->
+            <!-- Testimonial Section -->
+            <section class="bg-white py-20 w-full">
+              <div class="max-w-7xl mx-auto px-4">
+                <div class="text-center mb-16">
+                  <h2
+                    class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Member
+                    Feedback</h2>
+                  <p class="text-xl text-gray-600 max-w-2xl mx-auto">What our
+                    partners say about us</p>
+                </div>
+
+                <!-- Swiper Container -->
+                <div class="swiper testimonial-swiper">
+                  <div class="swiper-wrapper">
+
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide">
+                      <div
+                        class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                        <div class="relative flex-shrink-0">
+                          <img src="path/images/member-testimonial.jpg"
+                            alt="Joselito Gutierrez"
+                            class="member-image">
+                        </div>
+                        <div class="flex-1 max-w-2xl">
+                          <div class="testimonial-card">
+                            <span
+                              class="quote-mark absolute -left-4 -top-2">"</span>
+                            <p
+                              class="text-lg text-gray-800 leading-relaxed mb-6 relative z-10">
+                              Kung sa trabaho, halos malaki na din ang nawala sa
+                              akin. Kaya yung natanggap ko, panggastos ko na din
+                              pambili ng pagkain at vitamins para may malakas na
+                              resistensya. Pinagpapasalamat ko po sa GBLDC
+                              anuman
+                              pong naiabot na tulong para makaraos din.
+                            </p>
+                            <span
+                              class="quote-mark absolute -right-4 -bottom-8">"</span>
+
+                            <div class="mt-8 relative z-10">
+                              <h4
+                                class="font-semibold text-gray-900 text-xl mb-1">Joselito
+                                D.C Gutierrez</h4>
+                              <p class="text-gray-600 mb-3">Member, Poblacion
+                                Branch</p>
+                              <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide">
+                      <div
+                        class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                        <div class="relative flex-shrink-0">
+                          <img src="path/images/member-testimonial-2.jpg"
+                            alt="Maria Santos"
+                            class="member-image">
+                        </div>
+                        <div class="flex-1 max-w-2xl">
+                          <div class="testimonial-card">
+                            <span
+                              class="quote-mark absolute -left-4 -top-2">"</span>
+                            <p
+                              class="text-lg text-gray-800 leading-relaxed mb-6 relative z-10">
+                              Napakaganda ng serbisyo ng GBLDC. Nakatulong
+                              talaga
+                              sa pagpapalaki ng aming negosyo. Ang mga staff ay
+                              napakabait at handang tumulong. Salamat sa
+                              cooperative na ito!
+                            </p>
+                            <span
+                              class="quote-mark absolute -right-4 -bottom-8">"</span>
+
+                            <div class="mt-8 relative z-10">
+                              <h4
+                                class="font-semibold text-gray-900 text-xl mb-1">Maria
+                                C. Santos</h4>
+                              <p class="text-gray-600 mb-3">Business Owner,
+                                Baliuag Branch</p>
+                              <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide">
+                      <div
+                        class="flex flex-col lg:flex-row items-center gap-12 max-w-6xl mx-auto">
+                        <div class="relative flex-shrink-0">
+                          <img src="path/images/member-testimonial-3.jpg"
+                            alt="Roberto Cruz"
+                            class="member-image">
+                        </div>
+                        <div class="flex-1 max-w-2xl">
+                          <div class="testimonial-card">
+                            <span
+                              class="quote-mark absolute -left-4 -top-2">"</span>
+                            <p
+                              class="text-lg text-gray-800 leading-relaxed mb-6 relative z-10">
+                              Matagal na akong miyembro ng GBLDC at nakita ko
+                              kung
+                              paano lumago ang kooperatiba. Ang kanilang savings
+                              programs ay nakatulong sa amin na ma-secure ang
+                              future ng pamilya namin.
+                            </p>
+                            <span
+                              class="quote-mark absolute -right-4 -bottom-8">"</span>
+
+                            <div class="mt-8 relative z-10">
+                              <h4
+                                class="font-semibold text-gray-900 text-xl mb-1">Roberto
+                                M. Cruz</h4>
+                              <p class="text-gray-600 mb-3">Senior Member, Main
+                                Branch</p>
+                              <div class="star-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Navigation -->
+                  <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div>
+
+                  <!-- Pagination -->
+                  <div class="swiper-pagination"></div>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="flex justify-center items-center mt-12 gap-8">
+                  <div class="text-center">
+                    <div
+                      class="flex gap-1 text-orange-400 text-lg justify-center mb-2">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-sm text-gray-600">Trusted by 1000+
+                      members</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Floating Chatbot Button & Widget -->
+            <button onclick="toggleChatbot()"
+              class="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-300 focus:outline-none ring-4 ring-green-300/20 animate-bounce"
+              aria-label="Open Chatbot">
+              <i class="fas fa-comments text-2xl"></i>
+            </button>
+            <div id="chatbot-widget"
+              class="fixed bottom-24 right-8 w-80 max-w-full bg-white rounded-2xl shadow-2xl border border-green-100 flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster">
+              <div
+                class="bg-green-600 px-4 py-3 flex items-center gap-3 text-white shadow">
+                <img src="path/images/logocoop-removebg-preview 2.png"
+                  alt="GBLDC"
+                  class="w-8 h-8 rounded-full border-2 border-white shadow" />
+                <span class="font-medium text-left text-base flex-1">Chat with
+                  GBLDC</span>
+                <button onclick="toggleChatbot()"
+                  class="text-white focus:outline-none hover:text-gray-300 transition-colors"
+                  title="Close"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+              <div id="chat-messages"
+                class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black custom-scrollbar"
+                style="height: 320px; background: transparent;">
+                <div class="flex items-start gap-2">
+                  <img src="path/images/logocoop-removebg-preview 2.png"
+                    alt="GBLDC"
+                    class="w-6 h-6 rounded-full border border-green-200" />
+                  <div
+                    class="bg-green-100 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[100%]">Welcome
+                    to GBLDC Chatbot! How can I assist you today?</div>
+                </div>
+              </div>
+              <div id="typing-indicator"
+                class="px-6 pb-2 text-xs text-gray-500 hidden">
+                <span
+                  class="border bg-green-600 text-white py-2 px-2 rounded-lg">GBLDC
+                  is
+                  typing...</span>
+              </div>
+              <form id="chat-form"
+                class="flex p-2 border-t bg-white/80 backdrop-blur rounded-b-2xl shadow-inner text-black gap-2">
+                <input id="chat-input" type="text"
+                  placeholder="Type your message..."
+                  class="flex-1 px-4 py-2 border border-green-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 text-black transition-shadow shadow-sm" />
+                <button type="submit"
+                  class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition-colors shadow"><i
+                    class="fas fa-paper-plane"></i></button>
+              </form>
+            </div>
+          </section>
+
+          <!-- Footer  -->
+          <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
+            <div class="max-w-7xl mx-auto px-4">
+              <div
+                class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
+                <div class="flex flex-col items-center md:items-start">
+                  <h4
+                    class="font-semibold mb-3 uppercase tracking-wide text-lg">Products</h4>
+                  <ul class="space-y-2">
+                    <li><a href="loan-products.html"
+                        class="hover:underline transition-colors">Loan
+                        Products</a></li>
+                    <li><a href="deposit.html"
+                        class="hover:underline transition-colors">Deposit
+                        Products</a></li>
+                    <li><a href="#"
+                        class="hover:underline transition-colors">Savings
+                        Products</a></li>
+                  </ul>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                  <h4
+                    class="font-semibold mb-3 uppercase tracking-wide text-lg">About</h4>
+                  <ul class="space-y-2">
+                    <li><a href="about-gbldc.html"
+                        class="hover:underline transition-colors">About
+                        GBLDC</a></li>
+                    <li><a href="#"
+                        class="hover:underline transition-colors duration-200">Senior
+                        Management</a></li>
+                    <li><a href="#"
+                        class="hover:underline transition-colors duration-200">Officers
+                        & Committees</a></li>
+                  </ul>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                  <h4
+                    class="font-semibold mb-3 uppercase tracking-wide text-lg">Quicklinks</h4>
+                  <ul class="space-y-2">
+                    <li><a href="https://ifernglobal.com.ph/"
+                        class="hover:underline transition-colors">iFern
+                        Global</a></li>
+                    <li><a href="index.html"
+                        class="hover:underline transition-colors">Member Portal
+                        Login</a></li>
+                    <li><a href="#"
+                        class="hover:underline transition-colors">Contact
+                        Us</a></li>
+                    <li><a href="applynow.html"
+                        class="hover:underline transition-colors">Apply
+                        Now</a></li>
+                    <li><a href="#"
+                        class="hover:underline transition-colors">Feedback</a></li>
+                  </ul>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                  <h4
+                    class="font-semibold mb-3 uppercase tracking-wide text-lg">Get
+                    Our App</h4>
+                  <div class="flex gap-2 mb-2">
+                    <a href="https://play.google.com/store" target="_blank"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                        alt="Google Play" class="h-10 rounded shadow" /></a>
+                    <a href="https://www.apple.com/app-store/"
+                      target="_blank"><img
+                        src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                        alt="App Store" class="h-10 rounded shadow" /></a>
+                  </div>
+                  <p class="text-xs text-white">Download our app for a better
+                    banking
+                    experience.</p>
+                </div>
+              </div>
+              <div
+                class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2">
+                <div class="text-center md:text-left">GREATER BULACAN LIVELIHOOD
+                  DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.</div>
+                <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
+                  <a href="#"
+                    class="text-white  text-sm transition-colors">Privacy
+                    Policy</a>
+                  <a href="#"
+                    class="text-white  text-sm transition-colors">Terms
+                    of
+                    Service</a>
+                  <a href="#"
+                    class="text-white  text-sm transition-colors">Cookie
+                    Policy</a>
+                </div>
+              </div>
+
+            </div>
+          </footer>
+          <!-- JS SCRIPT -->
+          <script src="../src/javascript/chatbot.js"></script>
+          <script src="../src/javascript/landingpage.js"></script>
+
+          <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonialSwiper = new Swiper('.testimonial-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: true,
+                
+                autoplay: {
+                    delay: 6000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                
+                effect: 'slide',
+                
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    dynamicBullets: true,
+                },
+                
+                keyboard: {
+                    enabled: true,
+                    onlyInViewport: true,
+                },
+                
+                a11y: {
+                    enabled: true,
+                    prevSlideMessage: 'Previous testimonial',
+                    nextSlideMessage: 'Next testimonial',
+                },
+                
+                breakpoints: {
+                    640: {
+                        spaceBetween: 20,
+                    },
+                    768: {
+                        spaceBetween: 30,
+                    }
+                }
+            });
+        });
+    </script>
+        </body>
+      </html>
+
+      <!-- Logout Confirmation Modal -->
+      <div id="logout-modal"
+        class="fixed inset-0 z-[60] flex items-center justify-center hidden">
+        <div id="logout-modal-content"
+          class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4 transform transition-all duration-300 relative z-[61]">
+          <div class="text-center">
             <!-- Icon -->
-            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
-                <i class="fas fa-sign-out-alt text-red-600 text-xl"></i>
+            <div
+              class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+              <i class="fas fa-sign-out-alt text-red-600 text-xl"></i>
             </div>
-            
+
             <!-- Title -->
             <h3 class="text-lg font-medium text-gray-900 mb-2">
-                Confirm Logout
+              Confirm Logout
             </h3>
-            
+
             <!-- Message -->
             <p class="text-sm text-gray-500 mb-6">
-                Are you sure you want to logout? You will need to sign in again to access your account.
+              Are you sure you want to logout? You will need to sign in again to
+              access your account.
             </p>
-            
+
             <!-- Buttons -->
-            <div class="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center">
-                <button onclick="closeLogoutModal()" 
-                        class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200">
-                    Cancel
-                </button>
-                <button onclick="confirmLogout()" 
-                        class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
-                    Logout
-                </button>
+            <div
+              class="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center">
+              <button onclick="closeLogoutModal()"
+                class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200">
+                Cancel
+              </button>
+              <button onclick="confirmLogout()"
+                class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
+                Logout
+              </button>
             </div>
-        </div>
-    </div>
-</div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
-      <div class="max-w-7xl mx-auto px-4 mt-4">
-        <div
-          class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
-
-          <!-- Products & Services -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Products &
-              Services</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="loan.html"
-                  class="hover:underline transition-colors duration-200">Loan
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Deposit
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Insurance
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Social
-                  Services</a></li>
-            </ul>
           </div>
-
-          <!-- About -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">About
-                  Greater Bulacan Livelihood Development Cooperative</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Senior
-                  Management</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Officers
-                  & Committees</a></li>
-            </ul>
-          </div>
-
-          <!-- Other Quicklinks -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Other
-              Quicklinks</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">News &
-                  Events</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">FAQs</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Contact</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Apply
-                  Now</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Downloadable
-                  Forms</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Privacy
-                  Policy</a></li>
-            </ul>
-          </div>
-          <!-- Download Our App -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Download Our
-              App</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Click
-                  Here to Download App</a></li>
-            </ul>
-          </div>
-        </div>
-        <!-- Copyright -->
-        <div class="mt-12 text-center text-sm text-white font-normal">
-          GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS
-          RESERVED.
         </div>
       </div>
-    </footer>
-</body>
+    </section>
+
+  </body>
 </html>

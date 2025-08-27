@@ -103,17 +103,11 @@
         <button id="mobile-menu-btn"
           class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
           onclick="toggleMobileMenu()">
-          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-            class="w-6 h-6 transition-transform duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
+            class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round"
               d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-          <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
-            class="w-6 h-6 hidden transition-transform duration-200">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M6 18L18 6M6 6l12 12" />
           </svg>
         </button>
       </div>
@@ -253,7 +247,7 @@
             <p class="text-gray-600 mb-6">Access competitive loan rates for
               personal, business, or educational needs with flexible repayment
               terms.</p>
-            <a href="#loans"
+            <a href="loan-products.html"
               class="text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">Learn
               More →</a>
           </div>
@@ -279,7 +273,7 @@
             <p class="text-gray-600 mb-6">Grow your savings with competitive
               interest rates and flexible deposit options tailored to your
               financial goals.</p>
-            <a href="#deposits"
+            <a href="deposit.html"
               class="text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">Learn
               More →</a>
           </div>
@@ -301,7 +295,7 @@
             <p class="text-gray-600 mb-6">Secure your future and grow your
               wealth
               with our reliable savings options designed for every member.</p>
-            <a href="#savings"
+            <a href="savings-page.html"
               class="text-green-600 font-semibold hover:text-green-800 hover:underline transition-colors">Learn
               More →</a>
           </div>
@@ -787,8 +781,8 @@
         <!-- JS SCRIPT -->
         <script src="../src/javascript/chatbot.js"></script>
         <script src="../src/javascript/landingpage.js"></script>
-        
-    <script>
+
+        <script>
         document.addEventListener('DOMContentLoaded', function() {
             const testimonialSwiper = new Swiper('.testimonial-swiper', {
                 slidesPerView: 1,
