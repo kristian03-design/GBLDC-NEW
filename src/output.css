@@ -98,8 +98,6 @@
     --radius-2xl: 1rem;
     --drop-shadow-xl: 0 9px 7px rgb(0 0 0 / 0.1);
     --drop-shadow-2xl: 0 25px 25px rgb(0 0 0 / 0.15);
-    --ease-in: cubic-bezier(0.4, 0, 1, 1);
-    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --animate-bounce: bounce 1s infinite;
@@ -580,9 +578,6 @@
   .h-36 {
     height: calc(var(--spacing) * 36);
   }
-  .h-38 {
-    height: calc(var(--spacing) * 38);
-  }
   .h-40 {
     height: calc(var(--spacing) * 40);
   }
@@ -990,14 +985,6 @@
   }
   .rounded-xl {
     border-radius: var(--radius-xl);
-  }
-  .rounded-l-md {
-    border-top-left-radius: var(--radius-md);
-    border-bottom-left-radius: var(--radius-md);
-  }
-  .rounded-r-md {
-    border-top-right-radius: var(--radius-md);
-    border-bottom-right-radius: var(--radius-md);
   }
   .rounded-b-xl {
     border-bottom-right-radius: var(--radius-xl);
@@ -1463,9 +1450,6 @@
   }
   .text-gray-900 {
     color: var(--color-gray-900);
-  }
-  .text-green-100 {
-    color: var(--color-green-100);
   }
   .text-green-500 {
     color: var(--color-green-500);
