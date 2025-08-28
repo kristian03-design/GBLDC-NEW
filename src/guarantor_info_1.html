@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FontAwesome for Icons -->
+        <script src="https://kit.fontawesome.com/e588cb9d47.js"
+            crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png"
+            href="path/images/logocoop-removebg-preview 2.png"
+            sizes="512x512" />
+        <link href="../src/animation/animation.css" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../src/javascript/landingpage.js"></script>
+        <script src="../src/javascript/landingpage-user.js"></script>
+        <title>Loan Application | GBLDC</title>
+
+    </head>
+    <body class="bg-white text-gray-800 font-outfit scroll-smooth">
+        <!-- Modern Header/Navbar -->
+        <header
+            class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+            <div
+                class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
+                <!-- Logo Section - Responsive sizing -->
+                <a href="landingpage.html"
+                    class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
+                    <img src="path/images/logocoop-removebg-preview 2.png"
+                        alt="GBLDC Logo"
+                        class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
+                    <span
+                        class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav
+                    class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
+                    <a href="landingpage.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
+
+                    <!-- Products & Services Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span class="whitespace-nowrap">Product &
+                                Services</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="loan-products.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- About Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span>About</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <a href="news&events.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
+                        & Events</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="applynow.html"
+                        class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap">
+                        Join Now
+                    </a>
+                    <div class="ml-4">
+                        <div class="relative group">
+                            <a href="#" title="User Profile"
+                                onclick="toggleProfileDropdown(event)"
+                                class="flex items-center gap-2">
+                                <img
+                                    src="path/images/logocoop-removebg-preview 2.png"
+                                    alt="User Avatar"
+                                    class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
+                                <i
+                                    class="fas fa-chevron-down text-gray-500 text-base">
+                                </a></i>
+                            <!-- Desktop Profile Dropdown Menu -->
+                            <div id="profile-dropdown"
+                                class="absolute right-0 mt-2 w-72 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
+                                <div
+                                    class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
+                                    <?php echo isset($_SESSION['user_name']) ?
+                                    htmlspecialchars($_SESSION['user_name']) :
+                                    ''; ?>
+                                </div>
+                                <a href="loandashboard.html"
+                                    class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan
+                                    Dashboard</a>
+                                <a href="account-settings.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
+                                <a href="help.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help
+                                    & Support</a>
+                                <div class="border-t my-1">
+                                    <a href="index.html"
+                                        onclick="openLogoutModal(event)"
+                                        class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+                    onclick="toggleMobileMenu()">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 hidden transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+                <nav class="px-4 sm:px-6 py-4 space-y-1">
+                    <!-- Mobile Home Link -->
+                    <a href="landingpage.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        Home
+                    </a>
+
+                    <!-- Mobile Products & Services -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownProductsMobile(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>Product & Services</span>
+                            <i id="products-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-products-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile About -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownMobileAbout(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>About</span>
+                            <i id="about-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-about-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile News & Events -->
+                    <a href="news&events.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        News & Events
+                    </a>
+
+                    <!-- Mobile CTA Button -->
+                    <div class="pt-4 border-t border-gray-100 mt-4">
+                        <a href="applynow.html"
+                            class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200">
+                            Join Now
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <body class="bg-white text-gray-800 font-outfit scroll-smooth">
+              <!-- Progress Indicator -->
+            <div class="max-w-7xl mx-auto mt-24 p-4 sm:p-6 md:p-7">
+                <h2
+                    class="text-center text-3xl sm:text-4xl font-semibold text-gray-800 block">Loan
+                    Application</h2>
+                <p class="text-center text-black mt-3">Please fill out the form
+                    below to apply for a loan.</p>
+                <div class="w-full flex items-center justify-center my-6">
+                    <div class="w-full overflow-x-auto">
+                        <div
+                            class="flex items-stretch gap-4 min-w-[600px] sm:min-w-0 flex-nowrap md:flex-wrap md:justify-center">
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
+                                <a href="#" onclick="validateStep1(event)">
+                                    <div
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">1</div>
+                                </a>
+                                <a href="#"><p
+                                        class="text-center text-xs sm:text-sm mt-2">Personal
+                                        Information</p></a>
+                            </div>
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
+                                <a href="#" onclick="validateStep1(event)">
+                                    <div
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">2</div>
+                                </a>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2">Guarantor
+                                    Information 1</p>
+                            </div>
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
+                                <a href="#" onclick="validateStep1(event)">
+                                    <div
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-semibold">3</div>
+                                </a>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2">Guarantor
+                                    Information 2</p>
+                            </div>
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-gray-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
+                                <a href="#" onclick="validateStep1(event)">
+                                    <div
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-semibold">4</div>
+                                </a>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2 text-center">Employment
+                                    / Business Info</p>
+                            </div>
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-gray-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
+                                <a href="#" onclick="validateStep1(event)">
+                                    <div
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-semibold ">5</div>
+                                </a>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2">Review
+                                    & Submit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div id="validationModal"
+                class="fixed inset-0 items-center flex justify-center hidden">
+                <div
+                    class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50 animate-fade-in-down">
+                    <h3
+                        class="text-lg font-semibold text-gray-800 mb-4">Missing
+                        Required Fields</h3>
+                    <p class="text-gray-600 mb-4">Please fill out the
+                        following required fields before proceeding:</p>
+                    <ul id="missingFieldsList"
+                        class="custom-asterisk-list list-inside text-red-500 mb-4"></ul>
+                    <button onclick="closeModal()"
+                        class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
+                </div>
+            </div>
+            <form
+                class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10 " enctype="multipart/form-data">
+				<h2 class="text-2xl sm:text-3xl font-semibold text-green-800 mb-2">Guarantor Information</h2>
+				<p class="text-gray-600 mb-6">Please provide details of your first guarantor (co-maker).</p>
+					<div>
+						<label for="guarantorName" class="block text-black font-medium">Full Name<span class="text-red-500">*</span></label>
+						<input id="guarantorName" name="guarantorName" type="text" placeholder="Full Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+					</div>
+					<div>
+						<label for="membershipId" class="block text-black font-medium">Membership ID <span class="text-red-500">*</span></label>
+						<input id="membershipId" name="membershipId" type="text" placeholder="Membership ID (must be an active member)" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+					</div>
+					<div>
+						<label for="relationship" class="block text-black font-medium">Relationship to Borrower <span class="text-red-500">*</span></label>
+						<input id="relationship" name="relationship" type="text" placeholder="e.g. Friend, Co-worker, Relative" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+					</div>
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+						<div>
+							<label for="guarantorContact" class="block text-black font-medium">Contact Number <span class="text-red-500">*</span></label>
+							<input id="guarantorContact" name="guarantorContact" type="tel" placeholder="09XXXXXXXXX" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+						</div>
+						<div>
+							<label for="guarantorAddress" class="block text-black font-medium">Address <span class="text-red-500">*</span></label>
+							<input id="guarantorAddress" name="guarantorAddress" type="text" placeholder="Address" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+						</div>
+					</div>
+					<div>
+						<label for="guarantorEmployment" class="block text-black font-medium">Employment / Source of Income <span class="text-red-500">*</span></label>
+						<input id="guarantorEmployment" name="guarantorEmployment" type="text" placeholder="Employment or Source of Income" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+					</div>
+					<div>
+						<label for="guarantorId" class="block text-black font-medium">Upload Valid ID <span class="text-red-500">*</span></label>
+						<input id="guarantorId" name="guarantorId" type="file" accept="image/*,application/pdf" class="mt-2 block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100" required>
+					</div>
+					<div>
+						<label for="guarantorSignature" class="block text-black font-medium">Signature / Agreement <span class="text-red-500">*</span></label>
+						<textarea id="guarantorSignature" name="guarantorSignature" rows="3" placeholder="Type your name as signature or upload a signed agreement below" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required></textarea>
+						<div class="mt-2">
+							<label class="block text-gray-600 text-xs mb-1">Or upload signature/agreement (optional):</label>
+							<input id="guarantorSignatureFile" name="guarantorSignatureFile" type="file" accept="image/*,application/pdf" class="block w-full text-sm text-gray-700 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-50 file:text-green-700 hover:file:bg-green-100">
+						</div>
+					</div>
+					<div class="flex justify-end mt-8">
+						<button type="button" onclick="validateStep1(event)"
+							class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Continue</button>
+					</div>
+				</form>
+			</div>
+             <div id="logout-modal"
+        class="fixed inset-0 z-[60] flex items-center justify-center hidden">
+        <div id="logout-modal-content"
+          class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4 transform transition-all duration-300 relative z-[61]">
+          <div class="text-center">
+            <!-- Icon -->
+            <div
+              class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+              <i class="fas fa-sign-out-alt text-red-600 text-xl"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              Confirm Logout
+            </h3>
+
+            <!-- Message -->
+            <p class="text-sm text-gray-500 mb-6">
+              Are you sure you want to logout? You will need to sign in again to
+              access your account.
+            </p>
+
+            <!-- Buttons -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center">
+              <button onclick="closeLogoutModal()"
+                class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200">
+                Cancel
+              </button>
+              <button onclick="confirmLogout()"
+                class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+	</body>
+</html>

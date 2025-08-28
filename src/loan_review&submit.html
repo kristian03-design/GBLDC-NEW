@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- FontAwesome for Icons -->
+        <script src="https://kit.fontawesome.com/e588cb9d47.js"
+            crossorigin="anonymous"></script>
+        <link rel="icon" type="image/png"
+            href="path/images/logocoop-removebg-preview 2.png"
+            sizes="512x512" />
+        <link href="../src/animation/animation.css" rel="stylesheet">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+            rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="../src/javascript/landingpage.js"></script>
+        <script src="../src/javascript/landingpage-user.js"></script>
+        <title>Loan Application | GBLDC</title>
+    </head>
+    <body class="bg-white text-gray-800 font-outfit scroll-smooth">
+        <!-- Modern Header/Navbar -->
+        <header
+            class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+            <div
+                class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
+                <!-- Logo Section - Responsive sizing -->
+                <a href="landingpage.html"
+                    class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
+                    <img src="path/images/logocoop-removebg-preview 2.png"
+                        alt="GBLDC Logo"
+                        class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
+                    <span
+                        class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav
+                    class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
+                    <a href="landingpage.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
+
+                    <!-- Products & Services Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span class="whitespace-nowrap">Product &
+                                Services</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="loan-products.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- About Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span>About</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <a href="news&events.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
+                        & Events</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="applynow.html"
+                        class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap">
+                        Join Now
+                    </a>
+                    <div class="ml-4">
+                        <div class="relative group">
+                            <a href="#" title="User Profile"
+                                onclick="toggleProfileDropdown(event)"
+                                class="flex items-center gap-2">
+                                <img
+                                    src="path/images/logocoop-removebg-preview 2.png"
+                                    alt="User Avatar"
+                                    class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
+                                <i
+                                    class="fas fa-chevron-down text-gray-500 text-base">
+                                </i>
+                            </a>
+                            <!-- Desktop Profile Dropdown Menu -->
+                            <div id="profile-dropdown"
+                                class="absolute right-0 mt-2 w-72 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
+                                <div
+                                    class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
+                                    <?php echo isset($_SESSION['user_name']) ?
+                                    htmlspecialchars($_SESSION['user_name']) :
+                                    ''; ?>
+                                </div>
+                                <a href="loandashboard.html"
+                                    class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan
+                                    Dashboard</a>
+                                <a href="account-settings.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
+                                <a href="help.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help
+                                    & Support</a>
+                                <div class="border-t my-1">
+                                    <a href="index.html"
+                                        onclick="openLogoutModal(event)"
+                                        class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+                    onclick="toggleMobileMenu()">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 hidden transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+                <nav class="px-4 sm:px-6 py-4 space-y-1">
+                    <!-- Mobile Home Link -->
+                    <a href="landingpage.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        Home
+                    </a>
+
+                    <!-- Mobile Products & Services -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownProductsMobile(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>Product & Services</span>
+                            <i id="products-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-products-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile About -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownMobileAbout(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>About</span>
+                            <i id="about-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-about-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile News & Events -->
+                    <a href="news&events.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        News & Events
+                    </a>
+
+                    <!-- Mobile CTA Button -->
+                    <div class="pt-4 border-t border-gray-100 mt-4">
+                        <a href="applynow.html"
+                            class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200">
+                            Join Now
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <body class="bg-white text-gray-800 font-outfit scroll-smooth">
+
+            <!-- Logout Confirmation Modal -->
+            <div id="logout-modal"
+                class="fixed inset-0 z-[60] flex items-center justify-center hidden">
+                <div id="logout-modal-content"
+                    class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4 transform transition-all duration-300 relative z-[61]">
+                    <div class="text-center">
+                        <!-- Icon -->
+                        <div
+                            class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+                            <i
+                                class="fas fa-sign-out-alt text-red-600 text-xl"></i>
+                        </div>
+
+                        <!-- Title -->
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">
+                            Confirm Logout
+                        </h3>
+
+                        <!-- Message -->
+                        <p class="text-sm text-gray-500 mb-6">
+                            Are you sure you want to logout? You will need to
+                            sign in again to
+                            access your account.
+                        </p>
+
+                        <!-- Buttons -->
+                        <div
+                            class="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center">
+                            <button onclick="closeLogoutModal()"
+                                class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200">
+                                Cancel
+                            </button>
+                            <button onclick="confirmLogout()"
+                                class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Progress Indicator -->
+           <div class="max-w-7xl mx-auto mt-24 p-4 sm:p-6 md:p-7">
+            <h2 class="text-center text-3xl sm:text-4xl font-semibold text-gray-800 block">Loan Application</h2>
+            <p class="text-center text-black mt-3">Please fill out the form below to apply for a loan.</p>
+            <div class="w-full flex items-center justify-center my-6">
+                <div class="w-full overflow-x-auto">
+                    <div class="flex items-stretch gap-4 min-w-[600px] sm:min-w-0 flex-nowrap md:flex-wrap md:justify-center">
+                        <div class="flex flex-col items-center text-black min-w-[90px]">
+                            <a href="#" onclick="validateStep1(event)">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">1</div>
+                            </a>
+                            <a href="#"><p class="text-center text-xs sm:text-sm mt-2">Personal Information</p></a>
+                        </div>
+                        <div class="flex items-center"><div class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                        <div class="flex flex-col items-center text-black min-w-[90px]">
+                            <a href="#" onclick="validateStep1(event)">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">2</div>
+                            </a>
+                            <p class="text-center text-xs sm:text-sm mt-2">Guarantor Information 1</p>
+                        </div>
+                        <div class="flex items-center"><div class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                        <div class="flex flex-col items-center text-black min-w-[90px]">
+                            <a href="#" onclick="validateStep1(event)">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">3</div>
+                            </a>
+                            <p class="text-center text-xs sm:text-sm mt-2">Guarantor Information 2</p>
+                        </div>
+                        <div class="flex items-center"><div class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                        <div class="flex flex-col items-center text-black min-w-[90px]">
+                            <a href="#" onclick="validateStep1(event)">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">4</div>
+                            </a>
+                            <p class="text-center text-xs sm:text-sm mt-2 ">Employment / Business Info</p>
+                        </div>
+                        <div class="flex items-center"><div class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                        <div class="flex flex-col items-center text-black min-w-[90px]">
+                            <a href="#" onclick="validateStep1(event)">
+                                <div class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-600 rounded-full text-lg font-semibold text-white">5</div>
+                            </a>
+                            <p class="text-center text-xs sm:text-sm mt-2">Review & Submit</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-7">
+        <div class="bg-white rounded-xl shadow-lg p-6 md:p-10 animate-fade-in">
+            
+            <!-- Header -->
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-3xl font-semibold text-green-800 mb-3">
+                    <i class="fas fa-clipboard-check mr-3"></i>Review & Submit
+                </h2>
+                <p class="text-gray-600 text-lg">Please review all information carefully before submitting your application.</p>
+            </div>
+
+            <!-- Summary Cards Container -->
+            <div class="space-y-8">
+                
+                <!-- Personal Information Card -->
+                <div class="summary-card bg-white border border-gray-200 rounded-xl p-6 animate-slide-up">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-user-circle text-green-600 mr-3"></i>
+                            Personal Information
+                        </h3>
+                        <button class="edit-btn bg-green-100 hover:bg-green-200 text-green-700 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium">
+                            <i class="fas fa-edit mr-2"></i>Edit
+                        </button>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-x-8">
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Full Name:</span>
+                            <span class="text-gray-800 font-semibold">Juan Carlos Dela Cruz</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Date of Birth:</span>
+                            <span class="text-gray-800">March 15, 1985</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Gender:</span>
+                            <span class="text-gray-800">Male</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Civil Status:</span>
+                            <span class="text-gray-800">Married</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Contact Number:</span>
+                            <span class="text-gray-800">+63 912 345 6789</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Email:</span>
+                            <span class="text-gray-800">juan.delacruz@email.com</span>
+                        </div>
+                        <div class="info-row flex justify-between md:col-span-2">
+                            <span class="text-gray-600 font-medium">Complete Address:</span>
+                            <span class="text-gray-800 text-right">123 Rizal Street, Barangay San Jose, Manila City, Metro Manila</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Loan Amount:</span>
+                            <span class="text-gray-800 font-bold text-green-600">₱50,000.00</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Loan Purpose:</span>
+                            <span class="text-gray-800">Business Capital</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guarantor 1 Information Card -->
+                <div class="summary-card bg-white border border-gray-200 rounded-xl p-6 animate-slide-up" style="animation-delay: 0.1s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-user-shield text-blue-600 mr-3"></i>
+                            Guarantor 1 Information
+                        </h3>
+                        <button class="edit-btn bg-blue-100 hover:bg-blue-200 text-blue-700 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium">
+                            <i class="fas fa-edit mr-2"></i>Edit
+                        </button>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-x-8">
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Full Name:</span>
+                            <span class="text-gray-800 font-semibold">Maria Santos Rodriguez</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Relationship:</span>
+                            <span class="text-gray-800">Sister</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Contact Number:</span>
+                            <span class="text-gray-800">+63 915 678 9012</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Email:</span>
+                            <span class="text-gray-800">maria.rodriguez@email.com</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Occupation:</span>
+                            <span class="text-gray-800">Teacher</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Monthly Income:</span>
+                            <span class="text-gray-800 font-semibold text-green-600">₱35,000.00</span>
+                        </div>
+                        <div class="info-row flex justify-between md:col-span-2">
+                            <span class="text-gray-600 font-medium">Complete Address:</span>
+                            <span class="text-gray-800 text-right">456 Bonifacio Avenue, Barangay Central, Quezon City, Metro Manila</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guarantor 2 Information Card -->
+                <div class="summary-card bg-white border border-gray-200 rounded-xl p-6 animate-slide-up" style="animation-delay: 0.2s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-user-shield text-purple-600 mr-3"></i>
+                            Guarantor 2 Information
+                        </h3>
+                        <button class="edit-btn bg-purple-100 hover:bg-purple-200 text-purple-700 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium">
+                            <i class="fas fa-edit mr-2"></i>Edit
+                        </button>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-x-8">
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Full Name:</span>
+                            <span class="text-gray-800 font-semibold">Roberto Miguel Fernandez</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Relationship:</span>
+                            <span class="text-gray-800">Friend</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Contact Number:</span>
+                            <span class="text-gray-800">+63 917 234 5678</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Email:</span>
+                            <span class="text-gray-800">roberto.fernandez@email.com</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Occupation:</span>
+                            <span class="text-gray-800">Engineer</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Monthly Income:</span>
+                            <span class="text-gray-800 font-semibold text-green-600">₱55,000.00</span>
+                        </div>
+                        <div class="info-row flex justify-between md:col-span-2">
+                            <span class="text-gray-600 font-medium">Complete Address:</span>
+                            <span class="text-gray-800 text-right">789 Luna Street, Barangay Poblacion, Makati City, Metro Manila</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employment/Business Information Card -->
+                <div class="summary-card bg-white border border-gray-200 rounded-xl p-6 animate-slide-up" style="animation-delay: 0.3s;">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-800 flex items-center">
+                            <i class="fas fa-briefcase text-orange-600 mr-3"></i>
+                            Employment / Business Information
+                        </h3>
+                        <button class="edit-btn bg-orange-100 hover:bg-orange-200 text-orange-700 px-4 py-2 rounded-lg transition-all duration-200 text-sm font-medium">
+                            <i class="fas fa-edit mr-2"></i>Edit
+                        </button>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-x-8">
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Employment Type:</span>
+                            <span class="text-gray-800 font-semibold">Self-Employed</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Business Name:</span>
+                            <span class="text-gray-800">JC Trading & Services</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Nature of Business:</span>
+                            <span class="text-gray-800">General Merchandise</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Years in Business:</span>
+                            <span class="text-gray-800">5 years</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Monthly Income:</span>
+                            <span class="text-gray-800 font-bold text-green-600">₱45,000.00</span>
+                        </div>
+                        <div class="info-row flex justify-between">
+                            <span class="text-gray-600 font-medium">Contact Number:</span>
+                            <span class="text-gray-800">+63 912 345 6789</span>
+                        </div>
+                        <div class="info-row flex justify-between md:col-span-2">
+                            <span class="text-gray-600 font-medium">Business Address:</span>
+                            <span class="text-gray-800 text-right">Unit 12-A, Mercado Building, Divisoria, Manila City</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms and Conditions -->
+                <div class="bg-gradient-to-r from-green-50 to-blue-50 border border-green-200 rounded-xl p-6 animate-slide-up" style="animation-delay: 0.4s;">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0 mt-1">
+                            <input type="checkbox" id="terms-checkbox" class="w-5 h-5 text-green-600 border-2 border-gray-300 rounded focus:ring-green-500 focus:ring-2 transition-all duration-200">
+                        </div>
+                        <div class="flex-1">
+                            <label for="terms-checkbox" class="text-gray-800 font-medium leading-relaxed cursor-pointer">
+                                <i class="fas fa-shield-check text-green-600 mr-2"></i>
+                                I hereby certify that the above information is true and correct. I authorize GBLDC (Greater Bulacan Livelihood Development Cooperative) to verify and validate this loan application, including conducting background checks and contacting provided references as necessary.
+                            </label>
+                            <p class="text-sm text-gray-600 mt-3 leading-relaxed">
+                                By checking this box, you also agree to the cooperative's terms and conditions, privacy policy, and consent to the processing of your personal data in accordance with the Data Privacy Act.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-between pt-8 border-t border-gray-200 animate-slide-up" style="animation-delay: 0.5s;">
+                    <button type="button" onclick="goBack()" class="flex items-center justify-center px-8 py-4 bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold rounded-lg transition-all duration-200 border border-gray-300">
+                        <i class="fas fa-arrow-left mr-3"></i>
+                        Back to Previous Step
+                    </button>
+                    
+                    <button type="button" onclick="submitApplication()" id="submit-btn" class="flex items-center justify-center px-8 py-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed">
+                        <i class="fas fa-paper-plane mr-3"></i>
+                        Submit Application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+      // Check if terms are accepted
+        const termsCheckbox = document.getElementById('terms-checkbox');
+        const submitBtn = document.getElementById('submit-btn');
+
+        termsCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                submitBtn.classList.add('hover:bg-green-700', 'shadow-lg');
+            } else {
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                submitBtn.classList.remove('hover:bg-green-700', 'shadow-lg');
+            }
+        });
+
+        // Initially disable submit button
+        submitBtn.disabled = true;
+
+        function goBack() {
+            // Add your navigation logic here
+            Swal.fire({
+                title: 'Go Back?',
+                text: 'Are you sure you want to go back to the previous step?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonColor: '#10b981',
+                cancelButtonColor: '#6b7280',
+                confirmButtonText: 'Yes, go back',
+                cancelButtonText: 'Stay here'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    // Navigate back to step 4
+                    window.location.href = '#step4';
+                }
+            });
+        }
+
+        function submitApplication() {
+            if (!termsCheckbox.checked) {
+                Swal.fire({
+                    title: 'Terms Required',
+                    text: 'Please accept the terms and conditions before submitting.',
+                    icon: 'warning',
+                    confirmButtonColor: '#10b981'
+                });
+                return;
+            }
+
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i>Submitting...';
+            submitBtn.disabled = true;
+
+            // Simulate submission process
+            setTimeout(() => {
+                Swal.fire({
+                    title: 'Application Submitted!',
+                    text: 'Your loan application has been successfully submitted. You will receive a confirmation email shortly.',
+                    icon: 'success',
+                    confirmButtonColor: '#10b981',
+                    confirmButtonText: 'Continue to Dashboard'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Redirect to dashboard or success page
+                        window.location.href = 'loandashboard.html';
+                    }
+                });
+            }, 2000);
+        }
+
+        // Edit button functionality
+        document.querySelectorAll('.edit-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const cardTitle = this.closest('.summary-card').querySelector('h3').textContent.trim();
+                
+                Swal.fire({
+                    title: 'Edit Information',
+                    text: `Do you want to edit your ${cardTitle}?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#10b981',
+                    cancelButtonColor: '#6b7280',
+                    confirmButtonText: 'Yes, edit',
+                    cancelButtonText: 'Cancel'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        // Navigate to appropriate step based on the card
+                        if (cardTitle.includes('Personal')) {
+                            window.location.href = '#step1';
+                        } else if (cardTitle.includes('Guarantor 1')) {
+                            window.location.href = '#step2';
+                        } else if (cardTitle.includes('Guarantor 2')) {
+                            window.location.href = '#step3';
+                        } else if (cardTitle.includes('Employment')) {
+                            window.location.href = '#step4';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+
+</body>
+</html>

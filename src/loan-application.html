@@ -14,10 +14,7 @@
             href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
             rel="stylesheet">
         <script src="https://cdn.tailwindcss.com"></script>
-        <script
-            src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="../src/javascript/loan-application.js"></script>
         <script src="../src/javascript/landingpage.js"></script>
         <script src="../src/javascript/landingpage-user.js"></script>
         <title>Loan Application | GBLDC</title>
@@ -99,7 +96,7 @@
                 <div class="hidden lg:flex items-center">
                     <a href="applynow.html"
                         class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap">
-                        Apply loan
+                        Join Now
                     </a>
                     <div class="ml-4">
                         <div class="relative group">
@@ -138,417 +135,991 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Mobile menu button -->
-                    <button id="mobile-menu-btn"
-                        class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
-                        onclick="toggleMobileMenu()">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 24 24" stroke-width="2.5"
-                            stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                        </svg>
-                    </button>
                 </div>
 
-                <!-- Mobile Navigation Menu -->
-                <div id="mobile-menu"
-                    class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
-                    <nav class="px-4 sm:px-6 py-4 space-y-1">
-                        <!-- Mobile Home Link -->
-                        <a href="landingpage.html"
-                            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
-                            Home
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+                    onclick="toggleMobileMenu()">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 hidden transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+                <nav class="px-4 sm:px-6 py-4 space-y-1">
+                    <!-- Mobile Home Link -->
+                    <a href="landingpage.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        Home
+                    </a>
+
+                    <!-- Mobile Products & Services -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownProductsMobile(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>Product & Services</span>
+                            <i id="products-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-products-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile About -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownMobileAbout(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>About</span>
+                            <i id="about-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-about-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile News & Events -->
+                    <a href="news&events.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        News & Events
+                    </a>
+
+                    <!-- Mobile CTA Button -->
+                    <div class="pt-4 border-t border-gray-100 mt-4">
+                        <a href="applynow.html"
+                            class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200">
+
+                            Join Now
                         </a>
+                    </div>
+                </nav>
+            </div>
+        </header>
 
-                        <!-- Mobile Products & Services -->
-                        <div class="space-y-1">
-                            <button
-                                onclick="toggleDropdownProductsMobile(event)"
-                                class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
-                                <span>Product & Services</span>
-                                <i id="products-chevron"
-                                    class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
-                            </button>
-                            <div id="dropdown-menu-products-mobile"
-                                class="hidden ml-4 space-y-1">
-                                <a href="loan-products.html"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
-                                <a href="deposit.html"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
-                                <a href="deposit.html"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
-                            </div>
-                        </div>
+        <body class="bg-white text-gray-800 font-outfit scroll-smooth">
 
-                        <!-- Mobile About -->
-                        <div class="space-y-1">
-                            <button onclick="toggleDropdownMobileAbout(event)"
-                                class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
-                                <span>About</span>
-                                <i id="about-chevron"
-                                    class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
-                            </button>
-                            <div id="dropdown-menu-about-mobile"
-                                class="hidden ml-4 space-y-1">
-                                <a href="about-gbldc.html"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
-                                    GBLDC</a>
-                                <a href="#"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
-                                    & Vision</a>
-                                <a href="board-of-directors.html"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
-                                    of Directors</a>
-                                <a href="committee-officers.html"
-                                    class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
-                                    Officers</a>
-                            </div>
-                        </div>
-
-                        <!-- Mobile News & Events -->
-                        <a href="news&events.html"
-                            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
-                            News & Events
-                        </a>
-
-                        <!-- Mobile CTA Button -->
-                        <div class="pt-4 border-t border-gray-100 mt-4">
-                            <a href="loan-application.html"
-                                class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 sm:text-center md:text-center">
-                               Apply loan
-                            </a>
-                        </div>
-                    </nav>
-                </div>
-            </header>
-            <body class="bg-white text-gray-800 font-outfit scroll-smooth">
-
-                <!-- Progress Indicator -->
-                <div class="max-w-7xl mx-auto mt-24 p-7">
-                    <h2
-                        class="text-center text-4xl font-semibold text-gray-800 block">Loan
-                        Application</h2>
-                    <p class="text-center text-black mt-3">Please fill out the
-                        form below to apply for a loan.</p>
-                    <div
-                        class="flex items-center justify-center my-6 flex-col md:flex-row">
-                        <div class="flex items-center gap-8">
-                            <div class="flex flex-col items-center text-black">
+            <!-- Progress Indicator -->
+            <div class="max-w-7xl mx-auto mt-24 p-4 sm:p-6 md:p-7">
+                <h2
+                    class="text-center text-3xl sm:text-4xl font-semibold text-gray-800 block">Loan
+                    Application</h2>
+                <p class="text-center text-black mt-3">Please fill out the form
+                    below to apply for a loan.</p>
+                <div class="w-full flex items-center justify-center my-6">
+                    <div class="w-full overflow-x-auto">
+                        <div
+                            class="flex items-stretch gap-4 min-w-[600px] sm:min-w-0 flex-nowrap md:flex-wrap md:justify-center">
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
                                 <a href="#" onclick="validateStep1(event)">
                                     <div
-                                        class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
-                                        1
-                                    </div>
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-green-300 rounded-full text-lg font-bold">1</div>
                                 </a>
-                                <a href="#">
-                                    <p class="text-center text-sm mt-2">Personal
-                                        Information</p>
-                                </a>
+                                <a href="#"><p
+                                        class="text-center text-xs sm:text-sm mt-2">Personal
+                                        Information</p></a>
                             </div>
-                            <div class="w-20 h-1 bg-green-300"></div>
-                            <div class="flex flex-col items-center text-black">
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
                                 <a href="#" onclick="validateStep1(event)">
                                     <div
-                                        class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                                        2
-                                    </div>
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-bold">2</div>
                                 </a>
-                                <p class="text-center text-sm mt-2">Guarantor
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2">Guarantor
                                     Information 1</p>
                             </div>
-                            <div class="w-20 h-1 bg-green-300"></div>
-                            <div class="flex flex-col items-center text-black">
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-green-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
                                 <a href="#" onclick="validateStep1(event)">
                                     <div
-                                        class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                                        3
-                                    </div></a>
-                                <p class="text-center text-sm mt-2">Guarantor
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-bold">3</div>
+                                </a>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2">Guarantor
                                     Information 2</p>
                             </div>
-                            <div class="w-20 h-1 bg-gray-300"></div>
-                            <div class="flex flex-col items-center text-black">
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-gray-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
                                 <a href="#" onclick="validateStep1(event)">
                                     <div
-                                        class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                                        4
-                                    </div>
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-bold">4</div>
                                 </a>
-                                <p class="text-center text-sm mt-2">Employment
-                                    Information / Business Information</p>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2 text-center">Employment
+                                    / Business Info</p>
                             </div>
-                            <div class="w-20 h-1 bg-gray-300"></div>
-                            <div class="flex flex-col items-center text-black">
+                            <div class="flex items-center"><div
+                                    class="w-10 sm:w-20 h-1 bg-gray-300"></div></div>
+                            <div
+                                class="flex flex-col items-center text-black min-w-[90px]">
                                 <a href="#" onclick="validateStep1(event)">
                                     <div
-                                        class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
-                                        5
-                                    </div>
+                                        class="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center bg-gray-200 rounded-full text-lg font-bold">5</div>
                                 </a>
-                                <p class="text-center text-sm mt-2">Review &
-                                    Submit</p>
+                                <p
+                                    class="text-center text-xs sm:text-sm mt-2">Review
+                                    & Submit</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Main Content -->
-                <div id="validationModal"
-                    class="fixed inset-0 items-center flex justify-center hidden">
-                    <div
-                        class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50 animate-fade-in-down">
-                        <h3
-                            class="text-lg font-semibold text-gray-800 mb-4">Missing
-                            Required Fields</h3>
-                        <p class="text-gray-600 mb-4">Please fill out the
-                            following required fields before proceeding:</p>
-                        <ul id="missingFieldsList"
-                            class="custom-asterisk-list list-inside text-red-500 mb-4"></ul>
-                        <button onclick="closeModal()"
-                            class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
-                    </div>
-                </div>
-
-                <form
-                    class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10">
-                    <!-- Branch -->
-                    <h3 class="text-2xl font-medium text-teal-900">Personal
-                        Information</h3>
-                    <p class="text-gray-600 mb-4">Please fill out the form below
-                        with your personal information.</p>
-                    <!-- Name Fields -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                            <label for="lastName" class="block text-black">Last
-                                Name<span class="text-red-500">*</span></label>
-                            <input id="lastName" type="text"
-                                placeholder="Last Name"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                        <div>
-                            <label for="firstName"
-                                class="block text-black">First Name<span
-                                    class="text-red-500">*</span></label>
-                            <input id="firstName" type="text"
-                                placeholder="First Name"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                        <div>
-                            <label for="middleName"
-                                class="block text-black">Middle Name<span
-                                    class="text-red-500">*</span></label>
-                            <input id="middleName" type="text"
-                                placeholder="Middle Name"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                    </div>
-
-                    <!-- Birth Details -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                            <label for="birthPlace"
-                                class="block text-black">Place of Birth<span
-                                    class="text-red-500">*</span></label>
-                            <input id="birthPlace" type="text"
-                                placeholder="Place of Birth"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                        <div>
-                            <label for="birthDate"
-                                class="block text-black">Birth Date<span
-                                    class="text-red-500">*</span></label>
-                            <input id="birthDate" type="date"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black"
-                                required onchange="calculateAge()">
-                        </div>
-                        <div class="flex flex-col md:flex-row gap-4">
-                            <div class="flex-1">
-                                <label for="age"
-                                    class="block text-black">Age<span
-                                        class="text-red-500">*</span></label>
-                                <input id="age" type="number"
-                                    class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black bg-gray-100"
-                                    readonly required>
-                            </div>
-                            <div>
-                                <label class="block text-black">Gender<span
-                                        class="text-red-500">*</span></label>
-                                <div class="flex gap-4 mt-2">
-                                    <label><input type="radio" name="gender"
-                                            value="Male" class="mr-1 mt-0.5">
-                                        Male</label>
-                                    <label><input type="radio" name="gender"
-                                            value="Female" class="mr-1 mt-0.5">
-                                        Female</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Religion, Nationality, Status -->
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
-                        <div>
-                            <label for="religion"
-                                class="block text-black">Religion<span
-                                    class="text-red-500">*</span></label>
-                            <select id="religion"
-                                class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                                <option>Select Religion</option>
-                                <option>ROMAN CATHOLIC</option>
-                                <option>PROTESTANT</option>
-                                <option>CHRISTIAN</option>
-                                <option>BAPTIST</option>
-                                <option>SEVENTH-DAY ADVENTIST</option>
-                                <option>IGLESIA NI CRISTO</option>
-                                <option>ADVENTIST</option>
-                                <option>BUDDHISM</option>
-                                <option>JESUS IS LORD MOVEMENT</option>
-                                <option>JEHOVAH'S WITNESSES</option>
-                                <option>METHODIST</option>
-                                <option>NON-SECTARIAN</option>
-                                <option>OTHER</option>
-
-                            </select>
-                        </div>
-                        <div>
-                            <label for="nationality"
-                                class="block text-black">Nationality<span
-                                    class="text-red-500">*</span></label>
-                            <input id="nationality" type="text"
-                                placeholder="Nationality"
-                                class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                        <div>
-                            <label for="civilStatus"
-                                class="block text-black">Civil Status<span
-                                    class="text-red-500">*</span></label>
-                            <select id="civilStatus"
-                                class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                                <option>Select Status</option>
-                                <option>SINGLE</option>
-                                <option>WIDOW</option>
-                                <option>MARRIED</option>
-                                <option>SEPARATED</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="md:col-span-2 w-full">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label for="email"
-                                    class="block text-black font-medium">Email
-                                    Address<span
-                                        class="text-red-500">*</span></label>
-                                <input id="email" type="email"
-                                    placeholder="Email Address"
-                                    class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                    required>
-                            </div>
-                            <div>
-                                <label for="contact"
-                                    class="block text-black">Contact Number<span
-                                        class="text-red-500">*</span></label>
-                                <div class="flex items-center">
-                                    <span class="px-2 text-black">+63</span>
-                                    <input id="contact" type="tel"
-                                        pattern="[0-9]{10}" maxlength="10"
-                                        class="p-2 rounded-sm w-full border focus:outline-none focus:ring-2 focus:ring-green-400"
-                                        required inputmode="numeric"
-                                        placeholder="9123456789">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="my-6 border-gray-300">
-
-                    <!-- Home Address -->
-                    <h3 class="text-2xl font-medium text-teal-900">Home
-                        Address</h3>
-                    <label for="street" class="block text-black">Street
-                        Address<span class="text-red-500">*</span></label>
-                    <input id="street" type="text" placeholder="No. & Street"
-                        class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                        required>
-
-                    <div
-                        class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
-                        <div>
-                            <label for="province"
-                                class="block text-black">Province<span
-                                    class="text-red-500">*</span></label>
-                            <select id="province"
-                                class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
-                                <option value>Select Province</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="city"
-                                class="block text-black">City/Municipality<span
-                                    class="text-red-500">*</span></label>
-                            <select id="city"
-                                class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
-                                <option value>Select City</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="barangay"
-                                class="block text-black">Barangay<span
-                                    class="text-red-500">*</span></label>
-                            <select id="barangay"
-                                class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
-                                <option value>Select Barangay</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                            <label for="yearsOfStay"
-                                class="block text-black">Years of Stay<span
-                                    class="text-red-500">*</span></label>
-                            <input id="yearsOfStay" type="text"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                        <div>
-                            <label for="houseOwnership"
-                                class="block text-black">House Ownership<span
-                                    class="text-red-500">*</span></label>
-                            <select id="houseOwnership"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                                <option>Select Ownership</option>
-                                <option>Owned</option>
-                                <option>Rented</option>
-                                <option>Living with Parents</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="zipCode" class="block text-black">Zip
-                                Code<span class="text-red-500">*</span></label>
-                            <input id="zipCode" type="text"
-                                placeholder="Zip Code"
-                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
-                                required>
-                        </div>
-                    </div>
-                    <!-- Submit Button -->
-                    <div class="flex justify-end mt-6 font-light">
-                        <button type="button" onclick="validateStep1(event)"
-                            class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Continue</button>
-                    </div>
-                </form>
             </div>
-        </body>
-    </html>
+
+            <!-- Main Content -->
+            <div id="validationModal"
+                class="fixed inset-0 items-center flex justify-center hidden">
+                <div
+                    class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50 animate-fade-in-down">
+                    <h3
+                        class="text-lg font-semibold text-gray-800 mb-4">Missing
+                        Required Fields</h3>
+                    <p class="text-gray-600 mb-4">Please fill out the
+                        following required fields before proceeding:</p>
+                    <ul id="missingFieldsList"
+                        class="custom-asterisk-list list-inside text-red-500 mb-4"></ul>
+                    <button onclick="closeModal()"
+                        class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
+                </div>
+            </div>
+
+            <form
+                class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10">
+                <!-- Branch -->
+                <h3 class="text-2xl font-medium text-teal-900">Personal
+                    Information</h3>
+                <p class="text-gray-600 mb-4">Please fill out the form below
+                    with your personal information.</p>
+                <!-- Name Fields -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="lastName" class="block text-black">Last
+                            Name<span class="text-red-500">*</span></label>
+                        <input id="lastName" type="text"
+                            placeholder="Last Name"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                    <div>
+                        <label for="firstName"
+                            class="block text-black">First Name<span
+                                class="text-red-500">*</span></label>
+                        <input id="firstName" type="text"
+                            placeholder="First Name"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                    <div>
+                        <label for="middleName"
+                            class="block text-black">Middle Name<span
+                                class="text-red-500">*</span></label>
+                        <input id="middleName" type="text"
+                            placeholder="Middle Name"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                </div>
+
+                <!-- Birth Details -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="birthPlace"
+                            class="block text-black">Place of Birth<span
+                                class="text-red-500">*</span></label>
+                        <input id="birthPlace" type="text"
+                            placeholder="Place of Birth"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                    <div>
+                        <label for="birthDate"
+                            class="block text-black">Birth Date<span
+                                class="text-red-500">*</span></label>
+                        <input id="birthDate" type="date"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black"
+                            required onchange="calculateAge()">
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1">
+                            <label for="age"
+                                class="block text-black">Age<span
+                                    class="text-red-500">*</span></label>
+                            <input id="age" type="number"
+                                class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black bg-gray-100"
+                                readonly required>
+                        </div>
+                        <div>
+                            <label class="block text-black">Gender<span
+                                    class="text-red-500">*</span></label>
+                            <div class="flex gap-4 mt-2">
+                                <label><input type="radio" name="gender"
+                                        value="Male" class="mr-1 mt-0.5">
+                                    Male</label>
+                                <label><input type="radio" name="gender"
+                                        value="Female" class="mr-1 mt-0.5">
+                                    Female</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Religion, Nationality, Status -->
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+                    <div>
+                        <label for="religion"
+                            class="block text-black">Religion<span
+                                class="text-red-500">*</span></label>
+                        <select id="religion"
+                            class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                            <option>Select Religion</option>
+                            <option>ROMAN CATHOLIC</option>
+                            <option>PROTESTANT</option>
+                            <option>CHRISTIAN</option>
+                            <option>BAPTIST</option>
+                            <option>SEVENTH-DAY ADVENTIST</option>
+                            <option>IGLESIA NI CRISTO</option>
+                            <option>ADVENTIST</option>
+                            <option>BUDDHISM</option>
+                            <option>JESUS IS LORD MOVEMENT</option>
+                            <option>JEHOVAH'S WITNESSES</option>
+                            <option>METHODIST</option>
+                            <option>NON-SECTARIAN</option>
+                            <option>OTHER</option>
+
+                        </select>
+                    </div>
+                    <div>
+                        <label for="nationality"
+                            class="block text-black">Nationality<span
+                                class="text-red-500">*</span></label>
+                        <input id="nationality" type="text"
+                            placeholder="Nationality"
+                            class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                    <div>
+                        <label for="civilStatus"
+                            class="block text-black">Civil Status<span
+                                class="text-red-500">*</span></label>
+                        <select id="civilStatus"
+                            class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                            <option>Select Status</option>
+                            <option>SINGLE</option>
+                            <option>WIDOW</option>
+                            <option>MARRIED</option>
+                            <option>SEPARATED</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="md:col-span-2 w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="email"
+                                class="block text-black font-medium">Email
+                                Address<span
+                                    class="text-red-500">*</span></label>
+                            <input id="email" type="email"
+                                placeholder="Email Address"
+                                class="border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                                required>
+                        </div>
+                        <div>
+                            <label for="contact"
+                                class="block text-black">Contact Number<span
+                                    class="text-red-500">*</span></label>
+                            <div class="flex items-center">
+                                <span class="px-2 text-black">+63</span>
+                                <input id="contact" type="tel"
+                                    pattern="[0-9]{10}" maxlength="10"
+                                    class="p-2 rounded-sm w-full border focus:outline-none focus:ring-2 focus:ring-green-400"
+                                    required inputmode="numeric"
+                                    placeholder="9123456789">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-6 border-gray-300">
+
+                <!-- Home Address -->
+                <h3 class="text-2xl font-medium text-teal-900">Home
+                    Address</h3>
+                <label for="street" class="block text-black">Street
+                    Address<span class="text-red-500">*</span></label>
+                <input id="street" type="text" placeholder="No. & Street"
+                    class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                    required>
+
+                <div
+                    class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+                    <div>
+                        <label for="province"
+                            class="block text-black">Province<span
+                                class="text-red-500">*</span></label>
+                        <select id="province"
+                            class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <option value>Select Province</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="city"
+                            class="block text-black">City/Municipality<span
+                                class="text-red-500">*</span></label>
+                        <select id="city"
+                            class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <option value>Select City</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="barangay"
+                            class="block text-black">Barangay<span
+                                class="text-red-500">*</span></label>
+                        <select id="barangay"
+                            class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+                            <option value>Select Barangay</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="yearsOfStay"
+                            class="block text-black">Years of Stay<span
+                                class="text-red-500">*</span></label>
+                        <input id="yearsOfStay" type="text"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                    <div>
+                        <label for="houseOwnership"
+                            class="block text-black">House Ownership<span
+                                class="text-red-500">*</span></label>
+                        <select id="houseOwnership"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                            <option>Select Ownership</option>
+                            <option>Owned</option>
+                            <option>Rented</option>
+                            <option>Living with Parents</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="zipCode" class="block text-black">Zip
+                            Code<span class="text-red-500">*</span></label>
+                        <input id="zipCode" type="text"
+                            placeholder="Zip Code"
+                            class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400"
+                            required>
+                    </div>
+                </div>
+                <!-- Submit Button -->
+                <div class="flex justify-end mt-6 font-light">
+                    <button type="button" onclick="validateStep1(event)"
+                        class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Continue</button>
+                </div>
+            </form>
+        </div>
+        <script>
+              function toggleMobileMenu() {
+                const mobileMenu = document.getElementById('mobile-menu');
+                const menuIcon = document.getElementById('menu-icon');
+                const closeIcon = document.getElementById('close-icon');
+                
+                if (mobileMenu.classList.contains('mobile-menu-open')) {
+                    // Close menu
+                    mobileMenu.classList.remove('mobile-menu-open');
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                } else {
+                    // Open menu
+                    mobileMenu.classList.add('mobile-menu-open');
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                }
+            }
+
+            // Mobile dropdown toggles
+            function toggleDropdownProductsMobile(event) {
+                event.preventDefault();
+                const dropdown = document.getElementById('dropdown-menu-products-mobile');
+                const chevron = document.getElementById('products-chevron');
+                
+                if (dropdown.classList.contains('hidden')) {
+                    dropdown.classList.remove('hidden');
+                    chevron.classList.add('rotate-180');
+                } else {
+                    dropdown.classList.add('hidden');
+                    chevron.classList.remove('rotate-180');
+                }
+            }
+
+            function toggleDropdownMobileAbout(event) {
+                event.preventDefault();
+                const dropdown = document.getElementById('dropdown-menu-about-mobile');
+                const chevron = document.getElementById('about-chevron');
+                
+                if (dropdown.classList.contains('hidden')) {
+                    dropdown.classList.remove('hidden');
+                    chevron.classList.add('rotate-180');
+                } else {
+                    dropdown.classList.add('hidden');
+                    chevron.classList.remove('rotate-180');
+                }
+            }
+            // loan-application.js
+function validateStep1(event) {
+  event.preventDefault();
+  const requiredFields = document.querySelectorAll(
+    "input[required], select[required]"
+  );
+  let allFilled = true;
+  let missingFields = [];
+
+  requiredFields.forEach((field) => {
+    if (!field.value.trim()) {
+      allFilled = false;
+      field.classList.add("border-red-500");
+      let label =
+        field.closest("div")?.querySelector("label")?.textContent ||
+        field.previousElementSibling?.textContent ||
+        field.closest("fieldset")?.querySelector("legend")?.textContent ||
+        field.name ||
+        field.id ||
+        "Field";
+      label = label.replace("*", "").trim();
+      if (!missingFields.includes(label)) missingFields.push(label);
+    } else {
+      field.classList.remove("border-red-500");
+    }
+  });
+
+  if (!allFilled) {
+    Swal.fire({
+      icon: "warning",
+      iconColor: "#dc2626",
+      color: "#1e2939",
+      title: "Missing Required Fields",
+      html: `<p>Please fill out the following required fields before proceeding:</p>
+                   <ul style="text-align:left; color:#e53e3e;">
+                   ${missingFields.map((f) => `<li>• ${f}</li>`).join("")}
+                   </ul>`,
+      confirmButtonColor: "#16a34a",
+    });
+  } else {
+    // Proceed to the next page
+    window.location.href = "applynowstep2.html";
+  }
+}
+
+function closeModal() {
+  // Not needed with SweetAlert2
+}
+
+function calculateAge() {
+  const birthDateInput = document.getElementById("birthDate");
+  const ageInput = document.getElementById("age");
+  const birthDateValue = birthDateInput.value;
+  if (!birthDateValue) {
+    ageInput.value = "";
+    return;
+  }
+  const today = new Date();
+  const birthDate = new Date(birthDateValue);
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const m = today.getMonth() - birthDate.getMonth();
+  if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    age--;
+  }
+  ageInput.value = age >= 0 ? age : "";
+}
+// PSGC API base URL
+const PSGC_API = "https://psgc.gitlab.io/api";
+
+// Elements
+const provinceSelect = document.getElementById("province");
+const citySelect = document.getElementById("city");
+const barangaySelect = document.getElementById("barangay");
+
+// Load provinces on page load
+fetch(`${PSGC_API}/provinces/`)
+  .then((res) => res.json())
+  .then((provinces) => {
+    provinces.forEach((province) => {
+      provinceSelect.innerHTML += `<option value="${province.code}">${province.name}</option>`;
+    });
+  });
+
+// When province changes, load cities/municipalities
+provinceSelect.addEventListener("change", function () {
+  const provinceCode = this.value;
+  citySelect.innerHTML = '<option value="">Select City/Municipality</option>';
+  barangaySelect.innerHTML = '<option value="">Select Barangay</option>';
+  if (!provinceCode) return;
+
+  fetch(`${PSGC_API}/provinces/${provinceCode}/cities-municipalities/`)
+    .then((res) => res.json())
+    .then((cities) => {
+      cities.forEach((city) => {
+        citySelect.innerHTML += `<option value="${city.code}">${city.name}</option>`;
+      });
+    });
+});
+
+// When city/municipality changes, load barangays and set zip code
+citySelect.addEventListener("change", function () {
+  const cityCode = this.value;
+  barangaySelect.innerHTML = '<option value="">Select Barangay</option>';
+  document.getElementById("zipCode").value = ""; // Clear zip code
+  if (!cityCode) return;
+
+  // Fetch barangays
+  fetch(`${PSGC_API}/cities-municipalities/${cityCode}/barangays/`)
+    .then((res) => res.json())
+    .then((barangays) => {
+      barangays.forEach((barangay) => {
+        barangaySelect.innerHTML += `<option value="${barangay.code}">${barangay.name}</option>`;
+      });
+    });
+
+  // Fetch city/municipality details for zip code
+  fetch(`${PSGC_API}/cities-municipalities/${cityCode}/`)
+    .then((res) => res.json())
+    .then((city) => {
+      // PSGC API returns postalCode (zip code)
+      document.getElementById("zipCode").value = city.postalCode || "";
+    });
+});
+
+// Logout Modal Functions
+function openLogoutModal(event) {
+    event.preventDefault();
+    const modal = document.getElementById('logout-modal');
+    const modalContent = document.getElementById('logout-modal-content');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    // Close mobile menu if it's open
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+    
+    modal.classList.remove('hidden');
+    
+    // Animate modal content in
+    modalContent.style.opacity = '0';
+    modalContent.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+        modalContent.style.transition = 'opacity 0.3s, transform 0.3s';
+        modalContent.style.opacity = '1';
+        modalContent.style.transform = 'scale(1)';
+    }, 10);
+    
+    // Add a semi-transparent background overlay
+    if (!document.getElementById('logout-modal-overlay')) {
+        const overlay = document.createElement('div');
+        overlay.id = 'logout-modal-overlay';
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.background = 'rgba(0,0,0,0.4)';
+        overlay.style.zIndex = 59;
+        overlay.onclick = closeLogoutModal;
+        document.body.appendChild(overlay);
+    }
+    
+    // Prevent body scrolling
+    document.body.classList.add('overflow-hidden');
+}
+
+function closeLogoutModal() {
+    const modal = document.getElementById('logout-modal');
+    const modalContent = document.getElementById('logout-modal-content');
+    
+    if (!modal || modal.classList.contains('hidden')) {
+        return; // Modal is already closed
+    }
+    
+    // Animate modal content out
+    modalContent.style.transition = 'opacity 0.2s, transform 0.2s';
+    modalContent.style.opacity = '0';
+    modalContent.style.transform = 'scale(0.95)';
+    
+    setTimeout(() => {
+        modal.classList.add('hidden');
+        // Remove the overlay if it exists
+        const overlay = document.getElementById('logout-modal-overlay');
+        if (overlay) overlay.remove();
+        // Allow body scrolling again
+        document.body.classList.remove('overflow-hidden');
+    }, 200);
+}
+
+function confirmLogout() {
+    // Close the modal first
+    closeLogoutModal();
+    
+    // Add a small delay for better UX, then redirect
+    setTimeout(() => {
+        // You can also make an AJAX call here to properly logout from the server
+        // For now, we'll just redirect
+        window.location.href = 'index.html';
+    }, 300);
+}
+
+// Profile Dropdown Function
+function toggleProfileDropdown(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('profile-dropdown');
+    dropdown.classList.toggle('hidden');
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function handler(e) {
+        if (!dropdown.contains(e.target) && !event.target.contains(e.target)) {
+            dropdown.classList.add('hidden');
+            document.removeEventListener('click', handler);
+        }
+    });
+}
+
+// Desktop Dropdown Functions (for existing dropdowns)
+function toggleDropdown(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('dropdown-menu');
+    dropdown.classList.toggle('hidden');
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function handler(e) {
+        if (!dropdown.contains(e.target) && !event.target.contains(e.target)) {
+            dropdown.classList.add('hidden');
+            document.removeEventListener('click', handler);
+        }
+    });
+}
+
+function toggleDropdownProducts(event) {
+    event.preventDefault();
+    const dropdown = document.getElementById('dropdown-menu-products');
+    dropdown.classList.toggle('hidden');
+    
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function handler(e) {
+        if (!dropdown.contains(e.target) && !event.target.contains(e.target)) {
+            dropdown.classList.add('hidden');
+            document.removeEventListener('click', handler);
+        }
+    });
+}
+
+// Mobile Menu Toggle Functions with Enhanced Touch Events
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileProductsToggle = document.getElementById('mobile-products-toggle');
+    const mobileProductsDropdown = document.getElementById('mobile-products-dropdown');
+    const mobileAboutToggle = document.getElementById('mobile-about-toggle');
+    const mobileAboutDropdown = document.getElementById('mobile-about-dropdown');
+
+    // Add touch feedback to all mobile menu items
+    function addTouchFeedback() {
+        const mobileMenuItems = document.querySelectorAll('#mobile-menu a, #mobile-menu button');
+        
+        mobileMenuItems.forEach(item => {
+            // Skip if already has touch feedback
+            if (item.dataset.touchFeedback) return;
+            item.dataset.touchFeedback = 'true';
+            
+            // Add touch start event for immediate feedback
+            item.addEventListener('touchstart', function(e) {
+                // Different colors for different types of items
+                let bgColor = '#dcfce7'; // Default green
+                
+                if (this.href && this.href.includes('applynow')) {
+                    bgColor = '#dcfce7'; // Green for Apply Now
+                } else if (this.onclick && this.onclick.toString().includes('openLogoutModal')) {
+                    bgColor = '#fee2e2'; // Light red for logout
+                } else if (this.closest('#mobile-products-dropdown, #mobile-about-dropdown')) {
+                    bgColor = '#dbeafe'; // Light blue for dropdown items
+                }
+                
+                this.style.backgroundColor = bgColor;
+                this.style.transform = 'scale(0.98)';
+                this.style.transition = 'all 0.1s ease';
+            }, { passive: true });
+            
+            // Remove feedback on touch end
+            item.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.style.backgroundColor = '';
+                    this.style.transform = '';
+                }, 150);
+            }, { passive: true });
+            
+            // Handle touch cancel (when user drags away)
+            item.addEventListener('touchcancel', function() {
+                this.style.backgroundColor = '';
+                this.style.transform = '';
+            }, { passive: true });
+        });
+    }
+
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden'); // Prevent scrolling when menu is open
+        
+        // Add touch feedback after menu opens
+        if (!mobileMenu.classList.contains('hidden')) {
+            setTimeout(addTouchFeedback, 100);
+        }
+    }
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+
+    // Mobile menu button click with enhanced touch feedback
+    if (mobileMenuButton) {
+        mobileMenuButton.addEventListener('click', function() {
+            // Add haptic feedback if available
+            if (navigator.vibrate) {
+                navigator.vibrate(50); // 50ms vibration
+            }
+            toggleMobileMenu();
+        });
+        
+        // Add touch feedback to hamburger button
+        mobileMenuButton.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.95)';
+            this.style.backgroundColor = '#16a34a';
+            this.style.color = 'white';
+            this.style.transition = 'all 0.1s ease';
+        }, { passive: true });
+        
+        mobileMenuButton.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.transform = '';
+                this.style.backgroundColor = '';
+                this.style.color = '';
+            }, 100);
+        }, { passive: true });
+        
+        mobileMenuButton.addEventListener('touchcancel', function() {
+            this.style.transform = '';
+            this.style.backgroundColor = '';
+            this.style.color = '';
+        }, { passive: true });
+    }
+
+    // Mobile menu close button click
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', function() {
+            if (navigator.vibrate) {
+                navigator.vibrate(30);
+            }
+            closeMobileMenu();
+        });
+        
+        // Add touch feedback to close button
+        mobileMenuClose.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.9)';
+            this.style.color = '#dc2626';
+            this.style.transition = 'all 0.1s ease';
+        }, { passive: true });
+        
+        mobileMenuClose.addEventListener('touchend', function() {
+            setTimeout(() => {
+                this.style.transform = '';
+                this.style.color = '';
+            }, 100);
+        }, { passive: true });
+        
+        mobileMenuClose.addEventListener('touchcancel', function() {
+            this.style.transform = '';
+            this.style.color = '';
+        }, { passive: true });
+    }
+
+    // Close menu when clicking outside (on the backdrop)
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', function(e) {
+            if (e.target === mobileMenu) {
+                closeMobileMenu();
+            }
+        });
+    }
+
+    // Enhanced Mobile Products dropdown toggle
+    if (mobileProductsToggle && mobileProductsDropdown) {
+        mobileProductsToggle.addEventListener('click', function() {
+            mobileProductsDropdown.classList.toggle('hidden');
+            const chevron = this.querySelector('i');
+            if (chevron) {
+                chevron.classList.toggle('fa-chevron-down');
+                chevron.classList.toggle('fa-chevron-up');
+            }
+            
+            // Add haptic feedback
+            if (navigator.vibrate) {
+                navigator.vibrate(30);
+            }
+            
+            // Add touch feedback to dropdown items when opened
+            if (!mobileProductsDropdown.classList.contains('hidden')) {
+                setTimeout(addTouchFeedback, 50);
+            }
+        });
+    }
+
+    // Enhanced Mobile About dropdown toggle
+    if (mobileAboutToggle && mobileAboutDropdown) {
+        mobileAboutToggle.addEventListener('click', function() {
+            mobileAboutDropdown.classList.toggle('hidden');
+            const chevron = this.querySelector('i');
+            if (chevron) {
+                chevron.classList.toggle('fa-chevron-down');
+                chevron.classList.toggle('fa-chevron-up');
+            }
+            
+            // Add haptic feedback
+            if (navigator.vibrate) {
+                navigator.vibrate(30);
+            }
+            
+            // Add touch feedback to dropdown items when opened
+            if (!mobileAboutDropdown.classList.contains('hidden')) {
+                setTimeout(addTouchFeedback, 50);
+            }
+        });
+    }
+
+    // Close mobile menu when window is resized to desktop
+    window.addEventListener('resize', function() {
+        if (window.innerWidth >= 1024) { // lg breakpoint
+            closeMobileMenu();
+        }
+    });
+
+    // Enhanced keyboard support and modal handling
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            // Close mobile menu
+            closeMobileMenu();
+            
+            // Close desktop dropdowns
+            const dropdowns = ['dropdown-menu', 'dropdown-menu-products', 'profile-dropdown'];
+            dropdowns.forEach(id => {
+                const dropdown = document.getElementById(id);
+                if (dropdown && !dropdown.classList.contains('hidden')) {
+                    dropdown.classList.add('hidden');
+                }
+            });
+            
+            // Close logout modal
+            closeLogoutModal();
+        }
+    });
+
+    // Close logout modal when clicking on the backdrop
+    const logoutModal = document.getElementById('logout-modal');
+    if (logoutModal) {
+        logoutModal.addEventListener('click', function(e) {
+            if (e.target === logoutModal) {
+                closeLogoutModal();
+            }
+        });
+    }
+
+    // Initialize touch feedback when page loads (for initial menu items)
+    setTimeout(addTouchFeedback, 500);
+});
+
+        </script>
+         <div id="logout-modal"
+        class="fixed inset-0 z-[60] flex items-center justify-center hidden">
+        <div id="logout-modal-content"
+          class="bg-white rounded-lg shadow-xl p-6 max-w-md w-full mx-4 transform transition-all duration-300 relative z-[61]">
+          <div class="text-center">
+            <!-- Icon -->
+            <div
+              class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-red-100 mb-4">
+              <i class="fas fa-sign-out-alt text-red-600 text-xl"></i>
+            </div>
+
+            <!-- Title -->
+            <h3 class="text-lg font-medium text-gray-900 mb-2">
+              Confirm Logout
+            </h3>
+
+            <!-- Message -->
+            <p class="text-sm text-gray-500 mb-6">
+              Are you sure you want to logout? You will need to sign in again to
+              access your account.
+            </p>
+
+            <!-- Buttons -->
+            <div
+              class="flex flex-col sm:flex-row gap-3 sm:gap-2 justify-center">
+              <button onclick="closeLogoutModal()"
+                class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 transition-colors duration-200">
+                Cancel
+              </button>
+              <button onclick="confirmLogout()"
+                class="px-4 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition-colors duration-200">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
