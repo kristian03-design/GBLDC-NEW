@@ -1,0 +1,75 @@
+Website Flow for GBLDC
+
+This document outlines the user flow for both public (non-member) and authenticated (member/admin) users of the website.
+
+=========================
+I. Public User Flow (Guest)
+=========================
+
+A. Homepage & Information Browsing
+   1. User lands on `index.html` or `landingpage.html`.
+   2. From here, they can navigate to various informational pages:
+      - About Us (`about-gbldc.html`)
+      - Board of Directors (`board-of-directors.html`)
+      - Committee Officers (`committee-officers.html`)
+      - Loan Services (`loan-products.html`)
+      - Savings Services (`savings-services.html`)
+      - Deposit Services (`deposit-services.html`)
+      - News & Events (`news&events.html`)
+      - Contact Us (`contact-us.html`)
+      - FAQ (`user-faq.html`)
+
+B. Membership Application
+   1. User can learn about membership through `learn-more-about-membership.html`.
+   2. If interested, they need to create first a membership account in `index.html`.
+   3. After navigating to the page of creating membership account, complete all the information and create.
+   4. After completing the all information, Need to verify the email that you use.
+   5. Then after successfully verifying email, you will directly to the  `user-landingpage.html`
+
+
+=========================
+II. Member User Flow (Logged In)
+=========================
+
+A. Dashboard & Account Management
+   1. After logging in, the user is directed to `user-landingpage.html`.
+   2. Members can manage their profile and settings in `account-settings.html`.
+   3. Members can view their own dashboard in `user-dashboard.html`.
+
+
+B. Core Financial Services
+   1. Savings:
+      - View savings information on `savings-page.html`.
+      - Make a deposit using `deposit.html`.
+      - Open a new deposit account via `open-account-deposit.html`.
+   2. Loans:
+      - Members can apply for a loan through a multi-step process starting with `loan-application.html`.
+      - The process includes guarantor information (`guarantor_info_1.html`, `guarantor_info_2.html`, `loan-application_step4.html`), and a final review step (`loan_review&submit.html`).
+      - Members can check the status of their loan applications on `checkloanstatus.html`.
+      - A dedicated loan dashboard (`loandashboard.html`) shows loan status, including specific views for rejected or under-review loans (`loan-dashboard-reject-reviewing.html`).
+   3. Deposit:
+      -  
+
+C. Communication
+   1. A `chat-page.html` is available for members to communicate, possibly with support or admins.
+   2. Theres an dedicated page for asking the staff for the issue of loaning, accounts, paying etc....
+
+=========================
+III. Admin User Flow
+=========================
+
+A. Admin Authentication & Dashboard
+   1. Admins log in through a separate `admin-login.html`.
+   2. After login, they are directed to the `admin-dashboard.html` or a general `admin-page.html`.
+
+B. Management Functions
+   1. User Management:
+      - Admins can view all users in `admin-manage-user.html`.
+      - They can add new users via `admin-add-user.html`.
+   2. Registration Management:
+      - Admins manage new membership registrations through `admin-manage-registration.html`.
+   3. Financial Management:
+      - Manage member loans via `admin-manage-loans.html`.
+      - Manage member savings via `admin-manage-savings.html`.
+   4. Settings:
+      - Admins can configure settings in `admin-settings.html`.

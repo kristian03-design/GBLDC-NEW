@@ -15,241 +15,244 @@ exit;
       crossorigin="anonymous"></script>
     <link rel="icon" type="image/png"
       href="path/images/logocoop-removebg-preview 2.png" sizes="512x512" />
-    <link href="./output.css" rel="stylesheet">
-    <link href="./animation/animation.css" rel="stylesheet">
+    <link href="../src/animation/animation.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
     <!-- Slick JS & CSS (add in <head> if not already included) -->
     <link rel="stylesheet" type="text/css"
       href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
       <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+          <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet">
     <script
       src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="../src/javascript/dropdown.js"></script>
     <script src="../src/javascript/carousel.js"></script>
     <script src="../src/javascript/chatbot.js"></script>
+    <script src="../src/javascript/landingpage.js"></script>
     <script src="../src/javascript/landingpage-user.js"></script>
-    <title>Greater Bulacan Livelihood Development Cooperative - LANDING
-      PAGE</title>
-
-    <style>
-      /* Modern pulse animation for background blobs */
-      @keyframes pulse {
-        0%, 100% { opacity: 0.3; transform: scale(1);}
-        50% { opacity: 0.5; transform: scale(1.15);}
-      }
-      .animate-pulse { animation: pulse 1.5s infinite; }
-      /* Add delay for staggered card animation */
-      .delay-100  { animation-delay: 0.2s !important; }
-      .delay-200 { animation-delay: 0.3s !important; }
-      .delay-400 { animation-delay: 0.6s !important; }
-      .delay-600 { animation-delay: 0.9s !important; }
-
-       </style>
+    <title>Landing Page | GBLDC</title>
   </head>
 
   <body class="bg-white text-gray-800 scroll-smooth" style="font-family: Outfit;">
     <!-- Header Section -->
-    <header
-      class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
-      <div
-        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
-        <!-- Logo Section - Responsive sizing -->
-        <a href="landingpage.html"
-          class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo"
-            class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
-          <span
-            class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
-        </a>
-
-        <!-- Desktop Navigation -->
-        <nav
-          class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
-          <a href="landingpage.html"
-            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
-
-          <!-- Products & Services Dropdown -->
-          <div class="relative group">
-            <button
-              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
-              <span class="whitespace-nowrap">Services</span>
-              <i
-                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
-            </button>
+        <header
+            class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
             <div
-              class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
-              <a href="loan-products.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
-              <a href="deposit.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
-              <a href="deposit.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
-            </div>
-          </div>
+                class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
+                <!-- Logo Section - Responsive sizing -->
+                <a href="landingpage.html"
+                    class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
+                    <img src="path/images/logocoop-removebg-preview 2.png"
+                        alt="GBLDC Logo"
+                        class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
+                    <span
+                        class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
+                </a>
 
-          <!-- About Dropdown -->
-          <div class="relative group">
-            <button
-              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
-              <span>About</span>
-              <i
-                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
-            </button>
-            <div
-              class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
-              <a href="about-gbldc.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
-                GBLDC</a>
-              <a href="#"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
-                & Vision</a>
-              <a href="board-of-directors.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
-                of Directors</a>
-              <a href="committee-officers.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
-                Officers</a>
-            </div>
-          </div>
+                <!-- Desktop Navigation -->
+                <nav
+                    class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
+                    <a href="landingpage.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
 
-          <a href="news&events.html"
-            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
-            & Events</a>
-        </nav>
+                    <!-- Products & Services Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span class="whitespace-nowrap">Product &
+                                Services</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="loan-products.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
+                            <a href="savings-page.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
+                        </div>
+                    </div>
 
-        <!-- Desktop CTA Button -->
-        <div class="hidden lg:flex items-center">
-          <a href="loan-application.html"
-            class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap">
-            Apply loan
-          </a>
-          <div class="ml-4">
-            <div class="relative group">
-              <a href="#" title="User Profile"
-                onclick="toggleProfileDropdown(event)"
-                class="flex items-center gap-2">
-                <img
-                  src="path/images/logocoop-removebg-preview 2.png"
-                  alt="User Avatar"
-                  class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
-                <i
-                  class="fas fa-chevron-down text-gray-500 text-base">
-                </a></i>
-              <!-- Desktop Profile Dropdown Menu -->
-              <div id="profile-dropdown"
-                class="absolute right-0 mt-2 w-72 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
-                <div
-                  class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
-                  <?php echo isset($_SESSION['user_name']) ?
-                  htmlspecialchars($_SESSION['user_name']) :
-                  ''; ?>
+                    <!-- About Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span>About</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <a href="news&events.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
+                        & Events</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+                <div class="hidden lg:flex items-center">
+                    <a href="loan-application.html"
+                        class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap">
+                        Apply Loan
+                    </a>
+                    <div class="ml-4">
+                        <div class="relative group">
+                            <a href="#" title="User Profile"
+                                onclick="toggleProfileDropdown(event)"
+                                class="flex items-center gap-2">
+                                <img
+                                    src="path/images/logocoop-removebg-preview 2.png"
+                                    alt="User Avatar"
+                                    class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
+                                <i
+                                    class="fas fa-chevron-down text-gray-500 text-base">
+                                </a></i>
+                            <!-- Desktop Profile Dropdown Menu -->
+                            <div id="profile-dropdown"
+                                class="absolute right-0 mt-2 w-72 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
+                                <div
+                                    class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
+                                    <?php echo isset($_SESSION['user_name']) ?
+                                    htmlspecialchars($_SESSION['user_name']) :
+                                    ''; ?>
+                                </div>
+                                <a href="loandashboard.html"
+                                    class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan
+                                    Dashboard</a>
+                                <a href="account-settings.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
+                                <a href="help.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help
+                                    & Support</a>
+                                <div class="border-t my-1">
+                                    <a href="index.html"
+                                        onclick="openLogoutModal(event)"
+                                        class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <a href="loandashboard.html"
-                  class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan
-                  Dashboard</a>
-                <a href="account-settings.html"
-                  class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
-                <a href="help.html"
-                  class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help
-                  & Support</a>
-                <div class="border-t my-1">
-                  <a href="index.html"
-                    onclick="openLogoutModal(event)"
-                    class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Mobile menu button -->
-          <button id="mobile-menu-btn"
-            class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
-            onclick="toggleMobileMenu()">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-              viewBox="0 0 24 24" stroke-width="2.5"
-              stroke="currentColor" class="size-6">
-              <path stroke-linecap="round" stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu"
-          class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
-          <nav class="px-4 sm:px-6 py-4 space-y-1">
-            <!-- Mobile Home Link -->
-            <a href="landingpage.html"
-              class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
-              Home
-            </a>
-
-            <!-- Mobile Products & Services -->
-            <div class="space-y-1">
-              <button
-                onclick="toggleDropdownProductsMobile(event)"
-                class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
-                <span>Services</span>
-                <i id="products-chevron"
-                  class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
-              </button>
-              <div id="dropdown-menu-products-mobile"
-                class="hidden ml-4 space-y-1">
-                <a href="loan-products.html"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
-                <a href="deposit.html"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
-                <a href="deposit.html"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
-              </div>
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+                    onclick="toggleMobileMenu()">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 hidden transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
 
-            <!-- Mobile About -->
-            <div class="space-y-1">
-              <button onclick="toggleDropdownMobileAbout(event)"
-                class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
-                <span>About</span>
-                <i id="about-chevron"
-                  class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
-              </button>
-              <div id="dropdown-menu-about-mobile"
-                class="hidden ml-4 space-y-1">
-                <a href="about-gbldc.html"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
-                  GBLDC</a>
-                <a href="#"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
-                  & Vision</a>
-                <a href="board-of-directors.html"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
-                  of Directors</a>
-                <a href="committee-officers.html"
-                  class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
-                  Officers</a>
-              </div>
-            </div>
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+                <nav class="px-4 sm:px-6 py-4 space-y-1">
+                    <!-- Mobile Home Link -->
+                    <a href="landingpage.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        Home
+                    </a>
 
-            <!-- Mobile News & Events -->
-            <a href="news&events.html"
-              class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
-              News & Events
-            </a>
+                    <!-- Mobile Products & Services -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownProductsMobile(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>Product & Services</span>
+                            <i id="products-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-products-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
+                            <a href="savings-page.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+                        </div>
+                    </div>
 
-            <!-- Mobile CTA Button -->
-            <div class="pt-4 border-t border-gray-100 mt-4">
-              <a href="applynow.html"
-                class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 sm:text-center md:text-center">
-                Join Now
-              </a>
+                    <!-- Mobile About -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownMobileAbout(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>About</span>
+                            <i id="about-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-about-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile News & Events -->
+                    <a href="news&events.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        News & Events
+                    </a>
+
+                    <!-- Mobile CTA Button -->
+                    <div class="pt-4 border-t border-gray-100 mt-4">
+                        <a href="applynow.html"
+                            class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200"> Apply Loan
+                        </a>
+                    </div>
+                </nav>
             </div>
-          </nav>
-        </div>
-      </header>
+        </header>
+      <!-- Hero Section -->
       <section
         class="relative w-full min-h-[70vh] flex items-center justify-center pt-20 pb-12 md:pt-32 md:pb-20 overflow-hidden">
         <img src="path/images/meeting 2.png" alt="Hero Banner"
           class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
+          <!--Green Overlay-->
         <div
           class="absolute inset-0 bg-gradient-to-br from-green-700/80 to-green-800/80 opacity-75"></div>
         <div class="relative z-10 max-w-3xl mx-auto text-center px-4">
@@ -260,14 +263,6 @@ exit;
           <p class="text-lg md:text-2xl text-green-100 mb-8 font-light">Building
             stronger communities through cooperative financial services. Join
             thousands of members who trust us for their financial future.</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#join"
-              class="bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow hover:bg-green-700 transition">Become
-              a Member</a>
-            <a href="#services"
-              class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-green-700 transition">Our
-              Services</a>
-          </div>
         </div>
       </section>
       <!-- Products/Services Section -->
@@ -715,203 +710,55 @@ exit;
               </div>
             </section>
 
-            <!-- Floating Chatbot Button & Widget -->
-            <button onclick="toggleChatbot()"
-              class="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-300 focus:outline-none ring-4 ring-green-300/20 animate-bounce"
-              aria-label="Open Chatbot">
-              <i class="fas fa-comments text-2xl"></i>
-            </button>
-            <div id="chatbot-widget"
-              class="fixed bottom-24 right-8 w-80 max-w-full bg-white rounded-2xl shadow-2xl border border-green-100 flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster">
-              <div
-                class="bg-green-600 px-4 py-3 flex items-center gap-3 text-white shadow">
+<!-- Floating Chatbot Button & Widget -->
+          <button onclick="toggleChatbot()"
+            class="fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white w-16 h-16 rounded-full shadow-lg flex items-center justify-center z-50 transition-all duration-300 focus:outline-none ring-4 ring-green-300/20 animate-bounce"
+            aria-label="Open Chatbot">
+            <i class="fas fa-comments text-2xl"></i>
+          </button>
+          <div id="chatbot-widget"
+            class="fixed bottom-24 right-8 w-96 max-w-full bg-white rounded-2xl shadow-2xl border border-green-100 flex-col overflow-hidden z-50 hidden transition-all duration-300 animate-fade-in-up animate_faster">
+            <div
+              class="bg-green-600 px-4 py-3 flex items-center gap-3 text-white shadow">
+              <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC"
+                class="w-8 h-8 rounded-full border-2 border-white shadow" />
+              <span class="font-medium text-left text-base flex-1">Chat with
+                GBLDC</span>
+              <button onclick="toggleChatbot()"
+                class="text-white focus:outline-none hover:text-gray-300 transition-colors"
+                title="Close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chat-messages"
+              class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black custom-scrollbar scroll-behavior-smooth"
+              style="height: 320px; background: transparent;">
+              <div class="flex items-start gap-2">
                 <img src="path/images/logocoop-removebg-preview 2.png"
                   alt="GBLDC"
-                  class="w-8 h-8 rounded-full border-2 border-white shadow" />
-                <span class="font-medium text-left text-base flex-1">Chat with
-                  GBLDC</span>
-                <button onclick="toggleChatbot()"
-                  class="text-white focus:outline-none hover:text-gray-300 transition-colors"
-                  title="Close"><i class="fa-solid fa-xmark"></i></button>
+                  class="w-6 h-6 rounded-full border border-green-200" />
+                <div
+                  class="bg-green-100 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[100%]">Welcome
+                  to GBLDC Chatbot! How can I assist you today?</div>
               </div>
-              <div id="chat-messages"
-                class="flex-1 p-4 overflow-y-auto text-sm space-y-3 text-black custom-scrollbar"
-                style="height: 320px; background: transparent;">
-                <div class="flex items-start gap-2">
-                  <img src="path/images/logocoop-removebg-preview 2.png"
-                    alt="GBLDC"
-                    class="w-6 h-6 rounded-full border border-green-200" />
-                  <div
-                    class="bg-green-100 text-black px-4 py-2 rounded-2xl rounded-bl-none shadow max-w-[100%]">Welcome
-                    to GBLDC Chatbot! How can I assist you today?</div>
-                </div>
-              </div>
-              <div id="typing-indicator"
-                class="px-6 pb-2 text-xs text-gray-500 hidden">
-                <span
-                  class="border bg-green-600 text-white py-2 px-2 rounded-lg">GBLDC
-                  is
-                  typing...</span>
-              </div>
-              <form id="chat-form"
-                class="flex p-2 border-t bg-white/80 backdrop-blur rounded-b-2xl shadow-inner text-black gap-2">
-                <input id="chat-input" type="text"
-                  placeholder="Type your message..."
-                  class="flex-1 px-4 py-2 border border-green-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 text-black transition-shadow shadow-sm" />
-                <button type="submit"
-                  class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition-colors shadow"><i
-                    class="fas fa-paper-plane"></i></button>
-              </form>
             </div>
-          </section>
-
-          <!-- Footer  -->
-          <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
-            <div class="max-w-7xl mx-auto px-4">
-              <div
-                class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
-                <div class="flex flex-col items-center md:items-start">
-                  <h4
-                    class="font-semibold mb-3 uppercase tracking-wide text-lg">Products</h4>
-                  <ul class="space-y-2">
-                    <li><a href="loan-products.html"
-                        class="hover:underline transition-colors">Loan
-                        Products</a></li>
-                    <li><a href="deposit.html"
-                        class="hover:underline transition-colors">Deposit
-                        Products</a></li>
-                    <li><a href="#"
-                        class="hover:underline transition-colors">Savings
-                        Products</a></li>
-                  </ul>
-                </div>
-                <div class="flex flex-col items-center md:items-start">
-                  <h4
-                    class="font-semibold mb-3 uppercase tracking-wide text-lg">About</h4>
-                  <ul class="space-y-2">
-                    <li><a href="about-gbldc.html"
-                        class="hover:underline transition-colors">About
-                        GBLDC</a></li>
-                    <li><a href="#"
-                        class="hover:underline transition-colors duration-200">Senior
-                        Management</a></li>
-                    <li><a href="#"
-                        class="hover:underline transition-colors duration-200">Officers
-                        & Committees</a></li>
-                  </ul>
-                </div>
-                <div class="flex flex-col items-center md:items-start">
-                  <h4
-                    class="font-semibold mb-3 uppercase tracking-wide text-lg">Quicklinks</h4>
-                  <ul class="space-y-2">
-                    <li><a href="https://ifernglobal.com.ph/"
-                        class="hover:underline transition-colors">iFern
-                        Global</a></li>
-                    <li><a href="index.html"
-                        class="hover:underline transition-colors">Member Portal
-                        Login</a></li>
-                    <li><a href="#"
-                        class="hover:underline transition-colors">Contact
-                        Us</a></li>
-                    <li><a href="applynow.html"
-                        class="hover:underline transition-colors">Apply
-                        Now</a></li>
-                    <li><a href="#"
-                        class="hover:underline transition-colors">Feedback</a></li>
-                  </ul>
-                </div>
-                <div class="flex flex-col items-center md:items-start">
-                  <h4
-                    class="font-semibold mb-3 uppercase tracking-wide text-lg">Get
-                    Our App</h4>
-                  <div class="flex gap-2 mb-2">
-                    <a href="https://play.google.com/store" target="_blank"><img
-                        src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                        alt="Google Play" class="h-10 rounded shadow" /></a>
-                    <a href="https://www.apple.com/app-store/"
-                      target="_blank"><img
-                        src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                        alt="App Store" class="h-10 rounded shadow" /></a>
-                  </div>
-                  <p class="text-xs text-white">Download our app for a better
-                    banking
-                    experience.</p>
-                </div>
-              </div>
-              <div
-                class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2">
-                <div class="text-center md:text-left">GREATER BULACAN LIVELIHOOD
-                  DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.</div>
-                <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
-                  <a href="#"
-                    class="text-white  text-sm transition-colors">Privacy
-                    Policy</a>
-                  <a href="#"
-                    class="text-white  text-sm transition-colors">Terms
-                    of
-                    Service</a>
-                  <a href="#"
-                    class="text-white  text-sm transition-colors">Cookie
-                    Policy</a>
-                </div>
-              </div>
-
+            <div id="typing-indicator"
+              class="px-6 pb-2 text-xs text-gray-500 hidden">
+              <span
+                class="border bg-green-600 text-white py-2 px-2 rounded-lg">GBLDC
+                is
+                typing...</span>
             </div>
-          </footer>
-          <!-- JS SCRIPT -->
-          <script src="../src/javascript/chatbot.js"></script>
-          <script src="../src/javascript/landingpage.js"></script>
-
-          <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const testimonialSwiper = new Swiper('.testimonial-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 30,
-                loop: true,
-                
-                autoplay: {
-                    delay: 6000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                },
-                
-                effect: 'slide',
-                
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    dynamicBullets: true,
-                },
-                
-                keyboard: {
-                    enabled: true,
-                    onlyInViewport: true,
-                },
-                
-                a11y: {
-                    enabled: true,
-                    prevSlideMessage: 'Previous testimonial',
-                    nextSlideMessage: 'Next testimonial',
-                },
-                
-                breakpoints: {
-                    640: {
-                        spaceBetween: 20,
-                    },
-                    768: {
-                        spaceBetween: 30,
-                    }
-                }
-            });
-        });
-    </script>
-
-      <!-- Logout Confirmation Modal -->
+            <form id="chat-form"
+              class="flex p-2 border-t bg-white/80 backdrop-blur rounded-b-2xl shadow-inner text-black gap-2">
+              <input id="chat-input" type="text"
+                placeholder="Type your message..."
+                class="flex-1 px-4 py-2 border border-green-200 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 text-black transition-shadow shadow-sm" />
+              <button type="submit"
+                class="bg-green-600 text-white px-5 py-2 rounded-full hover:bg-green-700 transition-colors shadow"><i
+                  class="fas fa-paper-plane"></i></button>
+            </form>
+          </div>
+        </section>
+        <!-- Logout Confirmation Modal -->
       <div id="logout-modal"
         class="fixed inset-0 z-[60] flex items-center justify-center hidden">
         <div id="logout-modal-content"
@@ -950,5 +797,98 @@ exit;
         </div>
       </div>
 
+        <!-- Footer  -->
+        <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
+          <div class="max-w-7xl mx-auto px-4">
+            <div
+              class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
+              <div class="flex flex-col items-center md:items-start">
+                <h4
+                  class="font-semibold mb-3 uppercase tracking-wide text-lg">Products</h4>
+                <ul class="space-y-2">
+                  <li><a href="loan-products.html"
+                      class="hover:underline transition-colors">Loan
+                      Products</a></li>
+                  <li><a href="deposit.html"
+                      class="hover:underline transition-colors">Deposit
+                      Products</a></li>
+                  <li><a href="#"
+                      class="hover:underline transition-colors">Savings
+                      Products</a></li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center md:items-start">
+                <h4
+                  class="font-semibold mb-3 uppercase tracking-wide text-lg">About</h4>
+                <ul class="space-y-2">
+                  <li><a href="about-gbldc.html"
+                      class="hover:underline transition-colors">About
+                      GBLDC</a></li>
+                  <li><a href="#"
+                      class="hover:underline transition-colors duration-200">Senior
+                      Management</a></li>
+                  <li><a href="#"
+                      class="hover:underline transition-colors duration-200">Officers
+                      & Committees</a></li>
+                  <li><a href="#"
+                      class="hover:underline transition-colors duration-200">About Membership</a></li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center md:items-start">
+                <h4
+                  class="font-semibold mb-3 uppercase tracking-wide text-lg">Quicklinks</h4>
+                <ul class="space-y-2">
+                  <li><a href="https://ifernglobal.com.ph/"
+                      class="hover:underline transition-colors">iFern
+                      Global</a></li>
+                  <li><a href="index.html"
+                      class="hover:underline transition-colors">Member Portal
+                      Login</a></li>
+                  <li><a href="#"
+                      class="hover:underline transition-colors">Contact
+                      Us</a></li>
+                  <li><a href="applynow.html"
+                      class="hover:underline transition-colors">Apply
+                      Now</a></li>
+                  <li><a href="#"
+                      class="hover:underline transition-colors">Feedback</a></li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center md:items-start">
+                <h4
+                  class="font-semibold mb-3 uppercase tracking-wide text-lg">Get
+                  Our App</h4>
+                <div class="flex gap-2 mb-2">
+                  <a href="https://play.google.com/store" target="_blank"><img
+                      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                      alt="Google Play" class="h-10 rounded shadow" /></a>
+                  <a href="https://www.apple.com/app-store/"
+                    target="_blank"><img
+                      src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                      alt="App Store" class="h-10 rounded shadow" /></a>
+                </div>
+                <p class="text-xs text-white">Download our app for a better
+                  banking
+                  experience.</p>
+              </div>
+            </div>
+            <div
+              class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2">
+              <div class="text-center md:text-left">GREATER BULACAN LIVELIHOOD
+                DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.</div>
+              <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
+                <a href="#"
+                  class="text-white text-sm transition-colors hover:underline">Privacy
+                  Policy</a>
+                <a href="#" class="text-white  text-sm transition-colors hover:underline">Terms
+                  of
+                  Service</a>
+                <a href="#" class="text-white  text-sm transition-colors hover:underline">Cookie
+                  Policy</a>
+              </div>
+            </div>
+
+          </div>
+        </footer>
   </body>
 </html>
