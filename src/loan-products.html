@@ -1,377 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Loan Products | GBLDC</title>
-  <link rel="stylesheet" href="output.css" />
-  <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-   <script src="../src/javascript/dropdown.js"></script>
-   <link href="../src/animation/animation.css" rel="stylesheet">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans antialiased">
-  <!-- Header Section (reuse landing page style) -->
-  <header class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
-        <div class="container-lg mx-auto flex justify-between items-center p-4">
-            <!-- Logo and Title -->
-            <div class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
-                <a href="landingpage.html" class="flex-shrink-0">
-                    <img src="path/images/logocoop-removebg-preview 2.png" 
-                         alt="GBLDC Logo" 
-                         class="w-12 h-12 sm:w-16 sm:h-14 lg:w-18 lg:h-16 bg-auto">
-                </a>
-                <h1 class="text-xs sm:text-base md:text-lg lg:text-xl font-medium animate-fade-in-right truncate">
-                    Greater Bulacan Livelihood Development Cooperative
-                </h1>
-            </div>
-            
-            <!-- Desktop Navigation -->
-            <nav class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
-                <a href="landingpage.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
-                    HOME
-                </a>
-                
-                <!-- Products & Services Dropdown -->
-                <div class="relative" id="dropdown-trigger">
-                    <a href="#" 
-                       class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
-                       onclick="toggleDropdownProducts(event)">
-                        PRODUCT & SERVICES
-                        <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
-                    </a>
-                    <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
-                         id="dropdown-menu-products">
-                        <a href="loan-products.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Loans
-                        </a>
-                        <a href="deposit.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Deposits
-                        </a>
-                        <a href="insurance.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Insurance
-                        </a>
-                        <a href="social-services.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Social Services
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- About Dropdown -->
-                <div class="relative" id="dropdown-trigger-about">
-                    <a href="#" 
-                       class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
-                       onclick="toggleDropdown(event)">
-                        ABOUT
-                        <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
-                    </a>
-                    <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
-                         id="dropdown-menu">
-                        <a href="about-gbldc.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            About GBLDC
-                        </a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Mission & Vision
-                        </a>
-                        <a href="board-of-directors.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Board of Directors
-                        </a>
-                        <a href="committee-officers.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
-                            Committee Officers
-                        </a>
-                    </div>
-                </div>
-                
-                <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
-                    NEWS & EVENTS
-                </a>
-            </nav>
-            
-            <!-- Desktop Buttons -->
-            <div class="hidden lg:flex items-center gap-3 xl:gap-4">
-                <a href="index.html" class="bg-green-500 text-white px-4 xl:px-7 py-2 hover:bg-green-600 rounded-md font-normal whitespace-nowrap text-sm xl:text-base">
-                    Login
-                </a>
-                <a href="applynow.html" class="border border-green-600 text-black px-4 xl:px-6 py-2 rounded-md font-normal hover:bg-green-50 whitespace-nowrap text-sm xl:text-base">
-                    Apply Now
-                </a>
-            </div>
-            
-            <!-- Tablet Buttons (hidden on mobile and desktop) -->
-            <div class="hidden md:flex lg:hidden items-center gap-2">
-                <a href="index.html" class="bg-green-500 text-white px-3 py-2 hover:bg-green-600 rounded-md font-normal text-sm">
-                    Login
-                </a>
-                <a href="applynow.html" class="border border-green-600 text-black px-3 py-2 rounded-md font-normal hover:bg-green-50 text-sm">
-                    Apply
-                </a>
-            </div>
-            
-            <!-- Mobile Menu Button -->
-            <button class="lg:hidden text-black focus:outline-none animate-fade-in ml-2 flex-shrink-0"
-                    onclick="toggleMobileMenu()">
-                <i class="fas fa-bars text-xl sm:text-2xl"></i>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Loan Products | GBLDC</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="path/images/logocoop-removebg-preview 2.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="../src/javascript/dropdown.js"></script>
+    <link href="../src/animation/animation.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../src/javascript/landingpage.js" defer></script>
+  </head>
+  <body
+    class="bg-white text-gray-800 scroll-smooth"
+    style="font-family: Outfit"
+  >
+    <!-- NAVIGATION -->
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100"
+    >
+      <div
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0"
+      >
+        <!-- Logo Section - Responsive sizing -->
+        <a
+          href="landingpage.html"
+          class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0"
+        >
+          <img
+            src="path/images/logocoop-removebg-preview 2.png"
+            alt="GBLDC Logo"
+            class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+          />
+          <span
+            class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap"
+            >GBLDC</span
+          >
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav
+          class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium"
+        >
+          <a
+            href="landingpage.html"
+            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+            >Home</a
+          >
+
+          <!-- Products & Services Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none"
+            >
+              <span class="whitespace-nowrap">Services</span>
+              <i
+                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"
+              ></i>
             </button>
-        </div>
-        
-        <!-- Mobile Navigation -->
-        <nav class="lg:hidden bg-white shadow-lg hidden" id="mobile-menu">
-            <div class="px-4 py-2 space-y-1">
-                <a href="landingpage.html" class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
-                    HOME
-                </a>
-                
-                <!-- Mobile Products & Services Dropdown -->
-                <div class="relative">
-                    <a href="#" 
-                       class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
-                       onclick="toggleDropdownProductsMobile(event)">
-                        <span>PRODUCT & SERVICES</span>
-                        <i class="fas fa-chevron-down transition-transform duration-200" id="products-arrow"></i>
-                    </a>
-                    <div class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden" id="dropdown-menu-products-mobile">
-                        <a href="loan-products.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Loans
-                        </a>
-                        <a href="deposit.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Deposits
-                        </a>
-                        <a href="insurance.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Insurance
-                        </a>
-                        <a href="social-services.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Social Services
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Mobile About Dropdown -->
-                <div class="relative">
-                    <a href="#" 
-                       class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
-                       onclick="toggleDropdownMobileAbout(event)">
-                        <span>ABOUT</span>
-                        <i class="fas fa-chevron-down transition-transform duration-200" id="about-arrow"></i>
-                    </a>
-                    <div class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden" id="dropdown-menu-about-mobile">
-                        <a href="about-gbldc.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            About GBLDC
-                        </a>
-                        <a href="#" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Mission & Vision
-                        </a>
-                        <a href="board-of-directors.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Board of Directors
-                        </a>
-                        <a href="committee-officers.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
-                            Committee Officers
-                        </a>
-                    </div>
-                </div>
-                
-                <a href="news&events.html" class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
-                    NEWS & EVENTS
-                </a>
-                
-                <!-- Mobile Buttons -->
-                <div class="flex flex-col items-stretch mt-4 space-y-2 px-4 pb-4">
-                    <a href="index.html" class="bg-green-600 text-white px-4 py-3 rounded-lg font-normal hover:bg-green-800 text-center transition-colors duration-200">
-                        Login
-                    </a>
-                    <a href="applynow.html" class="border border-green-600 text-black px-4 py-3 rounded-lg font-normal hover:bg-green-50 text-center transition-colors duration-200">
-                        Apply Now
-                    </a>
-                </div>
+            <div
+              class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+            >
+              <a
+                href="loan-products.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors"
+                >Loans</a
+              >
+              <a
+                href="deposit.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors"
+                >Deposits</a
+              >
+              <a
+                href="savings-page.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors"
+                >Savings</a
+              >
             </div>
+          </div>
+
+          <!-- About Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none"
+            >
+              <span>About</span>
+              <i
+                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"
+              ></i>
+            </button>
+            <div
+              class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+            >
+              <a
+                href="about-gbldc.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors"
+                >About GBLDC</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors"
+                >Mission & Vision</a
+              >
+              <a
+                href="board-of-directors.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors"
+                >Board of Directors</a
+              >
+              <a
+                href="committee-officers.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors"
+                >Committee Officers</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="news&events.html"
+            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap"
+            >News & Events</a
+          >
         </nav>
+
+        <!-- Desktop CTA Button -->
+        <div class="hidden lg:flex items-center">
+          <a
+            href="applynow.html"
+            class="bg-green-600 text-white px-4 xl:px-7 py-2 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 text-sm xl:text-base whitespace-nowrap"
+          >
+            Join Now
+          </a>
+        </div>
+
+        <!-- Mobile menu button -->
+        <button
+          id="mobile-menu-btn"
+          class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+          onclick="toggleMobileMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div
+        id="mobile-menu"
+        class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40"
+      >
+        <nav class="px-4 sm:px-6 py-4 space-y-1">
+          <!-- Mobile Home Link -->
+          <a
+            href="landingpage.html"
+            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium"
+          >
+            Home
+          </a>
+
+          <!-- Mobile Products & Services -->
+          <div class="space-y-1">
+            <button
+              onclick="toggleDropdownProductsMobile(event)"
+              class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left"
+            >
+              <span>Services</span>
+              <i
+                id="products-chevron"
+                class="fas fa-chevron-down text-sm transition-transform duration-200"
+              ></i>
+            </button>
+            <div
+              id="dropdown-menu-products-mobile"
+              class="hidden ml-4 space-y-1"
+            >
+              <a
+                href="loan-products.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Loans</a
+              >
+              <a
+                href="deposit.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Deposits</a
+              >
+              <a
+                href="savings-page.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Savings</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile About -->
+          <div class="space-y-1">
+            <button
+              onclick="toggleDropdownMobileAbout(event)"
+              class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left"
+            >
+              <span>About</span>
+              <i
+                id="about-chevron"
+                class="fas fa-chevron-down text-sm transition-transform duration-200"
+              ></i>
+            </button>
+            <div id="dropdown-menu-about-mobile" class="hidden ml-4 space-y-1">
+              <a
+                href="about-gbldc.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >About GBLDC</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Mission & Vision</a
+              >
+              <a
+                href="board-of-directors.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Board of Directors</a
+              >
+              <a
+                href="committee-officers.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Committee Officers</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile News & Events -->
+          <a
+            href="news&events.html"
+            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium"
+          >
+            News & Events
+          </a>
+
+          <!-- Mobile CTA Button -->
+          <div class="pt-4 border-t border-gray-100 mt-4">
+            <a
+              href="applynow.html"
+              class="block w-full bg-green-600 text-white text-center px-6 py-3 rounded-full font-medium hover:bg-green-700 transition-colors duration-200 sm:text-center md:text-center"
+            >
+              Join Now
+            </a>
+          </div>
+        </nav>
+      </div>
     </header>
+    <!-- Loan Hero Section -->
+    <section class="pt-28 pb-12 px-4 bg-gradient-to-r from-green-50 to-white">
+      <div
+        class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 mt-20"
+      >
+        <div class="flex-1 animate-fade-in">
+          <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">
+            Loan with GBLDC
+          </h2>
+          <p class="text-gray-700 text-lg mb-6">
+            GBLDC offers a variety of loan services designed to help you achieve
+            your goals—whether for business, education, home, or personal needs.
+            Enjoy flexible terms, fast approval, and member-friendly service.
+          </p>
+          <ul class="list-disc list-inside text-gray-700 mb-6">
+            <li>Competitive interest rates</li>
+            <li>Flexible payment options</li>
+            <li>Quick and easy application</li>
+          </ul>
+          <a
+            href="applynow.html"
+            class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors"
+            >Apply for a Loan</a
+          >
+        </div>
+        <div class="flex-1 flex justify-center animate-fade-up">
+          <img
+            src="path/images/loan-services.png"
+            alt="Loan Services"
+            class="w-full max-w-md object-cover bg-transparent"
+          />
+        </div>
+      </div>
+    </section>
 
-  <!-- Loan Hero Section -->
-  <section class="pt-28 pb-12 px-4 bg-gradient-to-r from-green-50 to-white">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 mt-20">
-      <div class="flex-1 animate-fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold text-green-800 mb-4">Loan Products</h2>
-        <p class="text-gray-700 text-lg mb-6">
-          GBLDC offers a variety of loan products designed to help you achieve your goals—whether for business, education, home, or personal needs. Enjoy flexible terms, fast approval, and member-friendly service.
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-6">
-          <li>Competitive interest rates</li>
-          <li>Flexible payment options</li>
-          <li>Quick and easy application</li>
-        </ul>
-        <a href="applynow.html" class="inline-block bg-green-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-green-700 transition-colors">Apply for a Loan</a>
+    <!-- Loan Products Section -->
+    <section class="max-w-5xl mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">
+        Our Loan Products
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Example Loan 1 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in"
+        >
+          <img
+            src="path/images/flexicomboline.png"
+            alt="Flexi-Combo Line"
+            class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Flexi-Combo Line
+          </h4>
+          <p class="text-gray-700 text-sm">
+            A credit line facility that is more competitive and responsive to
+            the needs of the member-borrower.
+          </p>
+        </div>
+        <!-- Example Loan 2 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-100"
+        >
+          <img
+            src="path/images/cashbag.png"
+            alt="Secured Consumer Loan"
+            class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Secured Consumer Loan
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Secured loan product intended for non-business related purposes.
+          </p>
+        </div>
+        <!-- Example Loan 3 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-200"
+        >
+          <img
+            src="path/images/sunergyloan.png"
+            alt="Sunergy Loan"
+            class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Sunergy Loan
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Finance your purchase of a Solar Energy Power System to reduce your
+            monthly electric bill.
+          </p>
+        </div>
+        <!-- Example Loan 4 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-300"
+        >
+          <img
+            src="path/images/motorcycle.png"
+            alt="Motorcycle Loan"
+            class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Motorcycle Loan
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Loan facility to help members acquire a brand new motorcycle.
+          </p>
+        </div>
+        <!-- Example Loan 5 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-400"
+        >
+          <img
+            src="path/images/backtobackloan.png"
+            alt="Back to Back Loan"
+            class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Back to Back Loan
+          </h4>
+          <p class="text-gray-700 text-sm">
+            A loan package that is more competitive and responsive to the needs
+            of the members.
+          </p>
+        </div>
+        <!-- Example Loan 6 -->
+        <div
+          class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-500"
+        >
+          <img
+            src="path/images/group-people.png"
+            alt="Kaagapay Loan"
+            class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Kaagapay Loan
+          </h4>
+          <p class="text-gray-700 text-sm">
+            For members in difficult financial situations arising from
+            unforeseen events.
+          </p>
+        </div>
       </div>
-      <div class="flex-1 flex justify-center animate-fade-up">
-        <img src="path/images/loan-services.png" alt="Loan Services" class=" w-full max-w-md object-cover bg-transparent" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Loan Products Section -->
-  <section class="max-w-5xl mx-auto px-4 py-10">
-    <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">Our Loan Products</h2>
-    <div class="grid md:grid-cols-2 gap-8">
-      <!-- Example Loan 1 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in">
-        <img src="path/images/flexicomboline.png" alt="Flexi-Combo Line" class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600" />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Flexi-Combo Line</h4>
-        <p class="text-gray-700 text-sm">A credit line facility that is more competitive and responsive to the needs of the member-borrower.</p>
+    <!-- Loan Benefits Section -->
+    <section class="max-w-5xl mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">
+        Why Choose GBLDC Loans?
+      </h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div
+          class="rounded-xl shadow-md p-6 flex flex-col items-center text-center"
+        >
+          <img
+            src="path/images/fast-approval.png"
+            alt="Fast Approval"
+            class="w-34 h-34 object-contain rounded-lg mb-4"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Fast Approval
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Quick processing so you get your funds when you need them.
+          </p>
+        </div>
+        <div
+          class="rounded-xl shadow-md p-6 flex flex-col items-center text-center"
+        >
+          <img
+            src="path/images/flexible-terms-services.png"
+            alt="Flexible Terms"
+            class="w-34 h-34 object-contain rounded-lg mb-4"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Flexible Terms
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Choose payment options that fit your budget and lifestyle.
+          </p>
+        </div>
+        <div
+          class="rounded-xl shadow-md p-6 flex flex-col items-center text-center"
+        >
+          <img
+            src="path/images/member-support.png"
+            alt="Member Support"
+            class="w-34 h-34 object-contain rounded-lg mb-4"
+          />
+          <h4 class="text-lg font-semibold text-green-700 mb-2">
+            Member Support
+          </h4>
+          <p class="text-gray-700 text-sm">
+            Personalized assistance from our cooperative team.
+          </p>
+        </div>
       </div>
-      <!-- Example Loan 2 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-100">
-        <img src="path/images/cashbag.png" alt="Secured Consumer Loan" class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600" />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Secured Consumer Loan</h4>
-        <p class="text-gray-700 text-sm">Secured loan product intended for non-business related purposes.</p>
-      </div>
-      <!-- Example Loan 3 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-200 ">
-        <img src="path/images/sunergyloan.png" alt="Sunergy Loan" class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600" />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Sunergy Loan</h4>
-        <p class="text-gray-700 text-sm">Finance your purchase of a Solar Energy Power System to reduce your monthly electric bill.</p>
-      </div>
-      <!-- Example Loan 4 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-300">
-        <img src="path/images/motorcycle.png" alt="Motorcycle Loan" class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600" />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Motorcycle Loan</h4>
-        <p class="text-gray-700 text-sm">Loan facility to help members acquire a brand new motorcycle.</p>
-      </div>
-      <!-- Example Loan 5 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-400">
-        <img src="path/images/backtobackloan.png" alt="Back to Back Loan" class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600" />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Back to Back Loan</h4>
-        <p class="text-gray-700 text-sm">A loan package that is more competitive and responsive to the needs of the members.</p>
-      </div>
-      <!-- Example Loan 6 -->
-      <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-center text-center animate-fade-in delay-500">
-        <img src="path/images/group-people.png" alt="Kaagapay Loan" class="w-34 h-34 object-cover rounded-full mb-4 shadow p-6 bg-green-600" />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Kaagapay Loan</h4>
-        <p class="text-gray-700 text-sm">For members in difficult financial situations arising from unforeseen events.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Loan Benefits Section -->
-  <section class="max-w-5xl mx-auto px-4 py-10">
-    <h2 class="text-2xl font-bold text-green-800 mb-6 text-center">Why Choose GBLDC Loans?</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <div class=" rounded-xl shadow-md p-6 flex flex-col items-center text-center">
-        <img src="path/images/fast-approval.png" alt="Fast Approval" class="w-34 h-34 object-contain rounded-lg mb-4 " />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Fast Approval</h4>
-        <p class="text-gray-700 text-sm">Quick processing so you get your funds when you need them.</p>
-      </div>
-      <div class=" rounded-xl shadow-md p-6 flex flex-col items-center text-center">
-        <img src="path/images/flexible-terms-services.png" alt="Flexible Terms" class="w-34 h-34 object-contain rounded-lg mb-4 " />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Flexible Terms</h4>
-        <p class="text-gray-700 text-sm">Choose payment options that fit your budget and lifestyle.</p>
-      </div>
-      <div class="rounded-xl shadow-md p-6 flex flex-col items-center text-center">
-        <img src="path/images/member-support.png" alt="Member Support" class="w-34 h-34 object-contain rounded-lg mb-4 " />
-        <h4 class="text-lg font-semibold text-green-700 mb-2">Member Support</h4>
-        <p class="text-gray-700 text-sm">Personalized assistance from our cooperative team.</p>
-      </div>
-    </div>
     </section>
 
     <!-- Contact for Loan -->
-  <section class="max-w-3xl mx-auto px-4 py-10">
-    <div class="rounded-xl shadow-md p-6 flex flex-col md:flex-row items-center gap-6">
-      <div class="flex-1">
-        <h2 class="text-xl font-bold text-green-800 mb-2">Need Help?</h2>
-        <p class="text-gray-700 mb-2">
-          <strong>Email:</strong> <a href="mailto:gbldc@gmail.com" class="text-green-700 underline">gbldc@gmail.com</a><br>
-          <strong>Phone:</strong> (044) 123-4570<br>
-          <strong>Office:</strong> GBLDC Main Office, Brgy. Makinabang Baliuag, Bulacan
-        </p>
+    <section class="max-w-3xl mx-auto px-4 py-10">
+      <div
+        class="rounded-xl shadow-md p-6 flex flex-col md:flex-row items-center gap-6"
+      >
+        <div class="flex-1">
+          <h2 class="text-xl font-bold text-green-800 mb-2">Need Help?</h2>
+          <p class="text-gray-700 mb-2">
+            <strong>Email:</strong>
+            <a href="mailto:gbldc@gmail.com" class="text-green-700 underline"
+              >gbldc@gmail.com</a
+            ><br />
+            <strong>Phone:</strong> (044) 123-4570<br />
+            <strong>Office:</strong> GBLDC Main Office, Brgy. Makinabang
+            Baliuag, Bulacan
+          </p>
+        </div>
+        <div class="flex-1 flex justify-center">
+          <img
+            src="path/images/help-support.png"
+            alt="Loan Contact"
+            class="w-40 h-40 object-cover rounded-lg"
+          />
+        </div>
       </div>
-      <div class="flex-1 flex justify-center">
-        <img src="path/images/help-support.png" alt="Loan Contact" class="w-40 h-40 object-cover rounded-lg" />
-      </div>
-    </div>
-  </section>
+    </section>
 
-  
-     <!-- FOOTER -->
-    <footer class="bg-green-700 text-white py-12 animate-fade-in-up">
-      <div class="max-w-7xl mx-auto px-4 mt-4">
-        <div
-          class="grid grid-cols-1 lg:grid-cols-4 gap-6 text-sm text-gray-200 mt-5">
-
-          <!-- Products & Services -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Products &
-              Services</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="loan.html"
-                  class="hover:underline transition-colors duration-200">Loan
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Deposit
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Insurance
-                  Products</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Social
-                  Services</a></li>
+    <!-- FOOTER -->
+    <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Products
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="loan-products.html"
+                  class="hover:underline transition-colors"
+                  >Loan Products</a
+                >
+              </li>
+              <li>
+                <a href="deposit.html" class="hover:underline transition-colors"
+                  >Deposit Products</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Savings Products</a
+                >
+              </li>
             </ul>
           </div>
-
-          <!-- About -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">About</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">About
-                  Greater Bulacan Livelihood Development Cooperative</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Senior
-                  Management</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Officers
-                  & Committees</a></li>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              About
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about-gbldc.html"
+                  class="hover:underline transition-colors"
+                  >About GBLDC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline transition-colors duration-200"
+                  >Senior Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline transition-colors duration-200"
+                  >Officers & Committees</a
+                >
+              </li>
             </ul>
           </div>
-
-          <!-- Other Quicklinks -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Other
-              Quicklinks</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">News &
-                  Events</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">FAQs</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Contact</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Apply
-                  Now</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Downloadable
-                  Forms</a></li>
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Privacy
-                  Policy</a></li>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Quicklinks
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://ifernglobal.com.ph/"
+                  class="hover:underline transition-colors"
+                  >iFern Global</a
+                >
+              </li>
+              <li>
+                <a href="index.html" class="hover:underline transition-colors"
+                  >Member Portal Login</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="applynow.html"
+                  class="hover:underline transition-colors"
+                  >Apply Now</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Feedback</a
+                >
+              </li>
             </ul>
           </div>
-          <!-- Download Our App -->
-          <div>
-            <h4 class="font-semibold uppercase mb-4 text-white">Download Our
-              App</h4>
-            <ul class="space-y-2 font-light">
-              <li><a href="#"
-                  class="hover:underline transition-colors duration-200">Click
-                  Here to Download App</a></li>
-            </ul>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Get Our App
+            </h4>
+            <div class="flex gap-2 mb-2">
+              <a href="https://play.google.com/store" target="_blank"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  class="h-10 rounded shadow"
+              /></a>
+              <a href="https://www.apple.com/app-store/" target="_blank"
+                ><img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store"
+                  class="h-10 rounded shadow"
+              /></a>
+            </div>
+            <p class="text-xs text-white">
+              Download our app for a better banking experience.
+            </p>
           </div>
         </div>
-        <!-- Copyright -->
-        <div class="mt-12 text-center text-sm text-white font-normal">
-          GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS
-          RESERVED.
+        <div
+          class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2"
+        >
+          <div class="text-center md:text-left">
+            GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL
+            RIGHTS RESERVED.
+          </div>
+          <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
+            <a href="#" class="text-white text-sm transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-sm transition-colors"
+              >Terms of Service</a
+            >
+            <a href="#" class="text-white text-sm transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
         </div>
       </div>
     </footer>
-</body>
+  </body>
 </html>

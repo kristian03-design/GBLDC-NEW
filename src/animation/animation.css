@@ -618,3 +618,6 @@ select.border-red-500 {
     transform: translateY(0);
   }
 }
+ html {
+  scroll-behavior: smooth;
+ }
