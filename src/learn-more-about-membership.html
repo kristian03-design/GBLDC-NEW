@@ -25,168 +25,250 @@
   </head>
 
   <body
-    class="bg-white text-gray-800 scroll-smooth"
+    class="bg-white text-gray-800 scroll-behavior-smooth"
     style="font-family: Outfit"
   >
     <!--Navigation-->
-<header
-      class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+    <header
+      class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100"
+    >
       <div
-        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
+        class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0"
+      >
         <!-- Logo Section - Responsive sizing -->
-        <a href="landingpage.html"
-          class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
-          <img src="path/images/logocoop-removebg-preview 2.png"
+        <a
+          href="landingpage.html"
+          class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0"
+        >
+          <img
+            src="path/images/logocoop-removebg-preview 2.png"
             alt="GBLDC Logo"
-            class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
+            class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain"
+          />
           <span
-            class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
+            class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap"
+            >GBLDC</span
+          >
         </a>
 
         <!-- Desktop Navigation -->
         <nav
-          class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
-          <a href="landingpage.html"
-            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
+          class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium"
+        >
+          <a
+            href="landingpage.html"
+            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200"
+            >Home</a
+          >
 
           <!-- Products & Services Dropdown -->
           <div class="relative group">
             <button
-              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none"
+            >
               <span class="whitespace-nowrap">Services</span>
               <i
-                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"
+              ></i>
             </button>
             <div
-              class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
-              <a href="loan-products.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
-              <a href="deposit.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
-              <a href="deposit.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
+              class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+            >
+              <a
+                href="loan-products.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors"
+                >Loans</a
+              >
+              <a
+                href="deposit.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors"
+                >Deposits</a
+              >
+              <a
+                href="deposit.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors"
+                >Savings</a
+              >
             </div>
           </div>
 
           <!-- About Dropdown -->
           <div class="relative group">
             <button
-              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+              class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none"
+            >
               <span>About</span>
               <i
-                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"
+              ></i>
             </button>
             <div
-              class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
-              <a href="about-gbldc.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
-                GBLDC</a>
-              <a href="#"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
-                & Vision</a>
-              <a href="board-of-directors.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
-                of Directors</a>
-              <a href="committee-officers.html"
-                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
-                Officers</a>
+              class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20"
+            >
+              <a
+                href="about-gbldc.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors"
+                >About GBLDC</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors"
+                >Mission & Vision</a
+              >
+              <a
+                href="board-of-directors.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors"
+                >Board of Directors</a
+              >
+              <a
+                href="committee-officers.html"
+                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors"
+                >Committee Officers</a
+              >
             </div>
           </div>
 
-          <a href="news&events.html"
-            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
-            & Events</a>
+          <a
+            href="news&events.html"
+            class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap"
+            >News & Events</a
+          >
         </nav>
 
         <!-- Mobile menu button -->
-        <button id="mobile-menu-btn"
+        <button
+          id="mobile-menu-btn"
           class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
-          onclick="toggleMobileMenu()">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-            viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"
-            class="size-6">
-            <path stroke-linecap="round" stroke-linejoin="round"
-              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          onclick="toggleMobileMenu()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
           </svg>
         </button>
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu"
-        class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+      <div
+        id="mobile-menu"
+        class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40"
+      >
         <nav class="px-4 sm:px-6 py-4 space-y-1">
           <!-- Mobile Home Link -->
-          <a href="landingpage.html"
-            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+          <a
+            href="landingpage.html"
+            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium"
+          >
             Home
           </a>
 
           <!-- Mobile Products & Services -->
           <div class="space-y-1">
-            <button onclick="toggleDropdownProductsMobile(event)"
-              class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+            <button
+              onclick="toggleDropdownProductsMobile(event)"
+              class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left"
+            >
               <span>Services</span>
-              <i id="products-chevron"
-                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+              <i
+                id="products-chevron"
+                class="fas fa-chevron-down text-sm transition-transform duration-200"
+              ></i>
             </button>
-            <div id="dropdown-menu-products-mobile"
-              class="hidden ml-4 space-y-1">
-              <a href="loan-products.html"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
-              <a href="deposit.html"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
-              <a href="deposit.html"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+            <div
+              id="dropdown-menu-products-mobile"
+              class="hidden ml-4 space-y-1"
+            >
+              <a
+                href="loan-products.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Loans</a
+              >
+              <a
+                href="deposit.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Deposits</a
+              >
+              <a
+                href="deposit.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Savings</a
+              >
             </div>
           </div>
 
           <!-- Mobile About -->
           <div class="space-y-1">
-            <button onclick="toggleDropdownMobileAbout(event)"
-              class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+            <button
+              onclick="toggleDropdownMobileAbout(event)"
+              class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left"
+            >
               <span>About</span>
-              <i id="about-chevron"
-                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+              <i
+                id="about-chevron"
+                class="fas fa-chevron-down text-sm transition-transform duration-200"
+              ></i>
             </button>
             <div id="dropdown-menu-about-mobile" class="hidden ml-4 space-y-1">
-              <a href="about-gbldc.html"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
-                GBLDC</a>
-              <a href="#"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
-                & Vision</a>
-              <a href="board-of-directors.html"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
-                of Directors</a>
-              <a href="committee-officers.html"
-                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
-                Officers</a>
+              <a
+                href="about-gbldc.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >About GBLDC</a
+              >
+              <a
+                href="#"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Mission & Vision</a
+              >
+              <a
+                href="board-of-directors.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Board of Directors</a
+              >
+              <a
+                href="committee-officers.html"
+                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm"
+                >Committee Officers</a
+              >
             </div>
           </div>
 
           <!-- Mobile News & Events -->
-          <a href="news&events.html"
-            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+          <a
+            href="news&events.html"
+            class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium"
+          >
             News & Events
           </a>
         </nav>
       </div>
     </header>
     <!-- Hero Section -->
-    <section class="bg-green-700 text-white py-16 px-6 text-center mt-12">
-     <div class="relative max-w-6xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-5xl font-semibold mb-4">
-        Learn More About Membership
-      </h1>
-      <p class="text-lg max-w-2xl mx-auto">
-        Be part of the Greater Bulacan Livelihood Development Cooperative
-        (GBLDC) and enjoy the benefits of a supportive, growth-oriented
-        community.
-      </p>
-     </div>
+    <section
+      class="bg-green-700 min-h-[20vh] text-white py-16 px-6 text-center mt-12"
+    >
+      <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4">
+          Learn More About Membership
+        </h1>
+        <p class="text-lg max-w-2xl mx-auto">
+          Be part of the Greater Bulacan Livelihood Development Cooperative
+          (GBLDC) and enjoy the benefits of a supportive, growth-oriented
+          community.
+        </p>
+      </div>
     </section>
 
-      <!-- Why Join Section -->
+    <!-- Why Join Section -->
     <section id="benefits" class="py-16 bg-white">
       <div class="max-w-6xl mx-auto px-4">
         <div class="text-center mb-16">
@@ -201,110 +283,230 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Benefit 1 -->
-          <div
-            class="bg-white shadow p-8 rounded-2xl drop-shadow"
-          >
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
             <div
-              class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6 text-center"
+              class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
             >
-              <i class="fas fa-piggy-bank text-2xl text-white"></i>
+              <!-- Piggy Bank Icon -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="35"
+                height="35"
+                viewBox="0 0 24 24"
+                fill="none"
+              >
+                <g clip-path="url(#clip0_4418_10092)">
+                  <path
+                    d="M12.37 2.14984L21.37 5.74982C21.72 5.88982 22 6.30981 22 6.67981V9.99982C22 10.5498 21.55 10.9998 21 10.9998H3C2.45 10.9998 2 10.5498 2 9.99982V6.67981C2 6.30981 2.28 5.88982 2.63 5.74982L11.63 2.14984C11.83 2.06984 12.17 2.06984 12.37 2.14984Z"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22 22H2V19C2 18.45 2.45 18 3 18H21C21.55 18 22 18.45 22 19V22Z"
+                    stroke="#fff"
+                    stroke-width="3"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M4 18V11"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8 18V11"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 18V11"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M16 18V11"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M20 18V11"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M1 22H23"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M12 8.5C12.8284 8.5 13.5 7.82843 13.5 7C13.5 6.17157 12.8284 5.5 12 5.5C11.1716 5.5 10.5 6.17157 10.5 7C10.5 7.82843 11.1716 8.5 12 8.5Z"
+                    stroke="#fff"
+                    stroke-width="1.5"
+                    stroke-miterlimit="10"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_4418_10092">
+                    <rect width="24" height="24" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
               Higher Savings Returns
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-center">
               Earn competitive interest rates on your savings deposits and watch
               your money grow faster than traditional banks.
             </p>
           </div>
 
-          <!-- Benefit 2 -->
-          <div
-            class="bg-white p-8 rounded-2xl drop-shadow"
-          >
+          <!-- Benefit 2: Low-Interest Loans -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
             <div
-              class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6"
+              class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
             >
-              <i class="fas fa-hand-holding-usd text-2xl text-white"></i>
+              <!-- Loan / Money Icon -->
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
               Low-Interest Loans
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-center">
               Access affordable loans with lower interest rates and flexible
               payment terms for your personal and business needs.
             </p>
           </div>
 
-          <!-- Benefit 3 -->
-          <div
-            class="bg-white p-8 rounded-2xl drop-shadow"
-          >
+          <!-- Benefit 3: Annual Dividends -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
             <div
-              class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6"
+              class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
             >
-              <i class="fas fa-chart-line text-2xl text-white"></i>
+              <!-- Coins Icon -->
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2C6.48 2 2 4.69 2 8v8c0 3.31 4.48 6 10 6s10-2.69 10-6V8c0-3.31-4.48-6-10-6Zm0 2c4.42 0 8 1.79 8 4s-3.58 4-8 4-8-1.79-8-4 3.58-4 8-4Z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
               Annual Dividends
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-center">
               Receive your share of the cooperative's profits through annual
               dividend distributions based on your patronage.
             </p>
           </div>
 
-          <!-- Benefit 4 -->
-          <div
-            class="bg-white p-8 rounded-2xl drop-shadow"
-          >
+          <!-- Benefit 4: Educational Programs -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
             <div
-              class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6"
+              class="w-16 h-16 bg-orange-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
             >
-              <i class="fas fa-graduation-cap text-2xl text-white"></i>
+              <!-- Book / Learning Icon -->
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M18 2H6a2 2 0 0 0-2 2v16a1 1 0 0 0 1.45.89L12 18.1l6.55 2.79A1 1 0 0 0 20 20V4a2 2 0 0 0-2-2Z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
               Educational Programs
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-center">
               Participate in financial literacy seminars, skills training, and
               cooperative education programs at no cost.
             </p>
           </div>
 
-          <!-- Benefit 5 -->
-          <div
-            class="bg-white p-8 rounded-2xl drop-shadow"
-          >
+          <!-- Benefit 5: Community Support -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
             <div
-              class="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6"
+              class="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
             >
-              <i class="fas fa-users text-2xl text-white"></i>
+              <!-- People / Group Icon -->
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4S14.21 4 12 4 8 5.79 8 8s1.79 4 4 4Zm-6 8v-1c0-2.21 3.58-4 6-4s6 1.79 6 4v1H6Z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
               Community Support
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-center">
               Be part of a supportive community that helps each other grow
               through mutual assistance and cooperation.
             </p>
           </div>
 
-          <!-- Benefit 6 -->
-          <div
-            class="bg-white p-8 rounded-2xl drop-shadow"
-          >
+          <!-- Benefit 6: Financial Security -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
             <div
-              class="w-16 h-16 bg-rose-500 rounded-2xl flex items-center justify-center mb-6"
+              class="w-16 h-16 bg-rose-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
             >
-              <i class="fas fa-vote-yea text-2xl text-white"></i>
+              <!-- Shield / Protection Icon -->
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 2 4 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-3Z"
+                />
+              </svg>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-4">
-              Democratic Participation
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+              Financial Security
             </h3>
-            <p class="text-gray-600 leading-relaxed">
-              Have a voice in cooperative decisions and participate in elections
-              for board members and key positions.
+            <p class="text-gray-600 leading-relaxed text-center">
+              Enjoy peace of mind with member-focused protection and support
+              services.
             </p>
           </div>
         </div>
@@ -313,7 +515,7 @@
 
     <!--Membership Requirements -->
     <section class="py-16 bg-gray-50">
-      <div class="max-w-4xl mx-auto px-4">
+      <div class="max-w-7xl mx-auto px-4">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold gradient-text mb-4">
             Membership Requirements
@@ -324,7 +526,7 @@
           </p>
         </div>
 
-         <div class="bg-white rounded-md p-8 md:p-12 w-7xl">
+        <div class="bg-white rounded-lg p-8 md:p-12 w-9xl mx-auto shadow-xl">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <!-- Eligibility -->
             <div class="animate-slide-in-left">
@@ -338,43 +540,67 @@
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-green-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Age Requirement:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Must be at least 25 years old and above (legal age for financial commitments)</span>
+                    <span class="font-medium text-lg">Age Requirement:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Must be at least 25 years old and above (legal age for
+                      financial commitments)</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-green-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Residency:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Resident of Bulacan province or nearby areas within our service coverage</span>
+                    <span class="font-medium text-lg">Residency:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Resident of Bulacan province or nearby areas within our
+                      service coverage</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-green-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Financial Stability:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Must have stable income source (employed, business owner, or regular income)</span>
+                    <span class="font-medium text-lg"
+                      >Financial Stability:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Must have stable income source (employed, business owner,
+                      or regular income)</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-green-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Cooperative Principles:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Agrees to abide by cooperative principles and values of mutual help and solidarity</span>
+                    <span class="font-medium text-lg"
+                      >Cooperative Principles:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Agrees to abide by cooperative principles and values of
+                      mutual help and solidarity</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-green-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Active Participation:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Commits to active participation in cooperative activities and meetings</span>
+                    <span class="font-medium text-lg"
+                      >Active Participation:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Commits to active participation in cooperative activities
+                      and meetings</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-green-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Good Standing:</span>
-                    <span class="block text-gray-600 text-sm mt-1">No derogatory records or blacklisted status from other financial institutions</span>
+                    <span class="font-medium text-lg">Good Standing:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >No derogatory records or blacklisted status from other
+                      financial institutions</span
+                    >
                   </div>
                 </li>
               </ul>
@@ -392,43 +618,67 @@
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-blue-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Valid Government ID:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Driver's License, UMID, SSS ID, Postal ID, or Passport (original and photocopy)</span>
+                    <span class="font-medium text-base"
+                      >Valid Government ID:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Driver's License, UMID, SSS ID, Postal ID, or Passport
+                      (original and photocopy)</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-blue-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Proof of Address:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Recent utility bill, barangay certificate, or lease contract (not older than 3 months)</span>
+                    <span class="font-medium text-lg">Proof of Address:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Recent utility bill, barangay certificate, or lease
+                      contract (not older than 3 months)</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-blue-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Recent Photographs:</span>
-                    <span class="block text-gray-600 text-sm mt-1">2x2 recent photographs (2 copies) with white background</span>
+                    <span class="font-medium text-lg">Recent Photographs:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >2x2 recent photographs (2 copies) with white
+                      background</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-blue-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Proof of Income:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Certificate of Employment, Business Permit, or ITR for self-employed individuals</span>
+                    <span class="font-medium text-lg">Proof of Income:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Certificate of Employment, Business Permit, or ITR for
+                      self-employed individuals</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-blue-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Initial Capital Deposit:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Minimum share capital and membership fee payment receipt</span>
+                    <span class="font-medium text-lg"
+                      >Initial Capital Deposit:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Minimum share capital and membership fee payment
+                      receipt</span
+                    >
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <i class="fas fa-check-circle text-blue-500 mt-1"></i>
                   <div>
-                    <span class="font-medium">Reference/Recommendation:</span>
-                    <span class="block text-gray-600 text-sm mt-1">Character reference from existing member or community leader (if applicable)</span>
+                    <span class="font-medium text-lg"
+                      >Reference/Recommendation:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Character reference from existing member or community
+                      leader (if applicable)</span
+                    >
                   </div>
                 </li>
               </ul>
@@ -457,7 +707,8 @@
             </div>
             <p class="text-gray-600 text-sm mt-4">
               <i class="fas fa-info-circle text-blue-500 mr-2"></i>
-              Share capital represents your ownership stake in the cooperative and earns annual dividends based on the cooperative's performance.
+              Share capital represents your ownership stake in the cooperative
+              and earns annual dividends based on the cooperative's performance.
             </p>
           </div>
         </div>
@@ -472,8 +723,9 @@
             How to Join GBLDC
           </h2>
           <p class="text-gray-600 text-lg max-w-3xl mx-auto">
-            Follow these simple steps to become a member of our cooperative family. 
-            Our membership process is designed to be straightforward and welcoming.
+            Follow these simple steps to become a member of our cooperative
+            family. Our membership process is designed to be straightforward and
+            welcoming.
           </p>
         </div>
 
@@ -482,64 +734,92 @@
           <!-- Step 1 -->
           <div class="text-center group">
             <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
                 <i class="fas fa-file-alt text-2xl text-white"></i>
               </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
                 1
               </div>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Prepare Documents</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Prepare Documents
+            </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Gather all required documents including valid IDs, proof of address, and income verification.
+              Gather all required documents including valid IDs, proof of
+              address, and income verification.
             </p>
           </div>
 
           <!-- Step 2 -->
           <div class="text-center group">
             <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
                 <i class="fas fa-building text-2xl text-white"></i>
               </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
                 2
               </div>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Visit Our Office</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Visit Our Office
+            </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Come to our main office during business hours to submit your application and documents.
+              Come to our main office during business hours to submit your
+              application and documents.
             </p>
           </div>
 
           <!-- Step 3 -->
           <div class="text-center group">
             <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
                 <i class="fas fa-clipboard-check text-2xl text-white"></i>
               </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
                 3
               </div>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Application Review</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Application Review
+            </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Our team will review your application and verify all submitted documents within 3-5 business days.
+              Our team will review your application and verify all submitted
+              documents within 3-5 business days.
             </p>
           </div>
 
           <!-- Step 4 -->
           <div class="text-center group">
             <div class="relative mb-6">
-              <div class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
                 <i class="fas fa-handshake text-2xl text-white"></i>
               </div>
-              <div class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
                 4
               </div>
             </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Welcome Aboard</h3>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Welcome to GBLDC!
+            </h3>
             <p class="text-gray-600 text-sm leading-relaxed">
-              Upon approval, receive your member ID and start enjoying all the benefits of cooperative membership.
+              Upon approval, receive your member ID and start enjoying all the
+              benefits of cooperative membership.
             </p>
           </div>
         </div>
@@ -547,7 +827,9 @@
         <!-- Additional Information Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <!-- Office Hours Card -->
-          <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-200">
+          <div
+            class="bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl border border-green-200"
+          >
             <div class="flex items-center gap-3 mb-4">
               <i class="fas fa-clock text-2xl text-green-600"></i>
               <h3 class="text-xl font-bold text-gray-800">Office Hours</h3>
@@ -573,7 +855,9 @@
           </div>
 
           <!-- Contact Information Card -->
-          <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200">
+          <div
+            class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 rounded-2xl border border-blue-200"
+          >
             <div class="flex items-center gap-3 mb-4">
               <i class="fas fa-map-marker-alt text-2xl text-blue-600"></i>
               <h3 class="text-xl font-bold text-gray-800">Get in Touch</h3>
@@ -597,7 +881,9 @@
                 <i class="fas fa-building text-blue-600 mt-1"></i>
                 <div>
                   <span class="font-medium text-gray-700 block">Address:</span>
-                  <span class="text-gray-600 text-sm">Main Office, Bulacan Province</span>
+                  <span class="text-gray-600 text-sm"
+                    >Main Office, Makinabang Baliwag, Bulacan, Philippines</span
+                  >
                 </div>
               </div>
             </div>
@@ -612,38 +898,57 @@
           </h3>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="text-center">
-              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div
+                class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-3"
+              >
                 <i class="fas fa-upload text-white text-xl"></i>
               </div>
               <h4 class="font-bold text-gray-800 mb-2">Day 1</h4>
-              <p class="text-gray-600 text-sm">Application submission and initial document review</p>
+              <p class="text-gray-600 text-sm">
+                Application submission and initial document review
+              </p>
             </div>
             <div class="text-center">
-              <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div
+                class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-3"
+              >
                 <i class="fas fa-search text-white text-xl"></i>
               </div>
               <h4 class="font-bold text-gray-800 mb-2">Days 2-3</h4>
-              <p class="text-gray-600 text-sm">Background verification and document validation</p>
+              <p class="text-gray-600 text-sm">
+                Background verification and document validation
+              </p>
             </div>
             <div class="text-center">
-              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3">
+              <div
+                class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-3"
+              >
                 <i class="fas fa-check text-white text-xl"></i>
               </div>
               <h4 class="font-bold text-gray-800 mb-2">Days 4-5</h4>
-              <p class="text-gray-600 text-sm">Final approval and membership activation</p>
+              <p class="text-gray-600 text-sm">
+                Final approval and membership activation
+              </p>
             </div>
           </div>
         </div>
 
         <!-- Call to Action -->
         <div class="text-center mt-12">
-          <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-2xl text-white">
-            <h3 class="text-2xl font-bold mb-4">Ready to Join Our Community?</h3>
+          <div
+            class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 rounded-2xl text-white"
+          >
+            <h3 class="text-2xl font-bold mb-4">
+              Ready to Join Our Community?
+            </h3>
             <p class="text-green-100 mb-6 max-w-2xl mx-auto">
-              Take the first step towards financial growth and community partnership. 
-              Join thousands of satisfied members who trust GBLDC for their financial needs.
+              Take the first step towards financial growth and community
+              partnership. Join thousands of satisfied members who trust GBLDC
+              for their financial needs.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
               <a
                 href="applynow.html"
                 class="bg-white text-green-600 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors duration-200 inline-flex items-center gap-2"
@@ -664,95 +969,140 @@
       </div>
     </section>
 
-        <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
-          <div class="max-w-7xl mx-auto px-4">
-            <div
-              class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
-              <div class="flex flex-col items-center md:items-start">
-                <h4
-                  class="font-semibold mb-3 uppercase tracking-wide text-lg">Products</h4>
-                <ul class="space-y-2">
-                  <li><a href="loan-products.html"
-                      class="hover:underline transition-colors">Loan
-                      Products</a></li>
-                  <li><a href="deposit.html"
-                      class="hover:underline transition-colors">Deposit
-                      Products</a></li>
-                  <li><a href="#"
-                      class="hover:underline transition-colors">Savings
-                      Products</a></li>
-                </ul>
-              </div>
-              <div class="flex flex-col items-center md:items-start">
-                <h4
-                  class="font-semibold mb-3 uppercase tracking-wide text-lg">About</h4>
-                <ul class="space-y-2">
-                  <li><a href="about-gbldc.html"
-                      class="hover:underline transition-colors">About
-                      GBLDC</a></li>
-                  <li><a href="#"
-                      class="hover:underline transition-colors duration-200">Senior
-                      Management</a></li>
-                  <li><a href="#"
-                      class="hover:underline transition-colors duration-200">Officers
-                      & Committees</a></li>
-                </ul>
-              </div>
-              <div class="flex flex-col items-center md:items-start">
-                <h4
-                  class="font-semibold mb-3 uppercase tracking-wide text-lg">Quicklinks</h4>
-                <ul class="space-y-2">
-                  <li><a href="https://ifernglobal.com.ph/"
-                      class="hover:underline transition-colors">iFern
-                      Global</a></li>
-                  <li><a href="index.html"
-                      class="hover:underline transition-colors">Member Portal
-                      Login</a></li>
-                  <li><a href="#"
-                      class="hover:underline transition-colors">Contact
-                      Us</a></li>
-                  <li><a href="applynow.html"
-                      class="hover:underline transition-colors">Apply
-                      Now</a></li>
-                  <li><a href="#"
-                      class="hover:underline transition-colors">Feedback</a></li>
-                </ul>
-              </div>
-              <div class="flex flex-col items-center md:items-start">
-                <h4
-                  class="font-semibold mb-3 uppercase tracking-wide text-lg">Get
-                  Our App</h4>
-                <div class="flex gap-2 mb-2">
-                  <a href="https://play.google.com/store" target="_blank"><img
-                      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
-                      alt="Google Play" class="h-10 rounded shadow" /></a>
-                  <a href="https://www.apple.com/app-store/"
-                    target="_blank"><img
-                      src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                      alt="App Store" class="h-10 rounded shadow" /></a>
-                </div>
-                <p class="text-xs text-white">Download our app for a better
-                  banking
-                  experience.</p>
-              </div>
-            </div>
-            <div
-              class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2">
-              <div class="text-center md:text-left">GREATER BULACAN LIVELIHOOD
-                DEVELOPMENT COOPERATIVE © 2025. ALL RIGHTS RESERVED.</div>
-              <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
-                <a href="#"
-                  class="text-white  text-sm transition-colors">Privacy
-                  Policy</a>
-                <a href="#" class="text-white  text-sm transition-colors">Terms
-                  of
-                  Service</a>
-                <a href="#" class="text-white  text-sm transition-colors">Cookie
-                  Policy</a>
-              </div>
-            </div>
-
+    <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Products
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="loan-products.html"
+                  class="hover:underline transition-colors"
+                  >Loan Products</a
+                >
+              </li>
+              <li>
+                <a href="deposit.html" class="hover:underline transition-colors"
+                  >Deposit Products</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Savings Products</a
+                >
+              </li>
+            </ul>
           </div>
-        </footer>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              About
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about-gbldc.html"
+                  class="hover:underline transition-colors"
+                  >About GBLDC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline transition-colors duration-200"
+                  >Senior Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline transition-colors duration-200"
+                  >Officers & Committees</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Quicklinks
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://ifernglobal.com.ph/"
+                  class="hover:underline transition-colors"
+                  >iFern Global</a
+                >
+              </li>
+              <li>
+                <a href="index.html" class="hover:underline transition-colors"
+                  >Member Portal Login</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="applynow.html"
+                  class="hover:underline transition-colors"
+                  >Apply Now</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Feedback</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Get Our App
+            </h4>
+            <div class="flex gap-2 mb-2">
+              <a href="https://play.google.com/store" target="_blank"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  class="h-10 rounded shadow"
+              /></a>
+              <a href="https://www.apple.com/app-store/" target="_blank"
+                ><img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store"
+                  class="h-10 rounded shadow"
+              /></a>
+            </div>
+            <p class="text-xs text-white">
+              Download our app for a better banking experience.
+            </p>
+          </div>
+        </div>
+        <div
+          class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2"
+        >
+          <div class="text-center md:text-left">
+            GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL
+            RIGHTS RESERVED.
+          </div>
+          <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
+            <a href="#" class="text-white text-sm transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-sm transition-colors"
+              >Terms of Service</a
+            >
+            <a href="#" class="text-white text-sm transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

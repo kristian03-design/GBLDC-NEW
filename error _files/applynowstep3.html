@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- FontAwesome for Icons -->
+     <script src="https://kit.fontawesome.com/e588cb9d47.js" crossorigin="anonymous"></script>
+       <link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+         <link href="../src/animation/animation.css" rel="stylesheet">
+           <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="./output.css" rel="stylesheet">
+    <title>Apply Now Step 3 | GBLDC</title>
+</head>
+
+<body class="bg-gray-50 font-sans antialiased">
+    <!-- Header Section -->
+     <header class="bg-white shadow-lg lg:shadow-md fixed left-0 top-0 z-50 w-full">
+        <div class="container-lg mx-auto flex justify-between items-center p-4">
+            <!-- Logo and Title -->
+            <div class="flex items-center space-x-2 sm:space-x-4 overflow-hidden flex-1 min-w-0">
+                <a href="landingpage.html" class="flex-shrink-0">
+                    <img src="path/images/logocoop-removebg-preview 2.png" 
+                         alt="GBLDC Logo" 
+                         class="w-12 h-12 sm:w-16 sm:h-14 lg:w-18 lg:h-16 bg-auto">
+                </a>
+                <h1 class="text-xs sm:text-base md:text-lg lg:text-xl font-medium animate-fade-in-right truncate">
+                    Greater Bulacan Livelihood Development Cooperative
+                </h1>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex space-x-4 xl:space-x-4 text-black font-normal tracking-normal mr-8 xl:mr-36">
+                <a href="landingpage.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                    HOME
+                </a>
+                
+                <!-- Products & Services Dropdown -->
+                <div class="relative" id="dropdown-trigger">
+                    <a href="#" 
+                       class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                       onclick="toggleDropdownProducts(event)">
+                        PRODUCT & SERVICES
+                        <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                         id="dropdown-menu-products">
+                        <a href="loan-products.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Loans
+                        </a>
+                        <a href="deposit.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Deposits
+                        </a>
+                        <a href="insurance.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Insurance
+                        </a>
+                        <a href="social-services.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Social Services
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- About Dropdown -->
+                <div class="relative" id="dropdown-trigger-about">
+                    <a href="#" 
+                       class="hover:text-green-600 flex items-center transition-colors duration-300 whitespace-nowrap"
+                       onclick="toggleDropdown(event)">
+                        ABOUT
+                        <span class="ml-1"><i class="fas fa-chevron-down"></i></span>
+                    </a>
+                    <div class="dropdown-menu absolute left-0 hidden bg-slate-50 p-3 rounded-lg shadow-xl mt-2 w-64 transition-all duration-100 ease-in-out animate-fade-in animate_faster"
+                         id="dropdown-menu">
+                        <a href="about-gbldc.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            About GBLDC
+                        </a>
+                        <a href="#" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Mission & Vision
+                        </a>
+                        <a href="board-of-directors.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Board of Directors
+                        </a>
+                        <a href="committee-officers.html" class="block px-4 py-2 hover:bg-green-200 rounded-md transition-colors duration-200">
+                            Committee Officers
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="news&events.html" class="hover:text-green-600 transition-colors duration-300 whitespace-nowrap">
+                    NEWS & EVENTS
+                </a>
+            </nav>
+            
+            <!-- Desktop Buttons -->
+            <div class="hidden lg:flex items-center gap-3 xl:gap-4">
+                <a href="index.html" class="bg-green-500 text-white px-4 xl:px-7 py-2 hover:bg-green-600 rounded-md font-normal whitespace-nowrap text-sm xl:text-base">
+                    Login
+                </a>
+                <a href="applynow.html" class="border border-green-600 text-black px-4 xl:px-6 py-2 rounded-md font-normal hover:bg-green-50 whitespace-nowrap text-sm xl:text-base">
+                    Apply Now
+                </a>
+            </div>
+            
+            <!-- Tablet Buttons (hidden on mobile and desktop) -->
+            <div class="hidden md:flex lg:hidden items-center gap-2">
+                <a href="index.html" class="bg-green-500 text-white px-3 py-2 hover:bg-green-600 rounded-md font-normal text-sm">
+                    Login
+                </a>
+                <a href="applynow.html" class="border border-green-600 text-black px-3 py-2 rounded-md font-normal hover:bg-green-50 text-sm">
+                    Apply
+                </a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-black focus:outline-none animate-fade-in ml-2 flex-shrink-0"
+                    onclick="toggleMobileMenu()">
+                <i class="fas fa-bars text-xl sm:text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <nav class="lg:hidden bg-white shadow-lg hidden" id="mobile-menu">
+            <div class="px-4 py-2 space-y-1">
+                <a href="landingpage.html" class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+                    HOME
+                </a>
+                
+                <!-- Mobile Products & Services Dropdown -->
+                <div class="relative">
+                    <a href="#" 
+                       class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+                       onclick="toggleDropdownProductsMobile(event)">
+                        <span>PRODUCT & SERVICES</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200" id="products-arrow"></i>
+                    </a>
+                    <div class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden" id="dropdown-menu-products-mobile">
+                        <a href="loan-products.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Loans
+                        </a>
+                        <a href="deposit.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Deposits
+                        </a>
+                        <a href="insurance.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Insurance
+                        </a>
+                        <a href="social-services.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Social Services
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Mobile About Dropdown -->
+                <div class="relative">
+                    <a href="#" 
+                       class="flex px-4 py-3 hover:bg-green-200 items-center justify-between transition-colors duration-200 rounded-md"
+                       onclick="toggleDropdownMobileAbout(event)">
+                        <span>ABOUT</span>
+                        <i class="fas fa-chevron-down transition-transform duration-200" id="about-arrow"></i>
+                    </a>
+                    <div class="hidden bg-slate-50 rounded-md shadow-xl mt-1 overflow-hidden" id="dropdown-menu-about-mobile">
+                        <a href="about-gbldc.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            About GBLDC
+                        </a>
+                        <a href="#" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Mission & Vision
+                        </a>
+                        <a href="board-of-directors.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Board of Directors
+                        </a>
+                        <a href="committee-officers.html" class="block px-8 py-2 hover:bg-green-200 transition-colors duration-200">
+                            Committee Officers
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="news&events.html" class="block px-4 py-3 hover:bg-green-200 transition-colors duration-200 rounded-md">
+                    NEWS & EVENTS
+                </a>
+                
+                <!-- Mobile Buttons -->
+                <div class="flex flex-col items-stretch mt-4 space-y-2 px-4 pb-4">
+                    <a href="index.html" class="bg-green-600 text-white px-4 py-3 rounded-lg font-normal hover:bg-green-800 text-center transition-colors duration-200">
+                        Login
+                    </a>
+                    <a href="applynow.html" class="border border-green-600 text-black px-4 py-3 rounded-lg font-normal hover:bg-green-50 text-center transition-colors duration-200">
+                        Apply Now
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Apply Now 3-->
+    <section>
+    <div class="max-w-4xl mx-auto mt-24 p-7">
+        <h2 class="text-center text-4xl font-semibold text-gray-800">Online Application</h2>
+        <p class="text-center text-black mt-3">Let’s talks and learn your finances better</p>
+
+        <div class="flex items-center justify-center my-6">
+          <div class="flex items-center gap-8">
+            <div class="flex flex-col items-center text-black">
+              <a href="#" onclick="validateStep3(event)">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                  1
+                </div>
+              </a>
+              <a href="#">
+                <p class="text-sm mt-2 text-center">Personal Information</p>
+              </a>
+            </div>
+            <div class="w-20 h-1 bg-green-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <a href="#" onclick="validateStep3(event)">
+                <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                  2
+                </div>
+              </a>
+              <p class="text-sm mt-2 text-center">Emergency Contact 1</p>
+            </div>
+            <div class="w-20 h-1 bg-green-300"></div>
+            <div class="flex flex-col items-center text-black">
+              <a href="#" onclick="validateStep3(event)">
+                <div class="w-12 h-12 flex items-center justify-center bg-green-300 rounded-full">
+                  3
+                </div>
+              </a>
+              <p class="text-sm mt-2 text-center">Emergency Contact 2</p>
+            </div>
+            <div class="w-20 h-1 bg-gray-300"></div>
+            <div class="flex flex-col items-center text-black">
+               <a href="#" onclick="validateStep3(event)">
+              <div class="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full">
+                4
+              </div></a>
+              <p class="text-sm mt-2 text-center">Employment Information</p>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div id="validationModal" class="fixed inset-0 items-center flex justify-center hidden">
+      <div class="bg-white p-8 rounded-md shadow-lg max-w-md w-2/5 z-50">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Missing Required Fields</h3>
+        <p class="text-gray-600 mb-4">Please fill out the following required fields before proceeding:</p>
+        <ul id="missingFieldsList" class="custom-asterisk-list list-inside text-red-500 mb-4"></ul>
+        <button onclick="closeModal()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Close</button>
+      </div>
+    </div>
+    </section>
+    <!-- Emergency Contact (2) Form -->
+    <form class="mt-4 space-y-6 max-w-7xl mx-auto bg-white p-10 md:p-20 shadow-lg rounded-lg mb-10" onsubmit="validateStep3(event)">
+      <h3 class="text-2xl font-medium text-teal-900">Emergency Contact (2)</h3>
+      <p class="text-gray-500 mb-4">Please provide details of your second emergency contact.</p>
+      <!-- Name Fields -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label for="lastName2" class="block text-black">Last Name<span class="text-red-500">*</span></label>
+          <input id="lastName2" type="text" placeholder="Last Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="firstName2" class="block text-black">First Name<span class="text-red-500">*</span></label>
+          <input id="firstName2" type="text" placeholder="First Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="middleName2" class="block text-black">Middle Name<span class="text-red-500">*</span></label>
+          <input id="middleName2" type="text" placeholder="Middle Name" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+      </div>
+      <!-- Birth Details -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div>
+                <label for="birthPlace" class="block text-black">Place of Birth<span class="text-red-500">*</span></label>
+                <input id="birthPlace" type="text" placeholder="Place of Birth" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+            <div>
+                <label for="birthDate" class="block text-black">Birth Date<span class="text-red-500">*</span></label>
+                <input id="birthDate" type="date" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black" required onchange="calculateAge()">
+            </div>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1">
+                    <label for="age" class="block text-black">Age<span class="text-red-500">*</span></label>
+                    <input id="age" type="number" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400 text-black bg-gray-100" readonly required>
+                </div>
+                 <div>
+                    <label class="block text-black">Gender<span class="text-red-500">*</span></label>
+                    <div class="flex gap-4 mt-2">
+                        <label><input type="radio" name="gender" value="Male" class="mr-1 mt-0.5"> Male</label>
+                        <label><input type="radio" name="gender" value="Female" class="mr-1 mt-0.5"> Female</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+      <!-- Religion, Nationality, Status -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+        <div>
+          <label for="religion2" class="block text-black">Religion<span class="text-red-500">*</span></label>
+          <select id="religion2" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option>Select Religion</option>
+            <option>ROMAN CATHOLIC</option>
+            <option>PROTESTANT</option>
+            <option>CHRISTIAN</option>
+            <option>BAPTIST</option>
+            <option>SEVENTH-DAY ADVENTIST</option>
+            <option>IGLESIA NI CRISTO</option>
+            <option>ADVENTIST</option>
+            <option>BUDDHISM</option>
+            <option>JESUS IS LORD MOVEMENT</option>
+            <option>JEHOVAH'S WITNESSES</option>
+            <option>METHODIST</option>
+            <option>NON-SECTARIAN</option>
+            <option>OTHER</option>
+          </select>
+        </div>
+        <div>
+          <label for="nationality2" class="block text-black">Nationality<span class="text-red-500">*</span></label>
+          <input id="nationality2" type="text" placeholder="Nationality" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="civilStatus2" class="block text-black">Civil Status<span class="text-red-500">*</span></label>
+          <select id="civilStatus2" class="mt-2 text-black border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option>Select Status</option>
+            <option>SINGLE</option>
+            <option>WIDOW</option>
+            <option>MARRIED</option>
+            <option>SEPARATED</option>
+          </select>
+        </div>
+      </div>
+      <div class="md:col-span-2 w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="contact2" class="block text-black">Contact Number<span class="text-red-500">*</span></label>
+            <div class="flex items-center">
+              <span class="px-2 text-black border-gray-50 border p-2 rounded-md">+63</span>
+              <input id="contact2" type="text" class="p-2 rounded-md w-64 border focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr class="my-6 border-gray-300">
+      <!-- Home Address -->
+      <h3 class="text-2xl font-medium text-teal-900">Home Address</h3>
+      <label for="street2" class="block text-black">Street Address<span class="text-red-500">*</span></label>
+      <input id="street2" type="text" placeholder="No. & Street" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400">
+        <div>
+          <label for="province2" class="block text-black">Province<span class="text-red-500">*</span></label>
+          <select id="province2" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>Select Province</option>
+            <option>Bulacan</option>
+            <option>Pampanga</option>
+            <option>Bataan</option>
+            <option>Nueva Ecija</option>
+            <option>Tarlac</option>
+            <option>Zambales</option>
+            <option>Aurora</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="city2" class="block text-black">City<span class="text-red-500">*</span></label>
+          <select id="city2" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>Select City</option>
+            <option>Baliuag</option>
+            <option>Malolos</option>
+            <option>Meycauayan</option>
+            <option>San Jose del Monte</option>
+            <option>Marilao</option>
+            <option>Santa Maria</option>
+            <option>Plaridel</option>
+            <option>San Rafael</option>
+            <option>San Ildefonso</option>
+            <option>Guiguinto</option>
+            <option>Balagtas</option>
+            <option>Bocaue</option>
+            <option>Obando</option>
+            <option>Bulakan</option>
+            <option>Angat</option>
+            <option>Norzagaray</option>
+            <option>Pulilan</option>
+            <option>Hagonoy</option>
+            <option>Paombong</option>
+            <option>Calumpit</option>
+            <option>Dona Remedios Trinidad</option>
+            <option>Bustos</option>
+            <option>Pandi</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="barangay2" class="block text-black">Barangay<span class="text-red-500">*</span></label>
+          <select id="barangay2" class="mt-2 border border-gray-300 text-black p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400">
+            <option>Select Barangay</option>
+            <option>Bagong Nayon</option>
+            <option>Baliuag</option>
+            <option>Bambang</option>
+            <option>Balagtas</option>
+            <option>Bagong Barrio</option>
+            <option>Bagong Silang</option>
+            <option>Bagumbayan</option>
+            <option>Bahay Pare</option>
+            <option>Bancal</option>
+            <option>Bintog</option>
+            <option>Bocaue</option>
+            <option>Bulakan</option>
+            <option>Bustos</option>
+            <option>Calumpit</option>
+            <option>Catmon</option>
+            <option>Concepcion</option>
+            <option>Cruz na Daan</option>
+            <option>Cutcot</option>
+            <option>Dona Remedios Trinidad</option>
+            <option>Guiguinto</option>
+            <option>Hagonoy</option>
+            <option>Iba</option>
+            <option>Ibayo</option>
+            <option>Longos</option>
+            <option>Malolos</option>
+            <option>Marilao</option>
+            <option>Meycauayan</option>
+            <option>Norzagaray</option>
+            <option>Obando</option>
+            <option>Pandi</option>
+            <option>Paombong</option>
+            <option>Plaridel</option>
+            <option>Pulilan</option>
+            <option>San Ildefonso</option>
+            <option>San Jose del Monte</option>
+            <option>San Miguel</option>
+            <option>San Rafael</option>
+            <option>Santa Maria</option>
+            <option>Sapang Palay</option>
+            <option>Tabang</option>
+            <option>Tibag</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <label for="yearsOfStay2" class="block text-black">Years of Stay<span class="text-red-500">*</span></label>
+          <input id="yearsOfStay2" type="text" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+        <div>
+          <label for="houseOwnership2" class="block text-black">House Ownership<span class="text-red-500">*</span></label>
+          <select id="houseOwnership2" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+            <option>Select Ownership</option>
+            <option>Owned</option>
+            <option>Rented</option>
+            <option>Living with Parents</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div>
+          <label for="zipCode2" class="block text-black">Zip Code<span class="text-red-500">*</span></label>
+          <input id="zipCode2" type="text" placeholder="Zip Code" class="mt-2 border border-gray-300 p-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-green-400" required>
+        </div>
+      </div>
+      <div class="flex justify-end mt-6 font-light">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded">Continue</button>
+      </div>
+    </form>
+</div>
+<script src="../src/javascript/dropdown.js"></script>
+<script>
+      function validateStep3(event) {
+        event.preventDefault();
+        const requiredFields = document.querySelectorAll('input[required], select[required]');
+        let allFilled = true;
+        let missingFields = [];
+
+        requiredFields.forEach(field => {
+          if (!field.value.trim()) {
+        allFilled = false;
+        field.classList.add('border-red-500');
+        // Try to get the label text for the field
+        let label = field.closest('div')?.querySelector('label[for="' + field.id + '"]');
+        if (!label) {
+          // Try previousElementSibling if label is not found
+          label = field.previousElementSibling;
+        }
+        let labelText = label ? label.textContent.replace('*', '').trim() : field.name || field.id;
+        if (!missingFields.includes(labelText)) {
+          missingFields.push(labelText);
+        }
+          } else {
+        field.classList.remove('border-red-500');
+          }
+        });
+
+        if (!allFilled) {
+          Swal.fire({
+        icon: 'warning',
+        iconColor: '#dc2626',
+        color: '#1e2939',
+        title: 'Missing Required Fields',
+        html: `<p>Please fill out the following required fields before proceeding:</p>
+           <ul style="text-align:left; color:#e53e3e;">${missingFields.map(f => `<li>• ${f}</li>`).join('')}</ul>`,
+        confirmButtonColor: '#16a34a'
+          });
+        } else {
+          // Proceed to the next page
+          window.location.href = "applynowstep4.html";
+        }
+      }
+
+      function closeModal() {
+        // Not needed with SweetAlert2, but kept for compatibility
+      }
+         function calculateAge() {
+            const birthDateInput = document.getElementById('birthDate');
+            const ageInput = document.getElementById('age');
+            const birthDateValue = birthDateInput.value;
+            if (!birthDateValue) {
+            ageInput.value = '';
+            return;
+            }
+            const today = new Date();
+            const birthDate = new Date(birthDateValue);
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+            }
+            ageInput.value = age >= 0 ? age : '';
+        }
+        </script>
+</body>
+</html>
+
+      
+    

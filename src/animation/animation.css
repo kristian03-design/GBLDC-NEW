@@ -621,3 +621,8 @@ select.border-red-500 {
  html {
   scroll-behavior: smooth;
  }
+ .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+ }

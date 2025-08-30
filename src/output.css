@@ -118,6 +118,7 @@
     --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --drop-shadow-lg: 0 4px 4px rgb(0 0 0 / 0.15);
+    --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     --animate-pulse: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
     --animate-bounce: bounce 1s infinite;
@@ -697,6 +698,12 @@
   }
   .max-h-\[100vh\] {
     max-height: 100vh;
+  }
+  .min-h-\[20vh\] {
+    min-height: 20vh;
+  }
+  .min-h-\[30vh\] {
+    min-height: 30vh;
   }
   .min-h-\[70vh\] {
     min-height: 70vh;
@@ -1970,6 +1977,10 @@
   .ease-in-out {
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
+  }
+  .ease-out {
+    --tw-ease: var(--ease-out);
+    transition-timing-function: var(--ease-out);
   }
   .select-none {
     -webkit-user-select: none;
