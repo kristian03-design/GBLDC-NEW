@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FontAwesome for Icons -->
+    <script src="https://kit.fontawesome.com/e588cb9d47.js"
+      crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png"
+      href="path/images/logocoop-removebg-preview 2.png" sizes="512x512" />
+    <link href="../src/animation/animation.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://cdn.tailwindcss.com"></script>
+          <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../src/javascript/dropdown.js"></script>
+    <script src="../src/javascript/landingpage.js"></script>
+    <script src="../src/javascript/landingpage-user.js"></script>
+    <title>Learn About Loan | GBLDC</title>
+  </head>
+
+  <body class="bg-white text-gray-800 scroll-smooth" style="font-family: Outfit;">
+    <!-- Header Section -->
+        <header
+            class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
+            <div
+                class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3 lg:py-0">
+                <!-- Logo Section - Responsive sizing -->
+                <a href="landingpage.html"
+                    class="flex items-center gap-2 sm:gap-3 py-1 sm:py-2 flex-shrink-0">
+                    <img src="path/images/logocoop-removebg-preview 2.png"
+                        alt="GBLDC Logo"
+                        class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 object-contain">
+                    <span
+                        class="font-semibold text-base sm:text-lg lg:text-xl text-green-700 tracking-tight whitespace-nowrap">GBLDC</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav
+                    class="hidden lg:flex items-center gap-1 xl:gap-4 text-sm xl:text-base font-medium">
+                    <a href="landingpage.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200">Home</a>
+
+                    <!-- Products & Services Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span class="whitespace-nowrap">Product &
+                                Services</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-48 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="loan-products.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Deposits</a>
+                            <a href="savings-page.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- About Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="flex items-center gap-1 px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 focus:outline-none">
+                            <span>About</span>
+                            <i
+                                class="fas fa-chevron-down text-xs transition-transform group-hover:rotate-180 duration-200"></i>
+                        </button>
+                        <div
+                            class="absolute left-0 top-full mt-2 w-56 bg-white border border-gray-100 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-20">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-t-lg transition-colors">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 transition-colors">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-3 hover:bg-green-50 hover:text-green-700 rounded-b-lg transition-colors">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <a href="news&events.html"
+                        class="px-2 xl:px-3 py-2 rounded-md hover:bg-green-50 hover:text-green-700 transition-colors duration-200 whitespace-nowrap">News
+                        & Events</a>
+                </nav>
+
+                <!-- Desktop CTA Button -->
+
+                    <div class="ml-4">
+                        <div class="relative group">
+                            <a href="#" title="User Profile"
+                                onclick="toggleProfileDropdown(event)"
+                                class="flex items-center gap-2">
+                                <img
+                                    src="path/images/logocoop-removebg-preview 2.png"
+                                    alt="User Avatar"
+                                    class="w-12 h-12 rounded-full object-cover shadow-sm hover:ring-2 hover:ring-green-400 transition-all duration-200 cursor-pointer">
+                                <i
+                                    class="fas fa-chevron-down text-gray-500 text-base">
+                                </a></i>
+                            <!-- Desktop Profile Dropdown Menu -->
+                            <div id="profile-dropdown"
+                                class="absolute right-0 mt-2 w-72 p-4 bg-white rounded-lg shadow-lg border z-30 hidden animate-fade-in">
+                                <div
+                                    class="flex items-center px-4 py-2 text-gray-800 font-semibold mb-2 break-all">
+                                    <?php echo isset($_SESSION['user_name']) ?
+                                    htmlspecialchars($_SESSION['user_name']) :
+                                    ''; ?>
+                                </div>
+                                <a href="loandashboard.html"
+                                    class="block px-4 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Loan
+                                    Dashboard</a>
+                                <a href="account-settings.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Settings</a>
+                                <a href="help.html"
+                                    class="block px-4 py-2 text-gray-800 hover:bg-green-200 rounded-md p-2 transition-colors">Help
+                                    & Support</a>
+                                <div class="border-t my-1">
+                                    <a href="index.html"
+                                        onclick="openLogoutModal(event)"
+                                        class="block px-4 py-2 hover:bg-green-200 rounded-md p-2 transition-colors">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn"
+                    class="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-50 transition-colors duration-200"
+                    onclick="toggleMobileMenu()">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24" stroke-width="2"
+                        stroke="currentColor"
+                        class="w-6 h-6 hidden transition-transform duration-200">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <div id="mobile-menu"
+                class="lg:hidden absolute top-full left-0 w-full bg-white border-b border-gray-100 shadow-lg transform -translate-y-full invisible transition-all duration-300 z-40">
+                <nav class="px-4 sm:px-6 py-4 space-y-1">
+                    <!-- Mobile Home Link -->
+                    <a href="landingpage.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        Home
+                    </a>
+
+                    <!-- Mobile Products & Services -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownProductsMobile(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>Product & Services</span>
+                            <i id="products-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-products-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="loan-products.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Loans</a>
+                            <a href="deposit.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Deposits</a>
+                            <a href="savings-page.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Savings</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile About -->
+                    <div class="space-y-1">
+                        <button onclick="toggleDropdownMobileAbout(event)"
+                            class="w-full flex items-center justify-between px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium text-left">
+                            <span>About</span>
+                            <i id="about-chevron"
+                                class="fas fa-chevron-down text-sm transition-transform duration-200"></i>
+                        </button>
+                        <div id="dropdown-menu-about-mobile"
+                            class="hidden ml-4 space-y-1">
+                            <a href="about-gbldc.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">About
+                                GBLDC</a>
+                            <a href="#"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Mission
+                                & Vision</a>
+                            <a href="board-of-directors.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Board
+                                of Directors</a>
+                            <a href="committee-officers.html"
+                                class="block px-4 py-2 rounded-lg hover:bg-green-100 hover:text-green-700 transition-colors text-sm">Committee
+                                Officers</a>
+                        </div>
+                    </div>
+
+                    <!-- Mobile News & Events -->
+                    <a href="news&events.html"
+                        class="block px-4 py-3 rounded-lg hover:bg-green-50 hover:text-green-700 transition-colors font-medium">
+                        News & Events
+                    </a>
+
+                    <!-- Mobile CTA Button -->
+                </nav>
+            </div>
+        </header>
+
+             />
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script src="../src/javascript/landingpage.js"></script>
+    <title>About Applying Loan | GBLDC</title>
+    <title>About Loaning | GBLDC</title>
+   </head>
+ 
+   <body
+         </nav>
+       </div>
+     </header>
+    <!-- Hero Section -->
+    <section
+      class="bg-green-700 min-h-[20vh] text-white py-16 px-6 text-center mt-12"
+    >
+      <div class="relative max-w-6xl mx-auto px-6 text-center">
+        <h1 class="text-4xl md:text-5xl font-semibold mb-4">
+          Learn More About Applying for a Loan
+        </h1>
+        <p class="text-lg max-w-2xl mx-auto">
+          GBLDC offers a variety of loan products to meet your financial needs.
+          Our loan application process is simple and straightforward.
+        </p>
+      </div>
+    </section>
+
+    <!-- Why Get a Loan from GBLDC? -->
+    <section id="benefits" class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">
+            Why Get a Loan from GBLDC?
+          </h2>
+          <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+            We provide our members with accessible and affordable loan products
+            to help them achieve their financial goals.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Benefit 1 -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
+            <div
+              class="w-16 h-16 bg-green-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-percent text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+              Competitive Interest Rates
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-center">
+              Enjoy low-interest rates on all our loan products, making them
+              more affordable for our members.
+            </p>
+          </div>
+
+          <!-- Benefit 2: Flexible Payment Terms -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
+            <div
+              class="w-16 h-16 bg-blue-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-calendar-alt text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+              Flexible Payment Terms
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-center">
+              We offer flexible payment terms that can be tailored to your
+              financial situation.
+            </p>
+          </div>
+
+          <!-- Benefit 3: Fast Approval Process -->
+          <div class="bg-white shadow-lg p-8 rounded-2xl benefit-card">
+            <div
+              class="w-16 h-16 bg-purple-500 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+            >
+              <i class="fas fa-rocket text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">
+              Fast Approval Process
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-center">
+              Our streamlined loan application process ensures that you get
+              your loan approved in the shortest time possible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Loan Application Requirements -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">
+            Loan Application Requirements
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Please prepare the following documents to apply for a loan.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 md:p-12 w-9xl mx-auto shadow-xl">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Eligibility -->
+            <div class="animate-slide-in-left">
+              <h3
+                class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"
+              >
+                <i class="fas fa-user-check text-green-500"></i>
+                Eligibility Requirements
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Membership Status:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Must be a member of GBLDC in good standing.</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Age Requirement:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Must be a 25 years old and above (legal age for
+                      financial commitments)</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Residency:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Resident of Bulacan province or nearby areas within our
+                      service coverage</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg"
+                      >Financial Stability:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Must have stable income source (employed, business owner,
+                      or regular income)</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg"
+                      >Cooperative Principles:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Agrees to abide by cooperative principles and values of
+                      mutual help and solidarity</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg"
+                      >Active Participation:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Commits to active participation in cooperative activities
+                      and meetings</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-green-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Good Standing:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >No derogatory records or blacklisted status from other
+                      financial institutions</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Required Documents -->
+            <div class="animate-slide-in-right">
+              <h3
+                class="text-2xl font-bold text-gray-800 mb-6 flex items-center gap-3"
+              >
+                <i class="fas fa-file-alt text-blue-500"></i>
+                Required Documents
+              </h3>
+              <ul class="space-y-4">
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-base"
+                      >Valid Government ID:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Driver's License, UMID, SSS ID, Postal ID, or Passport
+                      (original and photocopy)</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Proof of Address:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Recent utility bill, barangay certificate, or lease
+                      contract (not older than 3 months)</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Recent Photographs:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >2x2 recent photographs (2 copies) with white
+                      background</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg">Proof of Income:</span>
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Certificate of Employment, Business Permit, or ITR for
+                      self-employed individuals</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg"
+                      >Initial Capital Deposit:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Minimum share capital and membership fee payment
+                      receipt</span
+                    >
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fas fa-check-circle text-blue-500 mt-1"></i>
+                  <div>
+                    <span class="font-medium text-lg"
+                      >Reference/Recommendation:</span
+                    >
+                    <span class="block text-gray-600 text-base mt-1"
+                      >Character reference from existing member or community
+                      leader (if applicable)</span
+                    >
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Share Capital -->
+          <div
+            class="mt-12 p-6 bg-gradient-to-r from-green-50 to-emerald-50 rounded-xl border border-green-200"
+          >
+            <h3
+              class="text-xl font-bold text-gray-800 mb-4 flex items-center gap-3"
+            >
+              <i class="fas fa-coins text-green-500"></i>
+              Initial Share Capital
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="flex justify-between items-center">
+                <span class="font-medium">Minimum Share Capital:</span>
+                <span class="text-2xl font-bold text-green-600">₱ 1,500</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="font-medium">Membership Fee:</span>
+                <span class="text-2xl font-bold text-green-600">TBA</span>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm mt-4">
+              <i class="fas fa-info-circle text-blue-500 mr-2"></i>
+              Share capital represents your ownership stake in the cooperative
+              and earns annual dividends based on the cooperative's performance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Apply Section -->
+    <section class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">
+            How to Apply for a Loan
+          </h2>
+          <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+            Follow these simple steps to apply for a loan. Our loan
+            application process is designed to be straightforward and
+            welcoming.
+          </p>
+        </div>
+
+        <!-- Step-by-step process -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Step 1 -->
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
+                <i class="fas fa-file-alt text-2xl text-white"></i>
+              </div>
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
+                1
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Submit Application
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Fill out the online loan application form and upload the
+              required documents.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
+                <i class="fas fa-search-dollar text-2xl text-white"></i>
+              </div>
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
+                2
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Loan Evaluation
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Our loan officers will evaluate your application and submitted
+              documents.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
+                <i class="fas fa-clipboard-check text-2xl text-white"></i>
+              </div>
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
+                3
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Loan Approval
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              You will be notified of the status of your loan application
+              within 3-5 business days.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="text-center group">
+            <div class="relative mb-6">
+              <div
+                class="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto shadow-lg group-hover:shadow-xl transition-shadow duration-300"
+              >
+                <i class="fas fa-money-check-alt text-2xl text-white"></i>
+              </div>
+              <div
+                class="absolute -top-2 -right-2 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-sm"
+              >
+                4
+              </div>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-3">
+              Loan Disbursement
+            </h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Once your loan is approved, the loan amount will be disbursed
+              to your account.
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12">
+          <div
+            class="bg-green-700 p-8 rounded-2xl text-white"
+          >
+            <h3 class="text-2xl font-bold mb-4">
+              Ready to Apply for a Loan?
+            </h3>
+            <p class="text-green-100 mb-6 max-w-2xl mx-auto">
+              Take the first step towards achieving your financial goals.
+              Apply for a loan today!
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            >
+              <a
+                href="loan-application.html"
+                class="bg-white text-green-600 px-8 py-3 rounded-full font-bold hover:bg-green-50 transition-colors duration-200 inline-flex items-center gap-2"
+              >
+                <i class="fas fa-file-alt"></i>
+                Apply for a Loan
+              </a>
+              <a
+                href="contact-us.html"
+                class="border-2 border-white text-white px-8 py-3 rounded-full font-bold hover:bg-white hover:text-green-600 transition-colors duration-200 inline-flex items-center gap-2"
+              >
+                <i class="fas fa-phone"></i>
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Terms and Conditions Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold gradient-text mb-4">
+            Loan Terms and Conditions
+          </h2>
+          <p class="text-gray-600 text-lg">
+            Please read the following terms and conditions carefully before applying for a loan.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg p-8 md:p-12 w-9xl mx-auto shadow-xl">
+          <div class="prose max-w-none">
+            <h3 class="text-lg font-bold">1. Eligibility</h3>
+            <p>All loan applicants must be members of GBLDC in good standing for at least six (6) months and 25 years old and above (legal age for
+                      financial commitments) Applicants must have a stable source of income and a good credit history.</p>
+
+            <h3 class="text-lg font-bold">2. Interest Rates</h3>
+            <p>Interest rates are subject to change without prior notice. The interest rate on your loan will be determined by the type of loan, the loan amount, and your credit history.</p>
+
+            <h3 class="text-lg font-bold">3. Loan Repayment</h3>
+            <p>Loan repayments must be made on or before the due date. A penalty fee will be charged for late payments. The repayment schedule will be provided to you upon loan approval.</p>
+
+            <h3 class="text-lg font-bold">4. Loan Application</h3>
+            <p>All loan applications are subject to approval by the GBLDC loan committee. GBLDC reserves the right to approve or reject any loan application.</p>
+
+            <h3 class="text-lg font-bold">5. Privacy Policy</h3>
+            <p>GBLDC is committed to protecting your privacy. We will not share your personal information with third parties without your consent. Your information will be used solely for the purpose of processing your loan application.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-green-900 text-white pt-12 pb-4 mt-16">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 text-sm">
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Products
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="loan-products.html"
+                  class="hover:underline transition-colors"
+                  >Loan Products</a
+                >
+              </li>
+              <li>
+                <a href="deposit.html" class="hover:underline transition-colors"
+                  >Deposit Products</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Savings Products</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              About
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="about-gbldc.html"
+                  class="hover:underline transition-colors"
+                  >About GBLDC</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline transition-colors duration-200"
+                  >Senior Management</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="hover:underline transition-colors duration-200"
+                  >Officers & Committees</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Quicklinks
+            </h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="https://ifernglobal.com.ph/"
+                  class="hover:underline transition-colors"
+                  >iFern Global</a
+                >
+              </li>
+              <li>
+                <a href="index.html" class="hover:underline transition-colors"
+                  >Member Portal Login</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Contact Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="applynow.html"
+                  class="hover:underline transition-colors"
+                  >Apply Now</a
+                >
+              </li>
+              <li>
+                <a href="#" class="hover:underline transition-colors"
+                  >Feedback</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col items-center md:items-start">
+            <h4 class="font-semibold mb-3 uppercase tracking-wide text-lg">
+              Get Our App
+            </h4>
+            <div class="flex gap-2 mb-2">
+              <a href="https://play.google.com/store" target="_blank"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                  alt="Google Play"
+                  class="h-10 rounded shadow"
+              /></a>
+              <a href="https://www.apple.com/app-store/" target="_blank"
+                ><img
+                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                  alt="App Store"
+                  class="h-10 rounded shadow"
+              /></a>
+            </div>
+            <p class="text-xs text-white">
+              Download our app for a better banking experience.
+            </p>
+          </div>
+        </div>
+        <div
+          class="border-t border-green-800 mt-10 pt-6 flex flex-col md:flex-row md:justify-between md:items-center text-xs text-white gap-2"
+        >
+          <div class="text-center md:text-left">
+            GREATER BULACAN LIVELIHOOD DEVELOPMENT COOPERATIVE © 2025. ALL
+            RIGHTS RESERVED.
+          </div>
+          <div class="flex space-x-6 mt-4 md:mt-0 md:text-center">
+            <a href="#" class="text-white text-sm transition-colors"
+              >Privacy Policy</a
+            >
+            <a href="#" class="text-white text-sm transition-colors"
+              >Terms of Service</a
+            >
+            <a href="#" class="text-white text-sm transition-colors"
+              >Cookie Policy</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
