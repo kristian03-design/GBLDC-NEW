@@ -13,872 +13,1151 @@
       src="https://connect.facebook.net/en_US/sdk.js"></script>
     <!-- Google Identity Services -->
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet">
     <script src="../src/javascript/index.js"></script>
      <link href="./output.css" rel="stylesheet">
-    <title>Register | GBLDC</title>
+     <link href="../src/animation/animation.css" rel="stylesheet">
+    <title>Member Registration | GBLDC</title>
   </head>
-  <body
-    class="bg-gray-50 flex items-center justify-center min-h-screen font-sans p-4">
-    
-    <!-- Registration Section - Now showing first -->
-    <div id="registerSection"
-      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mx-auto">
-      <!-- Left Side: Illustration -->
-      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
-        <img src="path/images/gbldc-login.png" alt="Loan Illustration"
-          class="object-cover w-full h-full">
-      </div>
-      <!-- Right Side: Registration Form -->
-      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <div>
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
-            style="image-rendering: auto;">
-          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Create
-            Account</h2>
-          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
-            Join GBLDC to easily manage your loans, track your finances, and
-            access exclusive member benefits. Fill out the form below to get
-            started.
-          </p>
-          <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-            <div class="col-span-1">
-              <label class="block text-sm text-gray-600 mb-1">First Name</label>
-              <input type="text" placeholder="First Name"
-              class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
-            <div class="col-span-1">
-              <label class="block text-sm text-gray-600 mb-1">Last Name</label>
-              <input type="text" placeholder="Last Name"
-              class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
-            <div class="col-span-1 sm:col-span-2">
-              <label class="block text-sm text-gray-600 mb-1">Email
-                Address</label>
-              <input type="email" placeholder="example@mail.com"
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-            </div>
-            <div class="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-              <div>
-                <label class="block text-sm text-gray-600 mb-1">Password</label>
-                <input type="password" placeholder="••••••••"
-                  class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-              </div>
-              <div>
-                <label class="block text-sm text-gray-600 mb-1">Confirm
-                  Password</label>
-                <input type="password" placeholder="••••••••"
-                  class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-              </div>
-            </div>
-            <!-- Terms and Conditions (full width) -->
-            <div class="col-span-1 sm:col-span-2 flex items-start">
-              <input type="checkbox" id="terms" required class="mt-1 mr-2">
-              <label for="terms" class="text-sm text-gray-700">I confirm that
-                all information provided is true and I agree to the <a href="#"
-                  class="text-green-700 underline">Terms & Conditions</a> of
-                GBLDC.</label>
-            </div>
-            <div class="col-span-1 sm:col-span-2">
-              <button type="button"
-                class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
-                onclick="showOtpSection();">
-                Continue
-              </button>
-            </div>
-          </form>
-          <p class="text-sm text-gray-600 text-center mt-4">
-            Already have an account?
-            <a href="#" onclick="showLoginSection();"
-              class="text-green-600 hover:underline">Log in</a>
-          </p>
+  <body class="bg-gray-50 flex items-center justify-center min-h-screen font-outfit">
+     <!-- Registration Section -->
+    <div id="registerSection" class="bg-white w-full max-w-7xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mx-auto">
+        <!-- Left Side: Illustration -->
+        <div class="hidden lg:flex w-full lg:w-3/5 bg-green-500 relative items-center justify-center">
+            <img src="path/images/gbldc-login.png" alt="Loan Illustration" class="object-cover w-full h-full">
         </div>
-        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
-          Livelihood Development Cooperative</p>
-      </div>
+        <!-- Right Side: Registration Form -->
+        <div class="w-full lg:w-3/5 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
+            <div>
+                <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-16 h-16 sm:w-20 sm:h-20 mb-4 mx-auto" style="image-rendering: auto;">
+                <h2 class="text-lg sm:text-xl font-bold mb-4 text-center text-green-600">Create Account</h2>
+                <p class="text-xs sm:text-sm text-gray-700 mb-4 sm:mb-6 text-center">
+                    Join GBLDC to easily manage your loans, track your finances, and access exclusive member benefits. Fill out the form below to get started.
+                </p>
+                <form id="registrationForm" class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                    <div class="col-span-1">
+                        <label class="block text-sm text-gray-600 mb-1">First Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required
+                            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <div class="col-span-1">
+                        <label class="block text-sm text-gray-600 mb-1">Last Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required
+                            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2">
+                        <label class="block text-sm text-gray-600 mb-1">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="example@mail.com" required
+                            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2">
+                        <label class="block text-sm text-gray-600 mb-1">Phone Number <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+63 9XX XXX XXXX" required
+                            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                        <div class="relative">
+                            <label class="block text-sm text-gray-600 mb-1">Password <span class="text-red-500">*</span></label>
+                            <input type="password" id="password" name="password" placeholder="••••••••" required
+                                class="w-full px-3 py-2 pr-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                            <button type="button" class="absolute right-3 top-8 text-gray-500 hover:text-gray-700" onclick="togglePassword('password')">
+                                <i class="fas fa-eye" id="passwordToggle"></i>
+                            </button>
+                            <div id="passwordStrength" class="password-strength"></div>
+                            <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                            <div class="text-xs text-gray-500 mt-1">
+                                Min 8 chars, uppercase, lowercase, number, special char
+                            </div>
+                        </div>
+                        <div class="relative">
+                            <label class="block text-sm text-gray-600 mb-1">Confirm Password <span class="text-red-500">*</span></label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="••••••••" required
+                                class="w-full px-3 py-2 pr-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                            <button type="button" class="absolute right-3 top-8 text-gray-500 hover:text-gray-700" onclick="togglePassword('confirmPassword')">
+                                <i class="fas fa-eye" id="confirmPasswordToggle"></i>
+                            </button>
+                            <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                        </div>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2">
+                        <label class="block text-sm text-gray-600 mb-1">Date of Birth <span class="text-red-500">*</span></label>
+                        <input type="date" id="dateOfBirth" name="dateOfBirth" required
+                            class="w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2 flex items-start">
+                        <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-2">
+                        <label for="terms" class="text-sm text-gray-700">I confirm that all information provided is true and I agree to the 
+                            <a href="#" class="text-green-700 underline hover:text-green-800">Terms & Conditions</a> of GBLDC.
+                            <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                    <div class="col-span-1 sm:col-span-2">
+                        <button type="submit" id="registerBtn"
+                            class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors duration-200">
+                            Continue
+                        </button>
+                    </div>
+                </form>
+                <p class="text-sm text-gray-600 text-center mt-4">
+                    Already have an account?
+                    <a href="#" onclick="showLoginSection();" class="text-green-600 hover:underline">Log in</a>
+                </p>
+            </div>
+            <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan Livelihood Development Cooperative</p>
+        </div>
     </div>
 
-    <!-- Login Section - Now hidden initially -->
-    <div id="loginSection"
-      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden hidden invisible pointer-events-none">
-
-      <!-- Left Side: Login Form -->
-      <div id="loginSect" class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <!-- Logo -->
-        <div>
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
-            style="image-rendering: auto;">
-          <h2
-            class="text-xl sm:text-2xl font-bold mb-2 text-center text-green-600 tracking-wide">
-            Welcome to GBLDC
-          </h2>
-          <p class="text-sm text-gray-800 mb-6 sm:mb-8 text-center">Securely
-            access your account to manage your loans and finances.</p>
-
-          <form class="space-y-4 sm:space-y-6">
+    <!-- Login Section -->
+    <div id="loginSection" class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden hidden invisible pointer-events-none">
+        <div id="loginSect" class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
             <div>
-              <label class="text-sm text-gray-600">Email Address</label>
-              <input type="email" placeholder="example@mail.com"
-                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto" style="image-rendering: auto;">
+                <h2 class="text-xl sm:text-2xl font-bold mb-2 text-center text-green-600 tracking-wide">Welcome to GBLDC</h2>
+                <p class="text-sm text-gray-800 mb-6 sm:mb-8 text-center">Securely access your account to manage your loans and finances.</p>
+
+                <form id="loginForm" class="space-y-4 sm:space-y-6">
+                    <div>
+                        <label class="text-sm text-gray-600">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="loginEmail" name="loginEmail" placeholder="example@mail.com" required
+                            class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <div>
+                        <label class="text-sm text-gray-600">Password <span class="text-red-500">*</span></label>
+                        <div class="relative">
+                            <input type="password" id="loginPassword" name="loginPassword" placeholder="••••••••" required
+                                class="w-full mt-1 px-4 py-2 pr-10 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                            <button type="button" class="absolute right-3 top-3 text-gray-500 hover:text-gray-700" onclick="togglePassword('loginPassword')">
+                                <i class="fas fa-eye" id="loginPasswordToggle"></i>
+                            </button>
+                        </div>
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                        <div class="text-right mt-1">
+                            <a href="#" class="text-sm text-green-600 hover:underline" id="forgotPasswordLink">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <button type="submit" id="loginBtn" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors duration-200">
+                        Log in
+                    </button>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="fbLogin()" type="button" class="flex-1 border border-blue-600 text-blue-600 py-2 rounded-md hover:bg-blue-100 flex items-center justify-center gap-2 text-sm transition-colors duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" class="h-5" alt="Facebook">
+                            <span class="hidden sm:inline">Log in with Facebook</span>
+                            <span class="sm:hidden">Facebook</span>
+                        </button>
+                        <button id="googleLoginBtn" type="button" class="flex-1 border border-red-600 text-red-600 py-2 rounded-md hover:bg-red-100 flex items-center justify-center gap-2 text-sm transition-colors duration-200">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg" class="h-5" alt="Google">
+                            <span class="hidden sm:inline">Log in with Google</span>
+                            <span class="sm:hidden">Google</span>
+                        </button>
+                    </div>
+                </form>
+                <p class="text-sm text-gray-600 mt-4 sm:mt-6 text-center">
+                    Don't have an account?
+                    <a href="#" class="text-green-600 hover:underline" onclick="event.preventDefault(); showRegisterSection();">Create an account</a>
+                </p>
             </div>
-            <div>
-              <label class="text-sm text-gray-600">Password</label>
-              <input type="password" placeholder="••••••••"
-                class="w-full mt-1 px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
-              <div class="text-right mt-1">
-                <a href="#" class="text-sm text-green-600 hover:underline"
-                  id="forgotPasswordLink">Forgot Password?</a>
-              </div>
-            </div>
-            <button
-              type="button"
-              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700"
-              onclick="validateLoginFields()">
-              Log in
-            </button>
-            <div class="flex flex-col sm:flex-row gap-4">
-              <button onclick="fbLogin()" type="button"
-                class="flex-1 border border-blue-600 text-blue-600 py-2 rounded-md hover:bg-blue-100 flex items-center justify-center gap-2 text-sm">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg"
-                  class="h-5" alt="Facebook">
-                <span class="hidden sm:inline">Log in with Facebook</span>
-                <span class="sm:hidden">Facebook</span>
-              </button>
-              <button id="googleLoginBtn"
-                type="button"
-                class="flex-1 border border-red-600 text-red-600 py-2 rounded-md hover:bg-red-100 flex items-center justify-center gap-2 text-sm">
-                <img
-                  src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
-                  class="h-5" alt="Google">
-                <span class="hidden sm:inline">Log in with Google</span>
-                <span class="sm:hidden">Google</span>
-              </button>
-            </div>
-          </form>
-          <p class="text-sm text-gray-600 mt-4 sm:mt-6 text-center">
-            Don't have an account?
-            <a href="#" class="text-green-600 hover:underline"
-              onclick="event.preventDefault(); showRegisterSection();">Create an
-              account</a>
-          </p>
+            <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan Livelihood Development Cooperative</p>
         </div>
-
-        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
-          Livelihood Development Cooperative</p>
-      </div>
-      <!-- Right Side: Illustration (for login only) -->
-      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
-        <img src="path/images/gbldc-login.png" alt="Loan Illustration"
-          class="object-cover w-full h-full">
-      </div>
+        <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
+            <img src="path/images/gbldc-login.png" alt="Loan Illustration" class="object-cover w-full h-full">
+        </div>
     </div>
 
     <!-- Forgot Password Section -->
-    <div id="forgotPasswordSection"
-      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
-      <!-- Left Side: Illustration -->
-      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
-        <img src="path/images/gbldc-forgot-password.jpg" alt="Loan Illustration"
-          class="object-cover w-full h-full">
-      </div>
-      <!-- Right Side: Forgot Password Form -->
-      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <div>
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
-            style="image-rendering: auto;">
-          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Forgot
-            Password</h2>
-          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
-            Enter your registered email address and we'll send you a link to
-            reset your password.
-          </p>
-          <form id="forgotPasswordForm" class="space-y-4 sm:space-y-6">
+    <div id="forgotPasswordSection" class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mx-auto hidden invisible pointer-events-none">
+        <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
+            <img src="path/images/gbldc-forgot-password.jpg" alt="Loan Illustration" class="object-cover w-full h-full">
+        </div>
+        <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
             <div>
-              <label class="block text-sm text-gray-600 mb-1">Email
-                Address</label>
-              <input type="email" id="forgotPasswordEmail" placeholder="example@mail.com" required
-                class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto" style="image-rendering: auto;">
+                <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Forgot Password</h2>
+                <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
+                    Enter your registered email address and we'll send you a link to reset your password.
+                </p>
+                <form id="forgotPasswordForm" class="space-y-4 sm:space-y-6">
+                    <div>
+                        <label class="block text-sm text-gray-600 mb-1">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="forgotPasswordEmail" name="forgotPasswordEmail" placeholder="example@mail.com" required
+                            class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <div class="error-message text-red-500 text-xs mt-1 hidden"></div>
+                    </div>
+                    <button type="submit" id="forgotPasswordBtn" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors duration-200">
+                        Send Reset Link
+                    </button>
+                </form>
+                <p class="text-sm text-gray-600 text-center mt-4">
+                    Remembered your password?
+                    <a href="#" onclick="showLoginSection();" class="text-green-600 hover:underline">Log in</a>
+                </p>
             </div>
-            <button type="button" onclick="sendForgotPasswordLink();"
-              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">
-              Send Reset Link
-            </button>
-          </form>
-          <p class="text-sm text-gray-600 text-center mt-4">
-            Remembered your password?
-            <a href="#" onclick="showLoginSection();"
-              class="text-green-600 hover:underline">Log in</a>
-          </p>
+            <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan Livelihood Development Cooperative</p>
         </div>
-        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
-          Livelihood Development Cooperative</p>
-      </div>
-    </div>
-
-    <!-- Forgot Password OTP Section -->
-    <div id="forgotPasswordOtpSection"
-      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
-      <!-- Left Side: Illustration -->
-      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
-        <img src="path/images/gbldc-verify-account.jpg" alt="OTP Verification Illustration"
-          class="object-cover w-full h-full shadow-2xl">
-      </div>
-      <!-- Right Side: OTP Form -->
-      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <div>
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
-            style="image-rendering: auto;">
-          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify
-            Your Email</h2>
-          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
-            Enter the 6-digit code sent to your email address to reset your password.<br>
-            <span id="forgotPasswordOtpEmailHint"
-              class="block text-xs text-gray-500 mt-2"></span>
-          </p>
-          <form id="forgotPasswordOtpForm" class="space-y-4 sm:space-y-6">
-            <div class="flex justify-center gap-1 sm:gap-2 mb-4">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl forgot-password-otp-input"
-                inputmode="numeric" pattern="[0-9]*">
-            </div>
-            <button type="submit"
-              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Verify</button>
-            <p class="text-sm text-gray-600 text-center">
-              Didn't receive the code?
-              <a href="#" id="forgotPasswordOtpResend"
-                class="text-green-600 hover:underline">Resend</a>
-            </p>
-          </form>
-        </div>
-        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
-          Livelihood Development Cooperative</p>
-      </div>
-    </div>
-    <!-- OTP Section (for login verification) -->
-    <div id="loginOtpSection"
-      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
-      <!-- Left Side: Illustration -->
-      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
-        <img src="path/images/gbldc-verify-account.jpg"
-          alt="OTP Verification Illustration"
-          class="object-cover w-full h-full shadow-2xl">
-      </div>
-      <!-- Right Side: OTP Form -->
-      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <div>
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
-            style="image-rendering: auto;">
-          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify
-            Login</h2>
-          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
-            Enter the 6-digit code sent to your email or phone to complete your
-            login.<br>
-            <span id="otpEmailHint"
-              class="block text-xs text-gray-500 mt-2">Example:
-              juandelacruz@gmail.com</span>
-          </p>
-          <form id="loginOtpForm" class="space-y-4 sm:space-y-6">
-            <div class="flex justify-center gap-1 sm:gap-2 mb-4">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-            </div>
-            <button type="submit"
-              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Verify</button>
-            <p class="text-sm text-gray-600 text-center">
-              Didn't receive the code?
-              <a href="#" id="loginOtpResend"
-                class="text-green-600 hover:underline">Resend</a>
-            </p>
-            <p class="text-sm text-gray-600 text-center">
-              <a href="#" onclick="showLoginSection();"
-                class="text-green-600 hover:underline">Back to Login</a>
-            </p>
-          </form>
-        </div>
-        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
-          Livelihood Development Cooperative</p>
-      </div>
     </div>
 
     <!-- OTP Section -->
-    <div id="otpSection"
-      class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
-      <!-- Left Side: Illustration -->
-      <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
-        <img src="path/images/gbldc-verify-account.jpg" alt="Loan Illustration"
-          class="object-cover w-full h-full">
-      </div>
-      <!-- Right Side: OTP Form -->
-      <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
-        <div>
-          <img src="path/images/logocoop-removebg-preview 2.png"
-            alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto"
-            style="image-rendering: auto;">
-          <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify
-            Your Email</h2>
-          <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
-            Enter the 6-digit code sent to your email address to complete your
-            registration.
-          </p>
-          <form class="space-y-4 sm:space-y-6">
-            <div class="flex justify-center gap-1 sm:gap-2 mb-4">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-              <input type="text" maxlength="1"
-                class="w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl"
-                inputmode="numeric" pattern="[0-9]*">
-            </div>
-            <button type="submit"
-              class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700">Verify</button>
-            <p class="text-sm text-gray-600 text-center">
-              Didn't receive the code?
-              <a href="#" class="text-green-600 hover:underline">Resend</a>
-            </p>
-            <p class="text-sm text-gray-600 text-center">
-              Want to use a different email?
-              <a href="#" onclick="event.preventDefault(); showRegisterSection();"
-                class="text-green-600 hover:underline">Back to Registration</a>
-            </p>
-          </form>
+    <div id="otpSection" class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
+        <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
+            <img src="path/images/gbldc-verify-account.jpg" alt="Loan Illustration" class="object-cover w-full h-full">
         </div>
-        <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan
-          Livelihood Development Cooperative</p>
-      </div>
+        <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+                <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto" style="image-rendering: auto;">
+                <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify Your Email</h2>
+                <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
+                    Enter the 6-digit code sent to your email address to complete your registration.
+                    <span id="registrationEmailHint" class="block text-xs text-gray-500 mt-2"></span>
+                </p>
+                <form id="otpForm" class="space-y-4 sm:space-y-6">
+                    <div class="flex justify-center gap-1 sm:gap-2 mb-4">
+                        <input type="text" maxlength="1" class="otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                    </div>
+                    <div class="text-center">
+                        <div id="otpTimer" class="text-sm text-gray-500 mb-2"></div>
+                    </div>
+                    <button type="submit" id="verifyOtpBtn" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors duration-200">Verify</button>
+                    <p class="text-sm text-gray-600 text-center">
+                        Didn't receive the code?
+                        <a href="#" id="resendOtp" class="text-green-600 hover:underline">Resend</a>
+                    </p>
+                    <p class="text-sm text-gray-600 text-center">
+                        Want to use a different email?
+                        <a href="#" onclick="event.preventDefault(); showRegisterSection();" class="text-green-600 hover:underline">Back to Registration</a>
+                    </p>
+                </form>
+            </div>
+            <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan Livelihood Development Cooperative</p>
+        </div>
     </div>
-  </div>
+
+    <!-- Login OTP Section -->
+    <div id="loginOtpSection" class="bg-white w-full max-w-6xl flex flex-col lg:flex-row rounded-2xl shadow-xl overflow-hidden mt-10 mx-auto hidden invisible pointer-events-none">
+        <div class="hidden lg:flex w-full lg:w-1/2 bg-green-500 relative items-center justify-center">
+            <img src="path/images/gbldc-verify-account.jpg" alt="OTP Verification Illustration" class="object-cover w-full h-full">
+        </div>
+        <div class="w-full lg:w-1/2 p-6 sm:p-8 lg:p-10 flex flex-col justify-between">
+            <div>
+                <img src="path/images/logocoop-removebg-preview 2.png" alt="GBLDC Logo" class="w-20 h-20 sm:w-24 sm:h-24 mb-6 mx-auto" style="image-rendering: auto;">
+                <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-green-600">Verify Login</h2>
+                <p class="text-sm text-gray-700 mb-6 sm:mb-8 text-center">
+                    Enter the 6-digit code sent to your email to complete your login.
+                    <span id="otpEmailHint" class="block text-xs text-gray-500 mt-2">Example: juandelacruz@gmail.com</span>
+                </p>
+                <form id="loginOtpForm" class="space-y-4 sm:space-y-6">
+                    <div class="flex justify-center gap-1 sm:gap-2 mb-4">
+                        <input type="text" maxlength="1" class="login-otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="login-otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="login-otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="login-otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="login-otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                        <input type="text" maxlength="1" class="login-otp-input w-10 h-10 sm:w-12 sm:h-12 text-center border rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 text-xl sm:text-2xl" inputmode="numeric" pattern="[0-9]*">
+                    </div>
+                    <div class="text-center">
+                        <div id="loginOtpTimer" class="text-sm text-gray-500 mb-2"></div>
+                    </div>
+                    <button type="submit" id="verifyLoginOtpBtn" class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition-colors duration-200">Verify</button>
+                    <p class="text-sm text-gray-600 text-center">
+                        Didn't receive the code?
+                        <a href="#" id="loginOtpResend" class="text-green-600 hover:underline">Resend</a>
+                    </p>
+                    <p class="text-sm text-gray-600 text-center">
+                        <a href="#" onclick="showLoginSection();" class="text-green-600 hover:underline">Back to Login</a>
+                    </p>
+                </form>
+            </div>
+            <p class="text-xs text-gray-400 text-center mt-6 sm:mt-10 italic">©2025 Greater Bulacan Livelihood Development Cooperative</p>
+        </div>
+    </div>
 
 <script>
+// Enhanced Registration System with Improved Functionality
+class RegistrationSystem {
+    constructor() {
+        this.userData = {};
+        this.otpTimer = null;
+        this.resendCooldown = 60;
+        this.maxAttempts = 3;
+        this.currentAttempts = 0;
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.setupValidation();
+        this.setupOTPInputs();
+        this.setDateLimits();
+    }
+
+    setupEventListeners() {
+        // Registration form
+        const registrationForm = document.getElementById('registrationForm');
+        if (registrationForm) {
+            registrationForm.addEventListener('submit', (e) => this.handleRegistration(e));
+        }
+
+        // Login form
+        const loginForm = document.getElementById('loginForm');
+        if (loginForm) {
+            loginForm.addEventListener('submit', (e) => this.handleLogin(e));
+        }
+
+        // Forgot password form
+        const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        if (forgotPasswordForm) {
+            forgotPasswordForm.addEventListener('submit', (e) => this.handleForgotPassword(e));
+        }
+
+        // OTP forms
+        const otpForm = document.getElementById('otpForm');
+        if (otpForm) {
+            otpForm.addEventListener('submit', (e) => this.handleOTPVerification(e));
+        }
+
+        const loginOtpForm = document.getElementById('loginOtpForm');
+        if (loginOtpForm) {
+            loginOtpForm.addEventListener('submit', (e) => this.handleLoginOTPVerification(e));
+        }
+
+        // Password strength checker
+        const passwordInput = document.getElementById('password');
+        if (passwordInput) {
+            passwordInput.addEventListener('input', () => this.checkPasswordStrength());
+        }
+
+        // Real-time validation
+        this.setupRealTimeValidation();
+    }
+
+    setupRealTimeValidation() {
+        const fields = ['firstName', 'lastName', 'email', 'phone', 'password', 'confirmPassword', 'loginEmail', 'loginPassword'];
+        
+        fields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.addEventListener('blur', () => this.validateField(fieldId));
+                field.addEventListener('input', () => this.clearFieldError(fieldId));
+            }
+        });
+    }
+
+    validateField(fieldId) {
+        const field = document.getElementById(fieldId);
+        const value = field.value.trim();
+        let isValid = true;
+        let errorMessage = '';
+
+        switch (fieldId) {
+            case 'firstName':
+            case 'lastName':
+                if (!value) {
+                    errorMessage = 'This field is required';
+                    isValid = false;
+                } else if (value.length < 2) {
+                    errorMessage = 'Must be at least 2 characters';
+                    isValid = false;
+                } else if (!/^[a-zA-Z\s'-]+$/.test(value)) {
+                    errorMessage = 'Only letters, spaces, hyphens and apostrophes allowed';
+                    isValid = false;
+                }
+                break;
+            
+            case 'email':
+            case 'loginEmail':
+                if (!value) {
+                    errorMessage = 'Email is required';
+                    isValid = false;
+                } else if (!this.isValidEmail(value)) {
+                    errorMessage = 'Please enter a valid email address';
+                    isValid = false;
+                }
+                break;
+            
+            case 'phone':
+                if (!value) {
+                    errorMessage = 'Phone number is required';
+                    isValid = false;
+                } else if (!this.isValidPhoneNumber(value)) {
+                    errorMessage = 'Please enter a valid Philippine mobile number';
+                    isValid = false;
+                }
+                break;
+            
+            case 'password':
+                const strength = this.getPasswordStrength(value);
+                if (!value) {
+                    errorMessage = 'Password is required';
+                    isValid = false;
+                } else if (strength.score < 3) {
+                    errorMessage = 'Password is too weak';
+                    isValid = false;
+                }
+                break;
+            
+            case 'confirmPassword':
+                const password = document.getElementById('password').value;
+                if (!value) {
+                    errorMessage = 'Please confirm your password';
+                    isValid = false;
+                } else if (value !== password) {
+                    errorMessage = 'Passwords do not match';
+                    isValid = false;
+                }
+                break;
+            
+            case 'loginPassword':
+                if (!value) {
+                    errorMessage = 'Password is required';
+                    isValid = false;
+                }
+                break;
+        }
+
+        this.showFieldValidation(fieldId, isValid, errorMessage);
+        return isValid;
+    }
+
+    showFieldValidation(fieldId, isValid, errorMessage) {
+        const field = document.getElementById(fieldId);
+        const errorDiv = field.parentNode.querySelector('.error-message');
+        
+        if (isValid) {
+            field.classList.remove('field-error');
+            field.classList.add('field-success');
+            if (errorDiv) {
+                errorDiv.textContent = '';
+                errorDiv.classList.add('hidden');
+            }
+        } else {
+            field.classList.remove('field-success');
+            field.classList.add('field-error');
+            if (errorDiv) {
+                errorDiv.textContent = errorMessage;
+                errorDiv.classList.remove('hidden');
+            }
+        }
+    }
+
+    clearFieldError(fieldId) {
+        const field = document.getElementById(fieldId);
+        const errorDiv = field.parentNode.querySelector('.error-message');
+        
+        field.classList.remove('field-error');
+        if (errorDiv) {
+            errorDiv.classList.add('hidden');
+        }
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    isValidPhoneNumber(phone) {
+        // Philippine mobile number validation
+        const phoneRegex = /^(\+63|0)?9\d{9}$/;
+        return phoneRegex.test(phone.replace(/\s|-/g, ''));
+    }
+
+    checkPasswordStrength() {
+        const password = document.getElementById('password').value;
+        const strengthBar = document.getElementById('passwordStrength');
+        const strength = this.getPasswordStrength(password);
+        
+        strengthBar.className = 'password-strength';
+        if (strength.score >= 3) {
+            strengthBar.classList.add('strength-strong');
+        } else if (strength.score >= 2) {
+            strengthBar.classList.add('strength-medium');
+        } else if (strength.score >= 1) {
+            strengthBar.classList.add('strength-weak');
+        }
+    }
+
+    getPasswordStrength(password) {
+        let score = 0;
+        const checks = {
+            length: password.length >= 8,
+            lowercase: /[a-z]/.test(password),
+            uppercase: /[A-Z]/.test(password),
+            numbers: /\d/.test(password),
+            symbols: /[^A-Za-z0-9]/.test(password)
+        };
+
+        score = Object.values(checks).filter(Boolean).length;
+        
+        return { score, checks };
+    }
+
+    setDateLimits() {
+        const dateInput = document.getElementById('dateOfBirth');
+        if (dateInput) {
+            const today = new Date();
+            const maxDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+            const minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate());
+            
+            dateInput.max = maxDate.toISOString().split('T')[0];
+            dateInput.min = minDate.toISOString().split('T')[0];
+        }
+    }
+
+    async handleRegistration(e) {
+        e.preventDefault();
+        
+        const button = document.getElementById('registerBtn');
+        const originalText = button.innerHTML;
+        
+        // Show loading state
+        button.innerHTML = '<div class="spinner"></div>Processing...';
+        button.classList.add('loading');
+        
+        try {
+            // Validate all fields
+            const isValid = this.validateRegistrationForm();
+            if (!isValid) {
+                this.showError('Please correct the errors above');
+                return;
+            }
+
+            // Check if email already exists (simulate API call)
+            const emailExists = await this.checkEmailExists(document.getElementById('email').value);
+            if (emailExists) {
+                this.showFieldValidation('email', false, 'An account with this email already exists');
+                return;
+            }
+
+            // Store user data
+            this.userData = {
+                firstName: document.getElementById('firstName').value.trim(),
+                lastName: document.getElementById('lastName').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                dateOfBirth: document.getElementById('dateOfBirth').value,
+                password: document.getElementById('password').value
+            };
+
+            // Send OTP (simulate API call)
+            await this.sendOTP(this.userData.email);
+            
+            this.showOTPSection();
+            this.startOTPTimer();
+            
+        } catch (error) {
+            this.showError('Registration failed. Please try again.');
+        } finally {
+            button.innerHTML = originalText;
+            button.classList.remove('loading');
+        }
+    }
+
+    validateRegistrationForm() {
+        const fields = ['firstName', 'lastName', 'email', 'phone', 'password', 'confirmPassword'];
+        let isValid = true;
+
+        fields.forEach(fieldId => {
+            if (!this.validateField(fieldId)) {
+                isValid = false;
+            }
+        });
+
+        // Validate date of birth
+        const dateOfBirth = document.getElementById('dateOfBirth').value;
+        if (!dateOfBirth) {
+            this.showFieldValidation('dateOfBirth', false, 'Date of birth is required');
+            isValid = false;
+        } else {
+            const birthDate = new Date(dateOfBirth);
+            const today = new Date();
+            const age = today.getFullYear() - birthDate.getFullYear();
+            if (age < 18) {
+                this.showFieldValidation('dateOfBirth', false, 'You must be at least 18 years old');
+                isValid = false;
+            }
+        }
+
+        // Validate terms checkbox
+        const termsCheckbox = document.getElementById('terms');
+        if (!termsCheckbox.checked) {
+            this.showError('Please accept the Terms & Conditions');
+            isValid = false;
+        }
+
+        return isValid;
+    }
+
+    async handleLogin(e) {
+        e.preventDefault();
+        
+        const button = document.getElementById('loginBtn');
+        const originalText = button.innerHTML;
+        
+        button.innerHTML = '<div class="spinner"></div>Logging in...';
+        button.classList.add('loading');
+        
+        try {
+            const email = document.getElementById('loginEmail').value.trim();
+            const password = document.getElementById('loginPassword').value.trim();
+            
+            // Validate login fields
+            let isValid = true;
+            if (!this.validateField('loginEmail')) isValid = false;
+            if (!this.validateField('loginPassword')) isValid = false;
+            
+            if (!isValid) return;
+
+            // Simulate login API call
+            const loginResult = await this.authenticateUser(email, password);
+            if (loginResult.success) {
+                // Update email hint for OTP
+                document.getElementById('otpEmailHint').textContent = `Code sent to: ${email}`;
+                
+                await this.sendLoginOTP(email);
+                this.showLoginOTPSection();
+                this.startLoginOTPTimer();
+            } else {
+                this.showError(loginResult.message || 'Invalid credentials');
+            }
+            
+        } catch (error) {
+            this.showError('Login failed. Please try again.');
+        } finally {
+            button.innerHTML = originalText;
+            button.classList.remove('loading');
+        }
+    }
+
+    async handleForgotPassword(e) {
+        e.preventDefault();
+        
+        const button = document.getElementById('forgotPasswordBtn');
+        const originalText = button.innerHTML;
+        
+        button.innerHTML = '<div class="spinner"></div>Sending...';
+        button.classList.add('loading');
+        
+        try {
+            const email = document.getElementById('forgotPasswordEmail').value.trim();
+            
+            if (!this.isValidEmail(email)) {
+                this.showFieldValidation('forgotPasswordEmail', false, 'Please enter a valid email address');
+                return;
+            }
+
+            // Simulate API call
+            await this.sendPasswordResetLink(email);
+            
+            Swal.fire({
+                icon: 'success',
+                iconColor: '#16a34a',
+                title: 'Reset Link Sent',
+                text: 'A password reset link has been sent to your email address.',
+                color: '#1e2939',
+                timer: 3000,
+                showConfirmButton: false,
+                willClose: () => {
+                    this.showLoginSection();
+                }
+            });
+            
+        } catch (error) {
+            this.showError('Failed to send reset link. Please try again.');
+        } finally {
+            button.innerHTML = originalText;
+            button.classList.remove('loading');
+        }
+    }
+
+    setupOTPInputs() {
+        // Registration OTP inputs
+        const otpInputs = document.querySelectorAll('.otp-input');
+        this.setupOTPNavigation(otpInputs);
+
+        // Login OTP inputs
+        const loginOtpInputs = document.querySelectorAll('.login-otp-input');
+        this.setupOTPNavigation(loginOtpInputs);
+    }
+
+    setupOTPNavigation(inputs) {
+        inputs.forEach((input, idx) => {
+            input.addEventListener('input', (e) => {
+                // Only allow numbers
+                e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                
+                if (e.target.value.length === 1 && idx < inputs.length - 1) {
+                    inputs[idx + 1].focus();
+                }
+            });
+
+            input.addEventListener('keydown', (e) => {
+                if (e.key === 'Backspace' && !e.target.value && idx > 0) {
+                    inputs[idx - 1].focus();
+                }
+            });
+
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                const pasteData = e.clipboardData.getData('text');
+                const numbers = pasteData.replace(/[^0-9]/g, '').slice(0, 6);
+                
+                numbers.split('').forEach((num, index) => {
+                    if (inputs[index]) {
+                        inputs[index].value = num;
+                    }
+                });
+                
+                if (numbers.length === 6) {
+                    inputs[5].focus();
+                }
+            });
+        });
+    }
+
+    async handleOTPVerification(e) {
+        e.preventDefault();
+        
+        const button = document.getElementById('verifyOtpBtn');
+        const originalText = button.innerHTML;
+        
+        button.innerHTML = '<div class="spinner"></div>Verifying...';
+        button.classList.add('loading');
+        
+        try {
+            const otpInputs = document.querySelectorAll('.otp-input');
+            const otpCode = Array.from(otpInputs).map(input => input.value).join('');
+            
+            if (otpCode.length !== 6) {
+                this.showError('Please enter the complete 6-digit code');
+                return;
+            }
+
+            // Simulate OTP verification
+            const isValid = await this.verifyOTP(otpCode, this.userData.email);
+            
+            if (isValid) {
+                // Complete registration
+                await this.completeRegistration();
+                
+                Swal.fire({
+                    icon: 'success',
+                    iconColor: '#16a34a',
+                    title: 'Account Created Successfully!',
+                    text: 'Welcome to GBLDC! You can now log in to your account.',
+                    color: '#1e2939',
+                    timer: 3000,
+                    showConfirmButton: false,
+                    willClose: () => {
+                        this.showLoginSection();
+                        this.resetForms();
+                    }
+                });
+            } else {
+                this.currentAttempts++;
+                if (this.currentAttempts >= this.maxAttempts) {
+                    this.showError('Maximum attempts exceeded. Please request a new code.');
+                    this.resetOTPInputs('.otp-input');
+                } else {
+                    this.showError(`Invalid code. ${this.maxAttempts - this.currentAttempts} attempts remaining.`);
+                }
+            }
+            
+        } catch (error) {
+            this.showError('Verification failed. Please try again.');
+        } finally {
+            button.innerHTML = originalText;
+            button.classList.remove('loading');
+        }
+    }
+
+    async handleLoginOTPVerification(e) {
+        e.preventDefault();
+        
+        const button = document.getElementById('verifyLoginOtpBtn');
+        const originalText = button.innerHTML;
+        
+        button.innerHTML = '<div class="spinner"></div>Verifying...';
+        button.classList.add('loading');
+        
+        try {
+            const otpInputs = document.querySelectorAll('.login-otp-input');
+            const otpCode = Array.from(otpInputs).map(input => input.value).join('');
+            
+            if (otpCode.length !== 6) {
+                this.showError('Please enter the complete 6-digit code');
+                return;
+            }
+
+            // Simulate OTP verification
+            const isValid = await this.verifyLoginOTP(otpCode);
+            
+            if (isValid) {
+                Swal.fire({
+                    icon: 'success',
+                    iconColor: '#16a34a',
+                    title: 'Login Successful!',
+                    text: 'Welcome back to GBLDC!',
+                    color: '#1e2939',
+                    timer: 2000,
+                    showConfirmButton: false,
+                    willClose: () => {
+                        // Redirect to dashboard
+                        window.location.href = 'user-landingpage.html';
+                    }
+                });
+            } else {
+                this.showError('Invalid code. Please try again.');
+            }
+            
+        } catch (error) {
+            this.showError('Verification failed. Please try again.');
+        } finally {
+            button.innerHTML = originalText;
+            button.classList.remove('loading');
+        }
+    }
+
+    startOTPTimer() {
+        let timeLeft = 300; // 5 minutes
+        const timerElement = document.getElementById('otpTimer');
+        const resendLink = document.getElementById('resendOtp');
+        
+        resendLink.style.pointerEvents = 'none';
+        resendLink.style.opacity = '0.5';
+        
+        this.otpTimer = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `Code expires in ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(this.otpTimer);
+                timerElement.textContent = 'Code expired';
+                resendLink.style.pointerEvents = 'auto';
+                resendLink.style.opacity = '1';
+                resendLink.textContent = 'Resend Code';
+            }
+            
+            timeLeft--;
+        }, 1000);
+        
+        // Setup resend functionality
+        resendLink.onclick = async (e) => {
+            e.preventDefault();
+            await this.resendOTP();
+        };
+    }
+
+    startLoginOTPTimer() {
+        let timeLeft = 300; // 5 minutes
+        const timerElement = document.getElementById('loginOtpTimer');
+        const resendLink = document.getElementById('loginOtpResend');
+        
+        resendLink.style.pointerEvents = 'none';
+        resendLink.style.opacity = '0.5';
+        
+        this.otpTimer = setInterval(() => {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `Code expires in ${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            if (timeLeft <= 0) {
+                clearInterval(this.otpTimer);
+                timerElement.textContent = 'Code expired';
+                resendLink.style.pointerEvents = 'auto';
+                resendLink.style.opacity = '1';
+                resendLink.textContent = 'Resend Code';
+            }
+            
+            timeLeft--;
+        }, 1000);
+        
+        // Setup resend functionality
+        resendLink.onclick = async (e) => {
+            e.preventDefault();
+            await this.resendLoginOTP();
+        };
+    }
+
+    async resendOTP() {
+        try {
+            await this.sendOTP(this.userData.email);
+            this.resetOTPInputs('.otp-input');
+            this.currentAttempts = 0;
+            this.startOTPTimer();
+            
+            Swal.fire({
+                icon: 'info',
+                iconColor: '#16a34a',
+                title: 'OTP Resent',
+                text: 'A new code has been sent to your email.',
+                color: '#1e2939',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        } catch (error) {
+            this.showError('Failed to resend code. Please try again.');
+        }
+    }
+
+    async resendLoginOTP() {
+        try {
+            const email = document.getElementById('loginEmail').value;
+            await this.sendLoginOTP(email);
+            this.resetOTPInputs('.login-otp-input');
+            this.startLoginOTPTimer();
+            
+            Swal.fire({
+                icon: 'info',
+                iconColor: '#16a34a',
+                title: 'OTP Resent',
+                text: 'A new code has been sent to your email.',
+                color: '#1e2939',
+                timer: 2000,
+                showConfirmButton: false
+            });
+        } catch (error) {
+            this.showError('Failed to resend code. Please try again.');
+        }
+    }
+
+    resetOTPInputs(selector) {
+        const inputs = document.querySelectorAll(selector);
+        inputs.forEach(input => {
+            input.value = '';
+            input.classList.remove('field-error', 'field-success');
+        });
+        if (inputs.length > 0) {
+            inputs[0].focus();
+        }
+    }
+
+    // Simulated API calls
+    async checkEmailExists(email) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Simulate some existing emails
+        const existingEmails = ['admin@gbldc.com', 'test@example.com'];
+        return existingEmails.includes(email.toLowerCase());
+    }
+
+    async sendOTP(email) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.log(`OTP sent to ${email}`);
+        
+        // Update email hint
+        document.getElementById('registrationEmailHint').textContent = `Code sent to: ${email}`;
+    }
+
+    async sendLoginOTP(email) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.log(`Login OTP sent to ${email}`);
+    }
+
+    async sendPasswordResetLink(email) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        console.log(`Password reset link sent to ${email}`);
+    }
+
+    async authenticateUser(email, password) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Simulate authentication (in real app, this would be server-side)
+        if (email === 'demo@gbldc.com' && password === 'Demo123!') {
+            return { success: true };
+        }
+        return { success: false, message: 'Invalid email or password' };
+    }
+
+    async verifyOTP(code, email) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Simulate OTP verification (in real app, this would be server-side)
+        return code === '123456';
+    }
+
+    async verifyLoginOTP(code) {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        
+        // Simulate OTP verification
+        return code === '123456';
+    }
+
+    async completeRegistration() {
+        // Simulate API delay
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        console.log('User registered successfully:', this.userData);
+    }
+
+    showError(message) {
+        Swal.fire({
+            icon: 'error',
+            iconColor: '#dc2626',
+            title: 'Error',
+            text: message,
+            color: '#1e2939',
+            confirmButtonColor: '#16a34a'
+        });
+    }
+
+    resetForms() {
+        document.getElementById('registrationForm').reset();
+        document.getElementById('loginForm').reset();
+        this.resetOTPInputs('.otp-input');
+        this.resetOTPInputs('.login-otp-input');
+        
+        // Clear all validation states
+        document.querySelectorAll('.field-error, .field-success').forEach(field => {
+            field.classList.remove('field-error', 'field-success');
+        });
+        
+        document.querySelectorAll('.error-message').forEach(error => {
+            error.classList.add('hidden');
+        });
+    }
+
+    // Section navigation methods
+    showRegisterSection() {
+        this.hideAllSections();
+        this.showSection('registerSection');
+    }
+
+    showLoginSection() {
+        this.hideAllSections();
+        this.showSection('loginSection');
+    }
+
+    showForgotPasswordSection() {
+        this.hideAllSections();
+        this.showSection('forgotPasswordSection');
+    }
+
+    showOTPSection() {
+        this.hideAllSections();
+        this.showSection('otpSection');
+    }
+
+    showLoginOTPSection() {
+        this.hideAllSections();
+        this.showSection('loginOtpSection');
+    }
+
+    hideAllSections() {
+        const sections = ['registerSection', 'loginSection', 'forgotPasswordSection', 'otpSection', 'loginOtpSection'];
+        sections.forEach(sectionId => {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.classList.add('hidden', 'invisible', 'pointer-events-none');
+                section.style.display = 'none';
+            }
+        });
+    }
+
+    showSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.classList.remove('hidden', 'invisible', 'pointer-events-none');
+            section.style.display = 'flex';
+            section.style.opacity = '0';
+            section.style.transition = 'opacity 0.5s';
+            
+            setTimeout(() => {
+                section.style.opacity = '1';
+            }, 10);
+            
+            section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+}
+
+// Password toggle functionality
+function togglePassword(fieldId) {
+    const field = document.getElementById(fieldId);
+    const toggle = document.getElementById(fieldId + 'Toggle');
+    
+    if (field.type === 'password') {
+        field.type = 'text';
+        toggle.classList.remove('fa-eye');
+        toggle.classList.add('fa-eye-slash');
+    } else {
+        field.type = 'password';
+        toggle.classList.remove('fa-eye-slash');
+        toggle.classList.add('fa-eye');
+    }
+}
+
+// Section navigation functions (for onclick handlers)
 function showRegisterSection() {
-  const reg = document.getElementById("registerSection");
-  const login = document.getElementById("loginSection");
-  const otp = document.getElementById("otpSection");
-  const loginOtp = document.getElementById("loginOtpSection");
-  const forgot = document.getElementById("forgotPasswordSection");
-  const forgotOtp = document.getElementById("forgotPasswordOtpSection");
-
-  // Hide all other sections
-  [login, otp, loginOtp, forgot, forgotOtp].forEach((section) => {
-    if (section) {
-      section.classList.add("hidden", "invisible", "pointer-events-none");
-      section.style.display = "none";
-    }
-  });
-
-  // Show registration section
-  if (reg) {
-    reg.classList.remove("hidden", "invisible", "pointer-events-none");
-    reg.style.display = "flex";
-    reg.style.opacity = 0;
-    reg.style.transition = "opacity 0.5s";
-    setTimeout(() => {
-      reg.style.opacity = 1;
-    }, 10);
-    reg.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
+    registrationSystem.showRegisterSection();
 }
 
-// New function to show login section
 function showLoginSection() {
-  const login = document.getElementById("loginSection");
-  const reg = document.getElementById("registerSection");
-  const otp = document.getElementById("otpSection");
-  const loginOtp = document.getElementById("loginOtpSection");
-  const forgot = document.getElementById("forgotPasswordSection");
-  const forgotOtp = document.getElementById("forgotPasswordOtpSection");
-
-  // Hide all other sections
-  [reg, otp, loginOtp, forgot, forgotOtp].forEach((section) => {
-    if (section) {
-      section.classList.add("hidden", "invisible", "pointer-events-none");
-      section.style.display = "none";
-    }
-  });
-
-  // Show login section
-  if (login) {
-    login.classList.remove("hidden", "invisible", "pointer-events-none");
-    login.style.display = "flex";
-    login.style.opacity = 0;
-    login.style.transition = "opacity 0.5s";
-    setTimeout(() => {
-      login.style.opacity = 1;
-    }, 10);
-    login.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
-}
-
-// Modified scrollToLogin function to use showLoginSection
-function scrollToLogin() {
-  showLoginSection();
+    registrationSystem.showLoginSection();
 }
 
 function showForgotPasswordSection() {
-  const forgot = document.getElementById("forgotPasswordSection");
-  const login = document.getElementById("loginSection");
-  const reg = document.getElementById("registerSection");
-  const otp = document.getElementById("otpSection");
-  const loginOtp = document.getElementById("loginOtpSection");
-  const forgotOtp = document.getElementById("forgotPasswordOtpSection");
-
-  // Hide all other sections
-  [login, reg, otp, loginOtp, forgotOtp].forEach((section) => {
-    if (section) {
-      section.classList.add("hidden", "invisible", "pointer-events-none");
-      section.style.display = "none";
-    }
-  });
-
-  // Show forgot password section
-  if (forgot) {
-    forgot.classList.remove("hidden", "invisible", "pointer-events-none");
-    forgot.style.display = "flex";
-    forgot.style.opacity = 0;
-    forgot.style.transition = "opacity 0.5s";
-    setTimeout(() => {
-      forgot.style.opacity = 1;
-    }, 10);
-    forgot.scrollIntoView({ behavior: "smooth", block: "center" });
-  }
+    registrationSystem.showForgotPasswordSection();
 }
 
-function validateLoginFields() {
-  const email = document.querySelector(
-    '#loginSection input[type="email"][placeholder="example@mail.com"]'
-  );
-  const password = document.querySelector(
-    '#loginSection input[type="password"][placeholder="••••••••"]'
-  );
-  const emailValue = email.value.trim();
-  const passwordValue = password.value.trim();
-
-  // Simple email format check
-  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-  if (!emailValue && !passwordValue) {
-    Swal.fire({
-      icon: "warning",
-      iconColor: "#dc2626",
-      color: "#1e2939",
-      title: "Missing Fields",
-      text: "Please fill both Email Address and Password fields.",
-    });
-  } else if (!emailValue && passwordValue) {
-    Swal.fire({
-      icon: "warning",
-      iconColor: "#dc2626",
-      color: "#1e2939",
-      title: "Missing Email",
-      text: "Please enter your email address.",
-    });
-  } else if (emailValue && !passwordValue) {
-    Swal.fire({
-      icon: "warning",
-      iconColor: "#dc2626",
-      color: "#1e2939",
-      title: "Missing Password",
-      text: "Please enter your password.",
-    });
-  } else if (!emailPattern.test(emailValue)) {
-    Swal.fire({
-      icon: "warning",
-      iconColor: "#dc2626",
-      color: "#1e2939",
-      title: "Invalid Email",
-      text: "Please enter a valid email address.",
-    });
-  } else {
-    // Proceed with login (show OTP section for login verification)
-    Swal.fire({
-      icon: "success",
-      iconColor: "#16a34a",
-      customClass: { popup: "swal2-custom-popup" },
-      title: "Check your email",
-      titleText: "Login Verification",
-      color: "#1e2939",
-      text: "Your 6-digit code has been sent to your email address.",
-      timer: 2000,
-      showConfirmButton: false,
-      willClose: () => {
-        const otp = document.getElementById("loginOtpSection");
-        const login = document.getElementById("loginSection");
-        if (login) {
-          login.classList.add("hidden", "invisible", "pointer-events-none");
-          login.style.display = "none";
-        }
-        if (otp) {
-          otp.classList.remove("hidden", "invisible", "pointer-events-none");
-          otp.style.display = "flex";
-          otp.style.opacity = 0;
-          otp.style.transition = "opacity 0.5s";
-          setTimeout(() => {
-            otp.style.opacity = 1;
-          }, 10);
-          otp.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      },
-    });
-  }
-}
-
-// Ensure FB SDK is loaded before using FB functions
+// Social login functions (placeholders)
 function fbLogin() {
-  if (typeof FB === "undefined") {
-    alert(
-      "Facebook SDK not loaded. Please check your internet connection and try again."
-    );
-    return;
-  }
-  FB.login(
-    function (response) {
-      if (response.authResponse) {
-        FB.api("/me", { fields: "name,email" }, function (profile) {
-          if (!profile.email) {
-            alert(
-              "Unable to retrieve email from Facebook. Please ensure your Facebook account has a verified email."
-            );
-            return;
-          }
-          fetch("facebook_register.php", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: `email=${encodeURIComponent(
-              profile.email
-            )}&name=${encodeURIComponent(profile.name)}`,
-          })
-            .then((res) => res.text())
-            .then((data) => {
-              window.location.href = "user-landingpage.php";
-            })
-            .catch((err) => {
-              alert("Error during Facebook login: " + err);
+    Swal.fire({
+        icon: 'info',
+        title: 'Facebook Login',
+        text: 'Facebook login integration would be implemented here.',
+        confirmButtonColor: '#16a34a'
+    });
+}
+
+// Initialize the registration system
+let registrationSystem;
+
+document.addEventListener('DOMContentLoaded', function() {
+    registrationSystem = new RegistrationSystem();
+    
+    // Setup forgot password link
+    const forgotLink = document.getElementById('forgotPasswordLink');
+    if (forgotLink) {
+        forgotLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            showForgotPasswordSection();
+        });
+    }
+    
+    // Setup Google login
+    const googleBtn = document.getElementById('googleLoginBtn');
+    if (googleBtn) {
+        googleBtn.addEventListener('click', function() {
+            Swal.fire({
+                icon: 'info',
+                title: 'Google Login',
+                text: 'Google login integration would be implemented here.',
+                confirmButtonColor: '#16a34a'
             });
         });
-      } else {
-        alert("Facebook login was not successful.");
-      }
-    },
-    { scope: "email" }
-  );
-}
-
-window.fbAsyncInit = function () {
-  FB.init({
-    appId: "4093222834242920", // Replace with your App ID
-    cookie: true,
-    xfbml: true,
-    version: "v23.0",
-  });
-};
-
-window.onload = function () {
-  const googleBtn = document.getElementById("googleLoginBtn");
-  if (googleBtn) {
-    googleBtn.addEventListener("click", function () {
-      google.accounts.id.initialize({
-        client_id:
-          "528123102514-o8vap3bmgnogbgvtfuipgkgea739ov3c.apps.googleusercontent.com", // Replace with your Google Client ID
-        callback: handleGoogleCredentialResponse,
-      });
-      google.accounts.id.prompt(); // Shows the Google One Tap prompt
-    });
-  }
-};
-
-function handleGoogleCredentialResponse(response) {
-  // Send the credential to your backend for verification and login
-  fetch("google_login.php", {
-    method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: "credential=" + encodeURIComponent(response.credential),
-  })
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) {
-        window.location.href = "user-landingpage.php";
-      } else {
-        alert("Google login failed.");
-      }
-    });
-}
-
-// Show OTP section and hide registration
-function showOtpSection() {
-  // Show SweetAlert2 before showing OTP section with timer, no confirm button
-  Swal.fire({
-    icon: "success",
-    iconColor: "#16a34a",
-    customClass: {
-      popup: "swal2-custom-popup",
-    },
-    title: "Check your email",
-    titleText: "Email Verification",
-    color: "#1e2939",
-    text: "Your 6-digit code has been sent to your email address.",
-    timer: 2000,
-    showConfirmButton: false,
-    willClose: () => {
-      const otp = document.getElementById("otpSection");
-      const reg = document.getElementById("registerSection");
-      if (reg) {
-        reg.classList.add("hidden", "invisible", "pointer-events-none");
-        reg.style.display = "none";
-      }
-      if (otp) {
-        otp.classList.remove("hidden", "invisible", "pointer-events-none");
-        otp.style.display = "flex";
-        otp.style.opacity = 0;
-        otp.style.transition = "opacity 0.5s";
-        setTimeout(() => {
-          otp.style.opacity = 1;
-        }, 10);
-        otp.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    },
-  });
-}
-
-// OTP input auto-focus and form logic
-document.addEventListener("DOMContentLoaded", function () {
-  const otpInputs = document.querySelectorAll('#otpSection input[type="text"]');
-  otpInputs.forEach((input, idx) => {
-    input.addEventListener("input", function () {
-      if (this.value.length === 1 && idx < otpInputs.length - 1) {
-        otpInputs[idx + 1].focus();
-      }
-    });
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Backspace" && !this.value && idx > 0) {
-        otpInputs[idx - 1].focus();
-      }
-    });
-  });
-
-  // OTP form submit handler using SweetAlert2
-  const otpForm = document.querySelector("#otpSection form");
-  if (otpForm) {
-    otpForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let otpCode = "";
-      otpInputs.forEach((inp) => (otpCode += inp.value));
-      if (otpCode.length === 6) {
-        Swal.fire({
-          icon: "success",
-          iconColor: "#16a34a",
-          customClass: {
-            popup: "swal2-custom-popup",
-          },
-          title: "Account Created!",
-          titleText: "Welcome to GBLDC",
-          text: "Your account has been successfully created.",
-          color: "#1e2939",
-          timer: 2000,
-          showConfirmButton: false,
-          willClose: () => {
-            showLoginSection();
-          },
-        });
-      } else {
-        Swal.fire({
-          icon: "warning",
-          iconColor: "#dc2626",
-          title: "Incomplete Code",
-          titleText: "Invalid OTP",
-          color: "#1e2939",
-          text: "Please enter the 6-digit code.",
-          confirmButtonColor: "#16a34a",
-        });
-      }
-    });
-  }
-
-  // Optional: Resend OTP handler using SweetAlert2
-  const resendLink = document.querySelector('#otpSection a[href="#"]');
-  if (resendLink) {
-    resendLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      Swal.fire({
-        icon: "info",
-        iconColor: "#dc2626",
-        title: "OTP Resent",
-        titleText: "Resend OTP",
-        color: "#1e2939",
-        text: "A new OTP has been sent to your email.",
-        confirmButtonColor: "#16a34a",
-      });
-    });
-  }
-
-  // Forgot Password link logic
-  const forgotLink = document.getElementById("forgotPasswordLink");
-  if (forgotLink) {
-    forgotLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      showForgotPasswordSection();
-    });
-  }
-
-  // Handle forgot password form submit
-  const forgotForm = document.getElementById("forgotPasswordForm");
-  if (forgotForm) {
-    forgotForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      Swal.fire({
-        icon: "success",
-        iconColor: "#16a34a",
-        customClass: { popup: "swal2-custom-popup" },
-        title: "Reset Link Sent",
-        text: "A password reset link has been sent to your email address.",
-        color: "#1e2939",
-        timer: 2000,
-        showConfirmButton: false,
-        willClose: () => {
-          showLoginSection();
-        },
-      });
-    });
-  }
-
-  // Realtime update of OTP email hint based on login email input
-  const loginEmailInput = document.querySelector(
-    '#loginSection input[type="email"]'
-  );
-  const otpEmailHint = document.getElementById("otpEmailHint");
-  if (loginEmailInput && otpEmailHint) {
-    loginEmailInput.addEventListener("input", function () {
-      const email = loginEmailInput.value.trim();
-      if (email) {
-        otpEmailHint.textContent = `Code sent to: ${email}`;
-      } else {
-        otpEmailHint.textContent = "Example: juandelacruz@gmail.com";
-      }
-    });
-  }
-
-  // OTP input auto-focus and form logic for login OTP
-  const loginOtpInputs = document.querySelectorAll(
-    '#loginOtpSection input[type="text"]'
-  );
-  loginOtpInputs.forEach((input, idx) => {
-    input.addEventListener("input", function () {
-      if (this.value.length === 1 && idx < loginOtpInputs.length - 1) {
-        loginOtpInputs[idx + 1].focus();
-      }
-    });
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Backspace" && !this.value && idx > 0) {
-        loginOtpInputs[idx - 1].focus();
-      }
-    });
-  });
-
-  // OTP form submit handler using SweetAlert2
-  const loginOtpForm = document.getElementById("loginOtpForm");
-  if (loginOtpForm) {
-    loginOtpForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-      let otpCode = "";
-      loginOtpInputs.forEach((inp) => (otpCode += inp.value));
-      if (otpCode.length === 6) {
-        Swal.fire({
-          icon: "success",
-          iconColor: "#16a34a",
-          customClass: { popup: "swal2-custom-popup" },
-          title: "Login Successful!",
-          text: "Discover your financial future with GBLDC. Welcome User!",
-          color: "#1e2939",
-          timer: 2000,
-          showConfirmButton: false,
-          willClose: () => {
-            window.location.href = "user-landingpage.php"; // Redirect to user landing page
-          },
-        });
-      } else {
-        Swal.fire({
-          icon: "warning",
-          iconColor: "#dc2626",
-          title: "Incomplete Code",
-          titleText: "Invalid OTP",
-          color: "#1e2939",
-          text: "Please enter the 6-digit code.",
-          confirmButtonColor: "#16a34a",
-        });
-      }
-    });
-  }
-
-  // Resend OTP handler for login OTP
-  const loginResendLink = document.getElementById("loginOtpResend");
-  if (loginResendLink) {
-    loginResendLink.addEventListener("click", function (e) {
-      e.preventDefault();
-      let timerInterval;
-      Swal.fire({
-        icon: "info",
-        iconColor: "#16a34a",
-        title: "OTP Resent",
-        titleText: "Resend OTP",
-        color: "#1e2939",
-        text: "A new OTP has been sent to your email.",
-        confirmButtonColor: "#16a34a",
-        showConfirmButton: false,
-        timer: 2000,
-        timerProgressBar: true,
-        willClose: () => {
-          clearInterval(timerInterval);
-        },
-      });
-    });
-  }
+    }
 });
 </script>
+
 </body>
 </html>
+    

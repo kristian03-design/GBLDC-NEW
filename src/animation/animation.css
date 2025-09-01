@@ -711,3 +711,52 @@ html {
   padding: 0.5rem;
   margin-top: 0.5rem;
 }
+
+.password-strength {
+  height: 4px;
+  border-radius: 2px;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+.strength-weak {
+  background-color: #ef4444;
+  width: 33%;
+}
+.strength-medium {
+  background-color: #f59e0b;
+  width: 66%;
+}
+.strength-strong {
+  background-color: #16a34a;
+  width: 100%;
+}
+.field-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 1px #ef4444 !important;
+}
+.field-success {
+  border-color: #16a34a !important;
+  box-shadow: 0 0 0 1px #16a34a !important;
+}
+.loading {
+  pointer-events: none;
+  opacity: 0.6;
+}
+.spinner {
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #16a34a;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 8px;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
