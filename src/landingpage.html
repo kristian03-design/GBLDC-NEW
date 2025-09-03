@@ -21,7 +21,7 @@
     <title>Landing Page | GBLDC</title>
 
   </head>
-  <body class="bg-white text-gray-800 scroll-smooth" style="font-family: Outfit;">
+  <body class="bg-white text-gray-800 scroll-behaviour-smooth" style="font-family: Outfit;">
     <!-- Modern Header/Navbar -->
     <header
       class="fixed top-0 left-0 w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100">
@@ -163,20 +163,21 @@
 
     <!-- Hero Section -->
     <section
-      class="relative w-full min-h-[70vh] flex items-center justify-center pt-20 pb-12 md:pt-32 md:pb-20 overflow-hidden">
+      class="relative w-full min-h-screen flex items-center justify-center md:pt-32 md:pb-20 overflow-hidden">
       <img src="path/images/meeting 2.png" alt="Hero Banner"
-        class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none" />
+        class="absolute inset-0 w-full h-full object-cover pointer-events-none select-none"
+        onerror="this.style.display='none'"/>
       <div
         class="absolute inset-0 bg-gradient-to-br from-green-700/80 to-green-800/80 opacity-75"></div>
       <div class="relative z-10 max-w-3xl mx-auto text-center px-4">
         <h1
-          class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg">Your
+          class="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow-lg fade-in">Your
           Financial Growth,<br><span class="text-green-400">Our
             Priority</span></h1>
-        <p class="text-lg md:text-2xl text-green-100 mb-8 font-light">Building
+        <p class="text-lg md:text-2xl text-green-100 mb-8 font-light slide-up">Building
           stronger communities through cooperative financial services. Join
           thousands of members who trust us for their financial future.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center slide-up mt-10">
           <a href="creating_account.html"
             class="bg-green-600 text-white px-8 py-3 rounded-full text-lg font-semibold shadow hover:bg-green-700 transition">Become
             a Member</a>
@@ -199,7 +200,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Loans Card -->
           <div
-            class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl">
+            class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl hover-scale">
             <div
               class="w-16 h-16  flex items-center justify-center mb-6">
               <svg xmlns="http://www.w3.org/2000/svg" width="60" height="70"
@@ -231,7 +232,7 @@
           </div>
 
           <div
-            class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl">
+            class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl hover-scale">
             <div
               class="w-16 h-16 flex items-center justify-center mb-6">
               <svg viewBox="0 0 24 24" aria-label="Deposit" role="img"
@@ -258,7 +259,7 @@
 
           <!-- Savings Card -->
           <div
-            class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl">
+            class="bg-white rounded-2xl p-8 shadow-lg hover-lift hover:shadow-xl hover-scale">
             <div
               class="w-16 h-16 flex items-center justify-center mb-6">
               <svg viewBox="0 0 24 24" aria-label="Savings jar" role="img"
@@ -353,7 +354,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <article
-                class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl">
+                class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl hover-scale">
                 <img src="path/images/event1.jpg" alt="Event 1"
                   class="rounded-t-2xl w-full h-56 object-cover">
                 <div class="p-6">
@@ -382,7 +383,7 @@
               </article>
 
               <article
-                class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl">
+                class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl hover-scale">
                 <img src="path/images/event2.jpg" alt="Event 2"
                   class="rounded-t-2xl w-full h-56 object-cover">
                 <div class="p-6">
@@ -410,7 +411,7 @@
               </article>
 
               <article
-                class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl">
+                class="bg-white rounded-2xl shadow-lg overflow-hidden hover-lift hover:shadow-xl hover-scale">
                 <img src="path/images/event3.jpg" alt="Event 3"
                   class="rounded-t-2xl w-full h-56 object-cover">
                 <div class="p-6">

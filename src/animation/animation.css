@@ -206,7 +206,7 @@ select.border-red-500 {
 .animate-card-fade-in {
   animation: fade-in-up 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-.animate-carousel-slide {
+.animate-carousel- {
   animation: fade-in 1.2s;
 }
 
@@ -759,4 +759,35 @@ html {
   100% {
     transform: rotate(360deg);
   }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-in-out;
+}
+.slide-up {
+  animation: slideUp 0.8s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+  transform: scale(1.05);
 }
