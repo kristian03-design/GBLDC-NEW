@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" type="image/png" href="path/images/logocoop-removebg-preview 2.png">
+		<link href="./output.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="../src/javascript/loan-dashboard.js"></script>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link rel="stylesheet" href="./animation/animation.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+		<title>Payment Proof Upload | GBLDC</title>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+		<style>
+			@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+			.animate-fadeIn { animation: fadeIn 0.3s ease-in-out; }
+			.sidebar-transition { transition: transform 0.3s ease-in-out; }
+			.table-container { overflow-x: auto; }
+		</style>
+	</head>
+	<body class="bg-gray-50 font-outfit">
+		<div class="min-h-screen flex relative">
+			<!-- Mobile Menu Overlay -->
+			<div id="mobileOverlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+			<!-- Mobile Menu Button -->
+			<button id="mobileMenuBtn" class="fixed top-4 left-4 z-50 lg:hidden bg-white p-2 rounded-md shadow-md">
+				<i class="fas fa-bars text-gray-600"></i>
+			</button>
+			<!-- Sidebar -->
+			<aside id="sidebar" class="w-80 lg:w-1/5 bg-white h-screen p-3 lg:p-5 shadow-lg flex flex-col fixed lg:relative z-50 transform -translate-x-full lg:translate-x-0 sidebar-transition ease-in-out duration-300">
+				<button id="closeSidebarBtn" class="self-end mb-4 lg:hidden">
+					<i class="fas fa-times text-gray-600"></i>
+				</button>
+				<div class="flex items-center space-x-2 lg:space-x-3 mb-4">
+					<div class="w-12 h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center">
+						<img src="path/images/logocoop-removebg-preview 2.png" class="text-xl lg:text-2xl" />
+					</div>
+					<h1 class="text-xl lg:text-3xl font-bold text-gray-800">GBLDC</h1>
+				</div>
+				<div class="mb-6">
+					<div class="flex items-center space-x-3 mb-4 p-2 bg-gray-50 rounded-lg">
+						<div class="w-12 h-12 lg:w-16 lg:h-16 bg-blue-100 rounded-full flex items-center justify-center">
+							<img src="path/images/Kristian.png" class="rounded-full :text-lg lg:text-xl" />
+						</div>
+						<div class="flex-1 min-w-0">
+							<p class="font-semibold text-sm lg:text-base truncate">Kristian Lloyd Hernandez</p>
+							<p class="text-xs lg:text-sm text-gray-500 truncate">hkristianlloyd2@gmail.com</p>
+						</div>
+					</div>
+					<nav class="flex flex-col gap-1 lg:gap-2">
+						<a href="loandashboard.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fa-solid fa-house mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Loan Dashboard</span>
+						</a>
+						<a href="checkloanstatus.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fa-solid fa-money-bill-wave mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Check Loan Status</span>
+						</a>
+						<a href="contact-us.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fas fa-envelope mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Contact Us</span>
+						</a>
+						<a href="members_payment_proof_upload.html" class="flex items-center p-3 lg:p-4 bg-green-500 text-white rounded-lg font-medium text-sm lg:text-base">
+							<i class="fas fa-upload mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Payment Proof Upload</span>
+						</a>
+						<a href="members_feedback.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fas fa-comment-dots mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Member's Feedback</span>
+						</a>
+						<a href="user-faq.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fas fa-question-circle mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">FAQ</span>
+						</a>
+						<a href="account-settings.html" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fas fa-cog mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Account Settings</span>
+						</a>
+						<a href="#" id="logoutBtn" class="flex items-center p-3 lg:p-4 hover:bg-gray-200 rounded-lg font-medium text-sm lg:text-base transition-colors">
+							<i class="fas fa-sign-out-alt mr-2 lg:mr-3 w-4"></i>
+							<span class="truncate">Logout</span>
+						</a>
+					</nav>
+				</div>
+			</aside>
+			<!-- Main Content -->
+			<main class="flex-1 p-4 lg:p-6 ml-0 lg:ml-0">
+				<div class="mt-12 lg:mt-0 mb-6">
+					<h1 class="text-xl lg:text-2xl xl:text-3xl font-bold">Upload Payment Proof</h1>
+					<p class="text-gray-600 text-sm lg:text-base">Submit your payment proof for verification.</p>
+					<hr class="border-gray-300 mt-4 lg:mt-6">
+				</div>
+				<section class="bg-white rounded-lg shadow-md p-4 lg:p-8 max-w-4xl mx-auto animate-fadeIn">
+					<h2 class="text-lg lg:text-xl font-semibold text-teal-950 mb-4">Payment Proof Form</h2>
+					<form class="space-y-5" id="paymentProofForm" enctype="multipart/form-data">
+						<div>
+							<label class="block text-gray-700 text-sm font-medium mb-2">Payment Type</label>
+							<select name="paymentType" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none transition-colors">
+								<option value="">Select Payment Type</option>
+								<option value="Gcash">Gcash</option>
+								<option value="Bank Transfer">Bank Transfer</option>
+								<option value="Card">Credit/Debit Card</option>
+								<option value="Other">Other</option>
+							</select>
+						</div>
+						<div>
+							<label class="block text-gray-700 text-sm font-medium mb-2">Amount (PHP)</label>
+							<input type="number" name="amount" required min="1" step="0.01" placeholder="Enter amount paid" class="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none transition-colors" />
+						</div>
+						<div>
+							<label class="block text-gray-700 text-sm font-medium mb-2">Upload Proof (Image or PDF)</label>
+							<input type="file" name="proof" accept="image/*,application/pdf" required class="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none transition-colors" />
+							<p class="text-xs text-gray-500 mt-1">Accepted: JPG, PNG, PDF. Max 5MB.</p>
+						</div>
+						<div>
+							<label class="block text-gray-700 text-sm font-medium mb-2">Remarks (optional)</label>
+							<textarea name="remarks" rows="2" class="w-full p-3 border border-gray-300 rounded-lg focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none transition-colors" placeholder="Any additional info..."></textarea>
+						</div>
+						<div class="flex flex-col sm:flex-row gap-3 pt-2">
+							<button type="reset" class="flex-1 bg-gray-300 text-gray-800 rounded-lg py-3 px-4 hover:bg-gray-400 transition-colors font-medium">Clear</button>
+							<button type="submit" class="flex-1 bg-green-600 text-white rounded-lg py-3 px-4 hover:bg-green-700 transition-colors font-medium">Submit Proof</button>
+						</div>
+					</form>
+				</section>
+			</main>
+		</div>
+		<script>
+            document.getElementById('paymentProofForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const form = e.target;
+                const formData = new FormData(form);
+
+                // Validate file size (max 5MB)
+                const file = formData.get('proof');
+                if (file && file.size > 5 * 1024 * 1024) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'File too large',
+                        text: 'Please upload a file smaller than 5MB.',
+                        confirmButtonColor: '#ef4444'
+                    });
+                    return;
+                }
+
+                try {
+                    const response = await fetch('/api/payment-proof/upload', {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Submitted!',
+                            text: 'Your payment proof has been submitted for review.',
+                            confirmButtonColor: '#22c55e'
+                        });
+                        form.reset();
+                        // Optionally: reload or update the proofs table here
+                    } else {
+                        const data = await response.json();
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Submission Failed',
+                            text: data.message || 'There was an error submitting your proof.',
+                            confirmButtonColor: '#ef4444'
+                        });
+                    }
+                } catch (err) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Network Error',
+                        text: 'Could not connect to the server. Please try again later.',
+                        confirmButtonColor: '#ef4444'
+                    });
+                }
+            });
+		</script>
+	</body>
+</html>

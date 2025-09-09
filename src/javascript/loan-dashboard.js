@@ -120,55 +120,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let creditScore = getCreditScore(paymentAmountInput?.value || 0);
   updateCreditScoreUI(creditScore);
 
-  // Event: Open modal
-  makePaymentBtn?.addEventListener("click", function (e) {
-    e.preventDefault();
-    showModal();
-  });
-
-  // Event: Cancel modal
-  cancelButton?.addEventListener("click", function (e) {
-    e.preventDefault();
-    hideModal();
-    Swal.fire({
-      icon: "info",
-      iconColor: '#ef4444',
-      color: '#1e2939',
-      title: "Payment Cancelled",
-      text: "You have cancelled the payment.",
-      confirmButtonColor: "#ef4444",
-    });
-  });
-
-  // Event: Payment form submit
-  paymentForm?.addEventListener("submit", function (e) {
-    e.preventDefault();
-    const amount = paymentAmountInput.value;
-    const method = paymentMethodInput.value;
-    hideModal();
-
-    Swal.fire({
-      icon: "success",
-      iconColor: '#22c55e',
-      color: '#1e2939',
-      title: "Payment Successful!",
-      html: `Processing payment of <b>PHP ${amount}</b> via <b>${getPaymentMethodText(
-        method
-      )}</b>.`,
-      confirmButtonColor: "#22c55e",
-    });
-
-    // Add payment to history after modal
-    setTimeout(function () {
-      const now = new Date();
-      const dateStr = now.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-      });
-      addPaymentToHistory(dateStr, amount, method);
-    }, 500);
-  });
 
   // Event: Real-time payment amount and credit score update
   paymentAmountInput?.addEventListener("input", function () {

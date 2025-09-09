@@ -517,14 +517,10 @@ class RegistrationSystem {
 
     async handleRegistration(e) {
         e.preventDefault();
-        
         const button = document.getElementById('registerBtn');
         const originalText = button.innerHTML;
-        
-        // Show loading state
         button.innerHTML = '<div class="spinner"></div>Processing...';
         button.classList.add('loading');
-        
         try {
             // Validate all fields
             const isValid = this.validateRegistrationForm();
@@ -532,30 +528,34 @@ class RegistrationSystem {
                 this.showError('Please correct the errors above');
                 return;
             }
-
-            // Check if email already exists (simulate API call)
-            const emailExists = await this.checkEmailExists(document.getElementById('email').value);
-            if (emailExists) {
-                this.showFieldValidation('email', false, 'An account with this email already exists');
-                return;
-            }
-
-            // Store user data
+            // Prepare user data for API
             this.userData = {
-                firstName: document.getElementById('firstName').value.trim(),
-                lastName: document.getElementById('lastName').value.trim(),
+                first_name: document.getElementById('firstName').value.trim(),
+                last_name: document.getElementById('lastName').value.trim(),
                 email: document.getElementById('email').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
-                dateOfBirth: document.getElementById('dateOfBirth').value,
+                date_of_birth: document.getElementById('dateOfBirth').value,
                 password: document.getElementById('password').value
             };
-
-            // Send OTP (simulate API call)
-            await this.sendOTP(this.userData.email);
-            
+            // Call backend registration API
+            const res = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(this.userData)
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
+                if (data.error && data.error.includes('email')) {
+                    this.showFieldValidation('email', false, data.error);
+                } else {
+                    this.showError(data.error || 'Registration failed.');
+                }
+                return;
+            }
+            // Show OTP section and hint
+            document.getElementById('registrationEmailHint').textContent = `Code sent to: ${this.userData.email}`;
             this.showOTPSection();
             this.startOTPTimer();
-            
         } catch (error) {
             this.showError('Registration failed. Please try again.');
         } finally {
@@ -728,52 +728,51 @@ class RegistrationSystem {
 
     async handleOTPVerification(e) {
         e.preventDefault();
-        
         const button = document.getElementById('verifyOtpBtn');
         const originalText = button.innerHTML;
-        
         button.innerHTML = '<div class="spinner"></div>Verifying...';
         button.classList.add('loading');
-        
         try {
             const otpInputs = document.querySelectorAll('.otp-input');
             const otpCode = Array.from(otpInputs).map(input => input.value).join('');
-            
             if (otpCode.length !== 6) {
                 this.showError('Please enter the complete 6-digit code');
                 return;
             }
-
-            // Simulate OTP verification
-            const isValid = await this.verifyOTP(otpCode, this.userData.email);
-            
-            if (isValid) {
-                // Complete registration
-                await this.completeRegistration();
-                
-                Swal.fire({
-                    icon: 'success',
-                    iconColor: '#16a34a',
-                    title: 'Account Created Successfully!',
-                    text: 'Welcome to GBLDC! You can now log in to your account.',
-                    color: '#1e2939',
-                    timer: 3000,
-                    showConfirmButton: false,
-                    willClose: () => {
-                        this.showLoginSection();
-                        this.resetForms();
-                    }
-                });
-            } else {
+            // Call backend verify-email API
+            const res = await fetch('/api/auth/verify-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email: this.userData.email, code: otpCode })
+            });
+            const data = await res.json();
+            if (!res.ok || !data.success) {
                 this.currentAttempts++;
                 if (this.currentAttempts >= this.maxAttempts) {
                     this.showError('Maximum attempts exceeded. Please request a new code.');
                     this.resetOTPInputs('.otp-input');
                 } else {
-                    this.showError(`Invalid code. ${this.maxAttempts - this.currentAttempts} attempts remaining.`);
+                    this.showError(data.error || `Invalid code. ${this.maxAttempts - this.currentAttempts} attempts remaining.`);
                 }
+                return;
             }
-            
+            // Store JWT and show success
+            if (data.token) {
+                localStorage.setItem('jwt', data.token);
+            }
+            Swal.fire({
+                icon: 'success',
+                iconColor: '#16a34a',
+                title: 'Account Created Successfully!',
+                text: 'Welcome to GBLDC! You can now log in to your account.',
+                color: '#1e2939',
+                timer: 3000,
+                showConfirmButton: false,
+                willClose: () => {
+                    this.showLoginSection();
+                    this.resetForms();
+                }
+            });
         } catch (error) {
             this.showError('Verification failed. Please try again.');
         } finally {
@@ -944,69 +943,7 @@ class RegistrationSystem {
         }
     }
 
-    // Simulated API calls
-    async checkEmailExists(email) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Simulate some existing emails
-        const existingEmails = ['admin@gbldc.com', 'test@example.com'];
-        return existingEmails.includes(email.toLowerCase());
-    }
-
-    async sendOTP(email) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.log(`OTP sent to ${email}`);
-        
-        // Update email hint
-        document.getElementById('registrationEmailHint').textContent = `Code sent to: ${email}`;
-    }
-
-    async sendLoginOTP(email) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.log(`Login OTP sent to ${email}`);
-    }
-
-    async sendPasswordResetLink(email) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.log(`Password reset link sent to ${email}`);
-    }
-
-    async authenticateUser(email, password) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Simulate authentication (in real app, this would be server-side)
-        if (email === 'demo@gbldc.com' && password === 'Demo123!') {
-            return { success: true };
-        }
-        return { success: false, message: 'Invalid email or password' };
-    }
-
-    async verifyOTP(code, email) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Simulate OTP verification (in real app, this would be server-side)
-        return code === '123456';
-    }
-
-    async verifyLoginOTP(code) {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        
-        // Simulate OTP verification
-        return code === '123456';
-    }
-
-    async completeRegistration() {
-        // Simulate API delay
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log('User registered successfully:', this.userData);
-    }
+    // Simulated API calls are now replaced by real backend API calls above for registration and OTP verification.
 
     showError(message) {
         Swal.fire({
