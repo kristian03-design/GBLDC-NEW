@@ -791,3 +791,73 @@ html {
 .hover-scale:hover {
   transform: scale(1.05);
 }
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.card-input {
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' viewBox='0 0 20 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='1' y='1' width='18' height='10' rx='2' stroke='%23CBD5E0' stroke-width='1' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+}
+.payment-option.selected {
+  border-color: #10860c;
+  color: green;
+}
+.method-option.selected {
+  border-color: #10860c;
+  color: green;
+}
+.fade-in {
+  animation: fadeIn 0.3s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #9ca3af;
+  border-color: #9ca3af;
+  box-shadow: none;
+}
+
+/* Custom responsive breakpoints */
+@media (max-width: 1024px) {
+  .payment-form-container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-stack {
+    flex-direction: column;
+  }
+  .mobile-full-width {
+    width: 100% !important;
+  }
+  .mobile-padding {
+    padding: 1rem !important;
+  }
+  .mobile-text-sm {
+    font-size: 0.875rem !important;
+  }
+  .mobile-text-base {
+    font-size: 1rem !important;
+  }
+  .mobile-text-lg {
+    font-size: 1.125rem !important;
+  }
+}
