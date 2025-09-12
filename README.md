@@ -46,3 +46,97 @@ To set up the project locally, follow these steps:
 4. Start the development server:
     ```bash
     npm run start
+
+## Backend (PHP + MySQL)
+
+This repository now includes a minimal backend built with PHP 8 + PDO + MySQL. It exposes JSON endpoints with a tiny router, controllers, and models.
+
+### Features
+
+- Health check: `GET /health`
+- Users CRUD:
+  - `GET /users` (query: `limit`, `offset`)
+  - `POST /users` (JSON `{ name, email }`)
+  - `GET /users/{id}`
+  - `PUT /users/{id}` (JSON `{ name?, email? }`)
+  - `DELETE /users/{id}`
+- Env-based configuration via `.env`
+- Basic CORS headers
+
+### Structure
+
+```
+public/
+  index.php
+  .htaccess
+src/
+  Config/
+    Config.php
+    Env.php
+  Controllers/
+    HealthController.php
+    UserController.php
+  Database/
+    Database.php
+  Http/
+    Request.php
+    Response.php
+    Router.php
+  Models/
+    UserModel.php
+sql/
+  schema.sql
+.env.example
+```
+
+### Setup
+
+1. Copy environment config:
+
+```bash
+cp .env.example .env
+```
+
+2. Create database and tables (adjust credentials per `.env`):
+
+```bash
+mysql -h $DB_HOST -P $DB_PORT -u $DB_USER -p$DB_PASS $DB_NAME < sql/schema.sql
+```
+
+If database `$DB_NAME` doesn't exist, create it first:
+
+```sql
+CREATE DATABASE app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+```
+
+3. Serve the app (Apache suggested):
+- Point the DocumentRoot to `public/`.
+- Ensure `mod_rewrite` is enabled for routing via `.htaccess`.
+
+Nginx FastCGI example:
+
+```
+location / {
+  try_files $uri /index.php?$query_string;
+}
+
+location ~ \.php$ {
+  include fastcgi_params;
+  fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+  fastcgi_pass 127.0.0.1:9000;
+}
+```
+
+### Testing
+
+- Health: `curl -s http://localhost/health`
+- Create: `curl -s -X POST http://localhost/users -H 'Content-Type: application/json' -d '{"name":"Alice","email":"alice@example.com"}'`
+- List: `curl -s http://localhost/users`
+- Get: `curl -s http://localhost/users/1`
+- Update: `curl -s -X PUT http://localhost/users/1 -H 'Content-Type: application/json' -d '{"name":"A. Smith"}'`
+- Delete: `curl -s -X DELETE http://localhost/users/1`
+
+### Notes
+
+- Errors return JSON with appropriate HTTP status codes.
+- CORS defaults to `*`. Set `CORS_ALLOW_ORIGIN` in `.env` for production.
